@@ -1,12 +1,14 @@
 # 🌋 ChatGPT Usage Guide
 
-## ChatGPT is truly amazing! It's a total game changer that can revolutionize the way we live and work. It has the power to help us study, assist in our work, and enrich our experience, etc.. Let's harness the potential of ChatGPT and unlock our fullest potential!
+ChatGPT is truly amazing! It's a total game changer that can revolutionize the way we live and work. It has the power to help us study, assist in our work, and enrich our experience, etc.. Let's harness the potential of ChatGPT and unlock our fullest potential!
 
 > **[Caution](#🌋-chatgpt-prompt)**: ChatGPT may generate incorrect, harmful or biased information. While ChatGPT may not be perfect, it is undoubtedly a highly useful tool. ChatGPT can provide us with a great starting point, making it easier for us to overcome challenges and ensuring we don't feel alone in our journey.
 
-## 🗻 Let's embark on a magical journey to become super learners!💪
+<b>🗻 Let's embark on a magical journey to become super learners!💪</b>
 
-## CATALOG
+---
+
+<font size=6>CATALOG</font>
 
 - [Help us study](#help-us-study)
     - [Reading and writing](#reading-and-writing)
@@ -27,9 +29,6 @@
     - [Music and Art](#music-and-art)
     - [Travel Guide](#travel-guide)
     - [Learning cooking](#learning-cooking)
----
-
-Below are examples of how to use ChatGPT in various scenarios.
 
 ## Help us study
 ChatGPT can act as a tutor or teaching assistant whether you're trying to learn a new language understand a complex topic or just want to brush up on your skills.
@@ -37,32 +36,11 @@ ChatGPT can act as a tutor or teaching assistant whether you're trying to learn 
 ### Reading and writing
 
 - **SEO Original Writing**:Chatgpt can write original articles according to the keywords you provide, according to SEO principles, and include corresponding article formats.
-   - 👁️ **[Prompt example]**:```You act as a text content writer, very proficient in English writing of SEO rules. Follow my next request:
-Requirement 1: Firstly, create a content outline and an article. Bold the title of the second table using Markdown language. Before writing an article, write an outline separately, including at least 15 titles and subtitles (including H1, H2, H3, H4 titles), and then start writing step by step according to the outline.
-Requirement 2: Article content must be completely unique, SEO optimized, human written article covering the provided topic. Don't copy and paste from other sources, generate article content yourself.
-    Requirement 3: When writing articles, ensure attractive and unique content, ensuring a high level of both without losing specificity or deviating from the context of the topic. Report paragraphs are required to be informative and engaging to the reader.
-Requirement 4: Write in a conversational style that humans write (use an informal tone, use personal pronouns, keep it simple, engage the reader, use active voice, keep it short, use rhetorical questions, use analogies and metaphors well). End with a concluding paragraph and an outlook on hot topics about the topic.
-    Now write an article of at least {1000} words on the topic {Artificial Intelligence in the New Era}.```
+   - 👁️ **[Prompt example]**:```You act as a text content writer, very proficient in English writing of SEO rules. Follow my next request:Requirement 1: Firstly, create a content outline and an article. Bold the title of the second table using Markdown language. Before writing an article, write an outline separately, including at least 15 titles and subtitles (including H1, H2, H3, H4 titles), and then start writing step by step according to the outline.Requirement 2: Article content must be completely unique, SEO optimized, human written article covering the provided topic. Don't copy and paste from other sources, generate article content yourself.Requirement 3: When writing articles, ensure attractive and unique content, ensuring a high level of both without losing specificity or deviating from the context of the topic. Report paragraphs are required to be informative and engaging to the reader.Requirement 4: Write in a conversational style that humans write (use an informal tone, use personal pronouns, keep it simple, engage the reader, use active voice, keep it short, use rhetorical questions, use analogies and metaphors well). End with a concluding paragraph and an outlook on hot topics about the topic.Now write an article of at least {1000} words on the topic {Artificial Intelligence in the New Era}.```
 - **Multi Style Rewriting**:Chatgpt can rewrite paragraphs in various styles according to the text paragraphs you provide.
-   - 👁️ **[Prompt example]**:```I want you to act as a top-tier copywriter who is fluent in English. I want you to pretend that you are an expert at writing all types of CTAs .
-Your task is to rewrite the paragraph in asked formats :
-1. Rewrite it to make it more concise
-2. Rewrite it to improve the flow and coherence
-3. Rewrite it to make it more engaging
-4. Rewrite it to make it more persuasive
-5. Rewrite it to make it more formal
-6. Rewrite it to make it more informal
-7. Rewrite it to add more detail
-8. Rewrite it to change the tone
-9. Rewrite it but focus on clarity and brevity
-10.  Rewrite to make it more poetic
-Please Bold each with big title and use format word number wise before each.
-Just take the best action you can. 
-The paragraph for this task is: 
-{enter your paragraph}```
+   - 👁️ **[Prompt example]**:```I want you to act as a top-tier copywriter who is fluent in English. I want you to pretend that you are an expert at writing all types of CTAs .Your task is to rewrite the paragraph in asked formats : 1. Rewrite it to make it more concise 2. Rewrite it to improve the flow and coherence 3. Rewrite it to make it more engaging 4. Rewrite it to make it more persuasive. 5. Rewrite it to make it more formal. 6. Rewrite it to make it more informal. 7. Rewrite it to add more detail. 8. Rewrite it to change the tone. 9. Rewrite it but focus on clarity and brevity. 10.  Rewrite to make it more poetic. Please Bold each with big title and use format word number wise before each.Just take the best action you can. The paragraph for this task is: {enter your paragraph}```
 - **One-click generation of telegram channels/WeChat circle of friends**:Chat GPT can automatically generate an appropriate-length Telegram channel or WeChat Moments update based on the content entered by the user, including appropriate emotional tendencies, keywords, and emoticons to attract readers' attention and get more interactions.
-   - 👁️ **[Prompt example]**:```Write an article for the channel’s Telegram/WeChat circle of friends and shorten the characters to within 4096, use a lot appropriate emoji, try to be objective and positive, and appropriately contain ridicule and self-deprecating content. 
-The theme is:{{Enter your content topic}}```
+   - 👁️ **[Prompt example]**:```Write an article for the channel’s Telegram/WeChat circle of friends and shorten the characters to within 4096, use a lot appropriate emoji, try to be objective and positive, and appropriately contain ridicule and self-deprecating content. The theme is:{Enter your content topic}```
 
 - **book content summaries**:Chat GPT can act as an expert in reading and understanding books, providing a comprehensive summary based on the title and author of the book you provide.
    - 👁️ **[Prompt example]**:```You act as an expert in reading and understanding books, and you have a strong ability to understand and summarize any book. I'll give you the title: { “To alive”} and Author: { Yu Hua}, and your task is to provide a comprehensive summary of the book. It is important that you always ask clarifying questions before providing a summary in order to ensure a better understanding of my request. Be sure to ask how in-depth I want the summary, and give me some options to choose from (brief overview, chapter summary, in-depth concept summary, or any other type of book summary method). You like to use bullet points to present key ideas and easy-to-understand points, and tables to highlight key concepts for me to understand further. Be sure to include both in your abstract. At the end of the abstract, provide more information about the subject of the book that you can offer. Give me a formatted list of topics you can delve into. Do you understand it?```
@@ -195,8 +173,7 @@ ChatGPT can provide personalized responses, taking into account their unique bac
 - **Debate process simulation**:Chat GPT can provide a simulated debate process by playing two debaters in a virtual 3-round debate to improve your debating skills by challenging each other's points and finding logical loopholes. The debate topic can be set by the user, and Chat GPT will present the debate speech process of both sides in a vivid and imaginative way.
    - 👁️ **[Prompt example]**:```I want you to act as two debaters for 3 rounds, named affirmative debater and  Opposition debater. In the debate, you must know how to quote history or current events, and both sides will try their best to find the logical loopholes in the other party's statement and continue to strengthen the credibility of their own views. You need to present both sides as logical and imaginatively as possible. topic question: { Should humans explore space？}```
 - **Perspective Inspiration**:Chat GPT can provide point of view inspiration to help users come up with ideas that can gain an advantage and win in a debate competition. Users can enter the debate topic and the identity of the debater they play (pro or con) and Chat GPT will provide three examples and a brief description of the logic chain of each point to help users better understand and apply them.
-   - 👁️ **[Prompt example]**:```Topic question: { Should humans explore space？}
-Of a debate . As the {Opposing debater} in a debate competition what arguments should be made to gain an advantage and win, give me three examples and briefly describe the logic chain.```
+   - 👁️ **[Prompt example]**:```Topic question: { Should humans explore space？} Of a debate . As the {Opposing debater} in a debate competition what arguments should be made to gain an advantage and win, give me three examples and briefly describe the logic chain.```
 ### Mock interview
 
 - **Interview question preparation**:Chat GPT can generate a list of commonly asked interview questions based on the user's job title or industry. The AI can also provide advice on how to structure and approach their answers.
@@ -249,9 +226,7 @@ ChatGPT can be a little helper in your life, providing you with guidance and ass
 ### Sports and fitness
 
 - **Body Data Calculation**:Chat GPT can calculate the daily calorie intake and optimal heart rate range for aerobic exercise based on the body data and exercise purpose provided by the user, and provide it to the user.
-   - 👁️ **[Prompt example]**:```Assuming you are a fitness coach, please calculate the daily calorie intake during { Please enter the purpose of the exercise, such as reducing fat and increasing muscle mass } period and the best range of heart rate for aerobic exercise based on my body data: 
-Gender: {Male}   Age: { Age }    Height: { Height } 
-Weight: { Weight:}   Body fat rate: { Body fat rate }%```
+   - 👁️ **[Prompt example]**:```Assuming you are a fitness coach, please calculate the daily calorie intake during { Please enter the purpose of the exercise, such as reducing fat and increasing muscle mass } period and the best range of heart rate for aerobic exercise based on my body data: Gender: {Male}   Age: { Age }    Height: { Height } Weight: { Weight:}   Body fat rate: { Body fat rate }%```
 - **fitness plan**:Chat GPT can develop a personalized weekly fitness plan for you. For your training purposes, the plan will be displayed in a table form, including the date of each day, the form and time of anaerobic exercise, the actions and groups of strength training.
    - 👁️ **[Prompt example]**:```Assuming you are a fitness coach, Make a one-week fitness plan for me, requiring { Please enter the number of training days per week } days of training per week and { Please enter the number of days off per week } days of rest, at least 3 strength training actions and 1 anaerobic exercise every day, mainly focusing on { Please enter training purposes }, including dates, anaerobic exercises in table form The form and time of exercise, the number of movements and sets of strength training.```
 - **custom recipes**:Chat GPT can help you develop personalized healthy eating plans, recommend daily recipes based on your training plan and dietary preferences, including detailed information on ingredients and calorie intake required for each meal.
@@ -263,8 +238,7 @@ Weight: { Weight:}   Body fat rate: { Body fat rate }%```
 - **Polish the lyrics**:Chat GPT can help you refine the lyrics to better express emotions and themes. We can adjust the details of the lyrics according to the user's requirements to make them more lyrical, concise, vivid, smooth, or in line with specific music styles.
    - 👁️ **[Prompt example]**:```Assume you’re a musician ，Adjust the details of the lyrics to make it more { Please enter requirements }.```
 - **Write the chords**:Chat GPT helps you write melodies and chords based on the provided lyrics.
-   - 👁️ **[Prompt example]**:```Assume you’re a musician ，Write the melodic and { Please input music style } style chords for the following lyrics, requiring each line of chords to be followed by its corresponding lyrics：{ Please enter your lyrics
-}```
+   - 👁️ **[Prompt example]**:```Assume you’re a musician ，Write the melodic and { Please input music style } style chords for the following lyrics, requiring each line of chords to be followed by its corresponding lyrics：{ Please enter your lyrics}```
 - **Instrument adaptation**:Chat GPT can help you adapt lyrics to a given instrument.
    - 👁️ **[Prompt example]**:```Assume you’re a musician ，Adjust the details of lyrics to make it more suitable for playing on { Please enter the instrument }.{ Please enter your lyrics}```
 - **Name the song**:Chat GPT can help you name the song. According to the lyrics and requirements you provide, give the song three names that match the specified style.
@@ -305,4 +279,4 @@ Weight: { Weight:}   Body fat rate: { Body fat rate }%```
    - 👁️ **[Prompt example]**:```Can you provide me with the nutritional information for a recipe that includes {chicken, brown rice, and mixed vegetables}? Please include calorie count, macronutrient breakdown, and any allergen warnings.```
 - **Ingredient substitutions:**:If you're missing a particular ingredient, Chat GPT can suggest substitutes that can be used instead. This can be useful in a pinch or for accommodating dietary restrictions.
    - 👁️ **[Prompt example]**:```I don't have any {eggs} in my kitchen. Can you suggest a substitute for eggs in {baking}?```
-> If you are interested in more content of this project, you can refer to the English homepage [README.md](./README.md)
+<!-- > If you are interested in more content of this project, you can refer to the English homepage [README.md](./README.md) -->
