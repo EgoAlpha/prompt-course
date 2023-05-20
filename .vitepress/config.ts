@@ -11,6 +11,13 @@ import extractorPug from '@unocss/extractor-pug'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  titleTemplate: 'Prompt Engineering Course, Resource and News',
+  head: [
+    ['meta', { name:"keywords",content:"Prompt Engineering, in-context learning, Prompt learning, chain-of-thought, LLMs, Artificial General Intelligence, AGI" }],
+    ['meta', { name:"description",content:"The mecca for studying Prompt engineering and In-Context Learning." }],
+    ['meta', { name:"subject",content:"Prompt Engineering, In-context Learning,prompt-based-learning,Large Language Model, ChatGPT" }],
+    ['meta', { name:"robots",content:"index, follow" }],
+  ],
   srcDir: './docs',
   locales: {
     zh: {
@@ -38,59 +45,81 @@ export default defineConfig({
                 link: 'zh/principle',
                 items: [
                   {
-                  text: '设计原则', link: 'zh/principle#design-principle',
-                }, 
-                {
-                  text: '框架', link: 'zh/principle#framework',
-                },
-                {
-                  text: 'ChatGPT 使用指南', link: 'zh/principle#framework',items:[
-                    {text: '帮助我们学习', link: 'zh/principle#framework',items:[
-                      {text: '阅读和写作', link: 'zh/principle#framework'},
-                      {text: '学习与编程', link: 'zh/principle#framework'}
-                    ]},
-                    {text: '协助我们工作', link: 'zh/principle#framework',items:[
-                      {text: '竞争分析', link: 'zh/principle#framework'},
-                      {text: '客户服务', link: 'zh/principle#framework'},
-                      {text: '协助软件开发', link: 'zh/principle#framework'},
-                      {text: '视频编辑', link: 'zh/principle#framework'},
-                      {text: '初创企业', link: 'zh/principle#framework'},
-                      {text: '教育工作', link: 'zh/principle#framework'}
-                    ]},
-                    {text: '丰富我们的经验', link: 'zh/principle#framework',items:[
-                      {text: '辩论比赛模拟 ', link: 'zh/principle#framework'},
-                      {text: '模拟面试', link: 'zh/principle#framework'},
-                      {text: '演讲稿设计', link: 'zh/principle#framework'},
-                    ]},
-                    {text: '方便我们的生活', link: 'zh/principle#framework',items:[
-                      {text: '运动与健身', link: 'zh/principle#framework'},
-                      {text: '音乐与艺术', link: 'zh/principle#framework'},
-                      {text: '旅游指南', link: 'zh/principle#framework'},
-                      {text: '学习厨艺', link: 'zh/principle#framework'},
-                    ]}
-                  ] 
-                },
-                {
-                  text: '使用LangChain操作大模型', link: 'zh/principle#framework',items:[
-                    {text: '开始之前', link: 'zh/principle#framework'},
-                    {text: '模型', link: 'zh/principle#framework'},
-                    {text: '提示', link: 'zh/principle#framework'},
-                    {text: '索引', link: 'zh/principle#framework'},
-                    {text: '存储', link: 'zh/principle#framework'},
-                    {text: '链', link: 'zh/principle#framework'},
-                    {text: '代理', link: 'zh/principle#framework'},
-                    {text: '代码样例', link: 'zh/principle#framework'},
-                  ]
-                },],
+                    text: '设计原则', link: 'zh/principle#design-principle',
+                  },
+                  {
+                    text: '框架', link: 'zh/principle#framework',
+                  },
+                  {
+                    text: 'ChatGPT 使用指南',
+                    link: 'zh/principle#framework',
+                    items: [
+                      {
+                        text: '帮助我们学习',
+                        link: 'zh/principle#framework',
+                        items: [
+                          { text: '阅读和写作', link: 'zh/principle#framework' },
+                          { text: '学习与编程', link: 'zh/principle#framework' },
+                        ],
+                      },
+                      {
+                        text: '协助我们工作',
+                        link: 'zh/principle#framework',
+                        items: [
+                          { text: '竞争分析', link: 'zh/principle#framework' },
+                          { text: '客户服务', link: 'zh/principle#framework' },
+                          { text: '协助软件开发', link: 'zh/principle#framework' },
+                          { text: '视频编辑', link: 'zh/principle#framework' },
+                          { text: '初创企业', link: 'zh/principle#framework' },
+                          { text: '教育工作', link: 'zh/principle#framework' },
+                        ],
+                      },
+                      {
+                        text: '丰富我们的经验',
+                        link: 'zh/principle#framework',
+                        items: [
+                          { text: '辩论比赛模拟 ', link: 'zh/principle#framework' },
+                          { text: '模拟面试', link: 'zh/principle#framework' },
+                          { text: '演讲稿设计', link: 'zh/principle#framework' },
+                        ],
+                      },
+                      {
+                        text: '方便我们的生活',
+                        link: 'zh/principle#framework',
+                        items: [
+                          { text: '运动与健身', link: 'zh/principle#framework' },
+                          { text: '音乐与艺术', link: 'zh/principle#framework' },
+                          { text: '旅游指南', link: 'zh/principle#framework' },
+                          { text: '学习厨艺', link: 'zh/principle#framework' },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    text: '使用LangChain操作大模型',
+                    link: 'zh/principle#framework',
+                    items: [
+                      { text: '开始之前', link: 'zh/principle#framework' },
+                      { text: '模型', link: 'zh/principle#framework' },
+                      { text: '提示', link: 'zh/principle#framework' },
+                      { text: '索引', link: 'zh/principle#framework' },
+                      { text: '存储', link: 'zh/principle#framework' },
+                      { text: '链', link: 'zh/principle#framework' },
+                      { text: '代理', link: 'zh/principle#framework' },
+                      { text: '代码样例', link: 'zh/principle#framework' },
+                    ],
+                  }],
               },
               {
                 text: '方法篇',
                 link: 'zh/principle',
                 items: [{
                   text: '基本Prompt', link: '/principle#design-principle',
-                }, 
+                },
                 {
-                  text: '高级Prompt', link: '/principle#framework',items:[
+                  text: '高级Prompt',
+                  link: '/principle#framework',
+                  items: [
                     {
                       text: '批量prompt', link: '/principle#framework',
                     },
@@ -118,7 +147,7 @@ export default defineConfig({
                     {
                       text: 'Progressive-Hint Prompt', link: 'zh/principle#framework',
                     },
-                  ]
+                  ],
                 },
                 {
                   text: '自动化Prompt', link: 'zh/principle#framework',
@@ -140,26 +169,26 @@ export default defineConfig({
                 text: '理论篇',
                 link: 'zh/principle',
                 items: [
-                {
-                  text: '大语言模型概览', link: 'zh/principle#design-principle',
-                }, 
-                {
-                  text: 'Transformer', link: 'zh/principle#framework',
-                },
-                {
-                  text: 'Tokenizer', link: 'zh/principle#framework',
-                },
-                {
-                  text: 'BERT', link: 'zh/principle#framework',
-                },
-                {
-                  text: 'GPT系列', link: 'zh/principle#framework',
-                },
-                {
-                  text: 'T5', link: 'zh/principle#framework',
-                },],
+                  {
+                    text: '大语言模型概览', link: 'zh/principle#design-principle',
+                  },
+                  {
+                    text: 'Transformer', link: 'zh/principle#framework',
+                  },
+                  {
+                    text: 'Tokenizer', link: 'zh/principle#framework',
+                  },
+                  {
+                    text: 'BERT', link: 'zh/principle#framework',
+                  },
+                  {
+                    text: 'GPT系列', link: 'zh/principle#framework',
+                  },
+                  {
+                    text: 'T5', link: 'zh/principle#framework',
+                  }],
               },
-              
+
               // {
               //   text: 'Design Principle and Framework',
               //   link: '/principle',
@@ -221,131 +250,153 @@ export default defineConfig({
                 text: 'Practical Chapter',
                 link: '/practicalchapter',
                 items: [
-                {
-                  text: 'ChatGPT Usage Guide', link: '/chatgptprompt',items:[
-                    {text: 'Help us study', link: '/chatgptprompt#help-us-study',items:[
-                      {text: 'Reading and Writing', link: '/chatgptprompt#reading-and-writing'},
-                      {text: 'Learning and Programming', link: '/chatgptprompt#learning-programming'}
-                    ]},
-                    {text: 'Assist in our work', link: '/chatgptprompt/assist-in-our-work',items:[
-                      {text: 'Competition and Analysis', link: '/chatgptprompt#competition-and-analysis'},
-                      {text: 'Customer and Service', link: '/chatgptprompt#customer-and-service'},
-                      {text: 'Aid in Software Development', link: '/chatgptprompt#aid-in-software-development'},
-                      {text: 'Aid in Making Videos', link: '/chatgptprompt#aid-in-making-videos'},
-                      {text: 'Start-up', link: '/chatgptprompt#start-up'},
-                      {text: 'Educational Work', link: '/chatgptprompt#educational-work'}
-                    ]},
-                    {text: 'Enrich our experience', link: '/chatgptprompt#enrich-our-experience',items:[
-                      {text: 'Debate Competition Simulation ', link: '/chatgptprompt#debate-competition-simulation'},
-                      {text: 'Mock Interview', link: '/chatgptprompt#mock-interview'},
-                      {text: 'Speech Design', link: '/chatgptprompt#speech-design'},
-                    ]},
-                    {text: 'Convenient to our lives', link: '/chatgptprompt#convenient-to-our-lives',items:[
-                      {text: 'Sports and Fitness', link: '/chatgptprompt#sports-and-fitness'},
-                      {text: 'Music and Art', link: '/chatgptprompt#music-and-art'},
-                      {text: 'Travel Guide', link: '/chatgptprompt#travel-guide'},
-                      {text: 'Learning Cooking', link: '/chatgptprompt#learning-cooking'},
-                    ]}
-                  ] 
-                },
-                {
-                  text: 'LangChain for LLMs Usage', link: '/principle#framework',items:[
-                    {text: 'Introduction', link: '/principle#framework'},
-                    {text: 'Before Start', link: '/principle#framework'},
-                    {text: 'Models', link: '/principle#framework'},
-                    {text: 'Prompt', link: '/principle#framework'},
-                    {text: 'Index', link: '/principle#framework'},
-                    {text: 'Memory', link: '/principle#framework'},
-                    {text: 'Chains', link: '/principle#framework'},
-                    {text: 'Agents', link: '/principle#framework'},
-                    {text: 'Coding Examples', link: '/principle#framework'},
-                  ]
-                },],
+                  {
+                    text: 'ChatGPT Usage Guide',
+                    link: '/chatgptprompt',
+                    items: [
+                      {
+                        text: 'Help us study',
+                        link: '/chatgptprompt#help-us-study',
+                        items: [
+                          { text: 'Reading and Writing', link: '/chatgptprompt#reading-and-writing' },
+                          { text: 'Learning and Programming', link: '/chatgptprompt#learning-programming' },
+                        ],
+                      },
+                      {
+                        text: 'Assist in our work',
+                        link: '/chatgptprompt/assist-in-our-work',
+                        items: [
+                          { text: 'Competition and Analysis', link: '/chatgptprompt#competition-and-analysis' },
+                          { text: 'Customer and Service', link: '/chatgptprompt#customer-and-service' },
+                          { text: 'Aid in Software Development', link: '/chatgptprompt#aid-in-software-development' },
+                          { text: 'Aid in Making Videos', link: '/chatgptprompt#aid-in-making-videos' },
+                          { text: 'Start-up', link: '/chatgptprompt#start-up' },
+                          { text: 'Educational Work', link: '/chatgptprompt#educational-work' },
+                        ],
+                      },
+                      {
+                        text: 'Enrich our experience',
+                        link: '/chatgptprompt#enrich-our-experience',
+                        items: [
+                          { text: 'Debate Competition Simulation ', link: '/chatgptprompt#debate-competition-simulation' },
+                          { text: 'Mock Interview', link: '/chatgptprompt#mock-interview' },
+                          { text: 'Speech Design', link: '/chatgptprompt#speech-design' },
+                        ],
+                      },
+                      {
+                        text: 'Convenient to our lives',
+                        link: '/chatgptprompt#convenient-to-our-lives',
+                        items: [
+                          { text: 'Sports and Fitness', link: '/chatgptprompt#sports-and-fitness' },
+                          { text: 'Music and Art', link: '/chatgptprompt#music-and-art' },
+                          { text: 'Travel Guide', link: '/chatgptprompt#travel-guide' },
+                          { text: 'Learning Cooking', link: '/chatgptprompt#learning-cooking' },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    text: 'LangChain for LLMs Usage',
+                    link: '/principle#framework',
+                    items: [
+                      { text: 'Introduction', link: '/principle#framework' },
+                      { text: 'Before Start', link: '/principle#framework' },
+                      { text: 'Models', link: '/principle#framework' },
+                      { text: 'Prompt', link: '/principle#framework' },
+                      { text: 'Index', link: '/principle#framework' },
+                      { text: 'Memory', link: '/principle#framework' },
+                      { text: 'Chains', link: '/principle#framework' },
+                      { text: 'Agents', link: '/principle#framework' },
+                      { text: 'Coding Examples', link: '/principle#framework' },
+                    ],
+                  }],
               },
               {
                 text: 'Methodology Chapter',
                 link: '/principle',
                 items: [
-                {
-                  text: 'Design Principle', link: '/principle#design-principle',
-                }, 
-                {
-                  text: 'Framework', link: '/principle#framework',
-                },
-                {
-                  text: 'Basic Prompt', link: '/principle#design-principle',
-                }, 
-                {
-                  text: 'Advanced Prompt', link: '/principle#framework',items:[
-                    {
-                      text: 'Batch Prompting', link: '/principle#framework',
-                    },
-                    {
-                      text: 'Successive Prompting', link: '/principle#framework',
-                    },
-                    {
-                      text: 'PAL', link: '/principle#framework',
-                    },
-                    {
-                      text: 'ReAct', link: '/principle#framework',
-                    },
-                    {
-                      text: 'Self-Ask', link: '/principle#framework',
-                    },
-                    {
-                      text: 'Context-faithful Prompting', link: '/principle#framework',
-                    },
-                    {
-                      text: 'REFINER', link: '/principle#framework',
-                    },
-                    {
-                      text: 'Reflections', link: '/principle#framework',
-                    },
-                    {
-                      text: 'Progressive-Hint Prompt', link: '/principle#framework',
-                    },
-                  ]
-                },
-                {
-                  text: 'Automatic Prompt', link: '/principle#framework',
-                },
-                {
-                  text: 'CoT', link: '/principle#framework',
-                },
-                {
-                  text: 'In-Context Learning', link: '/principle#framework',
-                },
-                {
-                  text: 'Knowledge Augumented Prompt', link: '/principle#framework',
-                },
-                {
-                  text: 'Evaluation and Reliability', link: '/principle#framework',
-                }],
+                  {
+                    text: 'Design Principle', link: '/principle#design-principle',
+                  },
+                  {
+                    text: 'Framework', link: '/principle#framework',
+                  },
+                  {
+                    text: 'Basic Prompt', link: '/principle#design-principle',
+                  },
+                  {
+                    text: 'Advanced Prompt',
+                    link: '/principle#framework',
+                    items: [
+                      {
+                        text: 'Batch Prompting', link: '/principle#framework',
+                      },
+                      {
+                        text: 'Successive Prompting', link: '/principle#framework',
+                      },
+                      {
+                        text: 'PAL', link: '/principle#framework',
+                      },
+                      {
+                        text: 'ReAct', link: '/principle#framework',
+                      },
+                      {
+                        text: 'Self-Ask', link: '/principle#framework',
+                      },
+                      {
+                        text: 'Context-faithful Prompting', link: '/principle#framework',
+                      },
+                      {
+                        text: 'REFINER', link: '/principle#framework',
+                      },
+                      {
+                        text: 'Reflections', link: '/principle#framework',
+                      },
+                      {
+                        text: 'Progressive-Hint Prompt', link: '/principle#framework',
+                      },
+                    ],
+                  },
+                  {
+                    text: 'Automatic Prompt', link: '/principle#framework',
+                  },
+                  {
+                    text: 'CoT', link: '/principle#framework',
+                  },
+                  {
+                    text: 'In-Context Learning', link: '/principle#framework',
+                  },
+                  {
+                    text: 'Knowledge Augumented Prompt', link: '/principle#framework',
+                  },
+                  {
+                    text: 'Evaluation and Reliability', link: '/principle#framework',
+                  }],
               },
               {
                 text: 'Theory Chapter',
                 link: '/principle',
                 items: [
-                {
-                  text: 'The Overview of LLM', link: '/principle#design-principle',
-                }, 
-                {
-                  text: 'Transformer', link: '/principle#framework',
-                },
-                {
-                  text: 'Tokenizer', link: '/principle#framework',
-                },
-                {
-                  text: 'BERT', link: '/principle#framework',
-                },
-                {
-                  text: 'GPT Series', link: '/principle#framework',
-                },
-                {
-                  text: 'T5', link: '/principle#framework',
-                },],
+                  {
+                    text: 'The Overview of LLM', link: '/principle#design-principle',
+                  },
+                  {
+                    text: 'Transformer', link: '/principle#framework',
+                  },
+                  {
+                    text: 'Tokenizer', link: '/principle#framework',
+                  },
+                  {
+                    text: 'BERT', link: '/principle#framework',
+                  },
+                  {
+                    text: 'GPT Series', link: '/principle#framework',
+                  },
+                  {
+                    text: 'T5', link: '/principle#framework',
+                  }],
               },
-              
+
               // {
               //   text: 'Design Principle and Framework',
               //   link: '/principle',
