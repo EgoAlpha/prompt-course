@@ -38,12 +38,12 @@ LangChain的目标在于：
 
 LangChain库主要包含六个部分:
 
-- [**Models**](langchianguide/guide#models): 提供基于OpenAI API封装好的大模型，包含常见的OpenAI大模型，也支持自定义大模型的封装。
-- [**Prompt**](langchianguide/guide#prompt): 支持自定义Prompt工程的快速实现以及和LLMs的对接。
-- [**Index**](langchianguide/guide#index): 接受用户查询，索引最相关内容返回。
-- [**Memory**](langchianguide/guide#memory): 标准的接口, 在chains/call之间保存状态。
-- [**Chains**](langchianguide/guide#chains): 一系列的调用(LLMs或者其他, 如网络, 操作系统), Chains提供了标准的接口和设置来组合这些调用。 先从外部的源获取信息, 然后喂给LLMs。大模型针对一系列任务的顺序执行逻辑链。
-- [**Agents**](langchianguide/guide#agents): 代理, 非常重要的一环, 关于对LLMs做何种action, 如何做。通常Utils中的能力、Chains中的各种逻辑链都会封装成一个个工具（Tools）供Agents进行智能化调用。
-- [**Coding Examples**](langchianguide/guide#coding-examples): 结合上述内容的代码示例，给出三个很经典的案例，分别是文档查询，自动代理和Auto-GPT。
+- [**Models**](./langchianguide/guide.md#models): 提供基于OpenAI API封装好的大模型，包含常见的OpenAI大模型，也支持自定义大模型的封装。
+- [**Prompt**](./langchianguide/guide.md#prompt): 支持自定义Prompt工程的快速实现以及和LLMs的对接。
+- [**Index**](./langchianguide/guide.md#index): 接受用户查询，索引最相关内容返回。
+- [**Memory**](./langchianguide/guide.md#memory): 标准的接口, 在chains/call之间保存状态。
+- [**Chains**](./langchianguide/guide.md#chains): 一系列的调用(LLMs或者其他, 如网络, 操作系统), Chains提供了标准的接口和设置来组合这些调用。 先从外部的源获取信息, 然后喂给LLMs。大模型针对一系列任务的顺序执行逻辑链。
+- [**Agents**](./langchianguide/guide.md#agents): 代理, 非常重要的一环, 关于对LLMs做何种action, 如何做。通常Utils中的能力、Chains中的各种逻辑链都会封装成一个个工具（Tools）供Agents进行智能化调用。
+- [**Coding Examples**](./langchianguide/guide.md#coding-examples): 结合上述内容的代码示例，给出三个很经典的案例，分别是文档查询，自动代理和Auto-GPT。
 
 接下来，让我们开启超级学习者的旅程吧！
