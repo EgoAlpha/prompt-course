@@ -162,7 +162,7 @@ ChatGPT can become your own personal assistant that can aiding in our work, mana
 - **Customer Experimental Design**:Chat GPT can provide help with experimental design, such as providing possible experimental design scenarios when testing hypotheses about the feasibility of customer acquisition costs.
   - 👁️ **[Prompt example]**:```Can you create a simple (maximum 100 words) experiment based on our brand {Enter your brand} and product {Enter your product}， I could use to test the assumptions around the viability of CAC (customer acquisition cost)?```
 
-### Educational work
+### Educational Work
 
 - **List of knowledge points**:ChatGPT can help you list the most important knowledge points in the selected chapters of your designated discipline,
   - 👁️ **[Prompt example]**:```Assuming you are a { Please enter the subject } teacher ，Please list 5 most important knowledge points about { Please enter content or chapter }.```

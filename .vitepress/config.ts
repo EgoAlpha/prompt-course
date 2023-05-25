@@ -95,53 +95,53 @@ export default defineConfig({
                     text: '框架', link: 'zh/principle#框架',
                   },
                   {
-                  text: '基本Prompt', link: '/principle#design-principle',
+                  text: '基本Prompt', link: 'zh/principle#design-principle',
                 }, 
                 {
-                  text: '高级Prompt', link: '/principle#framework',items:[
+                  text: '高级Prompt', link: 'zh/principle#框架',items:[
                     {
-                      text: '批量prompt', link: '/principle#framework',
+                      text: '批量prompt', link: 'zh/principle#框架',
                     },
                     {
-                      text: '连续prompt', link: '/principle#framework',
+                      text: '连续prompt', link: 'zh/principle#框架',
                     },
                     {
-                      text: 'PAL', link: 'zh/principle#framework',
+                      text: 'PAL', link: 'zh/principle#框架',
                     },
                     {
-                      text: 'ReAct', link: 'zh/principle#framework',
+                      text: 'ReAct', link: 'zh/principle#框架',
                     },
                     {
-                      text: 'Self-Ask', link: 'zh/principle#framework',
+                      text: 'Self-Ask', link: 'zh/principle#框架',
                     },
                     {
-                      text: 'Context-faithful Prompting', link: 'zh/principle#framework',
+                      text: 'Context-faithful Prompting', link: 'zh/principle#框架',
                     },
                     {
-                      text: 'REFINER', link: 'zh/principle#framework',
+                      text: 'REFINER', link: 'zh/principle#框架',
                     },
                     {
-                      text: 'Reflections', link: 'zh/principle#framework',
+                      text: 'Reflections', link: 'zh/principle#框架',
                     },
                     {
-                      text: 'Progressive-Hint Prompt', link: 'zh/principle#framework',
+                      text: 'Progressive-Hint Prompt', link: 'zh/principle#框架',
                     },
                   ]
                 },
                 {
-                  text: '自动化Prompt', link: 'zh/principle#framework',
+                  text: '自动化Prompt', link: 'zh/principle#框架',
                 },
                 {
-                  text: '思维链', link: 'zh/principle#framework',
+                  text: '思维链', link: 'zh/principle#框架',
                 },
                 {
-                  text: '上下文学习', link: 'zh/principle#framework',
+                  text: '上下文学习', link: 'zh/principle#框架',
                 },
                 {
-                  text: '知识增强Prompt', link: 'zh/principle#framework',
+                  text: '知识增强Prompt', link: 'zh/principle#框架',
                 },
                 {
-                  text: '评估和可靠性', link: 'zh/principle#framework',
+                  text: '评估和可靠性', link: 'zh/principle#框架',
                 }],
               },
               {
@@ -149,7 +149,7 @@ export default defineConfig({
                 link: 'zh/theorychapter',
                 items: [
                 {
-                  text: '大语言模型概览', link: 'zh/principle#design-principle',
+                  text: '大语言模型概览', link: 'zh/principle#框架',
                 }, 
                 {
                   text: 'Transformer', link: 'zh/Transformer_md/Transformer',
@@ -158,13 +158,13 @@ export default defineConfig({
                   text: 'Tokenizer', link: 'zh/token',
                 },
                 {
-                  text: 'BERT', link: 'zh/principle#framework',
+                  text: 'BERT', link: 'zh/principle#框架',
                 },
                 {
-                  text: 'GPT系列', link: 'zh/principle#framework',
+                  text: 'GPT系列', link: 'zh/principle#框架',
                 },
                 {
-                  text: 'T5', link: 'zh/principle#framework',
+                  text: 'T5', link: 'zh/principle#框架',
                 },],
               },
               // { text: 'Prompt Techniques', link: '/technique' },
