@@ -1,35 +1,43 @@
 # Practical Chapter
 
 ## Contents
+
 This chapter is divided into two major sections, namely, ChatGPT Usage Guide and LangChain for LLM usage, in which ChatGPT Usage Guide is introduced in the following sections: Help Us study, Assist Us Work, Enrich Our Experience and Convenient to Our Life. The content of ChatGPT prompt is provided in the above directions, so that people from all fields can directly use the written prompts to search for queries. At the same time, a template example of prompt writing is given, so you only need to imitate the relevant content writing method and nest it into your own query content to complete the corresponding specific tasks. For the part of using LangChain to operate large language models, through a quick introduction to the operation of the open source machine learning library LangChain, you can be familiar with and operate large models such as OpenAI in a short time, thus making it more convenient for many developers.
+
 ### ChatGPT Usage Guide
+
 The outline of the content included in this section is as follows: You can click on the relevant content directly for easy navigation and reference.
+
 - [Help us study](chatgptprompt#help-us-study)
-    - [Reading and writing](chatgptprompt#reading-and-writing)
-    - [Learning programming](chatgptprompt#learning-programming)
+  - [Reading and writing](chatgptprompt#reading-and-writing)
+  - [Learning programming](chatgptprompt#learning-programming)
 - [Assist in our work](chatgptprompt#assist-in-our-work)
-    - [Competition analysis](chatgptprompt#competition-analysis)
-    - [Customer Service](chatgptprompt#customer-service)
-    - [Aid in software development](chatgptprompt#aid-in-software-development)
-    - [Aid in making videos](chatgptprompt#aid-in-making-videos)
-    - [Start-up](chatgptprompt#Start-up)
-    - [Educational work](chatgptprompt#educational-work)
+  - [Competition analysis](chatgptprompt#competition-analysis)
+  - [Customer Service](chatgptprompt#customer-service)
+  - [Aid in software development](chatgptprompt#aid-in-software-development)
+  - [Aid in making videos](chatgptprompt#aid-in-making-videos)
+  - [Start-up](chatgptprompt#Start-up)
+  - [Educational work](chatgptprompt#educational-work)
 - [Enrich our experience](chatgptprompt#enrich-our-experience)
-    - [Debate Competition Simulation](chatgptprompt#debate-competition-simulation)
-    - [Mock interview](chatgptprompt#mock-interview)
-    - [Speech Design](chatgptprompt#speech-design)
+  - [Debate Competition Simulation](chatgptprompt#debate-competition-simulation)
+  - [Mock interview](chatgptprompt#mock-interview)
+  - [Speech Design](chatgptprompt#speech-design)
 - [Convenient to our lives](chatgptprompt#convenient-to-our-lives)
-    - [Sports and fitness](chatgptprompt#sports-and-fitness)
-    - [Music and Art](chatgptprompt#music-and-art)
-    - [Travel Guide](chatgptprompt#travel-guide)
-    - [Learning cooking](chatgptprompt#learning-cooking)
+  - [Sports and fitness](chatgptprompt#sports-and-fitness)
+  - [Music and Art](chatgptprompt#music-and-art)
+  - [Travel Guide](chatgptprompt#travel-guide)
+  - [Learning cooking](chatgptprompt#learning-cooking)
+
 ### LangChain for LLM Usage
+
 We give here a tutorial on how to use concrete code to manipulate the Big Model, LangChain is a Big Model upper toolchain, an application development framework based on LLMs, to build applications using LLMs through composability. The focus is on "composability". LangChain can be used for chatbots, generative question and answer (GQA), text extraction, etc.
 The goals of LangChain are to
- - Allow big language models to process data from different sources
- - Allow large language models to interact with the environment in which they are placed
+
+- Allow big language models to process data from different sources
+- Allow large language models to interact with the environment in which they are placed
 
 LangChain library contains six main parts.
+
 - [**Models**](langchianguide/guide#models): Provides large models encapsulated based on OpenAI API, including common OpenAI large models, and also supports custom large model encapsulation.
 - [**Prompt**](langchianguide/guide#prompt): Support for fast implementation of custom Prompt projects and interfacing with LLMs.
 - [**Index**](langchianguide/guide#index): accept user query, index the most relevant content to return.
