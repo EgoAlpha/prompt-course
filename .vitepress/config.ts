@@ -228,15 +228,15 @@ export default defineConfig({
                   ] 
                 },
                 {
-                  text: 'LangChain for LLMs Usage', link: '/principle#framework',items:[{text: 'Introduction', link: '/principle#framework'},
-                  {text: 'Before Start', link: '/principle#framework'},
-                  {text: 'Models', link: '/principle#framework'},
-                  {text: 'Prompt', link: '/principle#framework'},
-                  {text: 'Index', link: '/principle#framework'},
-                  {text: 'Memory', link: '/principle#framework'},
-                  {text: 'Chains', link: '/principle#framework'},
-                  {text: 'Agents', link: '/principle#framework'},
-                  {text: 'Coding Examples', link: '/principle#framework'}]
+                  text: 'LangChain for LLMs Usage', link: 'langchainguide/guide#🎇-langchain',items:[{text: 'Introduction', link: '/principle#framework'},
+                  {text: 'Before Start', link: 'langchainguide/guide#before-start'},
+                  {text: 'Models', link: 'langchainguide/guide#models'},
+                  {text: 'Prompt', link: 'langchainguide/guide#prompt'},
+                  {text: 'Index', link: 'langchainguide/guide#index'},
+                  {text: 'Memory', link: 'langchainguide/guide#memory'},
+                  {text: 'Chains', link: 'langchainguide/guide#chains'},
+                  {text: 'Agents', link: 'langchainguide/guide#agents'},
+                  {text: 'Coding Examples', link: 'langchainguide/guide#coding-examples'}]
                 }],
               },
               {
