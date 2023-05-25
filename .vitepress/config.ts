@@ -228,8 +228,7 @@ export default defineConfig({
                   ] 
                 },
                 {
-                  text: 'LangChain for LLMs Usage', link: '/langchainguide/guide#🎇-langchain',items:[{text: 'Introduction', link: '/principle#framework'},
-                  {text: 'Before Start', link: '/langchainguide/guide#before-start'},
+                  text: 'LangChain for LLMs Usage', link: '/langchainguide/guide#🎇-langchain',items:[{text: 'Before Start', link: '/langchainguide/guide#before-start'},
                   {text: 'Models', link: '/langchainguide/guide#models'},
                   {text: 'Prompt', link: '/langchainguide/guide#prompt'},
                   {text: 'Index', link: '/langchainguide/guide#index'},
