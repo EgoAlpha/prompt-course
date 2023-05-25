@@ -230,7 +230,7 @@ LLMResult(generations=[[ChatGeneration(text="J'aime programmer.", generation_inf
 
 我们可以从result中得到一些信息如下：
 
-~~~
+~~~python
 result.llm_output
 ~~~
 
@@ -1320,7 +1320,7 @@ print(chain.run("colorful socks"))
 
 顺序链可以组合多个chain，SequentialChain参数输入chain列表，它会顺序执行每一个chain，将第一个chain的返回值输入到第二chain，依次类推。下面是使用范例
 
-~~~
+~~~python
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
     ChatPromptTemplate,
@@ -3302,7 +3302,7 @@ llm指定了智能代理的语言模型为ChatOpenAI,并将其温度设置为0,�
 通过这部分代码，我们可以创建一个具有自定义角色、工具和语言模型的智能代理，并使用指定的检索器来获
 取信息。
 
-~~~
+~~~python
 agent = AutoGPT.from_llm_and_tools(
     ai_name="Tom",
     ai_role="Assistant",
