@@ -5,12 +5,14 @@
 
 LangChain是一个大模型上层工具链，一个基于LLMs的应用程序开发框架, 通过可组合性来使用LLM构建应用程序. 其重点在于"可组合性"。设计一系列便于集成到实际应用中的接口，降低了在实际场景中部署大语言模型的难度。LangChain可用于聊天机器人、生成式问答(GQA)、文本摘要提取等。
 LangChain的目标在于：
- - 允许大语言模型处理不同来源的数据
- - 让大语言模型能和布置它的环境之间进行交互
+
+- 允许大语言模型处理不同来源的数据
+- 让大语言模型能和布置它的环境之间进行交互
 
 <img src="./langchain.png" align=center width=100% />
 
 如上图所示，LangChain库主要包含六个部分:
+
 - **Models**: 提供基于OpenAI API封装好的大模型，包含常见的OpenAI大模型，也支持自定义大模型的封装。
 - **Prompt**: 支持自定义Prompt工程的快速实现以及和LLMs的对接。
 - **Index** 接受用户查询，索引最相关内容返回。
@@ -35,7 +37,7 @@ LangChain的目标在于：
 
 环境配置和检查,设置代理是针对国内用户（只针对大陆，不涉及香港、澳门和台湾地区）使用OpenAI需要挂载VPN的问题，因此需要本地运行程序进行代理设置，从而避免网络原因导致的访问和调用问题。
 
-```
+~~~python
 import os
 #设置HTTP代理，本地IP地址以及端口号，查看IP可以通过Win/Linux下的IPCONFIG/IFCONFIG命令查看，也可以直接默认设置为127.0.0.1,端口要写挂载VPN的端口号。
 os.environ['HTTP_PROXY'] = 'http://127.0.0.1:XXX'
@@ -57,10 +59,11 @@ os.environ["OPENAI_API_KEY"] = "填上你自己的openai api  key"
 
 #搜索api的key,仅在agent中使用，这步不是必要的
 os.environ['SERPAPI_API_KEY']='填上你自己的serpapi api key'
-```
+~~~
+
 检查谷歌搜索API是否能用，这一步是非必要的可选步骤，如果你在下文的示例中有用到谷歌搜索API的，那就需要进行相应的注册才可以调用访问，注册网址点击👉[这里](https://serpapi.com/dashboard)👈
 
-```
+~~~python
 from serpapi import GoogleSearch
 search = GoogleSearch({
     "q": "coffee",
@@ -68,11 +71,11 @@ search = GoogleSearch({
   })
 result = search.get_dict()
 print(result)
-```
+~~~
 
 检查OpenAI KEY是否可用
 
-```
+~~~python
 import openai
 """
 调用ChatGPT API，其中的engine是使用的chatgpt的davinci引擎，
@@ -94,7 +97,7 @@ response = openai.Completion.create(
 print("response : {}".format(response))
 print("--------")
 print(response.choices[0].text)
-```
+~~~
 
 ## Models
 
@@ -109,61 +112,67 @@ print(response.choices[0].text)
 我们知道——LangChain本身不提供大语言模型，只提供各种接口和方式用以调用访问大语言模型。
 现在有很多LLM提供商比如OpenAI, Cohere, Hugging Face等。在LLMs中，提供了统一的接口来访问这些大模型。
 
-```
+~~~python
 from langchain.llms import OpenAI
 import os
-```
+~~~
+
 下面是常规调用声明LLM的方式方法，模型选择是很多的，具体要使用哪个模型可以访问[此处](https://platform.openai.com/docs/models/overview)进行浏览和设置。
 
-```
+~~~python
 """model_name是选择的OpenAI的模型名称，n=2是生成的文本内容是两条，best_of是从2个里面选择出最佳的一条作为输出"""
 llm = OpenAI(model_name="text-ada-001", n=2, best_of=2)
-```
+~~~
+
 那么我们看一下这个llm具体的参数情况:
 
-```
+~~~python
 print(llm)
-```
+~~~
 
 生成文本：LLM最基本的功能就是能够调用它，传递一个字符串并返回一个字符串。其中的"tell me...story"就是query，传递进模型中调用问答模型给出回答，query的类型是字符串，没有限制它必须是疑问句还是陈述句，ChatGPT等大语言模型会对其内容进行相应的解析与了解，读者不必纠结在此处。
 
-```
+~~~python
 llm("Tell me a scared story")
-```
+~~~
 
 llm可以接受文本列表，生成各个语句的回答，还包括api供应商的返回信息
 
-```
+~~~python
 llm_result = llm.generate(["How to study English", "How to generate a new idea"]*3)
 print(llm_result)
 print(len(llm_result.generations))
 print(llm_result.generations[0])
 print(llm_result.generations[1])
-```
+~~~
 
 给出调用api的供应商返回信息:
-```
+
+~~~python
 print(llm_result.llm_output)
-```
+~~~
 
 评估字符串花费Tokens数量:
-```
+
+~~~python
 print(llm.get_num_tokens("假设你是个教师，如何教英语"))
-```
+~~~
 
 ### Chat Models
-ChatGPT接口使用的是 turbo 的模型，对于聊天机器人的设计，这里有很重要的三个角色:system、human、AI，下面这张图展示的是聊天机器人在捕获信息并进行处理的图画展示： 
+
+ChatGPT接口使用的是 turbo 的模型，对于聊天机器人的设计，这里有很重要的三个角色:system、human、AI，下面这张图展示的是聊天机器人在捕获信息并进行处理的图画展示：
 
 <img src="./three.png" align=center width=100% />
 
 如上图所示，这三个角色分别是如下的定义：
-- system：针对现实世界中的一切描述，我们的system要决定最终想要AI做什么，一个直白的背景或者说是角色的定位，例如翻译员、银行家等； 
+
+- system：针对现实世界中的一切描述，我们的system要决定最终想要AI做什么，一个直白的背景或者说是角色的定位，例如翻译员、银行家等；
 - human：具体的事情，例如想要AI翻译的语句或者想要AI写出一句酷似方文山的歌词；
 - AI：大模型决定返回的内容 使用langchain工具箱实现这个功能。
 
 在代码中我们将会通过langchain.schema引入的SystemMessage, HumanMessage, AIMessage来操纵具体的需求步骤，如下所示：
 
-```
+~~~python
 #导入我们所需要的相关库函数
 from langchain.chat_models import ChatOpenAI
 from langchain import PromptTemplate, LLMChain
@@ -183,19 +192,21 @@ chat = ChatOpenAI(temperature=0)
 #由AI回复human的消息
 #human给出的信息是一个字符串内容，给到chat之后会返回一个AIMessage信息，其中的内容将是给出的反馈答案
 chat([HumanMessage(content="Translate this sentence from English to Chinese. I love programming.")])
-```
+~~~
 
 正如我们上面图中展示的那样，我们一般定义systemmessage的内容为给定它一个角色使OpenAI模型能够在一个知识领域内回答，这样做的好处就是对于给出的答案会更加准确，这里特别说明一点——Openai聊天模型支持一次输入多段信息：
 
-```
+~~~python
 messages = [
     SystemMessage(content="You are a helpful assistant that translates English to Chinese."),
     HumanMessage(content="Translate this sentence from English to Chinese. I love programming.")
 ]
 chat(messages)
-```
+~~~
+
 可以使用chat.generate方法处理多对儿对话内容，返回值LLMResult包含有输入信息。
-```
+
+~~~python
 batch_messages = [
     [
         SystemMessage(content="You are a helpful assistant that translates English to French."),
@@ -208,20 +219,24 @@ batch_messages = [
 ]
 result = chat.generate(batch_messages)
 print(result)
-```
+~~~
 
 上面的输出信息我们为了您的直观看到，我们将其呈现在这里：
-```
+
+~~~python
 OUT：
 LLMResult(generations=[[ChatGeneration(text="J'aime programmer.", generation_info=None, message=AIMessage(content="J'aime programmer.", additional_kwargs={}))], [ChatGeneration(text='我喜欢人工智能。', generation_info=None, message=AIMessage(content='我喜欢人工智能。', additional_kwargs={}))]], llm_output={'token_usage': {'prompt_tokens': 73, 'completion_tokens': 16, 'total_tokens': 89}, 'model_name': 'gpt-3.5-turbo'})
-```
+~~~
+
 我们可以从result中得到一些信息如下：
-```
+
+~~~
 result.llm_output
-```
+~~~
 
 ### 在聊天模型（chatmodel）中使用提示模板
-```
+
+~~~python
 下面使用模板包装SystemMessage和HumanMessage。方便使用。
 #首先构建模版，用几个完形待填项表示要传入的内容，input_variables在这个模版中是两个
 template="You are a helpful assistant that translates {input_language} to {output_language}."
@@ -235,28 +250,32 @@ human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
 chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
 #使用聊天提示模版来创建一个聊天补全，其中的各项参数都是input_variables，通过to_messages方法传递给chat模型完成聊天对话
 chat(chat_prompt.format_prompt(input_language="English", output_language="French", text="I love programming.").to_messages())
-```
+~~~
 
 也可以用下面的方法更直接的创建system_message模板。
-```
+
+~~~python
 prompt=PromptTemplate(
     template="You are a helpful assistant that translates {input_language} to {output_language}.",
     input_variables=["input_language", "output_language"],
 )
 system_message_prompt = SystemMessagePromptTemplate(prompt=prompt)
-```
+~~~
 
 ### LLMChain
+
 结合LLMChain和Prompt、Chat model，可以更方便地开展对话
-```
+
+~~~python
 chain = LLMChain(llm=chat, prompt=chat_prompt)
 chain.run(input_language="English", output_language="Chinese", text="I love programming and swimming")
-```
+~~~
 
 ### 流式对话
+
 通过回调函数处理对话
 
-```
+~~~python
 from langchain.callbacks.base import CallbackManager
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 """
@@ -268,17 +287,23 @@ streaming=True是启用了聊天的流式模式，也就是响应的内容将会
 """
 chat = ChatOpenAI(streaming=True, callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]), verbose=True, temperature=0)
 resp = chat([HumanMessage(content="帮我分析一下为什么一加一等于二？")])
-```
-输出内容如下：
-```
+~~~
+
+输出内容如下:
+
+~~~python
 一加一等于二是因为这是我们所接受的基本数学原理之一。在十进制数系统中，我们将数字1表示为一个单位，数字2表示为两个单位。当我们将一个单位与另一个单位相加时，我们得到两个单位，即数字2。这是因为加法是一种基本的算术运算，它表示将两个或多个数值相加以得到它们的总和。因此，一加一等于二是数学中的基本原理之一，它被广泛接受并被用于各种数学和科学应用中。
-```
+~~~
+
 运行下面的代码：
-```
+
+~~~python
 resp_another = chat([HumanMessage(content="tell me how to become a superman?")])
-```
+~~~
+
 显示如下内容：
-```
+
+~~~python
 As an AI language model, I cannot provide instructions on how to become a fictional character like Superman. However, I can suggest some ways to become a better version of yourself:
 
 1. Set goals and work towards them consistently.
@@ -291,12 +316,14 @@ As an AI language model, I cannot provide instructions on how to become a fictio
 8. Take care of your health by eating a balanced diet and getting enough rest.
 9. Continuously challenge yourself to grow and improve.
 10. Believe in yourself and your abilities.
-```
+~~~
 
 ### Text Embedding Models
+
 词嵌入支持将自然语言转变为向量。LangChain中最重要的两个embedding方法为embed_documents 和 embed_query方法。因为处理多个文本文件和处理一个文件有很大的不同，所以LangChain将其分为两个类。
 LangChain中集成了很多来自不同平台的API可以进行词嵌入编码，这里举一个用OpenAi进行词嵌入的方法
-```
+
+~~~python
 #我们使用较多的也是OpenAI的embeddings方法
 from langchain.embeddings import OpenAIEmbeddings
 embeddings = OpenAIEmbeddings()
@@ -305,19 +332,22 @@ query_result = embeddings.embed_query(text)
 print(query_result)
 doc_result = embeddings.embed_documents([text])
 print(doc_result)
-```
+~~~
 
 下面这个例子是使用HuggingFace Hub的embeddings模型，让我们看看它的一个代码样例：
-```
+
+~~~python
 from langchain.embeddings import HuggingFaceEmbeddings
 embeddings_hf = HuggingFaceEmbeddings()
 text_hf = "I just test the embeddings method in huggingface"
 query_result = embeddings_hf.embed_query(text_hf)
 doc_result = embeddings_hf.embed_documents([text_hf])
-```
+~~~
+
 上面给出的例子用于熟悉基本models中的相关操作，详细的API开放接口还有很多，例如针对微软Azure的AzureOpenAI，Cohere和Llama-cpp等，点击[此处](https://python.langchain.com/en/latest/modules/models/text_embedding.html)可以直接跳转到相关位置。
 
 ## Prompt
+
 Prompt是一种为了更好地使用预训练模型的知识，采用在输入端添加额外文本的技术。Prompt的设计有时候可以极大地激发出大模型的潜力，基于prompt可以完成很多我们想象不到的任务，那么，现在我们就来熟悉一下什么是Prompt以及在LangChain中如何去更好地使用和完善它们，LangChain提供了几个类和函数来轻松构建Prompt模板。
 
 - [Prompt Templates](#prompt-templates)
@@ -326,18 +356,22 @@ Prompt是一种为了更好地使用预训练模型的知识，采用在输入�
 - [Output Parser](#output-parser)
 
 ### Prompt Templates
+
 语言模型的文本输入字符串本身就是一种提示，通常来说prompt由模板、一些例子（有的话）和用户的输入构成，其概念和含义并不复杂。
 
-### 什么是prompt template：
+### 什么是prompt template
+
 Prompt Template，也就是提示模版，是一种可重复使用生成prompt的方式，用template可以模版化提示指令，它由一个字符串和可供用户输入的参数组成。
 提示模版包含如下的内容：
+
 - 给语言模型的指令
 - 几个例子，帮助语言模型更好地回答
 - 一个让语言模型回答的问题
 - ...
 
 现在我们看一个创建prompt template的例子：
-```
+
+~~~python
 #一般导入的必要库，为了进一步模版化处理
 from langchain import PromptTemplate
 #具体的模版内容，其中要进行补全的地方（也就是为了定制我们具体问题以及要求的地方用一个变量进行代替）用中括号
@@ -357,21 +391,25 @@ prompt = PromptTemplate(
     input_variables=["product"],
     template=template,
 )
-```
+~~~
 
 让我们看看prompt长什么样子：
-```
+
+~~~python
 print(prompt)
-```
+~~~
+
 输出内容如下：
-```
+
+~~~python
 PromptTemplate(input_variables=['product'], output_parser=None, partial_variables={}, template='\nI want you to act as a naming consultant for new companies.\nHere are some examples of good company names:\n- search engine, Google\n- social media, Facebook\n- video sharing, YouTube\nThe name should be short, catchy and easy to remember.\nWhat is a good name for a company that makes {product}?\n', template_format='f-string', validate_template=True)
-```
+~~~
 
 ### 创建prompt template
+
 我们可以从上面的示例中看到：通过LangChain的PromptTemplate类，可以生成具体的prompt，那么通过继续使用这个类生成几个具体的prompts。prompt template接受多个输入变量，用来格式化生成prompt
 
-```
+~~~python
 from langchain import PromptTemplate
 
 #input_variables的值可以为空，说明其中没有任何变量
@@ -388,11 +426,11 @@ multiple_input_prompt = PromptTemplate(
     template="Tell me a {adjective} joke about {content}."
 )
 multiple_input_prompt.format(adjective="funny", content="chickens")
-```
+~~~
 
 ### 从LangChainHub加载本地prompt template
 
-```
+~~~python
 from langchain.prompts import load_prompt
 #可以加载用json格式写好的prompt
 test_prompt = PromptTemplate(
@@ -405,13 +443,15 @@ test_prompt.format(input="what is 1+1?")
 test_prompt.save("test_prompt.json")
 #加载本地的模版使用到的方法是固定的，将具体文件的位置传入即可
 prompt = load_prompt("./test_prompt.json")
-```
+~~~
 
 ### 在prompt template中添加几个例子
+
 如果生成带有几个例子的模版，该怎么做？通过PromptTemplate类固然是可以，将例子固定在具体的模版中是我们想到的方法。那么LangChain有没有提供直接的类可以用来达到我们的目的和要求。下面是给语言模型几个合适的例子从而使大模型能够更准确、更合适地回答问题，LangChain中使用FewShotPromptTemplate类生成带有例子的prompt。
 
 下面是创建一个让大语言模型去回答反义词的提示模版：
-```
+
+~~~python
 from langchain import PromptTemplate, FewShotPromptTemplate
 #如下是几个提示示例，让大模型知道几个例子回答的时候可以类比着回答
 few_examples = [
@@ -451,13 +491,15 @@ few_shot_prompt = FewShotPromptTemplate(
 )
 
 print(few_shot_prompt.format(input="big"))
-```
+~~~
 
 ### 从prompt template中选取例子
+
 上面那个代码案例中提供的是少量样本示例，如果有非常多可供LLM参考的例子时，使用ExampleSelector类来可控制地选择几个最好的例子供LLM学习。
 
 下面是一个使用LengthBasedExampleSelector选择一定长输入的例子，它是一个自动选择例子的方法，我们具体来看：**如果用户担心prompt超过输入窗口大小时，这很有用。当用户输入很长时，它自动选择少量的例子；当用户输入很短时，它选择更多的例子。**
-```
+
+~~~python
 from langchain.prompts.example_selector import LengthBasedExampleSelector
 #依然和上面一样，反义词对儿的组合，这里给出下面几种：
 few_examples = [
@@ -503,16 +545,20 @@ dynamic_prompt = FewShotPromptTemplate(
 )
 
 print(dynamic_prompt.format(input="big"))
-```
+~~~
+
 根据上面的例子我们知道：当输入问题很长时，LengthBasedExampleSelector会选择更少的提示
-```
+
+~~~python
 long_string = "big and huge and massive and large and gigantic and tall and much much much much much bigger than everything else"
 print(dynamic_prompt.format(input=long_string))
-```
+~~~
 
 ### chat model prompt template
+
 下面的示例是利用prompt template在chat model中使用的情况：chat model可以使用以前的历史信息进行单次生成回复，单次输入包含了过去聊天中的一系列模板、例子、用户问题的组合。LangChain提供了一些类和方法使得构建和使用prompt更加容易。
-```
+
+~~~python
 from langchain.prompts import (
     ChatPromptTemplate,
     PromptTemplate,
@@ -525,9 +571,11 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage
 )
-```
+~~~
+
 ChatPromptTemplate可以使用一个或者多个MessagePromptTemplate类构建prompt。可以使用ChatPromptTemplate的format_prompt函数返回prompt值，然后将其转化为string或message对象。
-```
+
+~~~
 system_template="You are a helpful assistant that translates {input_language} to {output_language}."
 system_message_prompt = SystemMessagePromptTemplate.from_template(system_template)
 human_template="{text}"
@@ -535,22 +583,26 @@ human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
 chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
 #从格式化的信息中获取完整的聊天信息
 chat_prompt.format_prompt(input_language="English", output_language="French", text="I love programming.").to_messages()
-```
+~~~
+
 下面是一种快速构建MessagePromptTemplate的方法
-```
+
+~~~
 prompt=PromptTemplate(
     template="You are a helpful assistant that translates {input_language} to {output_language}.",
     input_variables=["input_language", "output_language"],
 )
 system_message_prompt = SystemMessagePromptTemplate(prompt=prompt)
-```
+~~~
 
 ### Example Selectors
+
 根据模型功能需要动态选择提示词
 LangChain中的BaseExampleSelector类用于选择例子，select_examples函数接收输入变量并返回一系列例子。
 
 ### 基本接口定义如下
-```
+
+~~~
 from abc import ABC, abstractmethod
 from typing import Dict,List
 '''它是一个抽象基类，不能被示例化，而是用于定义其他类的接口和规范'''
@@ -560,15 +612,16 @@ class BaseExampleSelector(ABC):
     """
     @abstractmethod
     def select_examples(self, input_variables: Dict[str, str]) -> List[dict]:
-```
+~~~
 
 一个ExampleSelector类必须实现两个方法：
+
 - 1. add_example方法接受一个例子将其添加到example列表中
 - 2. select_examples告诉选择器如何选择例子并返回例子
 
 因此在一个示例选择器中可以随时调用上述两种方法，下面实现一个自定义的example selector
 
-```
+~~~
 from langchain.prompts.example_selector.base import BaseExampleSelector
 from typing import Dict, List
 import numpy as np
@@ -585,10 +638,11 @@ class CustomExampleSelector(BaseExampleSelector):
     def select_examples(self, input_variables: Dict[str, str]) -> List[dict]:
         """根据输入的信息选择要使用的例子"""
         return np.random.choice(self.examples, size=2, replace=False)
-```
+~~~
 
 使用自定义的example selector
-```
+
+~~~
 
 examples = [
     {"foo": "1"},
@@ -605,11 +659,13 @@ example_selector.add_example({"foo": "4"})
 example_selector.examples
 #选择示例
 example_selector.select_examples({"foo": "foo"})
-```
+~~~
 
 ### 基于长度的示例选择器
+
 LengthBased ExampleSelector根据用户输入自动选择一定数量的示例；使总长度不超过LLM输入窗口大小。下面的示例我们上面就遇到过，现在我们走到这里再看一下这个代码示例，是否更加了解它的原理？
-```
+
+~~~
 from langchain.prompts import PromptTemplate
 from langchain.prompts import FewShotPromptTemplate
 from langchain.prompts.example_selector import LengthBasedExampleSelector
@@ -644,10 +700,13 @@ print(dynamic_prompt.format(adjective=long_string))
 new_example = {"input": "big", "output": "small"}
 dynamic_prompt.example_selector.add_example(new_example)
 print(dynamic_prompt.format(adjective="enthusiastic"))
-```
+~~~
+
 ### 相似性选择器
+
 Similarity Example Selector根据例子和输入的相似程度来选择例子。该选择器根据例子和输入的词嵌入向量的余弦相似性来工作。
-```
+
+~~~
 from langchain.prompts.example_selector import SemanticSimilarityExampleSelector
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
@@ -688,15 +747,17 @@ print(similar_prompt.format(adjective="fat"))
 #您也可以向SimilarityExampleSelector添加新的示例。
 similar_prompt.example_selector.add_example({"input": "enthusiastic", "output": "apathetic"})
 print(similar_prompt.format(adjective="joyful"))
-```
+~~~
+
 ### Output Parser
+
 输出解析器，顾名思义，就是将输出答案进行解析，它指示模型去格式化输出内容，将输出解析为需要的格式。
 Output parsers类结构化模型的响应信息。例如我们提前定义好输出的形式应该包括A属性和B属性，如果正常把提问送给大模型，大模型是不会给你指定出特别严格划分之后的答案的，因此把这种答案进行解析处理进一步给到用户，用户可以用解析处理之后的结果去做更方便的应用或者就已经达到用户的目的。
 
 下面是关于PydanticOutputParser的一个示例说明，PydanticOutputParser能够让LLM输出符合JSON格式的回复。该功能效果和LLM生成能力相关。
 下面是使用PydanticOutputParser的例子。
 
-```
+~~~
 from langchain.prompts import PromptTemplate, ChatPromptTemplate, HumanMessagePromptTemplate
 from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
@@ -748,9 +809,11 @@ joke_query = "Tell me a joke."
 _input = prompt.format_prompt(query=joke_query)
 output = model(_input.to_string())
 parser.parse(output)
-```
+~~~
+
 下面是另外一个示例，我们接着看一下
-```
+
+~~~
 """
 下面这段代码定一个了一个名为actor的数据结构，它也是基于basemodel类创建的，这个actor有两个属性，分别是name
 和file_names，用来表示姓名和演员出演的电影列表，这两个属性上，同样适用field类，为两者分别指定了description属性，用来
@@ -779,9 +842,10 @@ _input = prompt.format_prompt(query=actor_query)
 output = model(_input.to_string())
 
 parser.parse(output)
-```
+~~~
 
 ## Index
+
 该模块用于接受用户查询，返回最相关概念。
 这里LangChain主要在针对用户提供的文档构建索引，将索引组合成检索器；然后可以建立一个问答链用于模型提问回答。
 LangChain使用chromadb构建向量池vectorstore，向量池用于检索和查找词嵌入。
@@ -790,7 +854,7 @@ LangChain使用chromadb构建向量池vectorstore，向量池用于检索和查�
 
 了解索引基本概念也很重要，下面是索引器Retriever的接口，用户可以自己实现如何返回相关文档。LangChain关注于使用Vectorstore retriever进行检索相关文档。
 
-```
+~~~
 from abc import ABC, abstractmethod
 from typing import List
 from langchain.schema import Document
@@ -812,9 +876,11 @@ class BaseRetriever(ABC):
         Returns:
             List of relevant documents
         """
-```
+~~~
+
 这里先加载需要的文档
-```
+
+~~~
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 from langchain.document_loaders import TextLoader
@@ -822,10 +888,11 @@ from langchain.document_loaders import TextLoader
 #encoding='utf-8'表示文件的编码格式为UTF-8。具体来说，
 #作用是将文件state_of_the_union.txt中的内容读取到内存中，并以字符串的形式存储在变量loader中。
 loader = TextLoader('state_of_the_union.txt',encoding='utf-8')
-```
+~~~
 
 创建索引,下面的语句使用VectorstoreIndexCreator直接创建索引
-```
+
+~~~
 """
 VectorstoreIndexCreator类用于创建向量空间索引(Vector Space Index)。通过调用from_loaders方法来创建一个名为index的对象，
 该方法接受一个参数列表，列表中只包含一个元素，即之前提到的TextLoader对象loader。from_loaders方法的作用是将多个文本数据加载器(TextLoader)
@@ -834,29 +901,37 @@ VectorstoreIndexCreator类用于创建向量空间索引(Vector Space Index)。�
 """
 from langchain.indexes import VectorstoreIndexCreator
 index = VectorstoreIndexCreator().from_loaders([loader])
-```
+~~~
+
 现在索引建立了，就可以开始根据文档问问题了
-```
+
+~~~
 query = "What did the president say about Ketanji Brown Jackson"
 index.query(query)
 query = "What did the president say about Ketanji Brown Jackson"
 index.query_with_sources(query)
-```
+~~~
+
 如果只是想访问vectorstore，可以这样做
-```
+
+~~~
 print(index.vectorstore)
-```
+~~~
+
 或者想访问VectorstoreRetriever
-```
+
+~~~
 index.vectorstore.as_retriever()
-```
+~~~
 
 上面是用索引查询的例子，那么索引是怎么创建的呢，有3步：
+
 1. 将文档划分成块
 2. 对每块创建词嵌入
 3. 将文档和词嵌入存在向量池中
 下面会一步步展示:
-```
+
+~~~
 #加载文档
 documents = loader.load()
 #文档切块
@@ -904,15 +979,17 @@ run方法将执行以下操作：首先从数据库中检索与给定查询相�
 最后将答案封装成一个三元组返回给用户。
 """
 qa.run(query)
-```
+~~~
+
 总结以上过程，VectorstoreIndexCreator就是做了切块，词嵌入，创建索引的过程。
-```
+
+~~~
 index_creator = VectorstoreIndexCreator(
     vectorstore_cls=Chroma,
     embedding=OpenAIEmbeddings(),
     text_splitter=CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
 )
-```
+~~~
 
 ## Memory
 
@@ -932,10 +1009,12 @@ LangChain提供两种memory组件；第一，LangChain提供helper utilities负�
 - [Add Memory to an Agent](#add-memory-to-an-agent)
 
 我们用这个ConversationBufferMemory进行举例，因此先看一下这个类是什么样的：
-###ConversationBufferMemory
+
+### ConversationBufferMemory
+
 ConversationBufferMemory可以帮助用户轻松创建对话历史，用法如下
 
-```
+~~~
 from langchain.memory import ConversationBufferMemory
 
 """
@@ -958,14 +1037,15 @@ memory = ConversationBufferMemory(return_messages=True)
 memory.chat_memory.add_user_message("hi!")
 memory.chat_memory.add_ai_message("whats up?")
 memory.load_memory_variables({})
-```
+~~~
+
 上面就是对历史对话进行记录以及获取的方式，简单直接，接下来我们通过几个示例看一下具体怎么讲其添加到Chain中：
 
 ### Add Memory to an LLMChain
 
 下面展示了ConversationBufferMemory的添加用法，对于其他类型的Memory,您可以点击[此处查看和使用](https://python.langchain.com/en/latest/modules/memory/how_to_guides.html)。
 
-```
+~~~
 from langchain.llms import OpenAI
 from langchain.chains import ConversationChain
 from langchain import LLMChain, PromptTemplate
@@ -1000,9 +1080,11 @@ llm_chain = LLMChain(
     memory=memory,
 )
 llm_chain.predict(human_input="Hi there!")
-```
+~~~
+
 显示如下的内容：
-```
+
+~~~
 > Entering new ConversationChain chain...
 Prompt after formatting:
 The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.
@@ -1013,13 +1095,15 @@ Human: Hi there!
 AI:
 
 > Finished chain.
-```
+~~~
 
-```
+~~~
 llm_chain.predict(human_input="I'm doing well! Just having a conversation with an AI.")
-```
+~~~
+
 显示如下的内容：
-```
+
+~~~
 > Entering new ConversationChain chain...
 Prompt after formatting:
 The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.
@@ -1031,13 +1115,15 @@ Human: I'm doing well! Just having a conversation with an AI.
 AI:
 
 > Finished chain.
-```
+~~~
 
-```
+~~~
 llm_chain.predict(input="Tell me about yourself.")
-```
+~~~
+
 显示如下：
-```
+
+~~~
 > Entering new ConversationChain chain...
 Prompt after formatting:
 The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.
@@ -1051,9 +1137,11 @@ Human: Tell me about yourself.
 AI:
 
 > Finished chain.
-```
+~~~
+
 另外一种情景是用户需要进行历史信息的保存，因为用户有保存历史信息，然后在需要的时候加载重用的需求。LangChain的schema类能方便的把历史信息转为为python数据结构，比如字典；也可以转化为json格式；然后从字典、json中加载历史信息。如下所示：
-```
+
+~~~
 import json
 
 from langchain.memory import ChatMessageHistory
@@ -1067,24 +1155,31 @@ history.add_user_message("hi!")
 history.add_ai_message("whats up?")
 dicts = messages_to_dict(history.messages)
 print(dicts)
-```
+~~~
+
 显示：
-```
+
+~~~
 [{'type': 'human', 'data': {'content': 'hi!', 'additional_kwargs': {}}},
  {'type': 'ai', 'data': {'content': 'whats up?', 'additional_kwargs': {}}}]
- ```
+ ~~~
 
-```
+~~~
 new_messages = messages_from_dict(dicts)
 print(new_messages)
-```
+~~~
+
 显示：
-```
+
+~~~
 [HumanMessage(content='hi!', additional_kwargs={}),
  AIMessage(content='whats up?', additional_kwargs={})] 
-```
+~~~
+
 下面是关于在Agent中添加Memory的案例说明：
+
 ### Add Memory to an Agent
+
 为了向Agent中添加Memory，我们将执行以下步骤：
 
 - 1.我们将创建一个带内存的 LLMChain。
@@ -1093,7 +1188,7 @@ print(new_messages)
 
 我们将创建一个简单的自定义代理，它可以访问搜索工具并使用该类ConversationBufferMemory。
 
-```
+~~~
 from langchain.agents import ZeroShotAgent, Tool, AgentExecutor
 from langchain.memory import ConversationBufferMemory
 from langchain import OpenAI, LLMChain
@@ -1131,14 +1226,17 @@ agent = ZeroShotAgent(llm_chain=llm_chain, tools=tools, verbose=True)
 agent_chain = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools, verbose=True, memory=memory)
 
 agent_chain.run(input="How many people live in canada?")
-```
+~~~
 
 为了测试此代理的记忆力，我们可以提出一个后续问题，该问题依赖于先前交流中的信息才能正确回答。
-```
+
+~~~
 agent_chain.run(input="what is their national anthem called?")
-```
+~~~
+
 我们将其与没有memory的agent进行比较
-```
+
+~~~
 prefix = """Have a conversation with a human, answering the following questions as best you can. You have access to the following tools:"""
 suffix = """Begin!"
 
@@ -1156,18 +1254,22 @@ agent = ZeroShotAgent(llm_chain=llm_chain, tools=tools, verbose=True)
 agent_without_memory = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools, verbose=True)
 agent_without_memory.run("How many people live in canada?")
 agent_without_memory.run("what is their national anthem called?")
-```
+~~~
+
 当然上述操作示例是方便读者快速了解和上手，为了在开发中更加熟练地应用，还是需要全面完善的浏览和查阅官方教程做进一步的融会贯通，点击此处可以直达[Memory教程位置](https://python.langchain.com/en/latest/modules/memory.html)。
 
 ## Chains
+
 当实现一些简单的应用时，只用一个大语言模型是非常可行的。但是，一些复杂情况下，需要我们去组合不同的大语言模型或者组合大语言模型和其他模块，去完成一些庞大而又复杂的工作内容。LangChain为Chains提供了一个标准接口，以及一些常用的实现方法。
 例如，简单的方式我们已经了解到——我们可以创建一个chain，接收用户输入，然后使用Prompt模块格式化，然后将格式化内容传给LLM；复杂的方式诸如组合多个chain，我们可以将多个chain组合在一起，也可以在chain中加入其他模块协同工作。
 这部分教程有如下内容：
+
 - 1.使用简单的LLM链
 - 2.创建序列化的链接
 - 3.创建自定义的链
 
 如果你想了解更多，可以点击[这里](https://python.langchain.com/en/latest/modules/chains.html)直达Chains官方教程。
+
 - [使用LLMChain完成基本调用](#llmchain-usage)
 - [SequentialChain组合多个Chain](#using-sequentialchain-to-combine-with-multiple-chains)
 - [自定义Chain](#customize-the-chain-class)
@@ -1176,7 +1278,7 @@ agent_without_memory.run("what is their national anthem called?")
 
 LLMChain，它是一个最简单、使用最多的chain，它会接收一个prompt模板，我们使用这个模板格式化输入信息，然后返回用户的查询得到的响应，也就是我们想要的答案。下面是使用例子：
 
-```
+~~~
 from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 #使用OpenAI的大模型，默认是text-davinci-003，设置随机性为0.9
@@ -1192,9 +1294,11 @@ chain = LLMChain(llm=llm, prompt=prompt)
 
 #用chain的run方法来运行指定输入变量的链 
 print(chain.run("colorful socks"))
-```
+~~~
+
 在LLMChain中使用chat model去完成聊天机器人的交互过程，以下是一个示例：
-```
+
+~~~
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
     ChatPromptTemplate,
@@ -1210,12 +1314,13 @@ chat_prompt_template = ChatPromptTemplate.from_messages([human_message_prompt])
 chat = ChatOpenAI(temperature=0.9)
 chain = LLMChain(llm=chat, prompt=chat_prompt_template)
 print(chain.run("colorful socks"))
-```
+~~~
+
 ### Using SequentialChain to combine with multiple chains
 
 顺序链可以组合多个chain，SequentialChain参数输入chain列表，它会顺序执行每一个chain，将第一个chain的返回值输入到第二chain，依次类推。下面是使用范例
 
-```
+~~~
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
     ChatPromptTemplate,
@@ -1236,18 +1341,21 @@ chat_prompt_template = ChatPromptTemplate.from_messages([human_message_prompt])
 chat = ChatOpenAI(temperature=0.9)
 chain_one = LLMChain(llm=chat, prompt=chat_prompt_template)
 chain_two = LLMChain(llm=llm, prompt=second_prompt)
-```
+~~~
+
 下面将两个简单的LLMChains组合到一起的方式，使用SimpleSequentialChain来完成，最终实现先给公司命名，然后给这个已经命名的公司起一个宣传语的这么一个过程。
-```
+
+~~~
 from langchain.chains import SimpleSequentialChain
 overall_chain = SimpleSequentialChain(chains=[chain, chain_two], verbose=True)
 #运行chain的run方法，只需要指定第一个链的输入变量。
 catchphrase = overall_chain.run("colorful socks")
 print(catchphrase)
-```
+~~~
+
 显示如下内容：
 
-```
+~~~
 
 > Entering new SimpleSequentialChain chain...
 Rainbow Sock Co.
@@ -1259,18 +1367,21 @@ Rainbow Sock Co.
 
 
 "Walk on the wild side with Rainbow Socks!"
-```
+~~~
 
 ### Customize the Chain class
+
 使用已经封装好的LangChain固然没有任何问题，因为其提供了很多开箱即用的chains，但是往往有时候用户可能想自己创建个自定义的类用于特殊用途。
 创建自定义类过程如下：
+
 - 1.继承Chain类
 - 2.填写input_keys 和 output_keys 属性
 - 3.实现私有方法_call方法，用于展示如何执行chain
 
 下面是自定义创建chain类的方法
 首先自定义一个ConcatenateChain类，该类将两个LLMChain同时处理一个查询并返回连接结果。
-```
+
+~~~
 from langchain.chains import LLMChain
 from langchain.chains.base import Chain
 from typing import Dict, List
@@ -1302,9 +1413,9 @@ class ConcatenateChain(Chain):
         output_1 = self.chain_1.run(inputs)
         output_2 = self.chain_2.run(inputs)
         return {'concat_output': output_1 + output_2}
-```
+~~~
 
-```
+~~~
 """
     prompt_1: PromptTemplate类型，表示一个提示模板，其中包含输入变量"product",
 模板为"What is a good name for a company that makes {product}?"。
@@ -1329,18 +1440,21 @@ chain_2 = LLMChain(llm=llm, prompt=prompt_2)
 concat_chain = ConcatenateChain(chain_1=chain_1, chain_2=chain_2)
 concat_output = concat_chain.run("colorful socks")
 print(f"Concatenated output:\n{concat_output}")
-```
+~~~
+
 显示如下：
-```
+
+~~~
 Concatenated output:
 
 
 Vivid Sockery.
 
 "Step Into Colorful Comfort!"
-```
+~~~
 
 ## Agents
+
 实际应用可能不仅需要预定义好的chain，也需要根据用户的输入请求，生成一个隐含的chain。agent作为代理，会根据用户输入，确定下来要采取的操作、使用的工具、LLM的输出、observation观察得出的结果或是将LLM结果返回给用户。
 在使用agents前，下面几个概念需要理解：
 
@@ -1362,7 +1476,8 @@ LangChain 将基于用户提出的要求驱动agent进行处理，期间调用�
 - [Toolkits](#toolkits)
 
 ### A simple example with using Agent
-```
+
+~~~
 from langchain.agents import load_tools
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
@@ -1376,9 +1491,11 @@ llm = OpenAI(temperature=0)
 tools = load_tools(["serpapi", "llm-math"], llm=llm)
 agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)
 agent.run("Who is Leo DiCaprio's girlfriend? What is her current age raised to the 0.43 power?")
-```
+~~~
+
 显示如下：
-```
+
+~~~
 
 
 > Entering new AgentExecutor chain...
@@ -1399,12 +1516,14 @@ Thought: I now know the final answer
 Final Answer: Nina Agdal is Leo DiCaprio's girlfriend and her current age raised to the 0.43 power is 4.378098500976803.
 
 > Finished chain.
-```
-```
+~~~
+
+~~~
 "Nina Agdal is Leo DiCaprio's girlfriend and her current age raised to the 0.43 power is 4.378098500976803."
-```
+~~~
 
 ### Tools
+
 工具是智能体和外部环境交互的方式。工具可以是实用程序、chain、其他agent等。
 
 LangChain大部分工具和搜索相关，下面仅举几个有特点的工具例子。
@@ -1418,13 +1537,13 @@ LangChain大部分工具和搜索相关，下面仅举几个有特点的工具�
 
 一般通过下面的方式加载工具，对于当做工具使用的chain、agent，需要进行初始化
 
-```
+~~~
 from langchain.agents import load_tools
 tool_names = [...]
 tools = load_tools(tool_names)
 llm = ...
 tools = load_tools(tool_names, llm=llm)
-```
+~~~
 
 #### Bing Search
 
@@ -1432,7 +1551,7 @@ tools = load_tools(tool_names, llm=llm)
 
 首先，您需要设置适当的 API 密钥和环境变量。点击[此处](https://levelup.gitconnected.com/api-tutorial-how-to-use-bing-web-search-api-in-python-4165d5592a7e)查阅说明并完成配置。
 
-```
+~~~
 import os
 os.environ["BING_SUBSCRIPTION_KEY"] = ""
 os.environ["BING_SEARCH_URL"] = ""
@@ -1446,7 +1565,8 @@ search.run("python")
 #设置k控制输出结果数目
 search = BingSearchAPIWrapper(k=1)
 search.run("python")
-```
+~~~
+
 运行下面的代码将会返回三项内容：片段，标题和链接
 
 片段: 结果的描述.
@@ -1454,16 +1574,17 @@ search.run("python")
 标题: 结果的标题.
 
 链接: 结果的链接.
-```
+
+~~~
 search = BingSearchAPIWrapper()
 search.results("apples", 5)
-```
+~~~
 
 #### Google Search
 
 以下示例介绍了如何使用谷歌搜索组件，您需要设置适当的 API 密钥和环境变量。要进行设置，请在[此处](https://console.cloud.google.com/apis/credentials)创建 GOOGLE_API_KEY，[这里](https://programmablesearchengine.google.com/)创建 GOOGLE_CSE_ID
 
-```
+~~~
 import os
 os.environ["GOOGLE_CSE_ID"] = ""
 os.environ["GOOGLE_API_KEY"] = ""
@@ -1485,13 +1606,13 @@ search.run("python")
 search = GoogleSearchAPIWrapper()
 search.results("apples", 5)
 
-```
+~~~
 
 #### Google Serper API
 
 为了更好地使用谷歌网络搜索API，需要注册一个免费账户用于获取API_KEY,注册位置点击[此处](https://serper.dev/)。下面是示例代码
 
-```
+~~~
 import os
 os.environ["SERPER_API_KEY"] = ""
 
@@ -1525,10 +1646,11 @@ tools = [
 
 self_ask_with_search = initialize_agent(tools, llm, agent=AgentType.SELF_ASK_WITH_SEARCH, verbose=True)
 self_ask_with_search.run("What is the hometown of the reigning men's U.S. Open champion?")
-```
+~~~
 
 #### Python REPL
-```
+
+~~~
 """
 首先导入PythonREPL类，该类用于在Python解释器中执行交互式代码。
 接着创建一个PythonREPL对象python_repl,以便在Python解释器中执行代码。
@@ -1537,10 +1659,11 @@ self_ask_with_search.run("What is the hometown of the reigning men's U.S. Open c
 from langchain.utilities import PythonREPL
 python_repl = PythonREPL()
 python_repl.run("print(3**3)")
-```
+~~~
 
 #### Bash
-```
+
+~~~
 """
 首先导入BashProcess类，该类用于在Linux系统中执行命令行操作。
 接着创建一个BashProcess对象bash,以便在Linux系统中执行命令行操作。
@@ -1550,18 +1673,21 @@ name'",以在终端上打印出字符串"My name is name"。
 from langchain.utilities import BashProcess
 bash = BashProcess()
 print(bash.run(' echo "My name is name" '))
-```
+~~~
 
 #### Wikipedia API
+
 下面是如何使用维基百科的示例：
 需要提前安装wikipedia，使用`%pip install wikipedia`:
-```
+
+~~~
 from langchain.utilities import WikipediaAPIWrapper
 wikipedia = WikipediaAPIWrapper()
 wikipedia.run('HUNTER X HUNTER')
-```
+~~~
 
 ### Agent
+
 我们接着看与agent相关的内容，Agent使用 LLM 来确定采取哪些行动以及采取何种顺序。action可以是使用tools并观察其输出，也可以是向用户返回响应。
 
 - [类型](#type)
@@ -1587,7 +1713,7 @@ wikipedia.run('HUNTER X HUNTER')
 
 如何创建自定义的Agent
 
-```
+~~~
 from langchain.agents import Tool,AgentExecutor
 from langchain.agents import BaseSingleActionAgent
 from langchain import OpenAI, SerpAPIWrapper
@@ -1630,7 +1756,7 @@ class FakeAgent(BaseSingleActionAgent):
 agent = FakeAgent()
 agent_executor = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools, verbose=True)
 agent_executor.run("How many people live in canada as of 2023?")
-```
+~~~
 
 #### Custom LLM Agent
 
@@ -1645,6 +1771,7 @@ LLM代理由几部分组成：
 4. OutputParser：这决定了如何将 LLMOutput 解析为 AgentAction 或 AgentFinish 对象
 
 LLMAgent 在 AgentExecutor 中使用。这个 AgentExecutor 在很大程度上可以被认为是一个循环：
+
 1. 将用户输入和任何先前的步骤传递给代理（在本例中为 LLMAgent）
 
 2. 如果代理返回一个AgentFinish，则直接将其返回给用户
@@ -1657,7 +1784,7 @@ AgentActionaction是由和组成的响应action_input。action指的是使用哪
 
 AgentFinish是包含要发送回用户的最终消息的响应。这应该用于结束代理运行。
 
-```
+~~~
 from langchain.agents import Tool, AgentExecutor, LLMSingleActionAgent, AgentOutputParser
 from langchain.prompts import StringPromptTemplate
 from langchain import OpenAI, SerpAPIWrapper, LLMChain
@@ -1675,7 +1802,8 @@ tools = [
         description="useful for when you need to answer questions about current events"
     )
 ]
-```
+~~~
+
 这部分指示代理做什么。一般来说，模板应包括：
 
 - tools：agent可以选择访问哪些工具以及调用它们的方式和时间。
@@ -1684,7 +1812,7 @@ tools = [
 
 - input: 一般用户的输入内容
 
-```
+~~~
 template = """Answer the following questions as best you can, but speaking as a pirate might speak. You have access to the following tools:
 
 {tools}
@@ -1705,16 +1833,16 @@ Begin! Remember to speak as a pirate when giving your final answer. Use lots of 
 Question: {input}
 {agent_scratchpad}"""
 template
-```
+~~~
 
 下面这段代码定义了一个名为 CustomPromptTemplate 的类，继承自 StringPromptTemplate。
     template 是一个字符串类型的属性，表示提示信息的模板；
     tools 是一个列表类型的属性，表示可用的工具列表；
     format 是一个方法，用于将传入的参数格式化成提示信息。在 format 方法中，首先从传入的参数中弹出一个名为 intermediate_steps 的关键字
-参数。然后，遍历这个中间步骤列表，将每个步骤的操作日志和观察结果拼接到一个字符串 thoughts 中。接着，将 thoughts 存入 agent_scratchpad 
+参数。然后，遍历这个中间步骤列表，将每个步骤的操作日志和观察结果拼接到一个字符串 thoughts 中。接着，将 thoughts 存入 agent_scratchpad
 中，并将可用的工具信息添加到tools 和 tool_names 中。最后，调用父类的 format 方法，将格式化后的提示信息返回。
 
-```
+~~~
 class CustomPromptTemplate(StringPromptTemplate):
     template: str
     tools: List[Tool]
@@ -1728,30 +1856,33 @@ class CustomPromptTemplate(StringPromptTemplate):
         kwargs["tools"] = "\n".join([f"{tool.name}: {tool.description}" for tool in self.tools])
         kwargs["tool_names"] = ", ".join([tool.name for tool in self.tools])
         return self.template.format(**kwargs)
-```
+~~~
+
 下面这段代码定义了一个名为 prompt 的变量，类型为 CustomPromptTemplate。该变量通过调用父类 StringPromptTemplate 的构造函数
 进行初始化，传入了三个参数：template、tools 和 input_variables。其中，template 是一个字符串类型的参数，表示提示信息的模板；
 tools 是一个列表类型的参数，表示可用的工具列表；input_variables 是一个列表类型的参数，表示输入变量的名称列表。在本例中，输入变
 量的名称为 input 和 intermediate_steps。
-```
+
+~~~
 prompt = CustomPromptTemplate(
     template=template,
     tools=tools,
     input_variables=["input", "intermediate_steps"]
 )
-```
+~~~
+
 OutputParser负责将 LLM 的输出解析为AgentAction和AgentFinish。这通常在很大程度上取决于所使用的提示。
 这时候您可以更改解析以进行重试、处理空白等的地方。
 
-
-下面这个代码定义了一个名为 output_parser 的变量，类型为 CustomOutputParser。该变量通过调用父类 
+下面这个代码定义了一个名为 output_parser 的变量，类型为 CustomOutputParser。该变量通过调用父类
 AgentOutputParser 的构造函数进行初始化。
 在 CustomOutputParser 类中，定义了一个名为 parse 的方法，用于解析 LLM 输出。该方法接受一个字符串
 类型的参数 llm_output,返回值为 AgentAction 或 AgentFinish 类型的对象。
-在 parse 方法中，首先判断输入的 LLM 输出是否包含 "Final Answer:" 字符串。如果是，则说明已经完成了任务，返回 
+在 parse 方法中，首先判断输入的 LLM 输出是否包含 "Final Answer:" 字符串。如果是，则说明已经完成了任务，返回
 AgentFinish 对象；否则，使用正则表达式从 LLM 输出中提取出动作和输入信息。如果无法提取出动作和输入信息，则抛出异常。
 最后，根据提取出的信息创建 AgentAction 对象并返回。
-```
+
+~~~
 class CustomOutputParser(AgentOutputParser):
     def parse(self, llm_output: str) -> Union[AgentAction, AgentFinish]:
         if "Final Answer:" in llm_output:
@@ -1769,47 +1900,54 @@ class CustomOutputParser(AgentOutputParser):
 
 output_parser = CustomOutputParser()
 llm = OpenAI(temperature=0)
-```
+~~~
+
 定义StopSequence(停止序列)，这很重要，因为它告诉 LLM 何时停止生成。
 
 这在很大程度上取决于您使用的提示和模型。通常，您希望这是您在提示中使用的任何标记来表示一个开始Observation（否则，LLM 可能会为您产生虚拟的Observation）。
 
-```
+~~~
 llm_chain = LLMChain(llm=llm, prompt=prompt)
 #使用列表推导式从 tools 列表中提取出每个工具的名称，并将这些名称存储到 tool_names 列表中。
 tool_names = [tool.name for tool in tools]
-```
+~~~
+
 如下代码传入了如下几个个参数：llm_chain、output_parser、stop和 allowed_tools。
 其中，llm_chain 是一个 LLMChain 对象，表示 LLM 链；
 output_parser 是一个 CustomOutputParser 对象，表示解析 LLM 输出的类；
 allowed_tools 是一个列表，表示可用的工具列表。
-```
+
+~~~
 agent = LLMSingleActionAgent(
     llm_chain=llm_chain, 
     output_parser=output_parser,
     stop=["\nObservation:"], 
     allowed_tools=tool_names
 )
-```
+~~~
+
 下面代码定义了一个名为 agent_executor 的变量，类型为 AgentExecutor。
 该变量通过调用 AgentExecutor 类的构造函数进行初始化。
 在构造函数中，传入了三个参数：agent、tools 和 verbose。
 其中，agent 是一个 LLMSingleActionAgent 对象，表示 LLM 代理；
 tools 是一个列表，表示可用的工具列表；
 verbose 是一个布尔值，表示是否输出详细信息。
-接下来，调用 AgentExecutor 类的 from_agent_and_tools 静态方法，将 agent、tools 和 verbose 
+接下来，调用 AgentExecutor 类的 from_agent_and_tools 静态方法，将 agent、tools 和 verbose
 作为参数传递给它。该方法会返回一个新的 AgentExecutor 对象，用于执行 LLM 任务。
 
-```
+~~~
 agent_executor = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools, verbose=True)
 agent_executor.run("How many people live in canada as of 2023?")
-```
+~~~
+
 #### Self Ask With Search
+
 下面的代码导入了 OpenAI 和 SerpAPIWrapper 模块，以及 initialize_agent、Tool 和 AgentType 类。
 然后，定义了一个名为 llm 的 OpenAI 对象，用于执行 LLM 任务。接着，定义了一个名为 search 的 SerpAPIWrapper 对象，用于搜索答案。
 接下来，定义了一个名为 tools 的列表，其中包含一个名为 Intermediate Answer 的工具对象。该工具对象具有 func 属性，指定了使用
  search.run() 方法来搜索答案。
-```
+
+~~~
 from langchain import OpenAI, SerpAPIWrapper
 from langchain.agents import initialize_agent, Tool
 from langchain.agents import AgentType
@@ -1825,8 +1963,10 @@ tools = [
 #调用 initialize_agent 函数初始化一个代理对象，并将其赋值给 self_ask_with_search 变量。
 self_ask_with_search = initialize_agent(tools, llm, agent=AgentType.SELF_ASK_WITH_SEARCH, verbose=True)
 self_ask_with_search.run("What is the hometown of the reigning men's U.S. Open champion?")
-```
+~~~
+
 ### Toolkits
+
 这部分主要包含一些成了工具的agent
 
 - [CSV Agent](#csv-agent)
@@ -1834,17 +1974,20 @@ self_ask_with_search.run("What is the hometown of the reigning men's U.S. Open c
 - [Vectorstore Agent](#vectorstore-agent)
 
 #### CSV Agent
+
 根据给定的csv文件内容，回复用户问题。
 
-```
+~~~
 from langchain.agents import create_csv_agent
 from langchain.llms import OpenAI
 #我们找了一个titanic生还者名单，里面是一些幸存者的信息，你可以上传一个csv文件，并对csv文件进行基本的询问
 agent = create_csv_agent(OpenAI(temperature=0), 'titanic.csv', verbose=True)
 agent.run("how many rows are there?")
-```
+~~~
+
 显示如下内容：
-```
+
+~~~
 > Entering new AgentExecutor chain...
 Thought: I need to count the number of rows
 Action: python_repl_ast
@@ -1855,13 +1998,15 @@ Final Answer: There are 891 rows in the dataframe.
 
 > Finished chain.
 'There are 891 rows in the dataframe.'
-```
+~~~
 
-```
+~~~
 agent.run("how many people have more than 3 sibligngs")
-```
+~~~
+
 显示如下：
-```
+
+~~~
 > Entering new AgentExecutor chain...
 Thought: I need to count the number of people with more than 3 siblings
 Action: python_repl_ast
@@ -1872,12 +2017,15 @@ Final Answer: 30 people have more than 3 siblings.
 
 > Finished chain.
 '30 people have more than 3 siblings.'
-```
-```
+~~~
+
+~~~
 agent.run("whats the square root of the average age?")
-```
+~~~
+
 显示如下内容：
-```
+
+~~~
 > Entering new AgentExecutor chain...
 Thought: I need to calculate the average age first
 Action: python_repl_ast
@@ -1900,12 +2048,13 @@ Final Answer: 5.449689683556195
 
 > Finished chain.
 '5.449689683556195'
-```
+~~~
 
 #### Python Agent
+
 该代理用于根据用户要求生成或执行一段python代码
 
-```
+~~~
 from langchain.agents.agent_toolkits import create_python_agent
 from langchain.tools.python.tool import PythonREPLTool
 from langchain.python import PythonREPL
@@ -1924,14 +2073,17 @@ agent_executor = create_python_agent(
     tool=PythonREPLTool(),
     verbose=True
 )
-```
+~~~
 
 生成Fibonacci数列
-```
+
+~~~
 agent_executor.run("What is the 10th fibonacci number?")
-```
+~~~
+
 显示如下内容输出：
-```
+
+~~~
 
 
 > Entering new AgentExecutor chain...
@@ -1953,17 +2105,19 @@ Final Answer: 55
 
 > Finished chain.
 '55'
-```
+~~~
 
 训练神经网络
-```
+
+~~~
 agent_executor.run("""Understand, write a single neuron neural network in PyTorch.
 Take synthetic data for y=2x. Train for 1000 epochs and print every 100 epochs.
 Return prediction for x = 5""")
-```
+~~~
 
 #### Vectorstore Agent
-```
+
+~~~
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.text_splitter import CharacterTextSplitter
@@ -2039,12 +2193,13 @@ agent_executor.run("What did biden say about ketanji brown jackson is the state 
 
 agent_executor.run("What did biden say about ketanji brown jackson is the state of the union address? List the source.")
 
-```
+~~~
+
 Multiple Vectorstores
 
 多个矢量存储库，我们也可以很容易地使用这个初始化一个具有多个向量存储的代理，并使用代理在它们之间连接。要做到这一点。这个代理是为连接彼此而优化的，所以它是一个不同的工具包和初始化器。
 
-```
+~~~
 from langchain.agents.agent_toolkits import (
     create_vectorstore_router_agent,
     VectorStoreRouterToolkit,
@@ -2080,7 +2235,8 @@ agent_executor = create_vectorstore_router_agent(
 agent_executor.run("What did biden say about ketanji brown jackson is the state of the union address?")
 agent_executor.run("What tool does ruff use to run over Jupyter Notebooks?")
 agent_executor.run("What tool does ruff use to run over Jupyter Notebooks? Did the president mention that tool in the state of the union?")
-```
+~~~
+
 ## Coding Examples
 
 - [Question answering in documents](#question-answering-in-documents)
@@ -2088,6 +2244,7 @@ agent_executor.run("What tool does ruff use to run over Jupyter Notebooks? Did t
 - [Auto-GPT Assistant](#auto-gpt-assistant)
 
 ### Question answering in documents
+
 问答可以使用不同的chains：stuff，map_reduce，refine和map_rerank
 
 其中的stuff是最常使用的方式；map_reduce可以把输入的数据分割成若干个小的数据块，并在这些小的数据块上独立地执行计算，然后将计算结果进行汇总，从而得到最终的输出结果；refine是根据上下文的信息和一个问题给出一个初步的答案，如果答案不够准确就会迭代根据上下文信息以及之前的回答来提供更好的答案，直到找到最终的最佳答案。
@@ -2095,7 +2252,8 @@ agent_executor.run("What tool does ruff use to run over Jupyter Notebooks? Did t
 详细的文档说明点击👉[此处](https://python.langchain.com/en/latest/use_cases/question_answering.html)👈直接跳转。
 
 下面我们针对这个示例进行逐行的代码解释。
-```
+
+~~~
 import os
 #设置HTTP代理
 os.environ['HTTP_PROXY'] = 'http://127.0.0.1:your port'
@@ -2163,7 +2321,7 @@ chain = load_qa_with_sources_chain(OpenAI(temperature=0), chain_type="stuff", pr
 query = "What did the president say about Justice Breyer"
 #使用chain()方法对给定的文档(docs)和问题(query)进行查询，并返回只包含输出结果的字典。
 chain({"input_documents": docs, "question": query}, return_only_outputs=True)
-```
+~~~
 
 ### BabyAGI with Tools
 
@@ -2179,7 +2337,7 @@ BabyAGI 是一种自主人工智能代理，可以根据给定目标生成并假
 
 那么我们在这个案例开始之前首先得知道什么是BabyAGI对吧？下面是一个BabyAGI的用户操作指南，我们熟悉这个之后再进一步看上面相关的代码案例
 
-```
+~~~
 import os
 #设置HTTP代理
 os.environ['HTTP_PROXY'] = 'http://127.0.0.1:port'
@@ -2216,9 +2374,9 @@ embedding_size = 1536
 index = faiss.IndexFlatL2(embedding_size)
 #embeddings_model.embed_query用于将文本查询转换为嵌入向量，InMemoryDocstore用于在内存中存储文档，最终将其存在vectorstore中
 vectorstore = FAISS(embeddings_model.embed_query, index, InMemoryDocstore({}), {})
-```
+~~~
 
-如果没有安装faiss库，请运行下面的代码，否则跳过下面pip这一步即可,```pip install faiss-cpu```
+如果没有安装faiss库，请运行下面的代码，否则跳过下面pip这一步即可,~~~pip install faiss-cpu~~~
 
 定义链
 
@@ -2237,7 +2395,7 @@ BabyAGI 依赖于三个 LLM 链：
 输入变量："result"、"task_description"、"incomplete_tasks"、"objective" 和 "previous_task_result"。最后，
 它使用cls()方法创建一个LLMChain对象，并将其保存在task_creation_chain变量中。
 
-```
+~~~
 class TaskCreationChain(LLMChain):
     @classmethod
     def from_llm(cls, llm: BaseLLM, verbose: bool = True) -> LLMChain:
@@ -2270,7 +2428,7 @@ class TaskCreationChain(LLMChain):
             ],
         )
         return cls(prompt=prompt, llm=llm, verbose=verbose)
-```
+~~~
 
 下面这段代码定义了一个名为TaskPrioritizationChain的类，它是LLMChain类的子类。该类的目的是确定任务的优先级，并返回llmchain对象。
 在类定义中，有一个静态方法from_llm(),它接受一个BaseLLM对象和一个布尔类型的verbose参数作为输入，并返回一个LLMChain对象。该方法
@@ -2278,7 +2436,8 @@ class TaskCreationChain(LLMChain):
 PromptTemplate类，该类用于将模板(template)与输入变量(input_variables)绑定起来。我们可以看到模板包括了三个输入变量：
 "task_names"、"next_task_id"和"objective"。最后，它使用cls()方法创建一个LLMChain对象，并将其保存在task_prioritization_chain
 这个变量中。
-```
+
+~~~
 class TaskPrioritizationChain(LLMChain):
     @classmethod
     def from_llm(cls, llm: BaseLLM, verbose: bool = True) -> LLMChain:
@@ -2296,13 +2455,15 @@ class TaskPrioritizationChain(LLMChain):
             input_variables=["task_names", "next_task_id", "objective"],
         )
         return cls(prompt=prompt, llm=llm, verbose=verbose)
-```
+~~~
+
 下面的这段代码定义了一个名为ExecutionChain的类，它是LLMChain类的子类。该类的目的是执行任务，并返回llmchain对象。在类定义
 中，有一个静态方法from_llm(),它接受一个BaseLLM对象和一个布尔类型的verbose参数作为输入，并返回一个LLMChain对象。该方法
 使用了一个execution_template字符串来生成一个提示(prompt),该提示用于指导AI完成任务的执行。接下来，该代码还定义了一个
 PromptTemplate类，该类用于将模板(template)与输入变量(input_variables)绑定起来。在这个例子中，模板包括了三个输入变量：
 "objective"、"context" 和 "task"。最后，它使用cls()方法创建一个LLMChain对象，并将其保存在execution_chain变量中。
-```
+
+~~~
 class ExecutionChain(LLMChain):
     @classmethod
     def from_llm(cls, llm: BaseLLM, verbose: bool = True) -> LLMChain:
@@ -2318,12 +2479,14 @@ class ExecutionChain(LLMChain):
             input_variables=["objective", "context", "task"],
         )
         return cls(prompt=prompt, llm=llm, verbose=verbose)
-```
+~~~
+
 定义 BabyAGI 控制器
 
 BabyAGI 将上面定义的链组合成一个（可能）无限循环的闭环运行过程。
 
 这个过程如下：
+
 1. 从任务列表中提取第一个任务.
 2. 将任务发送给执行代理, 该代理使用 OpenAI API 根据上下文完成任务.
 3. 润色结果并将其存储.
@@ -2333,7 +2496,8 @@ BabyAGI 将上面定义的链组合成一个（可能）无限循环的闭环运
 这里用到的三链中的第一链task_creation_chian去构建任务列表，然后在chain.run的方法中将变量均以input_variables
 的形式传入模版中完成补全，而响应的结果以'\n'分割开来并储存到new_tasks变量中，最终get_next_task方法返回一个将字典包
 装起来的列表
-```
+
+~~~
 def get_next_task(
     task_creation_chain: LLMChain,
     result: Dict,
@@ -2354,7 +2518,8 @@ def get_next_task(
     new_tasks = response.split("\n")
     #返回一个包含所有新任务信息的列表，其中每个任务信息都由一个"task_name"键组成。
     return [{"task_name": task_name} for task_name in new_tasks if task_name.strip()]
-```
+~~~
+
 如下这段代码定义了一个名为prioritize_tasks的函数，它接受四个参数：task_prioritization_chain、this_task_id、task_list和objective。
 该函数的目的是根据当前任务和目标设定，对任务列表进行优先级排序，并返回一个按照优先级排序的任务列表(List[Dict])。在函数中，首先将task_list
 中的每个任务字典(t)的任务名称(task_name)提取出来，生成一个任务名称列表(task_names)。然后将当前的任务ID(this_task_id)转换成整数，并加1,
@@ -2364,7 +2529,8 @@ def get_next_task(
 然后，使用for循环遍历new_tasks列表中的每个任务字符串(task_string),如果这个字符串是空的字符串或只包含空格就跳过这次循环。
 接着，使用strip()方法去除首位空格，强制将任务字符串分成两部分，分割符号是“.”。如果分割后得到的列表长度等于2,即成功拆分出task_id和task_name,
 则将它们添加到prioritized_task_list列表中。最后，该函数返回prioritized_task_list列表。
-```
+
+~~~
 def prioritize_tasks(
     task_prioritization_chain: LLMChain,
     this_task_id: int,
@@ -2397,13 +2563,15 @@ def prioritize_tasks(
             task_name = task_parts[1].strip()
             prioritized_task_list.append({"task_id": task_id, "task_name": task_name})
     return prioritized_task_list
-```
+~~~
+
 下面这段代码定义了一个名为_get_top_tasks的函数，该函数接受三个参数：vectorstore(一个向量存储库),query(查询语句)和k(要返回的结果数量)。
 该函数的目的是根据查询语句返回与查询最相关的前k个向量及其对应的任务名称。函数首先调用vectorstore对象的similarity_search_with_score方法
 进行相似度搜索，并将结果存储在results中。如果没有找到任何匹配项，则函数返回空列表。否则，函数使用Python内置的sorted函数对results中的元素
 按照相似性分数从大到小进行排序。该函数使用lambda表达式指定按第二个元素(即分数)进行排序，并使用reverse=True参数以倒序方式排序。然后，函数
 将排序后的结果拆分为两个元组，并将每个元组中的task_names转换为字符串，最后将这些字符串作为列表返回。
-```
+
+~~~
 def _get_top_tasks(vectorstore, query: str, k: int) -> List[str]:
     """Get the top k tasks based on the query."""
     #由vectorstore的相似度计算函数进行计算，返回的是最相似的K个向量以及其相似分数，存储在results中，这个里面并没有排序之后的结果
@@ -2415,12 +2583,14 @@ def _get_top_tasks(vectorstore, query: str, k: int) -> List[str]:
     sorted_results, _ = zip(*sorted(results, key=lambda x: x[1], reverse=True))
     #将sorted_results列表中的每一个向量对应的task_names（存储在metadata["task"]中）转换为字符串，并以列表的形式返回
     return [str(item.metadata["task"]) for item in sorted_results]
-```
+~~~
+
 下面这段代码定义了一个名为execute_task的函数，该函数接受四个参数：vectorstore(一个向量存储库)、execution_chain(执行链对象)、
 objective(目标字符串)和task(要执行的任务字符串)。该函数的目的是根据给定的目标和任务执行指定的向量计算。函数首先调用_get_top_tasks函数
 获取与目标最相关的前k个向量及其对应的任务名称，并将结果存储在context变量中。然后，函数调用execution_chain.run()方法，将目标、上下文和
 任务作为参数传递给它。最后，函数返回执行结果。
-```
+
+~~~
 
 def execute_task(
     vectorstore, execution_chain: LLMChain, objective: str, task: str, k: int = 5
@@ -2428,7 +2598,8 @@ def execute_task(
     """Execute a task."""
     context = _get_top_tasks(vectorstore, query=objective, k=k)
     return execution_chain.run(objective=objective, context=context, task=task)
-```
+~~~
+
 定义了一个名为BabyAGI的类，继承了Chain和BaseModel类。
 BabyAGI类用于控制模型的执行流程，其中定义了如下内容：
 task_list是一个deque类型，用于存储任务列表；
@@ -2443,7 +2614,8 @@ print_task_result方法用于打印任务执行结果；
 get_next_task方法用于获取下一个任务；
 prioritize_tasks方法用于重新排序任务列表。
 在类定义中还定义了一个Config类，用于配置pydantic对象，其中arbitrary_types_allowed属性设置为True表示允许任意类型。
-```
+
+~~~
 class BabyAGI(Chain, BaseModel):
     """Controller model for the BabyAGI agent."""
     #定义了task_list，类型为deque，使用field作为字段验证器，设置了默认工厂函数为deque，也就是创建一个空的双端队列作为默认值
@@ -2556,9 +2728,11 @@ class BabyAGI(Chain, BaseModel):
                 )
                 break
         return {}
-```
+~~~
+
 下面是一个类方法，用于从LLM(Language Model)实例中初始化BabyAGI控制器。该类方法接受四个参数：llm、vectorstore、verbose和kwargs。其中，llm表示LLM实例，vectorstore表示向量存储实例，verbose表示是否启用详细输出模式，kwargs表示其他可选参数。在类方法中，首先调用TaskCreationChain.from_llm()和TaskPrioritizationChain.from_llm()方法分别创建任务创建链和任务排序链。然后调用ExecutionChain.from_llm()方法创建执行链。最后使用这些链和vectorstore以及传入的其他参数来创建一个BabyAGI类实例并返回。
-```
+
+~~~
     @classmethod
     def from_llm(
         cls, llm: BaseLLM, vectorstore: VectorStore, verbose: bool = False, **kwargs
@@ -2576,8 +2750,9 @@ class BabyAGI(Chain, BaseModel):
             vectorstore=vectorstore,
             **kwargs,
         )
-```
-运行 BabyAGI 
+~~~
+
+运行 BabyAGI
 
 现在是创建 BabyAGI 控制器并观察它尝试实现您的目标的时候了。
 定义了三个变量：verbose、max_iterations和baby_agi。
@@ -2585,7 +2760,8 @@ verbose:这是一个布尔类型的变量，初始值为False。它表示是否�
 max_iterations:这是一个可选整数类型的变量，初始值为3。它表示BabyAGI控制器的最大迭代次数。如果没有指定，则默认为3。
 baby_agi:这是从LLM实例中初始化BabyAGI控制器的结果。它是一个BabyAGI类的对象，包含了从LLM实例中生成的任务列表、执行任务的
 链以及向量存储等信息。
-```
+
+~~~
 OBJECTIVE = "Make a plan to travel around the world for a month"
 llm = OpenAI(temperature=0)
 
@@ -2595,9 +2771,11 @@ baby_agi = BabyAGI.from_llm(
     llm=llm, vectorstore=vectorstore, verbose=verbose, max_iterations=max_iterations
 )
 baby_agi({"objective": OBJECTIVE})
-```
+~~~
+
 显示如下内容：
-```
+
+~~~
 *****TASK LIST*****
 
 1: Make a todo list
@@ -2626,12 +2804,13 @@ baby_agi({"objective": OBJECTIVE})
 I will research local transportation costs by looking up the cost of flights, trains, buses, and other forms of transportation in each of the countries I plan to visit. I will also look into the cost of renting a car or taking a taxi in each country. Additionally, I will research any discounts or promotions that may be available for transportation costs.
 
 *****TASK ENDING*****
-```
+~~~
 
 现在，我们熟悉了BabyAGI的基本操作，现在看一下有关它的代码案例吧,下面的案例将会用到谷歌的搜索API，可以使agent进行联网搜索并完成任务规划
 
 首先是导入相关库
-```
+
+~~~
 import os
 from collections import deque
 from typing import Dict, List, Optional, Any
@@ -2642,17 +2821,20 @@ from langchain.llms import BaseLLM
 from langchain.vectorstores.base import VectorStore
 from pydantic import BaseModel, Field
 from langchain.chains.base import Chain
-```
-连接到 Vector Store 
+~~~
+
+连接到 Vector Store
 
 根据您使用的矢量存储，此步骤可能看起来有所不同。
-```
+
+~~~
 %pip install faiss-cpu > /dev/null
 %pip install google-search-results > /dev/null
 from langchain.vectorstores import FAISS
 from langchain.docstore import InMemoryDocstore
-```
-```
+~~~
+
+~~~
 #embeddings_model:这是一个OpenAIEmbeddings类的对象，用于将查询嵌入到模型中以生成相似度向量。
 #它包含了一个embed_query()方法，用于将查询嵌入到指定的维度中。
 embeddings_model = OpenAIEmbeddings()
@@ -2665,9 +2847,11 @@ index = faiss.IndexFlatL2(embedding_size)
 #vectorstore:这是一个FAISS类型的对象，用于存储嵌入向量。它与index一起使用，可以将查询嵌入到指定的
 #维度中并存储到内存中以供快速查找。在创建vectorstore时，需要传入embeddings_model.embed_query()方法的结果作为输入。"""
 vectorstore = FAISS(embeddings_model.embed_query, index, InMemoryDocstore({}), {})
-```
+~~~
+
 下面的定义链的过程，同上，大同小异，这里就不再赘述：
-```
+
+~~~
 class TaskCreationChain(LLMChain):
     @classmethod
     def from_llm(cls, llm: BaseLLM, verbose: bool = True) -> LLMChain:
@@ -2692,8 +2876,9 @@ class TaskCreationChain(LLMChain):
             ],
         )
         return cls(prompt=prompt, llm=llm, verbose=verbose)
-```
-```
+~~~
+
+~~~
 class TaskPrioritizationChain(LLMChain):
     @classmethod
     def from_llm(cls, llm: BaseLLM, verbose: bool = True) -> LLMChain:
@@ -2712,9 +2897,11 @@ class TaskPrioritizationChain(LLMChain):
             input_variables=["task_names", "next_task_id", "objective"],
         )
         return cls(prompt=prompt, llm=llm, verbose=verbose)
-```
+~~~
+
 谷歌搜索api我们会用到，因此在这里需要加入：
-```
+
+~~~
 from langchain.agents import ZeroShotAgent, Tool, AgentExecutor
 from langchain import OpenAI, SerpAPIWrapper, LLMChain
 
@@ -2753,7 +2940,8 @@ prompt = ZeroShotAgent.create_prompt(
     suffix=suffix,
     input_variables=["objective", "task", "context", "agent_scratchpad"],
 )
-```
+~~~
+
 定义AGI controller， 为了把三个定义链组成成一个循环的链进入下面的步骤：首先是这个函数，其作用是获取下一个任务。
 它首先将之前执行过的任务列表转换为字符串，并将其作为参数传递给任务创建链的run方法。
 然后，它从任务创建链的响应中提取出新任务，并将它们存储在一个列表中。最后，它返回一
@@ -2764,7 +2952,8 @@ result: Dict类型，表示之前执行任务的结果。
 task_description: str类型，表示要为新任务生成的任务描述。
 task_list: List[str]类型，表示之前执行过的任务列表。
 objective: str类型，表示任务的目标。
-```
+
+~~~
 def get_next_task(
     task_creation_chain: LLMChain,
     result: Dict,
@@ -2782,7 +2971,8 @@ def get_next_task(
     )
     new_tasks = response.split("\n")
     return [{"task_name": task_name} for task_name in new_tasks if task_name.strip()]
-```
+~~~
+
 接下来是这个函数，该函数的作用是确定每个任务的优先级。它首先将任务列表中的所有任务名称提取出来，并将其存储在一个列表中。
 然后，它计算下一个任务的ID,并将其作为参数传递给任务优先级创建链的run方法。接下来，它从任务优先级创建链的
 响应中提取出新任务，并将它们存储在一个列表中。最后，它遍历新任务列表中的每个任务字符串，并使用空格分隔符将
@@ -2792,7 +2982,8 @@ task_prioritization_chain: LLMChain类型，表示任务优先级创建链。
 this_task_id: int类型，表示当前任务的ID。
 task_list: List[Dict]类型，表示所有任务的列表。
 objective: str类型，表示任务的目标。
-```
+
+~~~
 def prioritize_tasks(
     task_prioritization_chain: LLMChain,
     this_task_id: int,
@@ -2816,14 +3007,15 @@ def prioritize_tasks(
             task_name = task_parts[1].strip()
             prioritized_task_list.append({"task_id": task_id, "task_name": task_name})
     return prioritized_task_list
-```
+~~~
+
 接着是下面这个函数，
 该函数的作用是根据查询语句返回与查询最相关的k个任务名称。它首先调用相似向量存储对象的similarity_search_with_score方法
 来执行查询，并将结果存储在results变量中。如果没有结果，则函数返回空列表。否则，它使用zip和sorted函数来按相关性对结果进行
 排序，并将结果存储在sorted_results变量中。最后，它遍历sorted_results中的每个项目，并从其元数据中提取任务名称，并将其存
 储在一个列表中，最终返回该列表。
 
-```
+~~~
 def _get_top_tasks(vectorstore, query: str, k: int) -> List[str]:
     """Get the top k tasks based on the query."""
     results = vectorstore.similarity_search_with_score(query, k=k)
@@ -2831,10 +3023,12 @@ def _get_top_tasks(vectorstore, query: str, k: int) -> List[str]:
         return []
     sorted_results, _ = zip(*sorted(results, key=lambda x: x[1], reverse=True))
     return [str(item.metadata["task"]) for item in sorted_results]
-```
+~~~
+
 下面这个函数的作用是执行给定的任务。它首先调用名为“_get_top_tasks”的辅助函数来获取与任务目标相关的前k个任务列表，并将结果存储
 在context变量中。然后，它将上下文作为参数传递给执行链的run方法，以执行任务。最后，该函数返回执行结果。
-```
+
+~~~
 
 def execute_task(
     vectorstore, execution_chain: LLMChain, objective: str, task: str, k: int = 5
@@ -2842,7 +3036,7 @@ def execute_task(
     """Execute a task."""
     context = _get_top_tasks(vectorstore, query=objective, k=k)
     return execution_chain.run(objective=objective, context=context, task=task)
-```
+~~~
 
 我们接着定义了一个控制模拟AI代理行为的类，可以添加任务、执行任务并输出结果。它还提供了一些配置选项，以便在运行时自定义类的行为。
 task_list: 一个双向队列，存储了任务列表；
@@ -2860,7 +3054,7 @@ print_task_result(result): 打印任务结果；
 input_keys: 输入关键字列表；
 output_keys: 输出关键字列表。
 
-```
+~~~
 class BabyAGI(Chain, BaseModel):
     """Controller model for the BabyAGI agent."""
 
@@ -2960,10 +3154,12 @@ class BabyAGI(Chain, BaseModel):
                 )
                 break
         return {}
-```
+~~~
+
 首先使用TaskCreationChain.from_llm()和TaskPrioritizationChain.from_llm()方法
 分别创建任务创建链和任务优先级链。然后使用LLMChain()方法创建一个LLM链，并使用ZeroShotAgent()方法创建一个ZeroShotAgent。最后使用AgentExecutor.from_agent_and_tools()方法创建一个代理执行器。最后，该方法返回一个由这些对象组成的BabyAGI控制器对象。
-```
+
+~~~
     @classmethod
     def from_llm(
         cls, llm: BaseLLM, vectorstore: VectorStore, verbose: bool = False, **kwargs
@@ -2986,12 +3182,13 @@ class BabyAGI(Chain, BaseModel):
             vectorstore=vectorstore,
             **kwargs,
         )
-```
+~~~
 
-运行 BabyAGI 
+运行 BabyAGI
 
 现在是创建 BabyAGI 控制器并观察它尝试实现您的目标的时候了。
-```
+
+~~~
 OBJECTIVE = "Write a weather report for Beijing today"
 llm = OpenAI(temperature=0)
 #Logging of LLMChains
@@ -3002,9 +3199,11 @@ baby_agi = BabyAGI.from_llm(
     llm=llm, vectorstore=vectorstore, verbose=verbose, max_iterations=max_iterations
 )
 baby_agi({"objective": OBJECTIVE})
-```
+~~~
+
 运行程序显示如下：
-```
+
+~~~
 1: Make a todo list
 
 *****NEXT TASK*****
@@ -3030,25 +3229,26 @@ Observation:
 ...
 The current air quality in Beijing is Unhealthy for Sensitive Groups (USG).
 *****TASK ENDING*****
-```
+~~~
 
-### Auto-GPT Assistant 
+### Auto-GPT Assistant
+
 <img src="./autogpt.png"  height="20%"/>
 首先我们对AutoGPT基于langchain进行相应地实现,以便了解其原理与步骤
 首先建立tools，定义search tool, write-file tool, read-file tool
 安装一些我们这个栏目中即将要使用到的库函数
 
-```
+~~~
 %pip install duckduckgo_search
 %pip install playwright
 %pip install bs4
 %pip install nest_asyncio
 %pip install tiktoken
-```
+~~~
 
 配置程序运行代理以及相关API Key
 
-```
+~~~
 import os
 #设置HTTP代理
 os.environ['HTTP_PROXY'] = 'http://127.0.0.1:xxxx'
@@ -3059,9 +3259,11 @@ os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:xxxx'
 os.environ["OPENAI_API_KEY"] = "sk-xxxxxxxxxxxx"
 #谷歌搜索api的key,仅在agent中使用
 os.environ['SERPAPI_API_KEY']='--------------Your API KEY----------------------'
-```
+~~~
+
 以下的代码注释由于在Coding Examples中已经出现过，将对于重复的部分不再特别添加注释说明，如依然有疑问请参阅完整的[Coding Examples](#coding-exampls)
-```
+
+~~~
 from langchain.utilities import SerpAPIWrapper
 from langchain.agents import Tool
 from langchain.tools.file_management.write import WriteFileTool
@@ -3090,7 +3292,8 @@ index = faiss.IndexFlatL2(embedding_size)
 vectorstore = FAISS(embeddings_model.embed_query, index, InMemoryDocstore({}), {})
 from langchain.experimental.autonomous_agents.autogpt.agent import AutoGPT
 from langchain.chat_models import ChatOpenAI
-```
+~~~
+
 下面是使用AutoGPT创建一个名为"agent"的智能代理。具体来说，该智能代理将扮演一个助理的角色，
 并使用指定的工具和语言模型(在这里是ChatOpenAI)来与用户进行交互。其中，参数ai_name指定了智能
 代理的名称为"Tom",ai_role指定了其角色为助理；参数tools指定了智能代理可以使用的工具列表；参数
@@ -3098,7 +3301,8 @@ llm指定了智能代理的语言模型为ChatOpenAI,并将其温度设置为0,�
 参数memory指定了智能代理使用的检索器为vectorstore.as_retriever()。
 通过这部分代码，我们可以创建一个具有自定义角色、工具和语言模型的智能代理，并使用指定的检索器来获
 取信息。
-```
+
+~~~
 agent = AutoGPT.from_llm_and_tools(
     ai_name="Tom",
     ai_role="Assistant",
@@ -3108,11 +3312,11 @@ agent = AutoGPT.from_llm_and_tools(
 )
 agent.chain.verbose = True
 agent.run(["make a plan to travel around the China for a month, and give me five advices"])
-```
+~~~
 
 运行代码最终将会在当前目录下新建出很多的txt文件，包括不限于china_trip_plan.txt, china_info.txt, budge.txt, flight_info.txt等文件，您可以通过运行该noteboook代码进行体验。由于运行过程中需要finish的中断命令，因此我们上面运行的程序将部分运行结果放置在这里：
 
-```
+~~~
 OUT：
 
 
@@ -3255,10 +3459,11 @@ System: This reminds you of these events from your past:
 
 
 Human: Determine which next command to use, and respond using the format specified above:[0m
-```
+~~~
+
 如下的示例是用AutoGPT进行Winning Marathon Times的查找。该示例代码中使用到的model是GPT-4，因此需要提前准备好GPT-4调用需要的环境条件
 
-```
+~~~
 import os
 import pandas as pd
 from langchain.experimental.autonomous_agents.autogpt.agent import AutoGPT
@@ -3410,7 +3615,8 @@ def _get_text_splitter():
         chunk_overlap  = 20,
         length_function = len,
     )
-```
+~~~
+
 如下代码定义了一个名为WebpageQATool的类，该类继承自BaseTool类。在类中，我们定义了一些属性和方法，用于实现浏览网页并提取文本信息的功能。具体来说，
 我们定义了一个名为text_splitter的属性，用于存储文本分割器对象；定义了一个名为qa_chain的属性，用于存储qa链对象；实现了run方法和异步run方
 法，分别用于执行具体任务的逻辑。在run方法中，我们首先调用browse_web_page.run方法浏览网页并提取文本信息。然后，我们将提取到的文本信息存储
@@ -3418,7 +3624,8 @@ def _get_text_splitter():
 中，我们同样调用browse_web_page.run方法浏览网页并提取文本信息。但是，由于异步操作需要等待任务完成才能继续执行下一步操作，因此我们需要在函
 数中使用await关键字来等待任务的完成。需要注意的是，目前在异步run方法中还存在一些未实现的功能。具体来说，我们在函数末尾使用了
 raise NotImplementedError语句，这表示尚未实现该方法。因此，在实际应用中，如果需要使用异步run方法，则需要先完成未实现的部分。
-```
+
+~~~
 class WebpageQATool(BaseTool):
     #定义类名和描述信息
     name = "query_webpage"
@@ -3483,6 +3690,6 @@ agent = AutoGPT.from_llm_and_tools(
 #agent.chain.verbose = True
 
 agent.run(["What were the winning boston marathon times for the past 5 years (ending in 2022)? Generate a table of the year, name, country of origin, and times."])
-```
-## 🌹 上述内容来自于[LangChain官网教程](https://python.langchain.com/en/latest/index.html)并有适当的更改，如有商业化等行为我们会特别说明。该文档请勿随意转载，如有相关建议或者更改需求，请与[我们取得联系✉️](helloegoalpha@gmail.com)，再次感谢！
+~~~
 
+## 🌹 上述内容来自于[LangChain官网教程](https://python.langchain.com/en/latest/index.html)并有适当的更改，如有商业化等行为我们会特别说明。该文档请勿随意转载，如有相关建议或者更改需求，请与[我们取得联系✉️](helloegoalpha@gmail.com)，再次感谢
