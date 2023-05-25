@@ -35,58 +35,59 @@ export default defineConfig({
               },
               {
                 text: '实践篇章',
-                link: 'zh/principle',
+                link: 'zh/practicalchapter',
                 items: [
-                  {
-                  text: '设计原则', link: 'zh/principle#design-principle',
-                }, 
                 {
-                  text: '框架', link: 'zh/principle#framework',
-                },
-                {
-                  text: 'ChatGPT 使用指南', link: 'zh/principle#framework',items:[
-                    {text: '帮助我们学习', link: 'zh/principle#framework',items:[
-                      {text: '阅读和写作', link: 'zh/principle#framework'},
-                      {text: '学习与编程', link: 'zh/principle#framework'}
+                  text: 'ChatGPT 使用指南', link: 'zh/chatgptprompt#🌋-chatgpt-提示使用指南',items:[
+                    {text: '帮助我们学习', link: 'zh/chatgptprompt#帮助我们学习',items:[
+                      {text: '阅读和写作', link: 'zh/chatgptprompt#阅读与写作'},
+                      {text: '学习与编程', link: 'zh/chatgptprompt#学习编程'}
                     ]},
-                    {text: '协助我们工作', link: 'zh/principle#framework',items:[
-                      {text: '竞争分析', link: 'zh/principle#framework'},
-                      {text: '客户服务', link: 'zh/principle#framework'},
-                      {text: '协助软件开发', link: 'zh/principle#framework'},
-                      {text: '视频编辑', link: 'zh/principle#framework'},
-                      {text: '初创企业', link: 'zh/principle#framework'},
-                      {text: '教育工作', link: 'zh/principle#framework'}
+                    {text: '协助我们工作', link: 'zh/chatgptprompt#协助我们的工作',items:[
+                      {text: '竞争分析', link: 'zh/chatgptprompt#竞争分析'},
+                      {text: '客户服务', link: 'zh/chatgptprompt#客户服务'},
+                      {text: '协助软件开发', link: 'zh/chatgptprompt#协助软件开发'},
+                      {text: '视频编辑', link: 'zh/chatgptprompt#视频编辑'},
+                      {text: '初创企业', link: 'zh/chatgptprompt#初创企业'},
+                      {text: '教育工作', link: 'zh/chatgptprompt#教育工作'}
                     ]},
-                    {text: '丰富我们的经验', link: 'zh/principle#framework',items:[
-                      {text: '辩论比赛模拟 ', link: 'zh/principle#framework'},
-                      {text: '模拟面试', link: 'zh/principle#framework'},
-                      {text: '演讲稿设计', link: 'zh/principle#framework'},
+                    {text: '丰富我们的经验', link: 'zh/chatgptprompt#丰富我们的经验',items:[
+                      {text: '辩论比赛模拟 ', link: 'zh/chatgptprompt#辩论比赛模拟'},
+                      {text: '模拟面试', link: 'zh/chatgptprompt#模拟面试'},
+                      {text: '演讲稿设计', link: 'zh/chatgptprompt#演讲稿设计'},
                     ]},
-                    {text: '方便我们的生活', link: 'zh/principle#framework',items:[
-                      {text: '运动与健身', link: 'zh/principle#framework'},
-                      {text: '音乐与艺术', link: 'zh/principle#framework'},
-                      {text: '旅游指南', link: 'zh/principle#framework'},
-                      {text: '学习厨艺', link: 'zh/principle#framework'},
+                    {text: '方便我们的生活', link: 'zh/chatgptprompt#方便我们的生活',items:[
+                      {text: '运动与健身', link: 'zh/chatgptprompt#运动与健身'},
+                      {text: '音乐与艺术', link: 'zh/chatgptprompt#音乐与艺术'},
+                      {text: '旅游指南', link: 'zh/chatgptprompt#旅游指南'},
+                      {text: '学习厨艺', link: 'zh/chatgptprompt#学习厨艺'},
                     ]}
                   ] 
                 },
                 {
-                  text: '使用LangChain操作大模型', link: 'zh/principle#framework',items:[
-                    {text: '开始之前', link: 'zh/principle#framework'},
-                    {text: '模型', link: 'zh/principle#framework'},
-                    {text: '提示', link: 'zh/principle#framework'},
-                    {text: '索引', link: 'zh/principle#framework'},
-                    {text: '存储', link: 'zh/principle#framework'},
-                    {text: '链', link: 'zh/principle#framework'},
-                    {text: '代理', link: 'zh/principle#framework'},
-                    {text: '代码样例', link: 'zh/principle#framework'},
+                  text: '使用LangChain操作大模型', link: 'zh/langchainguide/guide#🎇-langchain',items:[
+                    {text: '开始之前', link: 'zh/langchainguide/guide#before-start'},
+                    {text: '模型', link: 'zh/langchainguide/guide#models'},
+                    {text: '提示', link: 'zh/langchainguide/guide#prompt'},
+                    {text: '索引', link: 'zh/langchainguide/guide#index'},
+                    {text: '存储', link: 'zh/langchainguide/guide#memory'},
+                    {text: '链', link: 'zh/langchainguide/guide#chains'},
+                    {text: '代理', link: 'zh/langchainguide/guide#agents'},
+                    {text: '代码样例', link: 'zh/langchainguide/guide#coding-examples'},
                   ]
                 },],
               },
               {
-                text: '方法篇',
-                link: 'zh/principle',
-                items: [{
+                text: '方法篇章',
+                link: 'zh/methodchapter',
+                items: [
+                  {
+                    text: '设计原则', link: 'zh/principle#设计原则',
+                  }, 
+                  {
+                    text: '框架', link: 'zh/principle#框架',
+                  },
+                  {
                   text: '基本Prompt', link: '/principle#design-principle',
                 }, 
                 {
@@ -138,16 +139,16 @@ export default defineConfig({
               },
               {
                 text: '理论篇',
-                link: 'zh/principle',
+                link: 'zh/theorychapter',
                 items: [
                 {
                   text: '大语言模型概览', link: 'zh/principle#design-principle',
                 }, 
                 {
-                  text: 'Transformer', link: 'zh/principle#framework',
+                  text: 'Transformer', link: 'zh/Transformer_md/Transformer',
                 },
                 {
-                  text: 'Tokenizer', link: 'zh/principle#framework',
+                  text: 'Tokenizer', link: 'zh/token',
                 },
                 {
                   text: 'BERT', link: 'zh/principle#framework',
@@ -159,38 +160,10 @@ export default defineConfig({
                   text: 'T5', link: 'zh/principle#framework',
                 },],
               },
-              
-              // {
-              //   text: 'Design Principle and Framework',
-              //   link: '/principle',
-              //   items: [{
-              //     text: 'Design Principle', link: '/principle#design-principle',
-              //   }, {
-              //     text: 'Framework', link: '/principle#framework',
-              //   }],
-              // },
-              { text: 'Prompt Techniques', link: '/technique' },
+              // { text: 'Prompt Techniques', link: '/technique' },
             ],
           },
         ],
-        //     items: [
-        //       {
-        //         text: '介绍', link: '/zh/intro',
-        //       },
-        //       {
-        //         text: '设计原则和框架',
-        //         link: '/zh/principle',
-        //         items: [{
-        //           text: '设计原则', link: '/zh/principle#设计原则',
-        //         }, {
-        //           text: '框架', link: '/zh/principle#框架',
-        //         }],
-        //       },
-
-        //       { text: '提示技巧', link: '/zh/technique' },
-        //     ],
-        //   },
-        // ],
 
         socialLinks: [
           { icon: 'github', link: 'https://github.com/EgoAlpha/prompt-in-context-learning' },
@@ -221,15 +194,14 @@ export default defineConfig({
                 text: 'Practical Chapter',
                 link: '/practicalchapter',
                 items: [
-                {
-                  text: 'ChatGPT Usage Guide', link: '/chatgptprompt',items:[
+                  {text: 'ChatGPT Usage Guide', link: '/chatgptprompt#🌋-chatgpt-usage-guide',items:[
                     {text: 'Help us study', link: '/chatgptprompt#help-us-study',items:[
                       {text: 'Reading and Writing', link: '/chatgptprompt#reading-and-writing'},
                       {text: 'Learning and Programming', link: '/chatgptprompt#learning-programming'}
                     ]},
-                    {text: 'Assist in our work', link: '/chatgptprompt/assist-in-our-work',items:[
-                      {text: 'Competition and Analysis', link: '/chatgptprompt#competition-and-analysis'},
-                      {text: 'Customer and Service', link: '/chatgptprompt#customer-and-service'},
+                    {text: 'Assist in our work', link: '/chatgptprompt#assist-in-our-work',items:[
+                      {text: 'Competition and Analysis', link: '/chatgptprompt#competition-analysis'},
+                      {text: 'Customer and Service', link: '/chatgptprompt#customer-service'},
                       {text: 'Aid in Software Development', link: '/chatgptprompt#aid-in-software-development'},
                       {text: 'Aid in Making Videos', link: '/chatgptprompt#aid-in-making-videos'},
                       {text: 'Start-up', link: '/chatgptprompt#start-up'},
@@ -238,7 +210,7 @@ export default defineConfig({
                     {text: 'Enrich our experience', link: '/chatgptprompt#enrich-our-experience',items:[
                       {text: 'Debate Competition Simulation ', link: '/chatgptprompt#debate-competition-simulation'},
                       {text: 'Mock Interview', link: '/chatgptprompt#mock-interview'},
-                      {text: 'Speech Design', link: '/chatgptprompt#speech-design'},
+                      {text: 'Speech Design', link: '/chatgptprompt#speech-design'}
                     ]},
                     {text: 'Convenient to our lives', link: '/chatgptprompt#convenient-to-our-lives',items:[
                       {text: 'Sports and Fitness', link: '/chatgptprompt#sports-and-fitness'},
@@ -249,22 +221,20 @@ export default defineConfig({
                   ] 
                 },
                 {
-                  text: 'LangChain for LLMs Usage', link: '/principle#framework',items:[
-                    {text: 'Introduction', link: '/principle#framework'},
-                    {text: 'Before Start', link: '/principle#framework'},
-                    {text: 'Models', link: '/principle#framework'},
-                    {text: 'Prompt', link: '/principle#framework'},
-                    {text: 'Index', link: '/principle#framework'},
-                    {text: 'Memory', link: '/principle#framework'},
-                    {text: 'Chains', link: '/principle#framework'},
-                    {text: 'Agents', link: '/principle#framework'},
-                    {text: 'Coding Examples', link: '/principle#framework'},
-                  ]
-                },],
+                  text: 'LangChain for LLMs Usage', link: '/principle#framework',items:[{text: 'Introduction', link: '/principle#framework'},
+                  {text: 'Before Start', link: '/principle#framework'},
+                  {text: 'Models', link: '/principle#framework'},
+                  {text: 'Prompt', link: '/principle#framework'},
+                  {text: 'Index', link: '/principle#framework'},
+                  {text: 'Memory', link: '/principle#framework'},
+                  {text: 'Chains', link: '/principle#framework'},
+                  {text: 'Agents', link: '/principle#framework'},
+                  {text: 'Coding Examples', link: '/principle#framework'}]
+                }],
               },
               {
                 text: 'Methodology Chapter',
-                link: '/principle',
+                link: '/methodchapter',
                 items: [
                 {
                   text: 'Design Principle', link: '/principle#design-principle',
@@ -324,16 +294,16 @@ export default defineConfig({
               },
               {
                 text: 'Theory Chapter',
-                link: '/principle',
+                link: '/theorychapter',
                 items: [
                 {
                   text: 'The Overview of LLM', link: '/principle#design-principle',
                 }, 
                 {
-                  text: 'Transformer', link: '/principle#framework',
+                  text: 'Transformer', link: '/Transformer_md/Transformer',
                 },
                 {
-                  text: 'Tokenizer', link: '/principle#framework',
+                  text: 'Tokenizer', link: '/token',
                 },
                 {
                   text: 'BERT', link: '/principle#framework',
@@ -345,17 +315,7 @@ export default defineConfig({
                   text: 'T5', link: '/principle#framework',
                 },],
               },
-              
-              // {
-              //   text: 'Design Principle and Framework',
-              //   link: '/principle',
-              //   items: [{
-              //     text: 'Design Principle', link: '/principle#design-principle',
-              //   }, {
-              //     text: 'Framework', link: '/principle#framework',
-              //   }],
-              // },
-              { text: 'Prompt Techniques', link: '/technique' },
+              // { text: 'Prompt Techniques', link: '/technique' },
             ],
           },
         ],
@@ -369,13 +329,12 @@ export default defineConfig({
   themeConfig: {
     logo: '/EgoAlpha.svg',
     pinia: {
-      // user:1,
     },
   },
   vite: {
     server: {
       host: '0.0.0.0',
-      hmr: true,
+      hmr: false,
       proxy: {
         '/api': {
           target: 'https://www.motionvision.cn',

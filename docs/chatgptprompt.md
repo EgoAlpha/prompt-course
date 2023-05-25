@@ -68,6 +68,7 @@ ChatGPT can act as a tutor or teaching assistant whether you're trying to learn 
    - 👁️ **[Prompt example]**:```Can you explain how {recursion} works in programming and provide an example?```
 - **Code Snippets**:Chat GPT can offer code snippets to provide quick and easy solutions to programming problems. These snippets can be customized and reused as needed.
    - 👁️ **[Prompt example]**:```Can you provide a code snippet in {Python} for {function to be implemented}?```
+   
 ## Assist in our work
 ChatGPT can become your own personal assistant that can aiding in our work, manage our daily tasks and organize our schedules.
 
@@ -91,6 +92,7 @@ ChatGPT can become your own personal assistant that can aiding in our work, mana
    - 👁️ **[Prompt example]**:```I'm an {Please enter your product} after-sales customer service person, you play the role of the very difficult and rude complaining customer and we have a conversation, got it?```
 - **Customer Service Improvement**:Chat GPT can provide customer service conversation improvement, analyze customer service performance and give scores and suggestions for improvement based on customer service conversations with complaining customers, helping customer service improve service quality and conversation skills.
    - 👁️ **[Prompt example]**:```I am an {Please enter your product} after-sales customer service agent. How should I improve my conversation based on my scoring of the conversation with the complaining customer and an example of how I should improve my conversation? The conversation went as follows:{Please enter your conversation}```
+
 ### Aid in software development
 
 - **Personalized code recommendations**:Chat GPT can analyze a developer's code history and provide personalized recommendations on libraries, frameworks, or design patterns that could be beneficial for the developer's project. This feature can help developers stay up to date on the latest trends and best practices in software development.
@@ -113,6 +115,7 @@ ChatGPT can become your own personal assistant that can aiding in our work, mana
    - 👁️ **[Prompt example]**:```Analyze the following code and suggest how to fix the error: {ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()}```
 - **Natural language processing**:Chat GPT can interpret natural language queries and provide relevant code snippets or documentation. This feature can be useful for developers who are new to a particular language or framework and need help finding the right syntax or documentation.
    - 👁️ **[Prompt example]**:```Provide a code example for how to use the {PyTorch library} for    {loading and processing images for image recognition}.```
+
 ### Aid in making videos
 
 - **Thumbnail generation**:Chat GPT can help you generate eye-catching thumbnails for your videos that are more likely to attract clicks and views. It can analyze your video content and suggest visual elements that are likely to be attention-grabbing.
@@ -127,6 +130,7 @@ ChatGPT can become your own personal assistant that can aiding in our work, mana
    - 👁️ **[Prompt example]**:```Generate a video transcript for a cooking tutorial that teaches viewers how to make {a vegan lasagna} from scratch. The transcript should include step-by-step instructions, ingredient lists, and cooking times for each step. It should also highlight any special techniques or tips , and provide alternative ingredient options for viewers with dietary restrictions.```
 - **Idea generation**:One of the key features of Chat GPT is its ability to generate high-quality content. You can use this feature to come up with new video ideas or even generate entire scripts for your YouTube channel. Simply provide the model with some prompts or keywords, and it will generate content based on them.
    - 👁️ **[Prompt example]**:```Act as a YouTube content creator, you are always looking for fresh ideas to attract your audience and come up with new video ideas. Share some possible creative ideas based on the provided keywords. Keywords: {Paste your keywords}```
+
 ### Start-up
 
 - **Field planning**:Chat GPT can provide venture capitalists with personalized field planning suggestions, and recommend investment fields with the greatest investment potential based on market trends and technological innovations.
@@ -153,6 +157,7 @@ ChatGPT can become your own personal assistant that can aiding in our work, mana
    - 👁️ **[Prompt example]**:```Let’s assume that our main value proposition is focused on { Input brand value proposition }. What would be some potential key features of the product that we should consider testing?```
 - **Customer Experimental Design**:Chat GPT can provide help with experimental design, such as providing possible experimental design scenarios when testing hypotheses about the feasibility of customer acquisition costs.
    - 👁️ **[Prompt example]**:```Can you create a simple (maximum 100 words) experiment based on our brand {Enter your brand} and product {Enter your product}， I could use to test the assumptions around the viability of CAC (customer acquisition cost)?```
+   
 ### Educational work
 
 - **List of knowledge points**:ChatGPT can help you list the most important knowledge points in the selected chapters of your designated discipline,
