@@ -1,4 +1,4 @@
-# Practical Chapter
+<!-- # Practical Chapter
 
 ## Contents
 
@@ -8,25 +8,25 @@ This chapter is divided into two major sections, namely, ChatGPT Usage Guide and
 
 The outline of the content included in this section is as follows: You can click on the relevant content directly for easy navigation and reference.
 
-- [Help us study](./chatgptprompt.md#help-us-study)
-  - [Reading and writing](./chatgptprompt.md#reading-and-writing)
-  - [Learning programming](./chatgptprompt.md#learning-programming)
-- [Assist in our work](./chatgptprompt.md#assist-in-our-work)
-  - [Competition analysis](./chatgptprompt.md#competition-analysis)
-  - [Customer Service](./chatgptprompt.md#customer-service)
-  - [Aid in software development](./chatgptprompt.md#aid-in-software-development)
-  - [Aid in making videos](./chatgptprompt.md#aid-in-making-videos)
-  - [Start-up](./chatgptprompt.md#Start-up)
-  - [Educational work](./chatgptprompt.md#educational-work)
-- [Enrich our experience](./chatgptprompt.md#enrich-our-experience)
-  - [Debate Competition Simulation](./chatgptprompt.md#debate-competition-simulation)
-  - [Mock interview](./chatgptprompt.md#mock-interview)
-  - [Speech Design](./chatgptprompt.md#speech-design)
-- [Convenient to our lives](./chatgptprompt.md#convenient-to-our-lives)
-  - [Sports and fitness](./chatgptprompt.md#sports-and-fitness)
-  - [Music and Art](./chatgptprompt.md#music-and-art)
-  - [Travel Guide](./chatgptprompt.md#travel-guide)
-  - [Learning cooking](./chatgptprompt.md#learning-cooking)
+- [Help us study](docs/chatgptprompt.md#help-us-study)
+  - [Reading and writing](docs/chatgptprompt.md#reading-and-writing)
+  - [Learning programming](docs/chatgptprompt.md#learning-programming)
+- [Assist in our work](docs/chatgptprompt.md#assist-in-our-work)
+  - [Competition analysis](docs/chatgptprompt.md#competition-analysis)
+  - [Customer Service](docs/chatgptprompt.md#customer-service)
+  - [Aid in software development](docs/chatgptprompt.md#aid-in-software-development)
+  - [Aid in making videos](docs/chatgptprompt.md#aid-in-making-videos)
+  - [Start-up](docs/chatgptprompt.md#Start-up)
+  - [Educational work](docs/chatgptprompt.md#educational-work)
+- [Enrich our experience](docs/chatgptprompt.md#enrich-our-experience)
+  - [Debate Competition Simulation](docs/chatgptprompt.md#debate-competition-simulation)
+  - [Mock interview](docs/chatgptprompt.md#mock-interview)
+  - [Speech Design](docs/chatgptprompt.md#speech-design)
+- [Convenient to our lives](docs/chatgptprompt.md#convenient-to-our-lives)
+  - [Sports and fitness](docs/chatgptprompt.md#sports-and-fitness)
+  - [Music and Art](docs/chatgptprompt.md#music-and-art)
+  - [Travel Guide](docs/chatgptprompt.md#travel-guide)
+  - [Learning cooking](docs/chatgptprompt.md#learning-cooking)
 
 ### LangChain for LLM Usage
 
@@ -38,12 +38,12 @@ The goals of LangChain are to
 
 LangChain library contains six main parts.
 
-- [**Models**](./langchainguide/guide.md#models): Provides large models encapsulated based on OpenAI API, including common OpenAI large models, and also supports custom large model encapsulation.
-- [**Prompt**](./langchainguide/guide.md#prompt): Support for fast implementation of custom Prompt projects and interfacing with LLMs.
-- [**Index**](./langchainguide/guide.md#index): accept user query, index the most relevant content to return.
-- [**Memory**](./langchainguide/guide.md#memory): standard interface, stores state between chains/calls.
-- [**Chains**](./langchainguide/guide.md#chains): a set of calls (LLMs or other, e.g. network, OS), Chains provides a standard interface and settings to combine these calls. The larger model executes a logical chain of sequential execution for a series of tasks.
-- [**Agents**](./langchainguide/guide.md#agents): Agents, a very important part, about what actions to do to LLMs and how to do them. Usually the capabilities in Utils and the various logic chains in Chains are encapsulated as Tools for Agents to call intelligently.
-- [**Coding Examples**](./langchainguide/guide.md#coding-examples): Combined with the above code examples, three classic cases are given, namely Document Query, Auto-Agent and Auto-GPT.
+- [**Models**](docs/langchainguide/guide.md#models): Provides large models encapsulated based on OpenAI API, including common OpenAI large models, and also supports custom large model encapsulation.
+- [**Prompt**](docs/langchainguide/guide.md#prompt): Support for fast implementation of custom Prompt projects and interfacing with LLMs.
+- [**Index**](docs/langchainguide/guide.md#index): accept user query, index the most relevant content to return.
+- [**Memory**](docs/langchainguide/guide.md#memory): standard interface, stores state between chains/calls.
+- [**Chains**](docs/langchainguide/guide.md#chains): a set of calls (LLMs or other, e.g. network, OS), Chains provides a standard interface and settings to combine these calls. The larger model executes a logical chain of sequential execution for a series of tasks.
+- [**Agents**](docs/langchainguide/guide.md#agents): Agents, a very important part, about what actions to do to LLMs and how to do them. Usually the capabilities in Utils and the various logic chains in Chains are encapsulated as Tools for Agents to call intelligently.
+- [**Coding Examples**](docs/langchainguide/guide.md#coding-examples): Combined with the above code examples, three classic cases are given, namely Document Query, Auto-Agent and Auto-GPT.
 
-Now, let's start the journey of super learners!
+Now, let's start the journey of super learners! -->
