@@ -16,12 +16,16 @@ Importantly, Zero-shot-CoT is versatile and task-agnostic, unlike most prior tas
 
 Prompt示例：
 
+```
 *Prompt:*
 
 *Q: A juggler can juggle 16 balls. Half of the balls are golf balls,and half of the golf balls are blue. How many blue golf balls are there?*
 
 *A: Let's think step by step.*
+```
 
 *Output:*
 
+```
 *There are 16 balls in total. Half of the balls are golf balls. That means that there are 8 golf balls. Half of the golf balls are blue. That means that there are 4 blue golf balls.*
+```

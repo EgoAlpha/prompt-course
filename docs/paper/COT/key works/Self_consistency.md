@@ -14,6 +14,7 @@ We first prompt the language model with chain-of-thought prompting, then instead
 
 Prompt示例：
 
+```
 *Prompt:*
 
 *Q: There are 15 trees in the grove. Grove workers will plant trees in the grove today. After they are done,there will be 21 trees. How many trees did the grove workers plant today?*
@@ -27,9 +28,11 @@ Prompt示例：
 *Q:When I was 6, my sister was half my age. Now I’m 70, how old is my sister?*
 
 *A:*
+```
 
 *⭐Sample a diversity set of reasoning paths as below:*
 
+```
 *Output 1:When I was 6 my sister was half my age, so she was 3. Now I am 70, so she is 70 - 3 = 67. The answer is 67.*
 
 *Output 2:When the narrator was 6, his sister was half his age, which is 3. Now that the narrator is 70, his sister would be 70 - 3 = 67 years old. The answer is 67.*
@@ -41,3 +44,5 @@ Prompt示例：
 *⭐majority voting:*
 
 *The answer is 67.（final answer）*
+
+```

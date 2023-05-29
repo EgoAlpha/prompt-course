@@ -167,7 +167,7 @@ The overall schematic diagram of the above contents is as follows:
 ## Code
 ### Embedding
 
-```
+~~~python
 class Embeddings(nn.Module):
     def __init__(self, d_model, vocab):
         super(Embeddings, self).__init__()
@@ -176,12 +176,12 @@ class Embeddings(nn.Module):
 
     def forward(self, x):
         return self.lut(x) * math.sqrt(self.d_model) 
-```
+~~~
 The code is very simple, and the only thing to note is that the forward process uses the nn. Embedding to Embedding the input x, as well as dividing by $\sqrt{d\_model}$.
 
 #### Positional Embedding
 
-```
+~~~python
 def positional_encoding(inputs,
                         maxlen,
                         masking=True,
@@ -206,14 +206,14 @@ def positional_encoding(inputs,
             outputs = tf.where(tf.equal(inputs, 0), inputs, outputs)
 
         return tf.to_float(outputs)
-```
+~~~
 Because the model does not contain RNN and CNN structure, in order to make the model can effectively use the sequence order features, we need to add the information of the relative position of each Token in the sequence or the absolute position of the Token in the sequence. The model encodes where the words in the sequence occur. The positional encoding and embedding have the same dimension, and the two vectors are added to get the input containing the positional information. The encoding method used in the paper uses sine encoding at even positions and cosine encoding at odd positions. The method of calculation is as follow (described in detail in that previou input section, I won't repeat it here): 
 $$ PE(pos,2i)=sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) $$
 $$ PE(pos,2i+1)=cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) $$
 
 ### Encoder
 
-```
+~~~python
 class Encoder(nn.Module):
     "Core encoder is a stack of N layers"
 
@@ -227,10 +227,10 @@ class Encoder(nn.Module):
         for layer in self.layers:
             x = layer(x, mask)
         return self.norm(x)
-```
+~~~
 The Encoder will map the input sequence to a continuous representation sequence. The Encoder is an instantiation of the EncoderLayer, which is composed of 6 layers of EncoderLayers. Of course, different layers can be selected.
 
- ```
+~~~python
 class EncoderLayer(nn.Module):
     "Encoder is made up of self-attn and feed forward (defined below)"
     def __init__(self, size, self_attn, feed_forward, dropout):
@@ -244,12 +244,12 @@ class EncoderLayer(nn.Module):
         "Follow Figure 1 (left) for connections."
         x = self.sublayer[0](x, lambda x: self.self_attn(x, x, x, mask))
         return self.sublayer[1](x, self.feed_forward) 
- ```
+~~~
 The EncoderLayer is divided into two sub-layers, one for the Multi-Head Self Attention and the other for the Feed-Forward network.
 
  #### Muti-Head-Attention
 
- ```
+~~~python
  class MultiHeadedAttention(nn.Module):
     def __init__(self, h, d_model, dropout=0.1):
         "Take in model size and number of heads."
@@ -279,10 +279,10 @@ The EncoderLayer is divided into two sub-layers, one for the Multi-Head Self Att
         x = x.transpose(1, 2).contiguous() \
             .view(nbatches, -1, self.h * self.d_k) 
         return self.linears[-1](x)
-```
+~~~
 Muti-Head-Attention is composed of H Self-Attention. In the text, H is 8. In the text, 512 dimensions are divided into H, each of which is self-attention. The parameters are not shared with each other. The essence of Multi-Head Attention is: Under the condition that the total amount of parameters remains unchanged, the same query, key, and value are mapped to different subspaces of the original high-dimensional space for attention calculation, and attention information in different subspaces is merged in the last step. This reduces the dimension of each vector when calculating the attention of each head, in a sense preventing overfitting; Because Attention has different distributions in different subspaces, Multi-head Attention actually finds the association relationships between sequences from different angles, and in the last concat step, the association relationships captured in different subspaces are synthesized again.
 
-```
+~~~python
 def attention(query, key, value, mask=None, dropout=None):
     "Compute 'Scaled Dot Product Attention'"
     d_k = query.size(-1)
@@ -294,12 +294,12 @@ def attention(query, key, value, mask=None, dropout=None):
     if dropout is not None:
         p_attn = dropout(p_attn)
     return torch.matmul(p_attn, value), p_attn
-```
+~~~
 The Attention function maps a Query and a set of key-value pairs to the output, where Query, Key, Value, and output are vectors. The output is a weighted sum of values, where the weight assigned to each Value is calculated by a compatible function of Query with the corresponding Key. Different Linear layers are used to calculate keys, queries and values based on X. K, Q and V after Linear are independent of each other and have different weights.
 
 ### Decoder
 
-```
+~~~python
 class Decoder(nn.Module): 
 	def __init__(self, layer, N):
 		super(Decoder, self).__init__()
@@ -310,10 +310,10 @@ class Decoder(nn.Module):
 		for layer in self.layers:
 			x = layer(x, memory, src_mask, tgt_mask)
 		return self.norm(x)
-```
+~~~
 Decoder is also a stack of N DecoderLayers. The parameter layer is DecoderLayer, which is also a callable. Finally, the __call__ will call the DecoderLayer. Forward method, which requires four parameters (described later). Input X, output memory of Encoder layer, Mask (SRC_mask) of input Encoder and Mask (TGT_mask) of input Decoder. All the forward of the Decoder here also requires these four parameters.
 
-```
+~~~python
 class DecoderLayer(nn.Module):
 	def __init__(self, size, self_attn, src_attn, feed_forward, dropout):
 		super(DecoderLayer, self).__init__()
@@ -328,7 +328,7 @@ class DecoderLayer(nn.Module):
 		x = self.sublayer[0](x, lambda x: self.self_attn(x, x, x, tgt_mask))
 		x = self.sublayer[1](x, lambda x: self.src_attn(x, m, m, src_mask))
 		return self.sublayer[2](x, self.feed_forward)
-```
+~~~
 DecoderLayer has one more src-attn layer than EncoderLayer, which is the output (memory) of attend to Encoder during Decoder. The implementation of src-attn is the same as that of self-attn, but the inputs of Query, Key, and Value are different. Query of ordinary Attention (src-attn) is input from the lower layer (output from self-attn), and Key and Value are the output memory of the last layer of Encoder; The Query, Key, and Value of Self-Attention are all input from the lower level.
 
 ## References

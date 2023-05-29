@@ -26,6 +26,7 @@ Specifically, chain-of-thought prompting explores the ability of language models
 
 Prompt示例：
 
+```
 *Prompt:*
 
 *Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does he have now?*
@@ -43,3 +44,4 @@ Prompt示例：
 *Output:*
 
 *The juggler can juggle 16 balls. Half of the balls are golf balls. So there are 16/ 2 = 8 golf balls. Half of the golf balls are blue. So there are 8/2 = 4 blue golf balls. The answer is 4.*
+```
