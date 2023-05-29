@@ -1,12 +1,15 @@
 ﻿*One-shot/few-shot CoT prompting*
 
 *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*
+
 ## introduction
+
 [\[Wei et al., 2022a\]](https://arxiv.org/abs/2201.11903) explore how generating a chain of thought—a series of intermediate reasoning steps—significantly improves the ability of large language models to perform complex reasoning. Since simply scaling up large language model size alone has not proved sufficient for achieving high performance on challenging tasks such as arithmetic, commonsense, and symbolic reasoning,which we call them “reasoning-heavy tasks”,here comes an idea to explores how the reasoning ability of large language models can be unlocked.
 
 chain-of-thought prompting,a new approach which endows language models with the ability to generate a similar chain of thought—a coherent series of intermediate reasoning steps that lead to the final answer for a problem outperforms standard prompting, sometimes to a striking degree. This work underscores how large language models can learn via a few examples with natural language data about the task (c.f. automatically learning the patterns underlying inputs and outputs via a large training dataset).
 
 ## How it Works?
+
 Consider one’s own thought process when solving a complicated reasoning task such as a multi-step math word problem. It is typical to decompose the problem into intermediate steps and solve each before giving the final answer. A chain of thought is a series of intermediate natural language reasoning steps that lead to the final output.This work explores how the reasoning ability of large language models can be unlocked by a simple method motivated by two ideas. First, techniques for arithmetic reasoning can benefit from generating natural language
 
 rationales that lead to the final answer. Second, large language models offer the exciting prospect of in-context few-shot learning via prompting. That is, instead of finetuning a separate language model checkpoint for each new task, one can simply “prompt” the model with a few input–output exemplars demonstrating the task. Remarkably, this has been successful for a range of simple question-answering tasks.

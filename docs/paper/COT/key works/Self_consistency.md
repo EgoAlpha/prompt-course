@@ -1,7 +1,11 @@
-﻿*Prompting extension->Self-consistency*
+﻿# *Prompting extension->Self-consistency*
+
 ## introduction
+
 [\[Wang et al. (2023)\]](https://arxiv.org/abs/2203.11171) proposes a new decoding strategy, self-consistency, to replace the naive greedy decoding used in chain-of-thought prompting. It first samples a diverse set of reasoning paths instead of only taking the greedy one, and then selects the most consistent answer by marginalizing out the sampled reasoning paths. Extensive empirical evaluation shows that self-consistency boosts the performance of chain-of-thought prompting with a striking margin on a range of popular arithmetic and commonsense reasoning benchmarks, including GSM8K (+17.9%), SVAMP (+11.0%), AQuA (+12.2%),StrategyQA (+6.4%) and ARC-challenge (+3.9%).
+
 ## How it Works?
+
 It has been observed that chain-of-thought prompting significantly improves model performance across a variety of multi-step reasoning tasks.In this paper, we introduce a novel decoding strategy called self-consistency to replace the greedy decoding strategy used in chain-of-thought prompting (Wei et al., 2022), that further improves language models’ reasoning performance by a significant margin. Self-consistency leverages the intuition that complex reasoning tasks typically admit multiple reasoning paths that reach a correct answer (Stanovich & West, 2000). The more that deliberate thinking and analysis is required for a problem (Evans, 2010), the greater the diversity of reasoning paths that can recover the answer.
 
 We first prompt the language model with chain-of-thought prompting, then instead of greedily decoding the optimal reasoning path, we propose a ”sample-and-marginalize”decoding procedure: we first sample from the language model’s decoder to generate a diverse set of reasoning paths; each reasoning path might lead to a different final answer, so we determine the optimal answer by marginalizing out the sampled reasoning paths to find the most consistent answer in the final answer set. Such an approach is analogous to the human experience that if multiple different ways of thinking lead to the same answer, one has greater confidence that the final answer is correct. Compared to other decoding methods, self-consistency avoids the repetitiveness and local-optimality that plague greedy decoding, while mitigating the stochasticity of a single sampled generation.
@@ -32,11 +36,8 @@ Prompt示例：
 
 *Output 3:When I was 6 my sister was half my age, so she was 3. Now I am 70, so she is 70/2 = 35.*
 
-` `*The answer is 35.*
+``*The answer is 35.*
 
 *⭐majority voting:*
 
 *The answer is 67.（final answer）*
-
-
-
