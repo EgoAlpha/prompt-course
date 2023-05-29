@@ -1,4 +1,4 @@
-<!-- # 实践篇章
+# 实践篇章
 
 ## 内容概览
 
@@ -8,25 +8,25 @@
 
 该板块包含的内容提纲如下所示，您可以直接点击相关内容进行跳转，便于浏览和查阅。
 
-- [帮助我们的学习](zh/chatgptprompt#帮助我们学习)
-  - [阅读与写作](zh/chatgptprompt#阅读与写作)
-  - [学习编程](zh/chatgptprompt#学习编程)
-- [协助我们的工作](zh/chatgptprompt#协助我们的工作)
-  - [竞争分析](zh/chatgptprompt#竞争分析)
-  - [客户服务](zh/chatgptprompt#客户服务)
-  - [协助软件开发](zh/chatgptprompt#协助软件开发)
-  - [视频编辑](zh/chatgptprompt#视频编辑)
-  - [初创企业](zh/chatgptprompt#初创企业)
-  - [教育工作](zh/chatgptprompt#教育工作)
-- [丰富我们的经验](zh/chatgptprompt#丰富我们的经验)
-  - [辩论比赛模拟](zh/chatgptprompt#辩论比赛模拟)
-  - [模拟面试](zh/chatgptprompt#模拟面试)
-  - [演讲稿设计](zh/chatgptprompt#演讲稿设计)
-- [方便我们的生活](zh/chatgptprompt#方便我们的生活)
-  - [运动健身](zh/chatgptprompt#运动健身)
-  - [音乐与艺术](zh/chatgptprompt#音乐与艺术)
-  - [旅游指南](zh/chatgptprompt#旅游指南)
-  - [学习厨艺](zh/chatgptprompt#学习厨艺)
+- [帮助我们的学习](chatgptprompt#帮助我们学习)
+  - [阅读与写作](chatgptprompt#阅读与写作)
+  - [学习编程](chatgptprompt#学习编程)
+- [协助我们的工作](chatgptprompt#协助我们的工作)
+  - [竞争分析](chatgptprompt#竞争分析)
+  - [客户服务](chatgptprompt#客户服务)
+  - [协助软件开发](chatgptprompt#协助软件开发)
+  - [视频编辑](chatgptprompt#视频编辑)
+  - [初创企业](chatgptprompt#初创企业)
+  - [教育工作](chatgptprompt#教育工作)
+- [丰富我们的经验](chatgptprompt#丰富我们的经验)
+  - [辩论比赛模拟](chatgptprompt#辩论比赛模拟)
+  - [模拟面试](chatgptprompt#模拟面试)
+  - [演讲稿设计](chatgptprompt#演讲稿设计)
+- [方便我们的生活](chatgptprompt#方便我们的生活)
+  - [运动健身](chatgptprompt#运动健身)
+  - [音乐与艺术](chatgptprompt#音乐与艺术)
+  - [旅游指南](chatgptprompt#旅游指南)
+  - [学习厨艺](chatgptprompt#学习厨艺)
 
 ### 使用LangChain操作大模型
 
@@ -38,12 +38,12 @@ LangChain的目标在于：
 
 LangChain库主要包含六个部分:
 
-- [**Models**](./langchianguide/guide.md#models): 提供基于OpenAI API封装好的大模型，包含常见的OpenAI大模型，也支持自定义大模型的封装。
-- [**Prompt**](./langchianguide/guide.md#prompt): 支持自定义Prompt工程的快速实现以及和LLMs的对接。
-- [**Index**](./langchianguide/guide.md#index): 接受用户查询，索引最相关内容返回。
-- [**Memory**](./langchianguide/guide.md#memory): 标准的接口, 在chains/call之间保存状态。
-- [**Chains**](./langchianguide/guide.md#chains): 一系列的调用(LLMs或者其他, 如网络, 操作系统), Chains提供了标准的接口和设置来组合这些调用。 先从外部的源获取信息, 然后喂给LLMs。大模型针对一系列任务的顺序执行逻辑链。
-- [**Agents**](./langchianguide/guide.md#agents): 代理, 非常重要的一环, 关于对LLMs做何种action, 如何做。通常Utils中的能力、Chains中的各种逻辑链都会封装成一个个工具（Tools）供Agents进行智能化调用。
-- [**Coding Examples**](./langchianguide/guide.md#coding-examples): 结合上述内容的代码示例，给出三个很经典的案例，分别是文档查询，自动代理和Auto-GPT。
+- [**Models**](langchainguide/guide.md#models): 提供基于OpenAI API封装好的大模型，包含常见的OpenAI大模型，也支持自定义大模型的封装。
+- [**Prompt**](langchainguide/guide.md#prompt): 支持自定义Prompt工程的快速实现以及和LLMs的对接。
+- [**Index**](langchainguide/guide.md#index): 接受用户查询，索引最相关内容返回。
+- [**Memory**](langchainguide/guide.md#memory): 标准的接口, 在chains/call之间保存状态。
+- [**Chains**](langchainguide/guide.md#chains): 一系列的调用(LLMs或者其他, 如网络, 操作系统), Chains提供了标准的接口和设置来组合这些调用。 先从外部的源获取信息, 然后喂给LLMs。大模型针对一系列任务的顺序执行逻辑链。
+- [**Agents**](langchainguide/guide.md#agents): 代理, 非常重要的一环, 关于对LLMs做何种action, 如何做。通常Utils中的能力、Chains中的各种逻辑链都会封装成一个个工具（Tools）供Agents进行智能化调用。
+- [**Coding Examples**](langchainguide/guide.md#coding-examples): 结合上述内容的代码示例，给出三个很经典的案例，分别是文档查询，自动代理和Auto-GPT。
 
-接下来，让我们开启超级学习者的旅程吧！ -->
+接下来，让我们开启超级学习者的旅程吧！

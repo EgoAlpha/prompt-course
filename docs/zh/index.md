@@ -17,9 +17,15 @@ hero:
 features:
   - title: "实践篇"
     details: "主要提供日常生活和工作中使用ChatGPTPrompt的例子，让ChatGPT来帮助我们学习、协助我们工作和丰富我们体验。"
+    link: /practicalchapter
+    linkText: 点击跳转到实践篇
   - title: "方法篇"
     details: "结合最新的研究论文，介绍设计先进Prompt的方法和技术，使我们能够更好地利用大型语言模型的潜力。 "
+    link: /methodchapter
+    linkText: 点击跳转到方法篇
   - title: "理论篇"
     details: "讲解大型语言模型的基本原理和相关的自然语言处理技术。"
+    link: /theorychapter
+    linkText: 点击跳转到理论篇
 ---
 

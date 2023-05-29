@@ -17,9 +17,15 @@ hero:
 features:
   - title: "Practical Chapter"
     details: "This chapter mainly provides examples of how to utilize chatGPT prompts in our daily lives and work, enabling ChatGPT to help us study, assist in our work, and enrich our experience."
+    link: /practicalchapter
+    linkText: Go to Practical Chapter
   - title: "Methodology Chapter"
     details: "This chapter discusses the methods and techniques for designing better prompts based on the latest research papers, allowing us to harness the potential of large language models."
+    link: /methodchapter
+    linkText: Go to Methodology Chapter
   - title: "Theory Chapter"
     details: "This Chapter covers the underlying principles of large language models and related natural language processing technologies. "
+    link: /theorychapter
+    linkText: Go to Theory Chapter
 ---
 

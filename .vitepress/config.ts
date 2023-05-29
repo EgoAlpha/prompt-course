@@ -132,7 +132,11 @@ export default defineConfig({
                   text: '自动化Prompt', link: 'zh/principle#框架',
                 },
                 {
-                  text: '思维链', link: 'zh/principle#框架',
+                  text: '思维链', link: 'zh/METHOD/cotintro',items:[
+                    {text: 'Auto-COT Prompting', link: 'zh/paper/COT/key works/Auto-CoT Prompting'},
+                    {text: 'One-Few Shot CoT Prompting', link: 'zh/paper/COT/key works/One-Few Shot CoT Prompting'},
+                    {text: 'Zero-shot CoT Prompting', link: 'zh/paper/COT/key works/Zero-shot CoT Prompting'},
+                  ]
                 },
                 {
                   text: '上下文学习', link: 'zh/principle#框架',
@@ -286,7 +290,11 @@ export default defineConfig({
                   text: 'Automatic Prompt', link: '/principle#framework',
                 },
                 {
-                  text: 'CoT', link: '/principle#framework',
+                  text: 'CoT', link: '/METHOD/cotintro',items:[
+                    {text: 'Auto-COT Prompting', link: 'paper/COT/key works/Auto-CoT Prompting'},
+                    {text: 'One-Few Shot CoT Prompting', link: 'paper/COT/key works/One-Few Shot CoT Prompting'},
+                    {text: 'Zero-shot CoT Prompting', link: 'paper/COT/key works/Zero-shot CoT Prompting'},
+                  ]
                 },
                 {
                   text: 'In-Context Learning', link: '/principle#framework',

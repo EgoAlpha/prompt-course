@@ -1,4 +1,4 @@
-# Methodlogy Chapter
+# Methodology Chapter
 
 ## Contents
 
