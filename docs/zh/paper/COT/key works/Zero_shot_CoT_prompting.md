@@ -1,10 +1,8 @@
-﻿*Zero-shot prompting*
+﻿# *Zero-shot prompting*
 
-*Large Language Models are Zero-Shot Reasoners*
+## *Large Language Models are Zero-Shot Reasoners*
 
-## 介绍
-
-[\[小岛康誉等人，2022年\]](https://arxiv.org/abs/2205.11916)通过在提示中的每个答案前简单地添加“让我们一步一步地思考”,显示LLM是体面的零样本推理器。实验结果表明，使用相同的单提示模板，这种所谓的零镜头CoT在包括算术和其他逻辑推理任务在内的各种基准推理任务上显著优于零镜头LLM性能，而无需任何手工制作的少镜头示例。
+[小岛康誉等人](https://arxiv.org/abs/2205.11916)通过在提示中的每个答案前简单地添加“让我们一步一步地思考”,显示LLM是体面的零样本推理器。实验结果表明，使用相同的单提示模板，这种所谓的零镜头CoT在包括算术和其他逻辑推理任务在内的各种基准推理任务上显著优于零镜头LLM性能，而无需任何手工制作的少镜头示例。
 
 ## 它是如何工作的？
 
@@ -12,7 +10,8 @@
 
 重要的是，Zero-shot-CoT是通用的和任务不可知的，不同于大多数先前的以示例(少量)或模板(Zero-shot)形式的特定于任务的提示工程:它可以促进跨各种推理任务的逐步回答，包括算术、符号推理、常识推理和其他逻辑推理任务，而无需修改每个任务的提示。见下图。
 
-![](../images/Zero_shot_CoT_prompting.png)
+<img src="../images/Zero_shot_CoT_prompting.png" width="100%">
+
 
 提示示例：
 

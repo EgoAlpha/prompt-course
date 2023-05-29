@@ -1,8 +1,6 @@
-﻿*Auto-CoT prompting*
+﻿# *Auto-CoT prompting*
 
-*Automatic Chain of Thought Prompting in Large Language Models*
-
-## Brief introduction
+## *Automatic Chain of Thought Prompting in Large Language Models*
 
 [\[Zhang et al., 2022\]](https://arxiv.org/abs/2210.03493) proposes an automatic CoT prompting method: AutoCoT. It samples questions with diversity and generates reasoning chains to construct demonstrations.In practice, Manual-CoT has obtained stronger performance than Zero-Shot-CoT. However, this superior performance hinges on the hand-drafting of effective demonstrations. Specifically, the
 
@@ -20,7 +18,7 @@ First we can leverage LLMs with the “Let’s think step by step” prompt to g
 
 The figure below shows the complete workflow of Auto-CoT prompting.
 
-![](../images/auto_cot.png)
+<img src="../images/auto_cot.png" width="100%">
 
 **⭐Demo construction:problems clustering+zero-shot CoT prompting**
 

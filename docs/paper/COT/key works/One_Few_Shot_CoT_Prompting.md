@@ -22,7 +22,7 @@ For the traditional few-shot prompting method used in Brown et al. (2020), it wo
 
 Specifically, chain-of-thought prompting explores the ability of language models to perform few-shot prompting for reasoning tasks, given a prompt that consists of triples: <input, chain of thought, output>.The figure below shows an example of chain of thoughts used in few-shot prompting demostrations,which are highlighted.
 
-![](../images/One_Few_shot_prompting.png)
+<img src="../images/One_Few_shot_prompting.png" width="100%">
 
 Prompt示例：
 

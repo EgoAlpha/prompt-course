@@ -2,8 +2,6 @@
 
 ## *Large Language Models are Zero-Shot Reasoners*
 
-## introduction
-
 [\[Kojima et al.,2022\]](https://arxiv.org/abs/2205.11916) shows that LLMs are decent zero-shot reasoners by simply adding “Let’s think step by step” before each answer in prompting. Experimental results demonstrate that this so called Zero-shot-CoT, using the same single prompt template,significantly outperforms zero-shot LLM performances on diverse benchmark reasoning tasks including arithmetics and other logical reasoning tasks without any hand-crafted few-shot examples.
 
 ## How it Works?
@@ -12,7 +10,7 @@ The success of large language models (LLMs) is often attributed to (in-context) 
 
 Importantly, Zero-shot-CoT is versatile and task-agnostic, unlike most prior task-specific prompt engineering in the forms of examples (few-shot) or templates (zero-shot): it can facilitate step-by-step answers across various reasoning tasks, including arithmetic,symbolic reasoning,commonsense reasoning and other logical reasoning tasks without modifying the prompt per task. See the figure below.
 
-![](../images/Zero_shot_CoT_prompting.png)
+<img src="../images/Zero_shot_CoT_prompting.png" width="100%">
 
 Prompt示例：
 
