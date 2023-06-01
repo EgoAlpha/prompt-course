@@ -1,8 +1,6 @@
-﻿*One-shot/few-shot CoT prompting*
+﻿# *One-shot/few-shot CoT prompting*
 
-*Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*
-
-## introduction
+## *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*
 
 [\[Wei et al., 2022a\]](https://arxiv.org/abs/2201.11903) explore how generating a chain of thought—a series of intermediate reasoning steps—significantly improves the ability of large language models to perform complex reasoning. Since simply scaling up large language model size alone has not proved sufficient for achieving high performance on challenging tasks such as arithmetic, commonsense, and symbolic reasoning,which we call them “reasoning-heavy tasks”,here comes an idea to explores how the reasoning ability of large language models can be unlocked.
 

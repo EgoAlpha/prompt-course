@@ -1,34 +1,36 @@
 # Chain-Of-Thought(COT)
 
-## **What Is Chain of Thought Prompting？**
 
-Consider one’s own thought process when solving a complicated reasoning task such as a multi-step math word problem. It is typical to decompose the problem into intermediate steps and solve each before giving the final answer.Based on this idea, [\[Wei et al., 2022a\] ](https://arxiv.org/abs/2201.11903)try to prompt the large language models to generate a chain of thought , rather than just giving the answer directly,when solving a reasoning-heavy problem.
+## *什么是思维链提示?*
 
-Specificly,a chain of thought(CoT) is a series of intermediate natural language
+在解决一个复杂的推理任务，比如一个多步骤的数学单词问题时，考虑一下自己的思维过程。典型的做法是将问题分解成中间步骤，在给出最终答案之前逐个解决。基于这一思路[[Wei et al.,2022a]](https://arxiv.org/abs/2201.11903)在解决推理繁重的问题时,试图通过prompt去促使大型语言模型产生思维链，而不仅仅是直接给出答案。
 
-reasoning steps that lead to the final output, and this approach is named as chain-of-thought prompting(CoT Prompting).
+具体来说，思维链(CoT)是一系列中间的自然语言导致最终输出的推理步骤，这种方法被命名为思维链提示(CoT提示)。
 
-## **What Are the Manifestations of CoT Prompting？**
+## *CoT提示有哪些表现形式?*
 
-In order to prompt the LLMs to complete the generation of reasoning chains before giving the final answer，some methods have already been explored and proven to be effective. The pioneering work is few-shot CoT prompting([Wei et al., 2022a]),in which we need to provide examples with chain of thoughts ahead of the final answer(triples: < input, chain of thought, output>). 
+为了提示 llm 在给出最终答案之前完成推理链的生成，一些方法已经被探索并被证明是有效的。开创性的工作是 few-shot CoT 提示([Wei.et al.， 2022a])，其中我们需要在最终答案之前提供具有思维链的示例(三元组:<输入，思维链，输出>)。
+考虑到人工构建示例的人工成本较高，一些人开始探索使用非人工的方法来构建示例。其中，最优秀的方法有 Auto-CoT([Zhang et al.， 2022])、Automate-
+CoT([Shum, et al.， 2023])等。
+另一种方法是优化提示，不提供示例，只通过提示鼓励模型生成思维链，代表性
+作品是Zero-shot-CoT 提示([Kojima et al.，2022])。
+还有一些其他方法利用了其他算法，如 bootstrapping、强化学习等，并在最初的 CoT 提示方法的基础上做了很多改进。
 
-Considering the high labor cost of manually constructing examples, some people are beginning to explore using non-manual methods to build examples. Among them, the most excellent methods are Auto-CoT([\[Zhang et al., 2022\]](https://arxiv.org/abs/2210.03493) ), Automate-CoT([\[Shum, et al., 2023\]](https://arxiv.org/abs/2302.12822)) and so on.
+上述方法的思路和具体细节将在后续章节中进行详细描述。
 
-Another approach is to optimize prompts, without providing examples, and encourage the model to generate a chain of thought only through prompts, representative work is zero-shot CoT prompting([\[Kojima et al.,2022\]](https://arxiv.org/abs/2205.11916)).
+## *如何设计创新的CoT提示?*
 
-There are also some other methods that utilize other algorithms, such as bootstrapping, reinforcement learning, etc., and have made many improvements on the basis of the initial CoT prompting method.
+如果您对 CoT 提示感兴趣，愿意研究并提出自己的创新方法，可以从以下几个方面入手:
 
-The ideas and specific details of the above-mentioned methods will be described in detail in subsequent chapters.
+1. 提示本身的设计&提示工作流程&两者兼而有之
 
-# **How to Design Innovative CoT Prompting？**
+2. 示例选择方法
 
-If you are interested in CoT prompting and willing to research and propose your own innovative methods, you can start from the following aspects:
+3. 提示结果的后期处理
 
-1. Prompt itself design & prompting workflow & both
-2. Demonstrations selection method
-3. Post process of prompting results
-4. Combining with algorithms and ideas in other fields
+4. 结合其他领域的算法和思路
 
-Firstly, you can research and modify the prompt itself to achieve better results based on existing paradigms, or propose new paradigms. In addition, the quality of example selection in prompt greatly affects the quality of the final inference result. You may need to research new methods for selecting examples, such as increasing the diversity of examples, in order to improve inference performance
+首先，您可以在现有范式的基础上对提示本身进行研究和修改，以达到更好的效果，或者提出新的范式。此外，提示中的示例选择质量极大地影响了最终推理结果的质量。您可能需要研究选择示例的新方法，例如增加示例的多样性，
+以提高推理性能。
 
-Finally,the post-processing of the prompting results is also worth considering after the interaction with LLMs. For example, multiple reasonging paths(CoT with answer) can be sampled and the answer with the most occurrences can be selected as the final answer. Alternatively, it is possible to consider using algorithms from other fields in this study, which may have unexpected effects.
+最后，在与 llm 交互之后，对提示结果的后处理也是值得考虑的。例如，可以对多个推理路径(带答案的 CoT)进行采样，选择出现次数最多的答案作为最终答案。或者，也可以考虑在本研究中使用其他领域的算法，这可能会产生意想不到的效果。
