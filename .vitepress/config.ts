@@ -166,7 +166,7 @@ export default defineConfig({
                   text: 'BERT', link: 'zh/principle#框架',
                 },
                 {
-                  text: 'GPT系列', link: 'zh/principle#框架',
+                  text: 'GPT系列', link: 'zh/gpt2_fintuning',
                 },
                 {
                   text: 'T5', link: 'zh/principle#框架',
@@ -325,7 +325,7 @@ export default defineConfig({
                   text: 'BERT', link: '/principle#framework',
                 },
                 {
-                  text: 'GPT Series', link: '/principle#framework',
+                  text: 'GPT Series', link: '/gpt2_fintuning',
                 },
                 {
                   text: 'T5', link: '/principle#framework',
