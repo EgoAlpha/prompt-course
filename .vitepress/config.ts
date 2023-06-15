@@ -126,6 +126,9 @@ export default defineConfig({
                     {
                       text: 'Progressive-Hint Prompt', link: 'Progressive_Hint_Prompting/Progressive_Hint_Prompting_zh',
                     },
+                    {
+                      text: 'Self-Refine', link: 'Self_Refine/Self_Refine_zh',
+                    },
                   ]
                 },
                 {
@@ -166,7 +169,10 @@ export default defineConfig({
                   text: 'BERT', link: 'zh/principle#框架',
                 },
                 {
-                  text: 'GPT系列', link: 'zh/gpt2_fintuning',
+                  text: 'GPT系列', link: 'zh/gpt2_fintuning',items:[
+                    {text: 'GPT-2', link: '/gpt2_fintuning',},
+                    {text: 'RecurrentGPT', link: '/RecurrentGPT/RecurrentGPT',}
+                  ]
                 },
                 {
                   text: 'T5', link: 'zh/principle#框架',
@@ -285,6 +291,9 @@ export default defineConfig({
                     {
                       text: 'Progressive-Hint Prompt', link: 'Progressive_Hint_Prompting/Progressive_Hint_Prompting',
                     },
+                    {
+                      text: 'Self-Refine', link: 'Self_Refine/Self_Refine',
+                    },
                   ]
                 },
                 {
@@ -325,7 +334,10 @@ export default defineConfig({
                   text: 'BERT', link: '/principle#framework',
                 },
                 {
-                  text: 'GPT Series', link: '/gpt2_fintuning',
+                  text: 'GPT Series', link: '/gpt2_fintuning',items:[
+                    {text: 'GPT-2', link: '/gpt2_fintuning',},
+                    {text: 'RecurrentGPT', link: '/RecurrentGPT/RecurrentGPT',}
+                  ]
                 },
                 {
                   text: 'T5', link: '/principle#framework',
