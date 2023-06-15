@@ -100,31 +100,31 @@ export default defineConfig({
                 {
                   text: '高级Prompt', link: 'zh/principle#框架',items:[
                     {
-                      text: '批量prompt', link: 'zh/principle#框架',
+                      text: '批量prompt', link: '/Batch_Prompting/BatchPrompting_zh',
                     },
                     {
-                      text: '连续prompt', link: 'zh/principle#框架',
+                      text: '连续prompt', link: '/SuccessivePrompt/Suc_Prompting_Dec_Com_Que_zh',
                     },
                     {
-                      text: 'PAL', link: 'zh/principle#框架',
+                      text: 'PAL', link: '/PAL/PALPrompting_zh',
                     },
                     {
-                      text: 'ReAct', link: 'zh/principle#框架',
+                      text: 'ReAct', link: '/ReAct/ReActPrompting_zh',
                     },
                     {
-                      text: 'Self-Ask', link: 'zh/principle#框架',
+                      text: 'Self-Ask', link: '/Self_Ask/MEA_NARROWING_zh',
                     },
                     {
-                      text: 'Context-faithful Prompting', link: 'zh/principle#框架',
+                      text: 'Context-faithful Prompting', link: '/Context_faithful_Prompting/Context_faithful_zh',
                     },
                     {
-                      text: 'REFINER', link: 'zh/principle#框架',
+                      text: 'REFINER', link: 'REFINER/REFINER_zh',
                     },
                     {
-                      text: 'Reflections', link: 'zh/principle#框架',
+                      text: 'Reflections', link: '/Reflexion/Reflexion_zh',
                     },
                     {
-                      text: 'Progressive-Hint Prompt', link: 'zh/principle#框架',
+                      text: 'Progressive-Hint Prompt', link: 'Progressive_Hint_Prompting/Progressive_Hint_Prompting_zh',
                     },
                   ]
                 },
@@ -259,31 +259,31 @@ export default defineConfig({
                 {
                   text: 'Advanced Prompt', link: '/principle#framework',items:[
                     {
-                      text: 'Batch Prompting', link: '/principle#framework',
+                      text: 'Batch Prompting', link: '/Batch_Prompting/BatchPrompting',
                     },
                     {
-                      text: 'Successive Prompting', link: '/principle#framework',
+                      text: 'Successive Prompting', link: '/SuccessivePrompt/Suc_Prompting_Dec_Com_Que',
                     },
                     {
-                      text: 'PAL', link: '/principle#framework',
+                      text: 'PAL', link: '/PAL/PALPrompting',
                     },
                     {
-                      text: 'ReAct', link: '/principle#framework',
+                      text: 'ReAct', link: '/ReAct/ReActPrompting',
                     },
                     {
-                      text: 'Self-Ask', link: '/principle#framework',
+                      text: 'Self-Ask', link: '/Self_Ask/MEA_NARROWING',
                     },
                     {
-                      text: 'Context-faithful Prompting', link: '/principle#framework',
+                      text: 'Context-faithful Prompting', link: '/Context_faithful_Prompting/Context_faithful',
                     },
                     {
-                      text: 'REFINER', link: '/principle#framework',
+                      text: 'REFINER', link: 'REFINER/REFINER',
                     },
                     {
-                      text: 'Reflections', link: '/principle#framework',
+                      text: 'Reflections', link: '/Reflexion/Reflexion',
                     },
                     {
-                      text: 'Progressive-Hint Prompt', link: '/principle#framework',
+                      text: 'Progressive-Hint Prompt', link: 'Progressive_Hint_Prompting/Progressive_Hint_Prompting',
                     },
                   ]
                 },
