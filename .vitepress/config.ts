@@ -100,28 +100,28 @@ export default defineConfig({
                 {
                   text: '高级Prompt', link: 'zh/principle#框架',items:[
                     {
-                      text: '批量prompt', link: '/Batch_Prompting/BatchPrompting_zh',
+                      text: '批量prompt', link: 'Batch_Prompting/BatchPrompting_zh',
                     },
                     {
-                      text: '连续prompt', link: '/SuccessivePrompt/Suc_Prompting_Dec_Com_Que_zh',
+                      text: '连续prompt', link: 'SuccessivePrompt/Suc_Prompting_Dec_Com_Que_zh',
                     },
                     {
-                      text: 'PAL', link: '/PAL/PALPrompting_zh',
+                      text: 'PAL', link: 'PAL/PALPrompting_zh',
                     },
                     {
-                      text: 'ReAct', link: '/ReAct/ReActPrompting_zh',
+                      text: 'ReAct', link: 'ReAct/ReActPrompting_zh',
                     },
                     {
-                      text: 'Self-Ask', link: '/Self_Ask/MEA_NARROWING_zh',
+                      text: 'Self-Ask', link: 'Self_Ask/MEA_NARROWING_zh',
                     },
                     {
-                      text: 'Context-faithful Prompting', link: '/Context_faithful_Prompting/Context_faithful_zh',
+                      text: 'Context-faithful Prompting', link: 'Context_faithful_Prompting/Context_faithful_zh',
                     },
                     {
                       text: 'REFINER', link: 'REFINER/REFINER_zh',
                     },
                     {
-                      text: 'Reflections', link: '/Reflexion/Reflexion_zh',
+                      text: 'Reflections', link: 'Reflexion/Reflexion_zh',
                     },
                     {
                       text: 'Progressive-Hint Prompt', link: 'Progressive_Hint_Prompting/Progressive_Hint_Prompting_zh',
@@ -170,9 +170,9 @@ export default defineConfig({
                 },
                 {
                   text: 'GPT系列', link: 'zh/gpt2_fintuning',items:[
-                    {text: 'GPT-2', link: '/gpt2_fintuning',},
-                    {text: 'RecurrentGPT', link: '/RecurrentGPT/RecurrentGPT',}
-                  ]
+                    {text: 'GPT-2', link: 'gpt2_fintuning',},
+                    {text: 'RecurrentGPT', link: 'RecurrentGPT/RecurrentGPT',}
+                  ] 
                 },
                 {
                   text: 'T5', link: 'zh/principle#框架',
