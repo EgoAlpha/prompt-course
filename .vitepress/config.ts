@@ -38,7 +38,7 @@ export default defineConfig({
             text: '课程',
             items: [
               {
-                text: '介绍', link: 'zh/intro',
+                text: '介绍', link: '/zh/intro',
               },
               {
                 text: '实践篇章',
