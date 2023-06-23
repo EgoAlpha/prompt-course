@@ -95,7 +95,7 @@ export default defineConfig({
                     text: '框架', link: 'zh/principle#框架',
                   },
                   {
-                  text: '基本Prompt', link: 'zh/Basicprompt',
+                  text: '基本Prompt', link: '/zh/Basicprompt',
                 }, 
                 {
                   text: '高级Prompt', link: 'zh/principle#框架',items:[
@@ -130,7 +130,7 @@ export default defineConfig({
                       text: 'Self-Refine', link: 'Self_Refine/Self_Refine_zh',
                     },
                     {
-                      text: 'RecurrentGPT', link: 'RecurrentGPT/RecurrentGPT',
+                      text: 'RecurrentGPT', link: 'RecurrentGPT/RecurrentGPT_zh',
                     },
                   ]
                 },

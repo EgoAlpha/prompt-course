@@ -1,5 +1,6 @@
+# Basic Prompt
 
-## 💥 Based on the complexity and characteristics of the task, you can select a few components from them to form your prompt. 
+> 💥 Based on the complexity and characteristics of the task, you can select a few components from them to form your prompt. 
 
 ###  Application of the framework and principles
 
