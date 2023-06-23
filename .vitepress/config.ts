@@ -95,7 +95,7 @@ export default defineConfig({
                     text: '框架', link: 'zh/principle#框架',
                   },
                   {
-                  text: '基本Prompt', link: 'zh/principle#design-principle',
+                  text: '基本Prompt', link: 'zh/Basicprompt',
                 }, 
                 {
                   text: '高级Prompt', link: 'zh/principle#框架',items:[
@@ -128,6 +128,9 @@ export default defineConfig({
                     },
                     {
                       text: 'Self-Refine', link: 'Self_Refine/Self_Refine_zh',
+                    },
+                    {
+                      text: 'RecurrentGPT', link: 'RecurrentGPT/RecurrentGPT',
                     },
                   ]
                 },
@@ -170,8 +173,7 @@ export default defineConfig({
                 },
                 {
                   text: 'GPT系列', link: 'zh/gpt2_fintuning',items:[
-                    {text: 'GPT-2', link: 'gpt2_fintuning',},
-                    {text: 'RecurrentGPT', link: 'RecurrentGPT/RecurrentGPT',}
+                    {text: 'GPT-2', link: 'gpt2_fintuning',}
                   ] 
                 },
                 {
@@ -260,7 +262,7 @@ export default defineConfig({
                   text: 'Framework', link: '/principle#framework',
                 },
                 {
-                  text: 'Basic Prompt', link: '/principle#design-principle',
+                  text: 'Basic Prompt', link: '/Basicprompt',
                 }, 
                 {
                   text: 'Advanced Prompt', link: '/principle#framework',items:[
@@ -293,6 +295,9 @@ export default defineConfig({
                     },
                     {
                       text: 'Self-Refine', link: 'Self_Refine/Self_Refine',
+                    },
+                    {
+                      text: 'RecurrentGPT', link: 'RecurrentGPT/RecurrentGPT',
                     },
                   ]
                 },
