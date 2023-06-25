@@ -95,8 +95,8 @@ export default defineConfig({
                     text: '框架', link: 'zh/principle#框架',
                   },
                   {
-                  text: '基本Prompt', link: '/zh/Basicprompt',
-                }, 
+                  text: '基本Prompt', link: 'zh/basicprompting_zh',
+                  }, 
                 {
                   text: '高级Prompt', link: 'zh/principle#框架',items:[
                     {
@@ -262,7 +262,7 @@ export default defineConfig({
                   text: 'Framework', link: '/principle#framework',
                 },
                 {
-                  text: 'Basic Prompt', link: '/Basicprompt',
+                  text: 'Basic Prompt', link: '/basicprompting',
                 }, 
                 {
                   text: 'Advanced Prompt', link: '/principle#framework',items:[
@@ -340,8 +340,9 @@ export default defineConfig({
                 },
                 {
                   text: 'GPT Series', link: '/gpt2_fintuning',items:[
-                    {text: 'GPT-2', link: '/gpt2_fintuning',},
-                    {text: 'RecurrentGPT', link: '/RecurrentGPT/RecurrentGPT',}
+                    {
+                      text: 'GPT-2', link: '/gpt2_fintuning',
+                    },
                   ]
                 },
                 {
