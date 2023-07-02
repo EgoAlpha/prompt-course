@@ -1,4 +1,4 @@
-# 1 gpt2-finetuning内部构造
+# GPT2-finetuning内部构造
 
 ## 1.1 token化
 

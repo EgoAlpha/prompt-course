@@ -135,7 +135,13 @@ export default defineConfig({
                   ]
                 },
                 {
-                  text: '自动化Prompt', link: 'zh/principle#框架',
+                  text: '自动化Prompt', link: 'AutomaticPrompt/intro_automaticprompt_zh',items:[
+                    {text: 'Automatic Prompt Optimization with Gradient Descent and Beam Search', link: 'AutomaticPrompt/optim/autooptim_zh'},
+                    {text: 'GPS Genetic Prompt Search for Efficient Few-shot Learning', link: 'AutomaticPrompt/GPSPrompt/GPSPrompt_zh'},
+                    {text: 'iPrompt Explaining Data Patterns in Natural Language', link: 'AutomaticPrompt/iPrompt/autoiPrompt_zh'},
+                    {text: 'PromptGen Automatically Generate Prompts using Generative Models', link: 'AutomaticPrompt/PromptGen/PromptGen_zh'},
+                    {text: 'RePrompt Automatic Prompt Editing to Refine AI-Generative Art', link: 'AutomaticPrompt/RePrompt/Reprompt_zh'},
+                  ]
                 },
                 {
                   text: '思维链', link: 'zh/METHOD/cotintro',items:[
@@ -172,9 +178,7 @@ export default defineConfig({
                   text: 'BERT', link: 'zh/principle#框架',
                 },
                 {
-                  text: 'GPT系列', link: 'zh/gpt2_fintuning',items:[
-                    {text: 'GPT-2', link: 'gpt2_fintuning',}
-                  ] 
+                  text: 'GPT系列', link: 'zh/gpt2_finetuning', 
                 },
                 {
                   text: 'T5', link: 'zh/principle#框架',
@@ -302,7 +306,13 @@ export default defineConfig({
                   ]
                 },
                 {
-                  text: 'Automatic Prompt', link: '/principle#framework',
+                  text: 'Automatic Prompt', link: 'AutomaticPrompt/intro_automaticprompt',items:[
+                    {text: 'Automatic Prompt Optimization with Gradient Descent and Beam Search', link: 'AutomaticPrompt/optim/autooptim'},
+                    {text: 'GPS Genetic Prompt Search for Efficient Few-shot Learning', link: 'AutomaticPrompt/GPSPrompt/GPSPrompt'},
+                    {text: 'iPrompt Explaining Data Patterns in Natural Language', link: 'AutomaticPrompt/iPrompt/autoiPrompt'},
+                    {text: 'PromptGen Automatically Generate Prompts using Generative Models', link: 'AutomaticPrompt/PromptGen/PromptGen'},
+                    {text: 'RePrompt Automatic Prompt Editing to Refine AI-Generative Art', link: 'AutomaticPrompt/RePrompt/Reprompt'},
+                  ]
                 },
                 {
                   text: 'CoT', link: '/METHOD/cotintro',items:[
@@ -339,11 +349,7 @@ export default defineConfig({
                   text: 'BERT', link: '/principle#framework',
                 },
                 {
-                  text: 'GPT Series', link: '/gpt2_fintuning',items:[
-                    {
-                      text: 'GPT-2', link: '/gpt2_fintuning',
-                    },
-                  ]
+                  text: 'GPT Series', link: '/gpt2_finetuning',
                 },
                 {
                   text: 'T5', link: '/principle#framework',
