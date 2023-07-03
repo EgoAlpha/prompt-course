@@ -1,8 +1,6 @@
-# *Automatic Prompt*
+# iPrompt: Explaining Data Patterns in Natural Language via Interpretable Autoprompting
 
-## *iPrompt: Explaining Data Patterns in Natural Language via Interpretable Autoprompting*
-
-[\[Chandan Singh et al., 2023\]](https://doi.org/10.48550/arXiv.2210.01848)本文引入可解释的自动提示(iPrompt)，这是一种生成解释数据的自然语言字符串的算法。
+[Chandan Singh et al., 2023](https://doi.org/10.48550/arXiv.2210.01848)本文引入可解释的自动提示(iPrompt)，这是一种生成解释数据的自然语言字符串的算法。
 
 换一句话说，iPrompt是一种扩展的AutoPrompt，相较于AutoPrompt，iPrompt生成的文本提示使用自然语言书写以生成语义上有意义的自然语言提示解释数据的一个关键特征，让用户更好理解，具有较强的泛化性。
 
@@ -24,7 +22,7 @@ iPrompt是一种迭代局部搜索算法，在三个步骤之间交替：（1）
 
 **第三步:探索**
 
-（iii）反复探索：重新排序的每个排名靠前的候选人都在一个随机位置被截断。当通过后缀解码生成新的候选提示时，这些被截断的候选被用作前缀。例如，我们可以随机选择前面候选者的开头，并填写结尾： {Combine the__, Sum__} ——>{Combine the numbers, Combine both arguments, Sum the numbers, Sum all inputs}.
+（iii）反复探索：重新排序的每个排名靠前的候选人都在一个随机位置被截断。当通过后缀解码生成新的候选提示时，这些被截断的候选被用作前缀。例如，我们可以随机选择前面候选者的开头，并填写结尾： ```{Combine the__, Sum__} ——>{Combine the numbers, Combine both arguments, Sum the numbers, Sum all inputs}```.
 
 **第四步:重复该算法**
 

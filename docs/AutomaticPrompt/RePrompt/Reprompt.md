@@ -1,8 +1,6 @@
-# *Automatic Prompt*
+# RePrompt: Automatic Prompt Editing to Refine AI-Generative Art Towards Precise Expressions
 
-## *RePrompt: Automatic Prompt Editing to Refine AI-Generative Art Towards Precise Expressions*
-
-[\[Wang et al., 2023\]](https://doi.org/10.1145/3544548.3581402) developed RePrompt, by exploring the emotional
+[Wang et al., 2023](https://doi.org/10.1145/3544548.3581402) developed RePrompt, by exploring the emotional
 expression ability of AI-generated images, RePrompt Is an Automatic Prompt Engineering method based on XAI that can refine text prompts (prompt) and So as to optimize the image generation and realize the accurate emotional expression.
 
 In RePrompt, we curated intuitive text features based on layperson editing (user-interpretable) strategies, designed image quality metrics ,trained machine learning models to predict image quality scores with the text features, then applied model explanations to the trained model to generate a rubric for automatically editing the text prompts

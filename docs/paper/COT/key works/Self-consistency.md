@@ -1,4 +1,4 @@
-﻿# *Prompting extension->Self-consistency*
+﻿# Prompting extension->Self-consistency
 
 ## introduction
 

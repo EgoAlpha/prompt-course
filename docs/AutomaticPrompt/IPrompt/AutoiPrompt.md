@@ -1,8 +1,6 @@
-# *Automatic Prompt*
+# iPrompt: Explaining Data Patterns in Natural Language via Interpretable Autoprompting
 
-## *iPrompt: Explaining Data Patterns in Natural Language via Interpretable Autoprompting*
-
-[\[Chandan Singh et al., 2023\]](https://doi.org/10.48550/arXiv.2210.01848)we introduce interpretable autoprompting (iPrompt), an algorithm that generates a natural language string explaining the data.
+[Chandan Singh et al., 2023](https://doi.org/10.48550/arXiv.2210.01848) introduce interpretable autoprompting (iPrompt), an algorithm that generates a natural language string explaining the data.
 
 In other words,iPrompt is an extended AutoPrompt that uses natural language writing to generate a semantically meaningful natural language prompt for better understanding and generalization than AutoPrompt.
 
@@ -27,11 +25,12 @@ maximize the objective are kept, e.g. narrowing down the candidates to fCombine 
 
 (iii) Iterate with exploration: Each of the top candidates from reranking is truncated at a random position. These
 truncated candidates are used as a prefix when generating new candidate prompts via suffix decoding. For example, we
-may randomly select the start of the previous candidates and fill in the endings: {Combine the__, Sum__}——>{Combine the numbers, Combine both arguments, Sum the numbers, Sum all inputs}.
+may randomly select the start of the previous candidates and fill in the endings:```{Combine the__, Sum__}——>{Combine the numbers, Combine both arguments, Sum the numbers, Sum all inputs}```.
 
 **Fourth Step:Again and again**
 
 The algorithm is repeated until identifying a suitably strong ^s.
 
 *Prompt:*
+
 ![img.png](img.png)

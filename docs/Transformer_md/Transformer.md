@@ -4,8 +4,8 @@ img{
     padding-left: 20%;
 }
 </style>
-# Tansformer
-- [Tansformer](#tansformer)
+# Transformer
+- [Transformer](#transformer)
   - [Introduction](#introduction)
   - [Model description](#model-description)
     - [Overall architecture](#overall-architecture)
@@ -63,8 +63,8 @@ In order to deal with the lack of a way to explain the order of words in the inp
 ![](input2.png)
 
 In this paper [《Attention Is All You Need》](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf), the following calculation method is given for the position vector:
-$$ PE(pos,2i)=sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) $$
-$$ PE(pos,2i+1)=cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}}) $$
+$PE(pos,2i)=sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}})$
+$PE(pos,2i+1)=cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}})$
  where, $pos$ is the position of the current word in the sentence, $d_{model}$ represents the dimension of the position vector, and $i \in (0, d_{model})$ represents the $i$th dimension of the position vector. At even positions, sine coding is used, and at odd positions, cosine coding is used.
 
 Positional Encoding is added to the value of embedding and sent as input to the next layer.

@@ -4,7 +4,7 @@ img{
     padding-left: 20%;
 }
 </style>
-# Tansformer
+# Transformer
 ## 简介
 2017年，Google团队在论文[《Attention Is All You Need》](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)中利用attention思想，首次提出了Transformer模型结构。与以往的RNN这类神经网络结构相比，Transformer在处理序列输入时对整个序列输入进行并行计算，不需要按照时间步循环递归处理输入序列，在seq2seq的任务中取得了创新性的成果。2018年，Google在论文[《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》](https://arxiv.org/pdf/1810.04805.pdf)中首次使用Transformer进行大模型的预训练并在下游任务重进行微调。此后，研究人员将Transformer这种模型结构和预训练+微调这种训练方式相结合，提出了一系列Transformer模型结构、训练方式的改进。如今，各种基于Transformer的深度学习模型已经在机器翻译，问答系统，文本摘要和语音识别等NLP方向取得了众多成果。
 

@@ -1,6 +1,6 @@
-﻿*Prompting extension->Self-consistency*
+﻿# Prompting extension->Self-consistency
 
-*Self-Consistency Improves Chain of Thought Reasoning in Language Models*
+## Self-Consistency Improves Chain of Thought Reasoning in Language Models
 
 ## 介绍
 

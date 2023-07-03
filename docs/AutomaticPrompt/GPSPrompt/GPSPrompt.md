@@ -1,4 +1,4 @@
-# **GPS Genetic Prompt Search for Efficient Few-shot Learning**
+# GPS Genetic Prompt Search for Efficient Few-shot Learning
 
 ## Introduction
 
