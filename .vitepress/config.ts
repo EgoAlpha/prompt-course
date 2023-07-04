@@ -225,7 +225,29 @@ export default defineConfig({
                     ]
                   },
                   {
-                    text: '上下文学习', link: 'zh/principle#框架',
+                    text: '上下文学习', link: 'zh/paper/ICL/introduction',items:[
+                      {
+                        text: 'Transformers learn in-context by gradient descent', link: 'zh/paper/ICL/with/theoryanalysis/gradient_descent/gradient_descent'
+                      },
+                      {
+                        text: 'Language Models Secretly Perform Gradient Descent as Meta-Optimizers', link: 'zh/paper/ICL/with/theoryanalysis/MetaOptimizers/MetaOptimizers'
+                      },
+                      {
+                        text: 'Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale', link: 'zh/paper/ICL/with/theoryanalysis/Rethinking/Rethinking'
+                      },
+                      {
+                        text: 'Complementary Explanations for Effective In-Context Learning', link: 'zh/paper/ICL/with/design/ComExp/ComExp'
+                      },
+                      {
+                        text: 'PLACES: Prompting Language Models for Social Conversation Synthesis', link: 'zh/paper/ICL/with/design/ConversationSynthesis/ConversationSynthesis'
+                      },
+                      {
+                        text: 'In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models', link: 'zh/paper/ICL/with/design/Distillation/Distillation'
+                      },
+                      {
+                        text: 'Diverse Demonstrations Improve In-context Compositional Generalization', link: 'zh/paper/ICL/with/design/DiverseDemo/DiverseDemo'
+                      }
+                    ]
                   },
                   {
                     text: '知识增强Prompt', link: 'zh/principle#框架',
@@ -473,7 +495,29 @@ export default defineConfig({
                     ]
                   },
                   {
-                    text: 'In-Context Learning', link: '/principle#framework',
+                    text: 'In-Context Learning', link: 'paper/ICL/introduction',items:[
+                      {
+                        text: 'Transformers learn in-context by gradient descent', link: 'paper/ICL/with/theoryanalysis/gradient_descent/gradient_descent'
+                      },
+                      {
+                        text: 'Language Models Secretly Perform Gradient Descent as Meta-Optimizers', link: 'paper/ICL/with/theoryanalysis/MetaOptimizers/MetaOptimizers'
+                      },
+                      {
+                        text: 'Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale', link: 'paper/ICL/with/theoryanalysis/Rethinking/Rethinking'
+                      },
+                      {
+                        text: 'Complementary Explanations for Effective In-Context Learning', link: 'paper/ICL/with/design/ComExp/ComExp'
+                      },
+                      {
+                        text: 'PLACES: Prompting Language Models for Social Conversation Synthesis', link: 'paper/ICL/with/design/ConversationSynthesis/ConversationSynthesis'
+                      },
+                      {
+                        text: 'In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models', link: 'paper/ICL/with/design/Distillation/Distillation'
+                      },
+                      {
+                        text: 'Diverse Demonstrations Improve In-context Compositional Generalization', link: 'paper/ICL/with/design/DiverseDemo/DiverseDemo'
+                      }
+                    ]
                   },
                   {
                     text: 'Knowledge Augumented Prompt', link: '/principle#framework',
