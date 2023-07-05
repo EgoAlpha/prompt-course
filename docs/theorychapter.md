@@ -1,131 +1,113 @@
 # 👓 Theory Chapter
 This chapter is divided into six sections, namely the overview of large language models, Transformer, tokenization, BERT model, fine-tuning of GPT model, and T5 model. It mainly introduces the basic framework structure, code implementation, and specific usage methods.
 ## 📔 Contents
-
+- [LLM Overview]()
+- [Transformer](./Transformer_md/Transformer.md)
+- [Tokenizer](./token.md)
+- [BERT]()
+- [GPT Series](./gpt2_finetuning.md)
+- [T5]()
+---
 ### 👉[LLM Overview]()
-本节对大模型的概述从以下几个方面展开：
-- 模型介绍：首先要介绍大模型的基本信息以及它的应用领域和意义。
-
-- 模型结构：介绍大模型的结构，包括层级结构和连接方式。通过字描述、图表或者公式等形式展示模型的结构，帮助读者理解模型的组成部分和各个部分之间的关系。
-
-- 模型训练：介绍大模型的训练方法和数据集。详细了描述训练过程中所使用的算法、超参数的选择、训练数据的准备等。同时介绍了训练过程中遇到的挑战和解决方法，以及训练结果的评估指标。
-
-- 模型性能：大模型在各个任务上的性能表现。本节列举出一些任务或者基准数据集，并展示大模型在这些任务上的表现，比如准确率、召回率等指标。并和其他模型进行对比，展示大模型的优势和不足之处。
-
-- 局限性与未来工作：大模型的局限性和可能的改进方向。针对大模型在一些特定任务或者场景下的表现不足进行说明，并提出一些改进的思路和方向。与此同时，展望了未来可能的研究方向，以及大模型在其他领域的应用潜力。
+This section provides an overview of large models from the following aspects:
+- Model Introduction: First, introduce the basic information about large models, their application areas, and significance.
+- Model Structure: Describe the structure of large models, including hierarchical structure and connection methods. Present the model's structure through words, diagrams, or formulas to help readers understand the components and relationships between them.
+- Model Training: Explain the training methods and datasets used for large models. Detailed descriptions of algorithms, hyperparameter selection, and data preparation during training are provided. Additionally, challenges encountered during training and solutions are discussed, as well as evaluation metrics for training results.
+- Model Performance: Showcase the performance of large models on various tasks or benchmark datasets. This section lists some tasks or benchmark datasets and presents the performance of large models in these tasks, such as accuracy and recall rates. It also compares large models with other models to demonstrate their strengths and weaknesses.
+- Limitations and Future Work: Discuss the limitations of large models and potential improvements. Address any shortcomings in specific tasks or scenarios where large models perform poorly and propose ideas and directions for improvement. At the same time, explore future research directions and potential applications of large models in other fields.
 
 ### 👉[Transformer](./zh/Transformer_md/Transformer.md)
-本节从以下几个方面展示具体内容：
+This section presents specific content from the following aspects:
 
-- 本节介绍了Transformer模型的背景和意义，以及它在自然语言处理等领域的应用。
-- 提出传统序列模型（如循环神经网络）存在的问题，引出Transformer模型的优势。
-- 注意力机制
-   - 介绍注意力机制的基本原理和作用。
-   - 解释自注意力机制和多头注意力机制的概念。
-   - 强调注意力机制在Transformer模型中的关键作用。
+- Background and Significance of Transformer Models: 
+    - This section introduces the background and significance of Transformer models, as well as their applications in natural language processing and other fields.
+- Problems with Traditional Sequence Models (e.g., Recurrent Neural Networks):
+    - This section highlights the problems with traditional sequence models and introduces the advantages of Transformer models.
+- Attention Mechanism:
+    - Basic Principles and Roles of Attention Mechanism: This section explains the basic principles and roles of attention mechanism.
+    - Concepts of Self-Attention and Multi-Head Attention: This section introduces the concepts of self-attention and multi-head attention and emphasizes their key roles in the Transformer model.
 
-- Transformer模型的结构
-   - 描述Transformer模型的整体结构，包括编码器和解码器。
-   - 详细介绍编码器和解码器的构成，包括多层自注意力和全连接层。
-   - 解释输入和输出的数据流动方式。
-
-- 自注意力机制
-   - 阐述自注意力机制的工作原理，包括注意力权重的计算和上下文向量的生成。
-   - 说明自注意力机制相比于传统序列模型的优势，如捕捉长距离依赖关系等。
-
-- 多头注意力机制
-   - 介绍多头注意力机制的概念和作用。
-   - 解释多头注意力机制是如何并行计算多个注意力权重和上下文向量的。
-
-- 位置编码
-   - 说明位置编码的作用和需要引入的原因。
-   - 描述位置编码的实现方式，如使用正弦和余弦函数进行编码。
-
-- 模型训练和推理
-   - 解释Transformer模型的训练阶段和推理阶段的区别。
-   - 提及训练时使用的损失函数、优化算法以及学习率调度方法。
-
-- Transformer模型的改进和扩展
-   - 介绍一些Transformer模型的改进和扩展方法，如BERT、GPT等。
-   - 强调这些改进和扩展模型在不同任务上的性能提升和应用价值。
+- Structure of Transformer Models: 
+    - This section describes the overall structure of Transformer models, including encoders and decoders. It provides detailed information on the components of encoders and decoders, including multi-layer self-attention and fully connected layers, as well as the flow of input and output data.
+- Self-Attention Mechanism: 
+    - This section explains how self-attention mechanisms work, including the calculation of attention weights and generation of context vectors. It also discusses the advantages of self-attention mechanisms over traditional sequence models, such as capturing long-distance dependencies.
+- Multi-Head Attention: 
+    -This section introduces the concept and role of multi-head attention, explaining how it parallelly computes multiple attention weights and context vectors.
+- Positional Encoding: 
+    - This section explains the role and necessity of positional encoding, describing its implementation using sine and cosine functions for encoding positions.
+- Model Training and Inference: 
+    - This section explains the differences between training and inference stages for Transformer models, mentioning loss functions, optimization algorithms, and learning rate scheduling methods used during training.
+- Improvements and Extensions to Transformer Models: 
+    - This section introduces some improvements and extensions to Transformer models, such as BERT, GPT, etc. It emphasizes the performance improvements and application values these improved models bring to different tasks.
 
 ### 👉[Tokenizer](./zh/token.md)
-在NLP任务中，计算机能够理解和处理的最小单位便是Token。本节将从几个不同类别的分词器入手介绍主要的内容，可以看到根据不同的分词器,有着不同的分词效果。
-以下是Tokenizer这个章节的框架结构：
+Tokenizer is the smallest unit that a computer can understand and process in NLP tasks. This section will introduce the main content from several different types of tokenizers, showing that there are different tokenization effects depending on the tokenizer used.
 
-- 介绍Tokenizer的背景和作用，以及它在自然语言处理中的重要性。
-- 强调Tokenizer在文本预处理中的关键作用，包括分词、标记化、词形还原等。
+The framework structure of this chapter is as follows:
 
-- 基本概念
-   - 定义Tokenizer的基本概念，包括Token、词汇表、序列等。
-   - 解释Tokenization的概念和过程，即将文本划分成一系列不可再分的单元。
-
-- 常见Tokenizer算法和方法
-   - 介绍基于规则的Tokenizer算法，如基于空格、标点符号的简单分词方法。
-   - 描述基于机器学习的Tokenizer方法，如统计分词、最大匹配法等。
-   - 提及基于深度学习的Tokenizer模型，如基于循环神经网络或Transformer的分词模型。
-
-- 分词规范和语言相关性
-   - 说明分词规范的重要性，如中文的《现代汉语词典》和英文的格林斯潘规范。
-   - 强调不同语言的分词特点和挑战，例如中文和英文的分词方法差异。
-
-- 词形还原和词性标注
-   - 介绍词形还原的作用和方法，即将不同形态的单词还原为原形。
-   - 简要解释词性标注的概念和作用，即为每个单词标注其词性。
-
-- 常见Tokenizer库和工具
-   - 介绍一些常见的开源Tokenizer库和工具，如NLTK、spaCy、BERT Tokenizer等。
-   - 强调这些工具在不同任务和语言处理方面的应用场景和优势。
+- Introduction to Tokenizer background and role, as well as its importance in natural language processing.
+- Emphasize the key role of Tokenizer in text preprocessing, including tokenization, tokenization, lemmatization, etc.
+- Basic concepts:  
+   - Define the basic concepts of Tokenizer, including Token, vocabulary, sequence, etc.  
+   - Explain the concept and process of Tokenization, which is to divide the text into a series of unbreakable units.
+- Common Tokenizer algorithms and methods:  
+   - Introduce rule-based Tokenizer algorithms, such as simple segmentation methods based on spaces and punctuation marks.  
+   - Describe machine learning-based Tokenizer methods, such as statistical segmentation and maximum matching methods.  
+   - Mention deep learning-based Tokenizer models, such as segmentation models based on recurrent neural networks or transformers.
+- Tokenization standards and language relevance:  
+   - Explain the importance of tokenization standards, such as the Modern Chinese Dictionary and the Greenspan standard for English.  
+   - Emphasize the characteristics and challenges of tokenization in different languages, such as the differences between Chinese and English segmentation methods.
+- Word form recovery and part-of-speech tagging:  
+   - Introduce the role and method of word form recovery, which is to restore words to their original forms with different forms.  
+   - Briefly explain the concept and role of part-of-speech tagging, which is to tag each word with its part of speech.
+- Common Tokenizer libraries and tools:  
+   - Introduce some common open-source Tokenizer libraries and tools, such as NLTK, spaCy, BERT Tokenizer, etc.  
+   - Emphasize the application scenarios and advantages of these tools in different tasks and language processing.
 
 ### 👉[BERT]()
-以下是BERT（Bidirectional Encoder Representations from Transformers）模型的框架结构概述：
+The following is an overview of the framework structure of BERT (Bidirectional Encoder Representations from Transformers) model:
 
-- 介绍BERT模型的背景和意义，以及它在自然语言处理领域的重要性。
-- 强调BERT模型在语言理解任务中的卓越表现和广泛应用。
-
-- BERT模型的结构
-   - 描述BERT模型的整体结构，包括编码器和预训练的目标任务。
-   - 详细介绍BERT模型的编码器部分，即多层Transformer编码器的堆叠。
-   - 解释编码器的输入是经过WordPiece或其他分词方法处理过的文本序列。
-
-- BERT模型的预训练
-   - 解释BERT模型的预训练阶段，即在大规模未标注文本上进行的自监督学习。
-   - 强调预训练目标任务，如Masked Language Model（MLM）和Next Sentence Prediction（NSP）。
-   - 提及预训练所需的大规模语料库和训练策略，如分批次训练和动态掩码。
-
-- BERT模型的微调
-   - 解释BERT模型的微调阶段，即在特定任务上针对标注数据进行的有监督学习。
-   - 提及微调的常见任务，如文本分类、命名实体识别和问答等。
-   - 强调微调阶段的模型架构调整和任务特定的输出层。
+- Introduction to the background and significance of BERT model, as well as its importance in the field of natural language processing.
+- Emphasize the outstanding performance and wide application of BERT model in language understanding tasks.
+- The structure of BERT model:  
+   - Describe the overall structure of BERT model, including the encoder and pre-trained task objectives.  
+   - Detailedly introduce the encoder part of BERT model, which is a stack of multi-layered transformer encoders.  
+   - Explain that the input to the encoder is processed text sequences using WordPiece or other tokenization methods.
+- Pretraining of BERT model:  
+   - Explain the pretraining stage of BERT model, which is self-supervised learning on large unannotated text datasets.  
+   - Emphasize the pretraining task objectives, such as Masked Language Model (MLM) and Next Sentence Prediction (NSP).  
+   - Mention the large corpus and training strategies required for pretraining, such as batch training and dynamic masking.
+- Fine-tuning of BERT model:  
+   - Explain the fine-tuning stage of BERT model, which is supervised learning on labeled data for specific tasks.  
+   - Mention common fine-tuning tasks, such as text classification, named entity recognition, and question answering.  
+   - Emphasize the adjustment of model architecture and task-specific output layers during fine-tuning.
 
 ### 👉[GPT Series](./zh/gpt2_finetuning.md)
-以下是GPT-2（Generative Pre-trained Transformer 2）模型的概述框架：
+The following is an overview of the framework structure of GPT-2 (Generative Pre-trained Transformer 2) model:
 
-- 介绍GPT-2模型的背景和作用，以及它在自然语言处理领域中的重要性。
-- 强调GPT-2模型在语言生成任务中的卓越性能和广泛应用。
-- GPT-2模型的结构
-   - 描述GPT-2模型的整体结构，包括多层Transformer解码器的堆叠。
-   - 解释GPT-2模型是一个单向语言模型，通过自回归生成文本序列。
-
-- GPT-2模型的训练过程
-   - 详细介绍GPT-2模型的训练过程，包括预训练和微调两个阶段。
-   - 解释预训练阶段使用的目标任务，如掩码语言模型和下一句预测。
-   - 强调GPT-2模型采用无监督学习，在大规模无标注文本上进行自学习。
-
-- GPT-2模型的生成能力
-   - 阐述GPT-2模型通过预训练学习到的语言表示能力，能够生成连贯、有上下文的文本序列。
-   - 提及GPT-2模型在文本生成任务上的出色表现和广泛应用，如对话生成、文章创作等。
-
-- GPT-2模型的应用领域
-   - 介绍GPT-2模型在自然语言处理任务中的应用，如机器翻译、文本摘要和问答系统等。
-   - 强调GPT-2模型在生成长文本和处理复杂语境方面的优势。
+- Introduction to the background and significance of GPT-2 model, as well as its importance in the field of natural language processing.
+- Emphasize the outstanding performance and wide application of GPT-2 model in language generation tasks.
+- The structure of GPT-2 model:  
+   - Describe the overall structure of GPT-2 model, including the stacking of multi-layered transformer decoders.  
+   - Explain that GPT-2 model is a unidirectional language model that generates text sequences through autoregressive generation.
+- The training process of GPT-2 model:  
+   - Detailedly introduce the training process of GPT-2 model, which includes pretraining and fine-tuning two stages.  
+   - Explain the task used in the pretraining stage, such as Masked Language Model (MLM) and Next Sentence Prediction (NSP).  
+   - Emphasize that GPT-2 model uses unsupervised learning and self-learning on large unannotated text datasets.
+- The generating ability of GPT-2 model:  
+   - Explain that GPT-2 model can generate coherent and contextually relevant text sequences through language representation learned during pretraining.  
+   - Mention the excellent performance and wide application of GPT-2 model in text generation tasks, such as dialogue generation, article creation, etc.
+- The application areas of GPT-2 model:  
+   - Introduce the applications of GPT-2 model in natural language processing tasks, such as machine translation, text summarization, and question answering systems.  
+   - Emphasize the advantages of GPT-2 model in generating long texts and handling complex contexts.
 
 ### 👉[T5 Series]()
-本节从以下几个方面介绍T5模型：
-- T5模型概述
-- T5模型与BERT的区别
-- T5模型的架构
-- T5模型训练过程
-- T5模型应用场景
-- T5模型的优势和不足
-- T5模型的未来发展方向
+This section introduces the T5 model from the following aspects:
+
+- Overview of T5 Model
+- Differences between T5 Model and BERT
+- Architecture of T5 Model
+- Training Process of T5 Model
+- Application Scenarios of T5 Model
+- Advantages and Disadvantages of T5 Model
+- Future Development Directions of T5 Model
