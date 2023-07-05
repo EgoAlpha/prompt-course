@@ -1,14 +1,14 @@
 # 👓 Theory Chapter
 This chapter is divided into six sections, namely the overview of large language models, Transformer, tokenization, BERT model, fine-tuning of GPT model, and T5 model. It mainly introduces the basic framework structure, code implementation, and specific usage methods.
 ## 📔 Contents
-- [LLM Overview]()
-- [Transformer](./Transformer_md/Transformer.md)
-- [Tokenizer](./token.md)
-- [BERT]()
-- [GPT Series](./gpt2_finetuning.md)
-- [T5]()
+- [LLM Overview](zh/gpt2_finetuning.md)
+- [Transformer](Transformer_md/Transformer.md)
+- [Tokenizer](token.md)
+- [BERT](zh/gpt2_finetuning.md)
+- [GPT Series](gpt2_finetuning.md)
+- [T5](zh/gpt2_finetuning.md)
 ---
-### 👉[LLM Overview]()
+### 👉[LLM Overview](zh/gpt2_finetuning.md)
 This section provides an overview of large models from the following aspects:
 - Model Introduction: First, introduce the basic information about large models, their application areas, and significance.
 - Model Structure: Describe the structure of large models, including hierarchical structure and connection methods. Present the model's structure through words, diagrams, or formulas to help readers understand the components and relationships between them.
@@ -16,7 +16,7 @@ This section provides an overview of large models from the following aspects:
 - Model Performance: Showcase the performance of large models on various tasks or benchmark datasets. This section lists some tasks or benchmark datasets and presents the performance of large models in these tasks, such as accuracy and recall rates. It also compares large models with other models to demonstrate their strengths and weaknesses.
 - Limitations and Future Work: Discuss the limitations of large models and potential improvements. Address any shortcomings in specific tasks or scenarios where large models perform poorly and propose ideas and directions for improvement. At the same time, explore future research directions and potential applications of large models in other fields.
 
-### 👉[Transformer](./zh/Transformer_md/Transformer.md)
+### 👉[Transformer](zh/Transformer_md/Transformer.md)
 This section presents specific content from the following aspects:
 
 - Background and Significance of Transformer Models: 
@@ -40,7 +40,7 @@ This section presents specific content from the following aspects:
 - Improvements and Extensions to Transformer Models: 
     - This section introduces some improvements and extensions to Transformer models, such as BERT, GPT, etc. It emphasizes the performance improvements and application values these improved models bring to different tasks.
 
-### 👉[Tokenizer](./zh/token.md)
+### 👉[Tokenizer](zh/token.md)
 Tokenizer is the smallest unit that a computer can understand and process in NLP tasks. This section will introduce the main content from several different types of tokenizers, showing that there are different tokenization effects depending on the tokenizer used.
 
 The framework structure of this chapter is as follows:
@@ -64,7 +64,7 @@ The framework structure of this chapter is as follows:
    - Introduce some common open-source Tokenizer libraries and tools, such as NLTK, spaCy, BERT Tokenizer, etc.  
    - Emphasize the application scenarios and advantages of these tools in different tasks and language processing.
 
-### 👉[BERT]()
+### 👉[BERT](zh/gpt2_finetuning.md)
 The following is an overview of the framework structure of BERT (Bidirectional Encoder Representations from Transformers) model:
 
 - Introduction to the background and significance of BERT model, as well as its importance in the field of natural language processing.
@@ -82,7 +82,7 @@ The following is an overview of the framework structure of BERT (Bidirectional E
    - Mention common fine-tuning tasks, such as text classification, named entity recognition, and question answering.  
    - Emphasize the adjustment of model architecture and task-specific output layers during fine-tuning.
 
-### 👉[GPT Series](./zh/gpt2_finetuning.md)
+### 👉[GPT Series](zh/gpt2_finetuning.md)
 The following is an overview of the framework structure of GPT-2 (Generative Pre-trained Transformer 2) model:
 
 - Introduction to the background and significance of GPT-2 model, as well as its importance in the field of natural language processing.
@@ -101,7 +101,7 @@ The following is an overview of the framework structure of GPT-2 (Generative Pre
    - Introduce the applications of GPT-2 model in natural language processing tasks, such as machine translation, text summarization, and question answering systems.  
    - Emphasize the advantages of GPT-2 model in generating long texts and handling complex contexts.
 
-### 👉[T5 Series]()
+### 👉[T5 Series](zh/gpt2_finetuning.md)
 This section introduces the T5 model from the following aspects:
 
 - Overview of T5 Model

@@ -1,15 +1,18 @@
 # 👓 Theory Chapter
 本章共分为六个部分，分别是大型语言模型概述、Transformer、分词、BERT模型、GPT模型的微调以及T5模型。
 ## 📔 目录
-- [LLM概述]()
-- [Transformer](./Transformer_md/Transformer.md)
-- [Tokenizer](./token.md)
-- [BERT]
-- [GPT系列](./gpt2_finetuning.md)
-- [T5]
+
+- [LLM概述](gpt2_finetuning.md)
+- [Transformer](Transformer_md/Transformer.md)
+- [Tokenizer](token.md)
+- [BERT](gpt2_finetuning.md)
+- [GPT系列](gpt2_finetuning.md)
+- [T5](gpt2_finetuning.md)
+
 ---
-### 👉[LLM Overview]()
+### 👉[LLM Overview](gpt2_finetuning.md)
 本节对大模型的概述从以下几个方面展开：
+
 - 模型介绍：首先要介绍大模型的基本信息以及它的应用领域和意义。
 
 - 模型结构：介绍大模型的结构，包括层级结构和连接方式。通过字描述、图表或者公式等形式展示模型的结构，帮助读者理解模型的组成部分和各个部分之间的关系。
@@ -20,7 +23,7 @@
 
 - 局限性与未来工作：大模型的局限性和可能的改进方向。针对大模型在一些特定任务或者场景下的表现不足进行说明，并提出一些改进的思路和方向。与此同时，展望了未来可能的研究方向，以及大模型在其他领域的应用潜力。
 
-### 👉[Transformer](./zh/Transformer_md/Transformer.md)
+### 👉[Transformer](Transformer_md/Transformer.md)
 本节从以下几个方面展示具体内容：
 
 - 本节介绍了Transformer模型的背景和意义，以及它在自然语言处理等领域的应用。
@@ -55,7 +58,7 @@
    - 介绍一些Transformer模型的改进和扩展方法，如BERT、GPT等。
    - 强调这些改进和扩展模型在不同任务上的性能提升和应用价值。
 
-### 👉[Tokenizer](./zh/token.md)
+### 👉[Tokenizer](token.md)
 在NLP任务中，计算机能够理解和处理的最小单位便是Token。本节将从几个不同类别的分词器入手介绍主要的内容，可以看到根据不同的分词器,有着不同的分词效果。
 以下是Tokenizer这个章节的框架结构：
 
@@ -83,7 +86,7 @@
    - 介绍一些常见的开源Tokenizer库和工具，如NLTK、spaCy、BERT Tokenizer等。
    - 强调这些工具在不同任务和语言处理方面的应用场景和优势。
 
-### 👉[BERT]()
+### 👉[BERT](gpt2_finetuning.md)
 以下是BERT（Bidirectional Encoder Representations from Transformers）模型的框架结构概述：
 
 - 介绍BERT模型的背景和意义，以及它在自然语言处理领域的重要性。
@@ -104,7 +107,7 @@
    - 提及微调的常见任务，如文本分类、命名实体识别和问答等。
    - 强调微调阶段的模型架构调整和任务特定的输出层。
 
-### 👉[GPT Series](./zh/gpt2_finetuning.md)
+### 👉[GPT Series](gpt2_finetuning.md)
 以下是GPT-2（Generative Pre-trained Transformer 2）模型的概述框架：
 
 - 介绍GPT-2模型的背景和作用，以及它在自然语言处理领域中的重要性。
@@ -126,8 +129,9 @@
    - 介绍GPT-2模型在自然语言处理任务中的应用，如机器翻译、文本摘要和问答系统等。
    - 强调GPT-2模型在生成长文本和处理复杂语境方面的优势。
 
-### 👉[T5 Series]()
+### 👉[T5 Series](gpt2_finetuning.md)
 本节从以下几个方面介绍T5模型：
+
 - T5模型概述
 - T5模型与BERT的区别
 - T5模型的架构
