@@ -253,7 +253,7 @@ export default defineConfig({
                     text: '知识增强Prompt', link: 'zh/principle#框架',
                   },
                   {
-                    text: '评估和可靠性', link: 'zh/principle#框架',
+                    text: '评估和可靠性', link: 'zh/EvaRelia/evalua',
                   }
                 ]
               },
@@ -271,7 +271,7 @@ export default defineConfig({
                     text: 'Tokenizer', link: 'zh/token'
                   },
                   {
-                    text: 'BERT', link: 'zh/principle#框架'
+                    text: 'BERT', link: 'zh/BERT/BERT'
                   },
                   {
                     text: 'GPT系列', link: 'zh/gpt2_finetuning'
@@ -523,7 +523,20 @@ export default defineConfig({
                     text: 'Knowledge Augumented Prompt', link: '/principle#framework',
                   },
                   {
-                    text: 'Evaluation and Reliability', link: '/principle#framework',
+                    text: 'Evaluation and Reliability', link: 'EvaRelia/evalua',items:[
+                      {
+                        text: 'AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models', link: 'EvaRelia/evalua',
+                      },
+                      {
+                        text: 'Have LLMs Advanced Enough?A Challenging Problem Solving Benchmark For Large Language Models', link: '',
+                      },
+                      {
+                        text: 'EVEVAL:A Comprehensive Evaluation of Event Semantics for Large Language Model', link: '',
+                      },
+                      {
+                        text: 'Is GPT-4 a Good Data Analyst?', link: ''
+                      }
+                    ]
                   }
                 ]
               },
@@ -541,7 +554,7 @@ export default defineConfig({
                     text: 'Tokenizer', link: '/token',
                   },
                   {
-                    text: 'BERT', link: '/principle#framework',
+                    text: 'BERT', link: '/BERT/BERT',
                   },
                   {
                     text: 'GPT Series', link: '/gpt2_finetuning',
