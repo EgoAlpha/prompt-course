@@ -1,4 +1,4 @@
-# Chain-Of-Thought(COT)
+# 🧬 Chain-Of-Thought(COT)
 
 ## **What Is Chain of Thought Prompting？**
 

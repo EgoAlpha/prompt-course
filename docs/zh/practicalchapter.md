@@ -1,4 +1,4 @@
-# 实践篇章
+# 🎭 实践篇章
 
 ## 内容概览
 
@@ -46,4 +46,4 @@ LangChain库主要包含六个部分:
 - [**Agents**](langchainguide/guide.md#agents): 代理, 非常重要的一环, 关于对LLMs做何种action, 如何做。通常Utils中的能力、Chains中的各种逻辑链都会封装成一个个工具（Tools）供Agents进行智能化调用。
 - [**Coding Examples**](langchainguide/guide.md#coding-examples): 结合上述内容的代码示例，给出三个很经典的案例，分别是文档查询，自动代理和Auto-GPT。
 
-接下来，让我们开启超级学习者的旅程吧！
+>🎮接下来，让我们开启超级学习者的旅程吧！

@@ -1,4 +1,4 @@
-# Prompt Techniques
+# 💡 Prompt Techniques
 
 ---
 

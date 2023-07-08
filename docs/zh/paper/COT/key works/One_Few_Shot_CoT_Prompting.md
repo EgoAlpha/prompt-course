@@ -1,4 +1,4 @@
-﻿# *One/few-shot prompting*
+﻿# One/few-shot prompting
 
 ## *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*
 

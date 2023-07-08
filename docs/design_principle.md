@@ -1,10 +1,10 @@
-# Design Principle and Framework
+# 📒 Design Principle and Framework
 
 ---
 
 A good prompt is one that is specific and provides enough context for LLMs to be able to generate a response that is relevant to the task.
 
-## Design principle
+## ⚔️ Design principle
 By following design principle, you can improve the quality and accuracy of the LLM’s responses and enhance the overall user experience.
 
 - **Be clear and specific**: The prompt should clearly state the task or question that the model is expected to answer. Avoid ambiguity or vagueness in the prompt as this can lead to unclear or irrelevant responses.
@@ -18,7 +18,7 @@ By following design principle, you can improve the quality and accuracy of the L
 -	**Use appropriate formatting**: Use appropriate formatting such as bullet points, numbered lists, or bold text to highlight key information in the prompt. This can help the model understand the structure and organization of the prompt.
 -	**Test and refine**: Test the prompts with the model and refine them based on the quality of the generated responses. Iteratively refine the prompts until the generated responses are of high quality and relevance.
 
-## Framework
+## ⚙️ Framework
 We propose a framework for prompt design that consists of five key components: context, instructions, relevance, constraints, and demonstration. This standardized structure can help streamline prompt design and ensure that a consistent process is followed, resulting in more effective prompts.
 
 - 🕐**Context**:

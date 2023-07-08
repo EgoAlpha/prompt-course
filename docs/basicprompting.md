@@ -1,4 +1,4 @@
-# Basic Prompt
+# 🥽 Basic Prompt
 
 > 💥 Based on the complexity and characteristics of the task, you can select a few components from them to form your prompt.
 

@@ -1,87 +1,88 @@
-# 设计原则和框架
+# 📒 设计原则和框架
 
 ---
 
-A good prompt is one that is specific and provides enough context for LLMs to be able to generate a response that is relevant to the task.
+一个设计优秀的提示是具体的，能够提供足够的上下文信息，从而使得大语言模型可以产生与任务相关的反馈和响应。
 
-## 设计原则
+## ⚔️ 设计原则
 By following design principle, you can improve the quality and accuracy of the LLM’s responses and enhance the overall user experience.
+通过遵循设计原则，你可以提高大语言模型的回答质量和准确性，并提高整个用户体验。
 
-- **Be clear and specific**: The prompt should clearly state the task or question that the model is expected to answer. Avoid ambiguity or vagueness in the prompt as this can lead to unclear or irrelevant responses.
--	**Provide context**: The prompt should provide enough context for the model to understand the task and generate a relevant response. This can include relevant background information, examples, or constraints.
--	**Use natural language**: Write the prompt in a natural and conversational style that the model can understand and respond to. Avoid using complex or technical language that may confuse the model.
--	**Be concise**: Keep the prompt concise and to the point. Avoid unnecessary details or information that may distract the model from the task at hand.
--	**Avoid complex sentence structure**: Using complex sentence structures can confuse the model, leading to poorly generated output. Using simple sentences and straightforward language makes it easier for the model to understand and generate the desired output.
--	**Avoid ambiguity**: Ensure that the prompt is specific and avoids ambiguity. Avoid using words with multiple meanings or phrases that can be interpreted in different ways.
--	**Use keywords**: Use keywords in the prompt that are relevant to the topic of the conversation. This helps the chatbot to understand the context and respond appropriately.
--	**Consider the intended audience**: Consider the intended audience for the generated responses and tailor the prompts accordingly. Use appropriate language, terminology, and examples that the audience is likely to understand and relate to.
--	**Use appropriate formatting**: Use appropriate formatting such as bullet points, numbered lists, or bold text to highlight key information in the prompt. This can help the model understand the structure and organization of the prompt.
--	**Test and refine**: Test the prompts with the model and refine them based on the quality of the generated responses. Iteratively refine the prompts until the generated responses are of high quality and relevance.
+- **清晰和具体**: 提示应该清楚地说明模型按照预期要回答的任务或问题。避免在提示中出现模棱两可或含糊不清的情况，因为这可能导致不明确或不相关的回答。
+-	**提供上下文**: 提示应该为模型提供足够的上下文信息，以便理解任务并产生相关的反应。这可以包括相关的背景信息、例子或制约因素。
+-	**使用自然语言**: 以自然和对话的方式来写提示，使模特能够理解和回应。避免使用复杂或技术性的语言，以免使模特儿感到困惑。
+-	**准确**: 保持提示的简洁性和针对性。避免不必要的细节或信息，以免分散模特对当前任务的注意力。
+-	**避免复杂的句式结构**: 使用复杂的句子结构会使模型混淆，导致生成的输出不理想。使用简单的句子和直截了当的语言可以使模型更容易理解并产生所需的输出。
+-	**避免歧义性**: 确保提示是具体的，避免含糊不清。避免使用具有多重含义的词语或可以用不同方式解释的短语。
+-	**使用关键词**: 在提示中使用与对话主题相关的关键词。这有助于聊天机器人理解上下文并作出适当的回应。
+-	**考虑目标受众群体**: 考虑到所产生的回答的目标受众，并相应地调整提示内容。使用适当的语言、术语和听众可能理解和涉及的例子。
+-	**使用适当的格式化句式**: 使用适当的格式，如句点式说明、编号列表或粗体字来突出提示中的关键信息。这可以帮助模型理解提示的结构和组织。
+-	**测试和完善**: 用模型测试提示语，并根据生成的回答的质量来完善它们。迭代地完善提示，直到生成的回答具有较高的质量和相关性。
 
-## 框架
-We propose a framework for prompt design that consists of five key components: context, instructions, relevance, constraints, and demonstration. This standardized structure can help streamline prompt design and ensure that a consistent process is followed, resulting in more effective prompts.
+## ⚙️ 框架
+我们提出了一个由五个关键部分组成的提示设计框架：上下文、指令、相关性、约束和示例。这种标准化的结构可以帮助简化提示设计，确保遵循一致的程序，从而产生更有效的提示。
 
-- 🕐**Context**:
-    - Context is key when designing a prompt. Make sure to provide enough background information surrounding to the designated task so that the model can understands the situation and generate text that is relevant and accurate.
+- 🕐**上下文**:
+    - 在设计提示时，背景是关键。确保提供足够的围绕指定任务的背景信息，以便模型能够理解情况，并生成相关和准确的文本。
 
-- 🕜**Instruction**:
-    - Instruction is crucial as it guides the model on what to do and what is expected of it. It is important to be clear, concise and specific. When dealing with complex reasoning tasks, consider breaking the tasks down into smaller, more manageable steps to help the model understand the task at hand.
+- 🕜**指令**:
+    - 指令是至关重要的，因为它指导模型做什么以及对它的期望是什么。重要的是要清楚、简明和具体。当处理复杂的推理任务时，考虑将任务分解成更小的、更容易管理的步骤，以帮助模型理解手头的任务。
 
-- 🕑**Relevance**:
-    - Relevance is essential when specific information needs to be referenced. This information could be links to relevant articles or data, or specific input provided by the user. By utilizing this specific information, the model can tailor its output to be personalized, reliable, and consistent with the user's needs.
+- 🕑**相关性**:
+    - 当需要参考具体信息时，相关性是至关重要的。这些信息可以是相关文章或数据的链接，或者是用户提供的具体输入。通过利用这些特定的信息，模型可以定制其输出，使之个性化、可靠，并与用户的需求相一致。
 
-- 🕝**Constraint**:
-    - Constraint is helpful as guiding LLMs on what it can and cannot do, ultimately leading to more accurate results. This may involve specifying the format of the output, the type of language to be used, or even the length of the output. Additionally, specifying the difficulty level and style can further refine the output.
+- 🕝**约束**:
+    - 约束有助于指导LLM能做什么和不能做什么，最终导致更准确的结果。这可能涉及到指定输出的格式，使用的语言类型，甚至是输出的长度。此外，指定难度等级和风格可以进一步完善输出。
 
-- 🕒**Demonstration**:
-    - Demonstration is valuable as it allow LLMs to understand what is expected through examples, particularly when instructions alone cannot effectively convey specific details and accuracy. By offering examples of input and output pairs, LLMs can automatically identify patterns and then generate text that is aligned with the user's expectations.
+- 🕒**示例**:
+    - 示例是很有价值的，因为它可以让LLM通过实例了解人们的期望，特别是当单独的指示不能有效地传达具体的细节和准确性时。通过提供输入和输出对的例子，LLM可以自动识别模式，然后生成与用户期望一致的文本。
 
-## 💥 Based on the complexity and characteristics of the task, you can select a few components from them to form your prompt.
+## 💥 根据任务的复杂性和特点，你可以从中选择一些成分来形成你的提示。
 
-Usually, 'instruction' or 'demonstration' can both be used to convey our intent behind tasks or questions. We can choose to use either of them depending on the situation of completing the task or question.
+通常情况下，"指令 "或 "示例 "都可以用来表达我们在任务或问题背后的意图。我们可以根据完成任务或问题的情况选择使用其中之一。
 
-At the beginning of the prompt, we can directly write the content to express the intent of the instruction, without having to explicitly use the words 'instruction' or 'demonstration'.
+在提示的开头，我们可以直接写上内容来表达指令的意图，而不必明确使用'指令'或'示例'这两个词。
 
-👁️ **[Prompt example]**:
+👁️ **[提示案例]**:
 
-```Write a 500-word short story that incorporates the theme of discovering hidden talents. Ensure that your story has a clear beginning, middle, and end, and that the characters are well-rounded and believable.```
+```写一个500字的短篇故事，结合发现隐藏人才的主题。确保你的故事有一个清晰的开头、中间和结尾，而且人物形象要全面、可信。```
 
-```[Context]: You are tasked with writing a short story about a character who suddenly discovers a hidden talent they never knew they possessed. The story should have a clear plot and well-developed characters.```
+```[上下文信息]: 你的任务是写一个短篇小说，讲述一个人物突然发现了他们从来不知道自己拥有的隐藏天赋。这个故事应该有一个清晰的情节和发展良好的人物。```
 
-```[Relevance]: To help you develop your story, please review the following articles: "The Power of Uncovering Hidden Talents" and "The Importance of Character Development in Fiction Writing." These articles will provide you with relevant insights and ideas for your story.```
+```[相关性]: 为了帮助你发展你的故事，请回顾以下文章： "发掘隐藏人才的力量 "和 "小说写作中人物发展的重要性"。这些文章将为你的故事提供相关的见解和想法。```
 
-```[Constraint]: Your story must be written in third person point of view and should be appropriate for a general audience. Additionally, ensure that the story has a positive and inspiring tone.```
+```[约束]: 你的故事必须以第三人称视角来写，并应适合于普通观众。此外，确保故事有一个积极和鼓舞人心的基调。```
 
 ```
 Output: 
 
-  Emily had always considered herself an average person. She went to work, came home, and spent her evenings watching TV or scrolling through social media. But on this particular day, something changed. 
-  As she walked home from work, she noticed a group of people gathered around a street performer. 
-  Curiosity piqued, she pushed her way through the crowd to see what was happening. The performer was a young man playing a guitar, his fingers moving expertly over the strings. 
-  Emily found herself drawn in by the music, the melody taking her to a place she had never been before. As the song ended, the performer looked up and met Emily's gaze. 
-  He smiled and gestured for her to come closer.Emily hesitated, feeling self-conscious, but something about the performer's smile made her feel welcome. 
-  She moved closer, and the performer handed her his guitar."Play something," he said, encouragingly. Emily shook her head. "I don't know how," she replied. "Everyone has music inside them," the performer said. "Just let it out."Emily looked down at the guitar in her hands, feeling a sense of unease. 
-  She had never played an instrument before, and the thought of making a fool of herself in front of this crowd was daunting. But as she looked up, she saw the performer nodding at her, encouraging her to give it a try. 
-  Taking a deep breath, Emily placed her fingers on the strings and began to strum. To her surprise, a melody began to form. She felt the music flowing through her, the notes coming easily as if they had been waiting to be released all along. 
-  The crowd around her cheered, and Emily felt a sense of pride swell inside her. She had discovered a talent she never knew she possessed. From that moment on, she spent every spare moment practicing, determined to hone her skills and see where this new passion could take her. 
-  Months passed, and Emily found herself playing at local bars and coffee shops, her talent drawing in crowds of people eager to hear her music. 
-  She had never felt so alive, and every time she played, she felt a sense of fulfillment and purpose that she had never experienced before. One day, a music producer heard her play and offered her a record deal. 
-  Emily couldn't believe it - this was everything she had ever dreamed of. She signed the contract and began working on her first album. 
-  As her music career took off, Emily looked back on that chance encounter with the street performer and realized that it had changed her life forever. 
-  She had discovered a hidden talent she never knew she possessed, and it had brought her more happiness and fulfillment than she could ever have imagined.
+  艾米丽一直认为自己是个普通人。她去上班，回家，晚上看电视或滚动浏览社交媒体。但在这个特殊的日子里，情况发生了变化。
+  当她下班回家时，她注意到一群人聚集在一个街头表演者周围。
+  她被激起了好奇心，挤进人群去看发生了什么。表演者是一个弹吉他的年轻人，他的手指熟练地在琴弦上移动。
+  艾米丽发现自己被音乐所吸引，旋律把她带到了一个她从未去过的地方。当歌曲结束时，表演者抬起头来，迎着艾米丽的目光看去。
+  他微笑着示意她走近。艾米丽犹豫了一下，感到很自责，但表演者的微笑让她感到很受欢迎。
+  她走近了，表演者把他的吉他递给她。"弹点什么，"他鼓励地说。艾米丽摇了摇头。"我不知道怎么做，"她回答。"每个人都有自己的音乐，"表演者说。"只要让它出来。"艾米丽低头看着手中的吉他，感到一种不安。
+  她以前从未演奏过乐器，想到要在这群人面前出丑，她就觉得很害怕。但当她抬头时，她看到表演者向她点头，鼓励她试一试。
+  深吸一口气，艾米丽将手指放在琴弦上，开始弹奏。令她惊讶的是，一段旋律开始形成。她感觉到音乐在她身上流动，音符轻松地出现，仿佛它们一直都在等待着被释放。
+  她周围的人群欢呼起来，艾米丽感到一种自豪感在她体内涌动。她发现了一种她从来不知道自己拥有的天赋。从那一刻起，她把每一个空闲时间都用来练习，决心磨练自己的技能，看看这种新的激情能把她带到哪里去。
+  几个月过去了，艾米丽发现自己在当地的酒吧和咖啡馆演出，她的才华吸引了一群渴望听她音乐的人。
+  她从来没有感觉到自己是如此有活力，每次演出，她都感到一种前所未有的成就感和使命感。有一天，一位音乐制作人听了她的演奏，给她提供了一份唱片合约。
+  艾米丽简直不敢相信--这是她梦寐以求的一切。她签了合同，并开始制作她的第一张专辑。 
+  随着她的音乐事业起飞，艾米丽回顾了与这位街头艺人的偶遇，并意识到这已经永远改变了她的生活。
+  她发现了自己从未意识到的隐藏天赋，这给她带来了超乎想象的快乐和成就感。
 ```
 
-I like this story:  Unleash Your Hidden Talent!
+我喜欢这个故事：  释放你的隐性天赋!
 
-👁️ **[Prompt example]**:
+👁️ **[提示案例]**:
 
-```Circulation revenue has increased by 5% in Finland. [Positive]```
-```Panostaja did not disclose the purchase price. [Neutral]```
-```Paying off the national debt will be extremely painful. [Negative]```
-```The acquisition will have an immediate positive impact. [???]```
+```芬兰的发行收入增加了5%。 [积极]```
+```Panostaja没有透露购买价格。 [中性]```
+```偿还国债将是极其痛苦的。 [消极]```
+```这项收购将立即产生积极影响。 [？？？]```
 
 ```
 Output:  
-Neutral
+中性
 ```
 

@@ -1,4 +1,4 @@
-﻿# *zero-shot CoT prompting*
+﻿# zero-shot CoT prompting
 
 ## *Large Language Models are Zero-Shot Reasoners*
 

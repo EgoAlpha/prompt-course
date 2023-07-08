@@ -1,4 +1,4 @@
-# Chain-Of-Thought(COT)
+# 🧬 Chain-Of-Thought(COT)
 
 
 ## *什么是思维链提示?*

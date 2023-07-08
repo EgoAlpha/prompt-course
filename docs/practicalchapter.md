@@ -1,4 +1,4 @@
-# Practical Chapter
+# 🎭 Practical Chapter
 
 ## Contents
 
@@ -46,4 +46,4 @@ LangChain library contains six main parts.
 - [**Agents**](langchainguide/guide.md#agents): Agents, a very important part, about what actions to do to LLMs and how to do them. Usually the capabilities in Utils and the various logic chains in Chains are encapsulated as Tools for Agents to call intelligently.
 - [**Coding Examples**](langchainguide/guide.md#coding-examples): Combined with the above code examples, three classic cases are given, namely Document Query, Auto-Agent and Auto-GPT.
 
-Now, let's start the journey of super learners!
+>Now, let's start the journey of super learners!

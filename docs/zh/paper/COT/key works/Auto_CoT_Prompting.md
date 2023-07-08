@@ -1,4 +1,4 @@
-﻿# *Auto-CoT Prompting*
+﻿# Auto-CoT Prompting
 
 ## *Automatic Chain of Thought Prompting in Large Language Models*
 

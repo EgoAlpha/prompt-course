@@ -1,4 +1,4 @@
-# GPT2-finetuning internal constructs
+# 🕯️ GPT2-finetuning internal constructs
 
 # 1.1 tokenizer
 

@@ -153,7 +153,7 @@ export default defineConfig({
                   text: '基本Prompt', link: 'zh/basicprompting_zh'
                   },
                   {
-                    text: '高级Prompt', link: 'zh/principle#框架',items:[
+                    text: '高级Prompt', link: 'zh/advanced',items:[
                       {
                         text: '批量prompt', link: 'zh/Batch_Prompting/BatchPrompting'
                       },
@@ -170,22 +170,22 @@ export default defineConfig({
                         text: 'Self-Ask', link: 'zh/Self_Ask/MEA_NARROWING'
                       },
                       {
-                        text: 'Context-faithful Prompting', link: 'zh/Context_faithful_Prompting/Context_faithful'
+                        text: '忠实于上下文的提示', link: 'zh/Context_faithful_Prompting/Context_faithful'
                       },
                       {
                         text: 'REFINER', link: 'zh/REFINER/REFINER'
                       },
                       {
-                        text: 'Reflections', link: 'zh/Reflexion/Reflexion'
+                        text: '反思', link: 'zh/Reflexion/Reflexion'
                       },
                       {
                         text: 'Progressive-Hint Prompt', link: 'zh/Progressive_Hint_Prompting/Progressive_Hint_Prompting'
                       },
                       {
-                        text: 'Self-Refine', link: 'zh/Self_Refine/Self_Refine'
+                        text: '自我提问', link: 'zh/Self_Refine/Self_Refine'
                       },
                       {
-                        text: 'RecurrentGPT', link: 'zh/RecurrentGPT/RecurrentGPT'
+                        text: '循环GPT', link: 'zh/RecurrentGPT/RecurrentGPT'
                       }
                     ]
                   },
@@ -211,7 +211,7 @@ export default defineConfig({
                   {
                     text: '思维链', link: 'zh/METHOD/cotintro',items:[
                       {
-                        text: '自动思维链提示', link: 'zh/paper/COT/key works/Auto-CoT_Prompting'
+                        text: '自动思维链提示', link: 'zh/paper/COT/key works/Auto_CoT_Prompting'
                       },
                       {
                         text: '少样本思维链提示', link: 'zh/paper/COT/key works/One_Few_Shot_CoT_Prompting'
@@ -423,7 +423,7 @@ export default defineConfig({
                     text: 'Basic Prompt', link: '/basicprompting',
                   }, 
                   {
-                    text: 'Advanced Prompt', link: '/principle#framework',items:[
+                    text: 'Advanced Prompt', link: '/advanced',items:[
                       {
                         text: 'Batch Prompting', link: '/Batch_Prompting/BatchPrompting'
                       },
