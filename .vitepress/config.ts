@@ -8,15 +8,105 @@ import Unocss from 'unocss/vite'
 // import VueMacros from 'unplugin-vue-macros/vite'
 import { presetAttributify, presetIcons, presetUno, presetWebFonts } from 'unocss'
 import extractorPug from '@unocss/extractor-pug'
+import mathjax3 from 'markdown-it-mathjax3'
 
+const customElements = [
+  'math',
+  'maction',
+  'maligngroup',
+  'malignmark',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mi',
+  'mlongdiv',
+  'mmultiscripts',
+  'mn',
+  'mo',
+  'mover',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'ms',
+  'mscarries',
+  'mscarry',
+  'mscarries',
+  'msgroup',
+  'mstack',
+  'mlongdiv',
+  'msline',
+  'mstack',
+  'mspace',
+  'msqrt',
+  'msrow',
+  'mstack',
+  'mstack',
+  'mstyle',
+  'msub',
+  'msup',
+  'msubsup',
+  'mtable',
+  'mtd',
+  'mtext',
+  'mtr',
+  'munder',
+  'munderover',
+  'semantics',
+  'math',
+  'mi',
+  'mn',
+  'mo',
+  'ms',
+  'mspace',
+  'mtext',
+  'menclose',
+  'merror',
+  'mfenced',
+  'mfrac',
+  'mpadded',
+  'mphantom',
+  'mroot',
+  'mrow',
+  'msqrt',
+  'mstyle',
+  'mmultiscripts',
+  'mover',
+  'mprescripts',
+  'msub',
+  'msubsup',
+  'msup',
+  'munder',
+  'munderover',
+  'none',
+  'maligngroup',
+  'malignmark',
+  'mtable',
+  'mtd',
+  'mtr',
+  'mlongdiv',
+  'mscarries',
+  'mscarry',
+  'msgroup',
+  'msline',
+  'msrow',
+  'mstack',
+  'maction',
+  'semantics',
+  'annotation',
+  'annotation-xml',
+  'mjx-container',
+  'mjx-assistive-mml',
+]
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   titleTemplate: 'Prompt Engineering Course, Resource and News',
   head: [
-    ['meta', { name:"keywords",content:"Prompt Engineering, in-context learning, Prompt learning, chain-of-thought, LLMs, Artificial General Intelligence, AGI" }],
-    ['meta', { name:"description",content:"The mecca for studying Prompt engineering and In-Context Learning." }],
-    ['meta', { name:"subject",content:"Prompt Engineering, In-context Learning,prompt-based-learning,Large Language Model, ChatGPT" }],
-    ['meta', { name:"robots",content:"index, follow" }],
+    ['meta', { name: 'keywords', content: 'Prompt Engineering, in-context learning, Prompt learning, chain-of-thought, LLMs, Artificial General Intelligence, AGI' }],
+    ['meta', { name: 'description', content: 'The mecca for studying Prompt engineering and In-Context Learning.' }],
+    ['meta', { name: 'subject', content: 'Prompt Engineering, In-context Learning,prompt-based-learning,Large Language Model, ChatGPT' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
   ],
   srcDir: './docs',
   locales: {
@@ -44,243 +134,263 @@ export default defineConfig({
                 text: '实践篇章',
                 link: 'zh/practicalchapter',
                 items: [
-                {
-                  text: 'ChatGPT 使用指南', link: 'zh/chatgptprompt#🌋-chatgpt-提示使用指南',items:[
-                    {
-                      text: '帮助我们学习', link: 'zh/chatgptprompt#帮助我们学习',items:[
-                        {
-                          text: '阅读和写作', link: 'zh/chatgptprompt#阅读与写作'
-                        },
-                        {
-                          text: '学习与编程', link: 'zh/chatgptprompt#学习编程'
-                        }
-                      ]
-                    },
-                    {
-                      text: '协助我们工作', link: 'zh/chatgptprompt#协助我们的工作',items:[
-                        {
-                          text: '竞争分析', link: 'zh/chatgptprompt#竞争分析'
-                        },
-                        {
-                          text: '客户服务', link: 'zh/chatgptprompt#客户服务'
-                        },
-                        {
-                          text: '协助软件开发', link: 'zh/chatgptprompt#协助软件开发'
-                        },
-                        {
-                          text: '视频编辑', link: 'zh/chatgptprompt#视频编辑'
-                        },
-                        {
-                          text: '初创企业', link: 'zh/chatgptprompt#初创企业'
-                        },
-                        {
-                          text: '教育工作', link: 'zh/chatgptprompt#教育工作'
-                        }
-                      ]
-                    },
-                    {
-                      text: '丰富我们的经验', link: 'zh/chatgptprompt#丰富我们的经验',items:[
-                        {
-                          text: '辩论比赛模拟 ', link: 'zh/chatgptprompt#辩论比赛模拟'
-                        },
-                        {
-                          text: '模拟面试', link: 'zh/chatgptprompt#模拟面试'
-                        },
-                        {
-                          text: '演讲稿设计', link: 'zh/chatgptprompt#演讲稿设计'
-                        }
-                      ]
-                    },
-                    {
-                      text: '方便我们的生活', link: 'zh/chatgptprompt#方便我们的生活',items:[
-                        {
-                          text: '运动与健身', link: 'zh/chatgptprompt#运动与健身'
-                        },
-                        {
-                          text: '音乐与艺术', link: 'zh/chatgptprompt#音乐与艺术'
-                        },
-                        {
-                          text: '旅游指南', link: 'zh/chatgptprompt#旅游指南'
-                        },
-                        {
-                          text: '学习厨艺', link: 'zh/chatgptprompt#学习厨艺'
-                        },
-                      ]
-                    }
-                  ]
-                },
-                {
-                  text: '使用LangChain操作大模型', link: 'zh/langchainguide/guide#🎇-langchain',items:[
-                    {
-                      text: '开始之前', link: 'zh/langchainguide/guide#before-start'
-                    },
-                    {
-                      text: '模型', link: 'zh/langchainguide/guide#models'
-                    },
-                    {
-                      text: '提示', link: 'zh/langchainguide/guide#prompt'
-                    },
-                    {
-                      text: '索引', link: 'zh/langchainguide/guide#index'
-                    },
-                    {
-                      text: '存储', link: 'zh/langchainguide/guide#memory'
-                    },
-                    {
-                      text: '链', link: 'zh/langchainguide/guide#chains'
-                    },
-                    {
-                      text: '代理', link: 'zh/langchainguide/guide#agents'
-                    },
-                    {
-                      text: '代码样例', link: 'zh/langchainguide/guide#coding-examples'
-                    }
-                  ]
-                },
-              ]
+                  {
+                    text: 'ChatGPT 使用指南',
+                    link: 'zh/chatgptprompt#🌋-chatgpt-提示使用指南',
+                    items: [
+                      {
+                        text: '帮助我们学习',
+                        link: 'zh/chatgptprompt#帮助我们学习',
+                        items: [
+                          {
+                            text: '阅读和写作', link: 'zh/chatgptprompt#阅读与写作',
+                          },
+                          {
+                            text: '学习与编程', link: 'zh/chatgptprompt#学习编程',
+                          },
+                        ],
+                      },
+                      {
+                        text: '协助我们工作',
+                        link: 'zh/chatgptprompt#协助我们的工作',
+                        items: [
+                          {
+                            text: '竞争分析', link: 'zh/chatgptprompt#竞争分析',
+                          },
+                          {
+                            text: '客户服务', link: 'zh/chatgptprompt#客户服务',
+                          },
+                          {
+                            text: '协助软件开发', link: 'zh/chatgptprompt#协助软件开发',
+                          },
+                          {
+                            text: '视频编辑', link: 'zh/chatgptprompt#视频编辑',
+                          },
+                          {
+                            text: '初创企业', link: 'zh/chatgptprompt#初创企业',
+                          },
+                          {
+                            text: '教育工作', link: 'zh/chatgptprompt#教育工作',
+                          },
+                        ],
+                      },
+                      {
+                        text: '丰富我们的经验',
+                        link: 'zh/chatgptprompt#丰富我们的经验',
+                        items: [
+                          {
+                            text: '辩论比赛模拟 ', link: 'zh/chatgptprompt#辩论比赛模拟',
+                          },
+                          {
+                            text: '模拟面试', link: 'zh/chatgptprompt#模拟面试',
+                          },
+                          {
+                            text: '演讲稿设计', link: 'zh/chatgptprompt#演讲稿设计',
+                          },
+                        ],
+                      },
+                      {
+                        text: '方便我们的生活',
+                        link: 'zh/chatgptprompt#方便我们的生活',
+                        items: [
+                          {
+                            text: '运动与健身', link: 'zh/chatgptprompt#运动与健身',
+                          },
+                          {
+                            text: '音乐与艺术', link: 'zh/chatgptprompt#音乐与艺术',
+                          },
+                          {
+                            text: '旅游指南', link: 'zh/chatgptprompt#旅游指南',
+                          },
+                          {
+                            text: '学习厨艺', link: 'zh/chatgptprompt#学习厨艺',
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    text: '使用LangChain操作大模型',
+                    link: 'zh/langchainguide/guide#🎇-langchain',
+                    items: [
+                      {
+                        text: '开始之前', link: 'zh/langchainguide/guide#before-start',
+                      },
+                      {
+                        text: '模型', link: 'zh/langchainguide/guide#models',
+                      },
+                      {
+                        text: '提示', link: 'zh/langchainguide/guide#prompt',
+                      },
+                      {
+                        text: '索引', link: 'zh/langchainguide/guide#index',
+                      },
+                      {
+                        text: '存储', link: 'zh/langchainguide/guide#memory',
+                      },
+                      {
+                        text: '链', link: 'zh/langchainguide/guide#chains',
+                      },
+                      {
+                        text: '代理', link: 'zh/langchainguide/guide#agents',
+                      },
+                      {
+                        text: '代码样例', link: 'zh/langchainguide/guide#coding-examples',
+                      },
+                    ],
+                  },
+                ],
               },
               {
                 text: '方法篇章',
                 link: 'zh/methodchapter',
                 items: [
                   {
-                    text: '设计原则', link: 'zh/principle#设计原则'
-                  }, 
-                  {
-                    text: '框架', link: 'zh/principle#框架'
+                    text: '设计原则', link: 'zh/principle#设计原则',
                   },
                   {
-                  text: '基本Prompt', link: 'zh/basicprompting_zh'
+                    text: '框架', link: 'zh/principle#框架',
                   },
                   {
-                    text: '高级Prompt', link: 'zh/advanced',items:[
-                      {
-                        text: '批量prompt', link: 'zh/Batch_Prompting/BatchPrompting'
-                      },
-                      {
-                        text: '连续prompt', link: 'zh/SuccessivePrompt/Suc_Prompting_Dec_Com_Que'
-                      },
-                      {
-                        text: 'PAL', link: 'zh/PAL/PALPrompting'
-                      },
-                      {
-                        text: 'ReAct', link: 'zh/ReAct/ReActPrompting'
-                      },
-                      {
-                        text: 'Self-Ask', link: 'zh/Self_Ask/MEA_NARROWING'
-                      },
-                      {
-                        text: '忠实于上下文的提示', link: 'zh/Context_faithful_Prompting/Context_faithful'
-                      },
-                      {
-                        text: 'REFINER', link: 'zh/REFINER/REFINER'
-                      },
-                      {
-                        text: '反思', link: 'zh/Reflexion/Reflexion'
-                      },
-                      {
-                        text: 'Progressive-Hint Prompt', link: 'zh/Progressive_Hint_Prompting/Progressive_Hint_Prompting'
-                      },
-                      {
-                        text: '自我提问', link: 'zh/Self_Refine/Self_Refine'
-                      },
-                      {
-                        text: '循环GPT', link: 'zh/RecurrentGPT/RecurrentGPT'
-                      }
-                    ]
+                    text: '基本Prompt', link: 'zh/basicprompting_zh',
                   },
                   {
-                    text: '自动化Prompt', link: 'zh/AutomaticPrompt/intro_automaticprompt',items:[
+                    text: '高级Prompt',
+                    link: 'zh/advanced',
+                    items: [
                       {
-                        text: '自动提示优化使用梯度下降和束搜索', link: 'zh/AutomaticPrompt/optim/autooptim'
+                        text: '批量prompt', link: 'zh/Batch_Prompting/BatchPrompting',
                       },
                       {
-                        text: '基于遗传提示搜索用于高效的少样本学习', link: 'zh/AutomaticPrompt/GPSPrompt/GPSPrompt'
+                        text: '连续prompt', link: 'zh/SuccessivePrompt/Suc_Prompting_Dec_Com_Que',
                       },
                       {
-                        text: 'iPrompt 用自然语言解释数据模式', link: 'zh/AutomaticPrompt/IPrompt/AutoiPrompt'
+                        text: 'PAL', link: 'zh/PAL/PALPrompting',
                       },
                       {
-                        text: 'PromptGen 使用生成模型自动生成提示', link: 'zh/AutomaticPrompt/PromptGen/PromptGen'
+                        text: 'ReAct', link: 'zh/ReAct/ReActPrompting',
                       },
                       {
-                        text: 'RePrompt 自动提示编辑以改进AI生成', link: 'zh/AutomaticPrompt/RePrompt/Reprompt'
-                      }
-                    ]
+                        text: 'Self-Ask', link: 'zh/Self_Ask/MEA_NARROWING',
+                      },
+                      {
+                        text: '忠实于上下文的提示', link: 'zh/Context_faithful_Prompting/Context_faithful',
+                      },
+                      {
+                        text: 'REFINER', link: 'zh/REFINER/REFINER',
+                      },
+                      {
+                        text: '反思', link: 'zh/Reflexion/Reflexion',
+                      },
+                      {
+                        text: 'Progressive-Hint Prompt', link: 'zh/Progressive_Hint_Prompting/Progressive_Hint_Prompting',
+                      },
+                      {
+                        text: '自我提问', link: 'zh/Self_Refine/Self_Refine',
+                      },
+                      {
+                        text: '循环GPT', link: 'zh/RecurrentGPT/RecurrentGPT',
+                      },
+                    ],
                   },
                   {
-                    text: '思维链', link: 'zh/METHOD/cotintro',items:[
+                    text: '自动化Prompt',
+                    link: 'zh/AutomaticPrompt/intro_automaticprompt',
+                    items: [
                       {
-                        text: '自动思维链提示', link: 'zh/paper/COT/key works/Auto_CoT_Prompting'
+                        text: '自动提示优化使用梯度下降和束搜索', link: 'zh/AutomaticPrompt/optim/autooptim',
                       },
                       {
-                        text: '少样本思维链提示', link: 'zh/paper/COT/key works/One_Few_Shot_CoT_Prompting'
+                        text: '基于遗传提示搜索用于高效的少样本学习', link: 'zh/AutomaticPrompt/GPSPrompt/GPSPrompt',
                       },
                       {
-                        text: '自一致性', link: 'zh/paper/COT/key works/Self-consistency'
+                        text: 'iPrompt 用自然语言解释数据模式', link: 'zh/AutomaticPrompt/IPrompt/AutoiPrompt',
                       },
                       {
-                        text: '零样本思维链提示', link: 'zh/paper/COT/key works/Zero_shot_CoT_Prompting'
-                      }
-                    ]
+                        text: 'PromptGen 使用生成模型自动生成提示', link: 'zh/AutomaticPrompt/PromptGen/PromptGen',
+                      },
+                      {
+                        text: 'RePrompt 自动提示编辑以改进AI生成', link: 'zh/AutomaticPrompt/RePrompt/Reprompt',
+                      },
+                    ],
                   },
                   {
-                    text: '上下文学习', link: 'zh/paper/ICL/introduction',items:[
+                    text: '思维链',
+                    link: 'zh/METHOD/cotintro',
+                    items: [
                       {
-                        text: 'Transformers learn in-context by gradient descent', link: 'zh/paper/ICL/with/theoryanalysis/gradient_descent/gradient_descent'
+                        text: '自动思维链提示', link: 'zh/paper/COT/key works/Auto_CoT_Prompting',
                       },
                       {
-                        text: 'Language Models Secretly Perform Gradient Descent as Meta-Optimizers', link: 'zh/paper/ICL/with/theoryanalysis/MetaOptimizers/MetaOptimizers'
+                        text: '少样本思维链提示', link: 'zh/paper/COT/key works/One_Few_Shot_CoT_Prompting',
                       },
                       {
-                        text: 'Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale', link: 'zh/paper/ICL/with/theoryanalysis/Rethinking/Rethinking'
+                        text: '自一致性', link: 'zh/paper/COT/key works/Self-consistency',
                       },
                       {
-                        text: 'Complementary Explanations for Effective In-Context Learning', link: 'zh/paper/ICL/with/design/ComExp/ComExp'
+                        text: '零样本思维链提示', link: 'zh/paper/COT/key works/Zero_shot_CoT_Prompting',
+                      },
+                    ],
+                  },
+                  {
+                    text: '上下文学习',
+                    link: 'zh/paper/ICL/introduction',
+                    items: [
+                      {
+                        text: 'Transformers learn in-context by gradient descent', link: 'zh/paper/ICL/with/theoryanalysis/gradient_descent/gradient_descent',
                       },
                       {
-                        text: 'PLACES: Prompting Language Models for Social Conversation Synthesis', link: 'zh/paper/ICL/with/design/ConversationSynthesis/ConversationSynthesis'
+                        text: 'Language Models Secretly Perform Gradient Descent as Meta-Optimizers', link: 'zh/paper/ICL/with/theoryanalysis/MetaOptimizers/MetaOptimizers',
                       },
                       {
-                        text: 'In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models', link: 'zh/paper/ICL/with/design/Distillation/Distillation'
+                        text: 'Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale', link: 'zh/paper/ICL/with/theoryanalysis/Rethinking/Rethinking',
                       },
                       {
-                        text: 'Diverse Demonstrations Improve In-context Compositional Generalization', link: 'zh/paper/ICL/with/design/DiverseDemo/DiverseDemo'
-                      }
-                    ]
+                        text: 'Complementary Explanations for Effective In-Context Learning', link: 'zh/paper/ICL/with/design/ComExp/ComExp',
+                      },
+                      {
+                        text: 'PLACES: Prompting Language Models for Social Conversation Synthesis', link: 'zh/paper/ICL/with/design/ConversationSynthesis/ConversationSynthesis',
+                      },
+                      {
+                        text: 'In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models', link: 'zh/paper/ICL/with/design/Distillation/Distillation',
+                      },
+                      {
+                        text: 'Diverse Demonstrations Improve In-context Compositional Generalization', link: 'zh/paper/ICL/with/design/DiverseDemo/DiverseDemo',
+                      },
+                    ],
                   },
                   {
                     text: '知识增强Prompt', link: 'zh/principle#框架',
                   },
                   {
                     text: '评估和可靠性', link: 'zh/EvaRelia/evalua',
-                  }
-                ]
+                  },
+                ],
               },
               {
                 text: '理论篇',
                 link: 'zh/theorychapter',
                 items: [
                   {
-                    text: '大语言模型概览', link: 'zh/principle#框架'
-                  }, 
-                  {
-                    text: 'Transformer', link: 'zh/Transformer_md/Transformer'
+                    text: '大语言模型概览', link: 'zh/principle#框架',
                   },
                   {
-                    text: 'Tokenizer', link: 'zh/token'
+                    text: 'Transformer', link: 'zh/Transformer_md/Transformer',
                   },
                   {
-                    text: 'BERT', link: 'zh/BERT/BERT'
+                    text: 'Tokenizer', link: 'zh/token',
                   },
                   {
-                    text: 'GPT系列', link: 'zh/gpt2_finetuning'
+                    text: 'BERT', link: 'zh/BERT/BERT',
                   },
                   {
-                    text: 'T5', link: 'zh/principle#框架'
-                  }
-                ]
-              }
+                    text: 'GPT系列', link: 'zh/gpt2_finetuning',
+                  },
+                  {
+                    text: 'T5', link: 'zh/principle#框架',
+                  },
+                ],
+              },
             ],
           },
         ],
@@ -315,117 +425,131 @@ export default defineConfig({
                 link: '/practicalchapter',
                 items: [
                   {
-                    text: 'ChatGPT Usage Guide', link: '/chatgptprompt#🌋-chatgpt-usage-guide',items:[
+                    text: 'ChatGPT Usage Guide',
+                    link: '/chatgptprompt#🌋-chatgpt-usage-guide',
+                    items: [
                       {
-                        text: 'Help us study', link: '/chatgptprompt#help-us-study',items:[
+                        text: 'Help us study',
+                        link: '/chatgptprompt#help-us-study',
+                        items: [
                           {
-                            text: 'Reading and Writing', link: '/chatgptprompt#reading-and-writing'
+                            text: 'Reading and Writing', link: '/chatgptprompt#reading-and-writing',
                           },
                           {
-                            text: 'Learning and Programming', link: '/chatgptprompt#learning-programming'
-                          }
-                        ]
+                            text: 'Learning and Programming', link: '/chatgptprompt#learning-programming',
+                          },
+                        ],
                       },
                       {
-                        text: 'Assist in our work', link: '/chatgptprompt#assist-in-our-work',items:[
+                        text: 'Assist in our work',
+                        link: '/chatgptprompt#assist-in-our-work',
+                        items: [
                           {
-                            text: 'Competition and Analysis', link: '/chatgptprompt#competition-analysis'
+                            text: 'Competition and Analysis', link: '/chatgptprompt#competition-analysis',
                           },
                           {
-                            text: 'Customer and Service', link: '/chatgptprompt#customer-service'
+                            text: 'Customer and Service', link: '/chatgptprompt#customer-service',
                           },
                           {
-                            text: 'Aid in Software Development', link: '/chatgptprompt#aid-in-software-development'
+                            text: 'Aid in Software Development', link: '/chatgptprompt#aid-in-software-development',
                           },
                           {
-                            text: 'Aid in Making Videos', link: '/chatgptprompt#aid-in-making-videos'
+                            text: 'Aid in Making Videos', link: '/chatgptprompt#aid-in-making-videos',
                           },
                           {
-                            text: 'Start-up', link: '/chatgptprompt#start-up'
+                            text: 'Start-up', link: '/chatgptprompt#start-up',
                           },
                           {
-                            text: 'Educational Work', link: '/chatgptprompt#educational-work'
-                          }
-                        ]
+                            text: 'Educational Work', link: '/chatgptprompt#educational-work',
+                          },
+                        ],
                       },
                       {
-                        text: 'Enrich our experience', link: '/chatgptprompt#enrich-our-experience',items:[
+                        text: 'Enrich our experience',
+                        link: '/chatgptprompt#enrich-our-experience',
+                        items: [
                           {
-                            text: 'Debate Competition Simulation ', link: '/chatgptprompt#debate-competition-simulation'
+                            text: 'Debate Competition Simulation ', link: '/chatgptprompt#debate-competition-simulation',
                           },
                           {
-                            text: 'Mock Interview', link: '/chatgptprompt#mock-interview'
+                            text: 'Mock Interview', link: '/chatgptprompt#mock-interview',
                           },
                           {
-                            text: 'Speech Design', link: '/chatgptprompt#speech-design'
-                          }
-                        ]
+                            text: 'Speech Design', link: '/chatgptprompt#speech-design',
+                          },
+                        ],
                       },
                       {
-                        text: 'Convenient to our lives', link: '/chatgptprompt#convenient-to-our-lives',items:[
+                        text: 'Convenient to our lives',
+                        link: '/chatgptprompt#convenient-to-our-lives',
+                        items: [
                           {
-                            text: 'Sports and Fitness', link: '/chatgptprompt#sports-and-fitness'
+                            text: 'Sports and Fitness', link: '/chatgptprompt#sports-and-fitness',
                           },
                           {
-                            text: 'Music and Art', link: '/chatgptprompt#music-and-art'
+                            text: 'Music and Art', link: '/chatgptprompt#music-and-art',
                           },
                           {
-                            text: 'Travel Guide', link: '/chatgptprompt#travel-guide'
+                            text: 'Travel Guide', link: '/chatgptprompt#travel-guide',
                           },
                           {
-                            text: 'Learning Cooking', link: '/chatgptprompt#learning-cooking'
-                          }
-                        ]
-                      }
-                    ]
+                            text: 'Learning Cooking', link: '/chatgptprompt#learning-cooking',
+                          },
+                        ],
+                      },
+                    ],
                   },
                   {
-                    text: 'LangChain for LLMs Usage', link: '/langchainguide/guide#🎇-langchain',items:[
+                    text: 'LangChain for LLMs Usage',
+                    link: '/langchainguide/guide#🎇-langchain',
+                    items: [
                       {
-                        text: 'Before Start', link: '/langchainguide/guide#before-start'
+                        text: 'Before Start', link: '/langchainguide/guide#before-start',
                       },
                       {
-                        text: 'Models', link: '/langchainguide/guide#models'
+                        text: 'Models', link: '/langchainguide/guide#models',
                       },
                       {
-                        text: 'Prompt', link: '/langchainguide/guide#prompt'
+                        text: 'Prompt', link: '/langchainguide/guide#prompt',
                       },
                       {
-                        text: 'Index', link: '/langchainguide/guide#index'
+                        text: 'Index', link: '/langchainguide/guide#index',
                       },
                       {
-                        text: 'Memory', link: '/langchainguide/guide#memory'
+                        text: 'Memory', link: '/langchainguide/guide#memory',
                       },
                       {
-                        text: 'Chains', link: '/langchainguide/guide#chains'
+                        text: 'Chains', link: '/langchainguide/guide#chains',
                       },
                       {
-                        text: 'Agents', link: '/langchainguide/guide#agents'
+                        text: 'Agents', link: '/langchainguide/guide#agents',
                       },
                       {
-                        text: 'Coding Examples', link: '/langchainguide/guide#coding-examples'
-                      }
-                    ]
-                  }
-                ]
+                        text: 'Coding Examples', link: '/langchainguide/guide#coding-examples',
+                      },
+                    ],
+                  },
+                ],
               },
               {
                 text: 'Methodology Chapter',
                 link: '/methodchapter',
                 items: [
                   {
-                    text: 'Design Principle', link: '/principle#design-principle'
+                    text: 'Design Principle', link: '/principle#design-principle',
                   },
                   {
                     text: 'Framework', link: '/principle#framework',
                   },
                   {
                     text: 'Basic Prompt', link: '/basicprompting',
-                  }, 
+                  },
                   {
-                    text: 'Advanced Prompt', link: '/advanced',items:[
+                    text: 'Advanced Prompt',
+                    link: '/advanced',
+                    items: [
                       {
-                        text: 'Batch Prompting', link: '/Batch_Prompting/BatchPrompting'
+                        text: 'Batch Prompting', link: '/Batch_Prompting/BatchPrompting',
                       },
                       {
                         text: 'Successive Prompting', link: '/SuccessivePrompt/Suc_Prompting_Dec_Com_Que',
@@ -456,74 +580,82 @@ export default defineConfig({
                       },
                       {
                         text: 'RecurrentGPT', link: 'RecurrentGPT/RecurrentGPT',
-                      }
-                    ]
+                      },
+                    ],
                   },
                   {
-                    text: 'Automatic Prompt', link: 'AutomaticPrompt/intro_automaticprompt',items:[
+                    text: 'Automatic Prompt',
+                    link: 'AutomaticPrompt/intro_automaticprompt',
+                    items: [
                       {
-                        text: 'Optimization with Gradient Descent and Beam Search', link: 'AutomaticPrompt/optim/autooptim'
+                        text: 'Optimization with Gradient Descent and Beam Search', link: 'AutomaticPrompt/optim/autooptim',
                       },
                       {
-                        text: 'Genetic Prompt Search for Efficient Few-shot Learning', link: 'AutomaticPrompt/GPSPrompt/GPSPrompt'
+                        text: 'Genetic Prompt Search for Efficient Few-shot Learning', link: 'AutomaticPrompt/GPSPrompt/GPSPrompt',
                       },
                       {
-                        text: 'Explaining Data Patterns in Natural Language', link: 'AutomaticPrompt/IPrompt/AutoiPrompt'
+                        text: 'Explaining Data Patterns in Natural Language', link: 'AutomaticPrompt/IPrompt/AutoiPrompt',
                       },
                       {
-                        text: 'Automatically Generate Prompts using Generative Models', link: 'AutomaticPrompt/PromptGen/PromptGen'
+                        text: 'Automatically Generate Prompts using Generative Models', link: 'AutomaticPrompt/PromptGen/PromptGen',
                       },
                       {
-                        text: 'Automatic Prompt Editing to Refine AI-Generative Art', link: 'AutomaticPrompt/RePrompt/Reprompt'
-                      }
-                    ]
+                        text: 'Automatic Prompt Editing to Refine AI-Generative Art', link: 'AutomaticPrompt/RePrompt/Reprompt',
+                      },
+                    ],
                   },
                   {
-                    text: 'CoT', link: '/METHOD/cotintro',items:[
+                    text: 'CoT',
+                    link: '/METHOD/cotintro',
+                    items: [
                       {
-                        text: 'Auto-COT Prompting', link: 'paper/COT/key works/Auto_CoT_Prompting'
+                        text: 'Auto-COT Prompting', link: 'paper/COT/key works/Auto_CoT_Prompting',
                       },
                       {
-                        text: 'One-Few Shot CoT Prompting', link: 'paper/COT/key works/One_Few_Shot_CoT_Prompting'
+                        text: 'One-Few Shot CoT Prompting', link: 'paper/COT/key works/One_Few_Shot_CoT_Prompting',
                       },
                       {
-                        text: 'Self-consistency', link: 'paper/COT/key works/Self-consistency'
+                        text: 'Self-consistency', link: 'paper/COT/key works/Self-consistency',
                       },
                       {
-                        text: 'Zero-shot CoT Prompting', link: 'paper/COT/key works/Zero_shot_CoT_Prompting'
-                      }
-                    ]
+                        text: 'Zero-shot CoT Prompting', link: 'paper/COT/key works/Zero_shot_CoT_Prompting',
+                      },
+                    ],
                   },
                   {
-                    text: 'In-Context Learning', link: 'paper/ICL/introduction',items:[
+                    text: 'In-Context Learning',
+                    link: 'paper/ICL/introduction',
+                    items: [
                       {
-                        text: 'Transformers learn in-context by gradient descent', link: 'paper/ICL/with/theoryanalysis/gradient_descent/gradient_descent'
+                        text: 'Transformers learn in-context by gradient descent', link: 'paper/ICL/with/theoryanalysis/gradient_descent/gradient_descent',
                       },
                       {
-                        text: 'Language Models Secretly Perform Gradient Descent as Meta-Optimizers', link: 'paper/ICL/with/theoryanalysis/MetaOptimizers/MetaOptimizers'
+                        text: 'Language Models Secretly Perform Gradient Descent as Meta-Optimizers', link: 'paper/ICL/with/theoryanalysis/MetaOptimizers/MetaOptimizers',
                       },
                       {
-                        text: 'Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale', link: 'paper/ICL/with/theoryanalysis/Rethinking/Rethinking'
+                        text: 'Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale', link: 'paper/ICL/with/theoryanalysis/Rethinking/Rethinking',
                       },
                       {
-                        text: 'Complementary Explanations for Effective In-Context Learning', link: 'paper/ICL/with/design/ComExp/ComExp'
+                        text: 'Complementary Explanations for Effective In-Context Learning', link: 'paper/ICL/with/design/ComExp/ComExp',
                       },
                       {
-                        text: 'PLACES: Prompting Language Models for Social Conversation Synthesis', link: 'paper/ICL/with/design/ConversationSynthesis/ConversationSynthesis'
+                        text: 'PLACES: Prompting Language Models for Social Conversation Synthesis', link: 'paper/ICL/with/design/ConversationSynthesis/ConversationSynthesis',
                       },
                       {
-                        text: 'In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models', link: 'paper/ICL/with/design/Distillation/Distillation'
+                        text: 'In-context Learning Distillation: Transferring Few-shot Learning Ability of Pre-trained Language Models', link: 'paper/ICL/with/design/Distillation/Distillation',
                       },
                       {
-                        text: 'Diverse Demonstrations Improve In-context Compositional Generalization', link: 'paper/ICL/with/design/DiverseDemo/DiverseDemo'
-                      }
-                    ]
+                        text: 'Diverse Demonstrations Improve In-context Compositional Generalization', link: 'paper/ICL/with/design/DiverseDemo/DiverseDemo',
+                      },
+                    ],
                   },
                   {
                     text: 'Knowledge Augumented Prompt', link: '/principle#framework',
                   },
                   {
-                    text: 'Evaluation and Reliability', link: 'EvaRelia/evalua',items:[
+                    text: 'Evaluation and Reliability',
+                    link: 'EvaRelia/evalua',
+                    items: [
                       {
                         text: 'AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models', link: 'EvaRelia/evalua',
                       },
@@ -534,11 +666,11 @@ export default defineConfig({
                         text: 'EVEVAL:A Comprehensive Evaluation of Event Semantics for Large Language Model', link: '',
                       },
                       {
-                        text: 'Is GPT-4 a Good Data Analyst?', link: ''
-                      }
-                    ]
-                  }
-                ]
+                        text: 'Is GPT-4 a Good Data Analyst?', link: '',
+                      },
+                    ],
+                  },
+                ],
               },
               {
                 text: 'Theory Chapter',
@@ -546,7 +678,7 @@ export default defineConfig({
                 items: [
                   {
                     text: 'The Overview of LLM', link: '/principle#design-principle',
-                  }, 
+                  },
                   {
                     text: 'Transformer', link: '/Transformer_md/Transformer',
                   },
@@ -561,11 +693,11 @@ export default defineConfig({
                   },
                   {
                     text: 'T5', link: '/principle#framework',
-                  }
-                ]
-              }
-            ]
-          }
+                  },
+                ],
+              },
+            ],
+          },
         ],
 
         socialLinks: [
@@ -657,5 +789,17 @@ export default defineConfig({
         // ],
       }),
     ],
+  },
+  markdown: {
+    config: (md) => {
+      md.use(mathjax3)
+    },
+  },
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: tag => customElements.includes(tag),
+      },
+    },
   },
 })
