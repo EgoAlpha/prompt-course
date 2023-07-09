@@ -1,8 +1,8 @@
-# **PromptGen Automatically Generate Prompts using Generative Models**
+# PromptGen Automatically Generate Prompts using Generative Models
 
 ## 简介
 
-[Yue Zhang, Hongliang Fei et al., 2022](https://pdfs.semanticscholar.org/5e27/3f5f35f6b6619212e3e41c582679ae5f7180.pdf)提出了一个动态提示生成模型，称为promptGen，通过利用预先训练的生成模型BART，根据输入自动生成提示。通常 promptGen由编码器和基于Transformer的自回归解码器组成。
+[Yue Zhang, Hongliang Fei et al., 2022](https://pdfs.semanticscholar.org/5e27/3f5f35f6b6619212e3e41c582679ae5f7180.pdf)提出了一个动态提示生成模型，称为PromptGen，通过利用预先训练的生成模型BART，根据输入自动生成提示。通常 PromptGen由编码器和基于Transformer的自回归解码器组成。
 
 知识事实被定义为三元组：```<sub,rel,obj>```.编码器从输入```<sub，rel>```中产生潜在表示，并且解码器自回归地生成```[sub][D1]...[MASK]..., [Dm+n]```.形式的提示，然后将生成的提示传递给固定的预训练LM（例如BERT），以将```<MASK>```填充为```[obj]```。
 
