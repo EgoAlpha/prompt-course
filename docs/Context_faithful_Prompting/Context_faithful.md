@@ -14,16 +14,16 @@ In the article, the authors have chosen a variety of prompt formats and their co
 
 
 
-**base prompt：**Given an input (c, q, o), we begin with the following base prompting template: 
+**base prompt**：Given an input (c, q, o), we begin with the following base prompting template: 
 ![img2](img/img2.png)
 
 
 
-**Opinion-based prompts：**On the basis of the base prompt, the background information is clarified by means of a narrator's statement (third person), and the content of the questions takes the form of the opinion (attitude) of the narrator who is asked (Bob in the text is chosen randomly as the name of the third person and can theoretically be changed at will).
+**Opinion-based prompts**：On the basis of the base prompt, the background information is clarified by means of a narrator's statement (third person), and the content of the questions takes the form of the opinion (attitude) of the narrator who is asked (Bob in the text is chosen randomly as the name of the third person and can theoretically be changed at will).
 
 ![img3](img/img3.png)
 
-**Instructed prompts：** Explicitly instruct LLMs to read context by natural language.  Starting by extending questions in prompts with attributive phrases such as “based on the given text”, leading to the following attributed prompting template
+**Instructed prompts**： Explicitly instruct LLMs to read context by natural language.  Starting by extending questions in prompts with attributive phrases such as “based on the given text”, leading to the following attributed prompting template
 
 ![img4](img/img4.png)
 ![img5](img/img5.png)
@@ -48,7 +48,7 @@ The original answers (po) and the substituted answers (ps),then using the memori
 
 ![img6](img/img12.png)
 
-**Results and discussion.**
+**Results and discussion**.
 The results in Tab. 1 demonstrate that the combination of OPIN + INSTR prompting and counterfactual demonstrations is most effective. It results in a reduction of 32.2% and 10.9% in MR for MRC and RE respectively when compared to the zero-shot base prompts. We also find that opinion-based prompts generally perform better than other templates, achieving the second-best results on 17 out of 24 metrics, indicating that LLMs are more faithful to the context when answering opinion-seeking questions. Combining opinion-based prompts and instructionbased prompts further improves faithfulness, with the best results obtained in 23 out of 24 metrics.
 
 
@@ -63,7 +63,7 @@ LLMs are presented with a question and multiple choices, and they need to choose
 of 2023 as demonstration instances. This process results in a total of 113 test instances, including 63 answerable questions and 50 unanswerable ones.
 
 
-**Results and discussion.**
+**Results and discussion**.
 
 The results presented in Tab. 2 demonstrate that the OPIN + INSTR prompt achieves the best results in both the zeroshot and few-shot settings, outperforming base prompts by 57.2% and 16.3% in accuracy in the NoAns subset, respectively. It also reduces the Brier score by 24.2% and 7.8% compared to base prompts in the two settings, respectively. The OPIN prompt is the second best in terms of these metrics. These findings demonstrate that opinionbased prompts can enhance the LLMs’ ability to make selective predictions. Furthermore, all proposed prompting templates achieve better results on NoAns instances compared to base prompts, and maintain perfect accuracy on HasAns subset, indicating their ability to improve LLMs’ selective prediction without compromising performance on answerable instances. In addition, The use of
 demonstrations consistently improves the LLMs’ ability to make selective predictions, as evidenced by the lower Brier scores in the few-shot setting compared to the zero-shot setting.
@@ -73,7 +73,7 @@ demonstrations consistently improves the LLMs’ ability to make selective predi
 ![img9](img/img14.png)
 
 
-**Memorization by different sizes of LLMs.**. Fig. 2 shows the memorization ratio MR across different sizes of InstructGPTs under the zero-shot evaluation of natural questions.5 Overall, OPIN + INSTR consistently outperforms other prompts across different model sizes. In the upper plot, results are shown for filtered evaluation sets where the corresponding LLMs can correctly predict the original answers without additional contexts, thereof the size of evaluation sets varies across different LLMs.
+**Memorization by different sizes of LLMs**. Fig. 2 shows the memorization ratio MR across different sizes of InstructGPTs under the zero-shot evaluation of natural questions.5 Overall, OPIN + INSTR consistently outperforms other prompts across different model sizes. In the upper plot, results are shown for filtered evaluation sets where the corresponding LLMs can correctly predict the original answers without additional contexts, thereof the size of evaluation sets varies across different LLMs.
 
 ## Prompt Example
 
