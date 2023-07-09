@@ -368,7 +368,7 @@ export default defineConfig({
                         text: '用于评估大模型的以人为本的基准', link: 'zh/EvaRelia/evalua#以人为中心基准的评估模型',
                       },
                       {
-                        text: '大语言模型是否已经足够先进？', link: 'zh/EvaRelia/evalua#大语言模型已经足够先进了吗一个针对llms的具有挑战性的问题解决基准',
+                        text: '大语言模型是否已经足够先进？', link: 'zh/EvaRelia/evalua#大语言模型已经足够先进了吗',
                       },
                       {
                         text: '大型语言模型的事件语义的综合评价', link: 'zh/EvaRelia/evalua#大型语言模型事件语义的综合评价',
