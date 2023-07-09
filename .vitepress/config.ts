@@ -363,7 +363,20 @@ export default defineConfig({
                     text: '知识增强Prompt', link: 'zh/principle#框架',
                   },
                   {
-                    text: '评估和可靠性', link: 'zh/EvaRelia/evalua',
+                    text: '评估和可靠性', link: 'zh/EvaRelia/evalua',items:[
+                      {
+                        text: '用于评估大模型的以人为本的基准', link: 'zh/EvaRelia/evalua#agieval-a-human-centric-benchmark-for-evaluating-foundation-models',
+                      },
+                      {
+                        text: '大语言模型是否已经足够先进？', link: 'zh/EvaRelia/evalua#have-llms-advanced-enougha-challenging-problem-solving-benchmark-for-large-language-models',
+                      },
+                      {
+                        text: '大型语言模型的事件语义的综合评价', link: 'zh/EvaRelia/evalua#evevala-comprehensive-evaluation-of-event-semantics-for-large-language-model',
+                      },
+                      {
+                        text: 'GPT-4是否是一位很好的数据分析师？', link: 'zh/EvaRelia/evalua#is-gpt-4-a-good-data-analyst',
+                      },
+                    ]
                   },
                 ],
               },
@@ -657,16 +670,16 @@ export default defineConfig({
                     link: 'EvaRelia/evalua',
                     items: [
                       {
-                        text: 'AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models', link: 'EvaRelia/evalua',
+                        text: 'AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models', link: 'EvaRelia/evalua#agieval-a-human-centric-benchmark-for-evaluating-foundation-models',
                       },
                       {
-                        text: 'Have LLMs Advanced Enough?A Challenging Problem Solving Benchmark For Large Language Models', link: '',
+                        text: 'Have LLMs Advanced Enough?A Challenging Problem Solving Benchmark For Large Language Models', link: 'EvaRelia/evalua#have-llms-advanced-enougha-challenging-problem-solving-benchmark-for-large-language-models',
                       },
                       {
-                        text: 'EVEVAL:A Comprehensive Evaluation of Event Semantics for Large Language Model', link: '',
+                        text: 'EVEVAL:A Comprehensive Evaluation of Event Semantics for Large Language Model', link: 'EvaRelia/evalua#evevala-comprehensive-evaluation-of-event-semantics-for-large-language-model',
                       },
                       {
-                        text: 'Is GPT-4 a Good Data Analyst?', link: '',
+                        text: 'Is GPT-4 a Good Data Analyst?', link: 'EvaRelia/evalua#is-gpt-4-a-good-data-analyst',
                       },
                     ],
                   },

@@ -1,10 +1,15 @@
 # 🏞️ Evaluation and Reliability
 
 ## 🏔️ Contents
+
 - [AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models](#agieval-a-human-centric-benchmark-for-evaluating-foundation-models)
-- [Have LLMs Advanced Enough?A Challenging Problem Solving Benchmark For Large Language Models](#have-llms-advanced-enougha-challenging-problem-solving-benchmark-for-large-language-models)
-- [EVEVAL:A Comprehensive Evaluation of Event Semantics for Large Language Model](#evevala-comprehensive-evaluation-of-event-semantics-for-large-language-model)
+
+- [Have LLMs Advanced Enough? A Challenging Problem Solving Benchmark For Large Language Models](#have-llms-advanced-enough-a-challenging-problem-solving-benchmark-for-large-language-models)
+
+- [EVEVAL:A Comprehensive Evaluation of Event Semantics for Large Language Model](#eveval-a-comprehensive-evaluation-of-event-semantics-for-large-language-model)
+
 - [Is GPT-4 a Good Data Analyst?](#is-gpt-4-a-good-data-analyst)
+
 ---
 
 ## AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models
@@ -36,7 +41,7 @@ Finally, the experimental data was analysed to obtain aspects of the current LLM
 5. better automated human-centred assessment metrics for tasks Development of more robust and meaningful automated assessment metrics
 6. Robustness of inference capabilities Improving the robustness of model inference capabilities is essential to ensure their consistency and reliability across contexts
 
-## Have LLMs Advanced Enough?A Challenging Problem Solving Benchmark For Large Language Models
+## Have LLMs Advanced Enough? A Challenging Problem Solving Benchmark For Large Language Models
 
 The authors propose the JEEBench dataset for assessing the ability of LLMS to solve complex problems, which is a collection of 450 challenging problems from the IIT JEE-Advanced Exam (an entrance exam in India with an acceptance rate of only 5%).
 450 challenging problems were selected from the IIT JEE-Advanced Exam, including mathematics, physics and chemistry problems, where LLMs need to reason mathematically and logically from deep domain knowledge above. The authors evaluated the GPT family of models and the best performer was GPT-4, but even with the use of
@@ -82,7 +87,7 @@ The authors found that more often than not, GPT-4 was able to give at least a sk
 Another interesting direction that could be explored is self-improvement. If a verifier were trained that could verify the correctness of mathematical reasoning in natural language and possibly provide some feedback on the nature of the errors, such an approach has the potential to greatly improve the reasoning power of the LLM. Physics problems often require spatial reasoning in order to understand real-world physical dynamics. We found that although GPT- 4's physical reasoning was far from perfect, it was able to reason about basic physical concepts in a limited sense.
 This is a summary of the authors' experiments, and they also suggest future developments such as calculator-enhanced GPT, multimodal assessment of GPT-4, and the planning capabilities of GPT in an exam setting. The authors hope that this benchmark will guide future research using the LLM.  
 
-## EVEVAL:A Comprehensive Evaluation of Event Semantics for Large Language Model
+## EVEVAL: A Comprehensive Evaluation of Event Semantics for Large Language Model
 
 Recent studies have begun leveraging large language models (LLMs) to address event semantic processing. However, the extent that LLMs can effectively tackle these challenges remains uncertain. The lack of a comprehensive evaluation framework for event semantic processing poses a significant challenge in evaluating these capabilities.To comprehensively evaluate the event semantic processing abilities of models, we introduce a novel benchmark called EVEVAL. We include 8 datasets covering understanding, reasoning, and prediction about the event semantics. Extensive experiments are conducted on EVEVAL, leading to several noteworthy findings based on the obtained results.
 
