@@ -3,7 +3,7 @@
 **Background**
 
 Prompting has emerged as a promising approach to solving a wide range of NLP problems using large pre-trained 
-language models (LMs), including leftto-right models such as GPTs ([\[Radford et al , 2019\]](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)) and masked LMs such as BERT ([\[Devlin et al, 2019\]](https://doi.org/10.48550/arXiv.2210.01848)), RoBERTa ([\[Liu et al, 2019\]](https://arxiv.org/pdf/1907.11692.pdf)), 
+language models (LMs), including leftto-right models such as GPTs ([\[Radford et al , 2019\]](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)) and masked LMs such as BERT ([\[Devlin et al, 2019\]](https://arxiv.org/pdf/1810.04805.pdf)), RoBERTa ([\[Liu et al, 2019\]](https://arxiv.org/pdf/1907.11692.pdf)), 
 etc. Compared to conventional fine-tuning that expensively updates the massive LM parameters for each downstream task, prompting concatenates the inputs with an additional piece of text that steers the LM to produce the desired outputs. A key question with prompting is how to find the optimal prompts to improve the LM’s performance on various tasks.
 
 

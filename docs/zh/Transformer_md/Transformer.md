@@ -1,6 +1,6 @@
 <style>
 img{
-    width: 60%;
+    width: 100%;
     padding-left: 20%;
 }
 </style>
@@ -42,11 +42,7 @@ img{
 
 ![](input2.png)
 
-在论文[《Attention Is All You Need》](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)中，对于该位置向量给出了如下计算方法：
-$PE(pos,2i)=sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}})$和
-$PE(pos,2i+1)=cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}})$
-其中，$pos$是当前词在句子中的位置，$d_{model}$代表位置向量的维度，$i \in (0, d_{model})$代表位置向量第$i$维。在偶数位置，使用正弦编码，在奇数位置，使用余弦编码。
-
+在论文[《Attention Is All You Need》](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)中，对于该位置向量给出了如下计算方法: $PE(pos,2i) = sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}})$和$PE(pos,2i+1)=cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}})$其中，$pos$ 是当前词在句子中的位置，$d_{model}$代表位置向量的维度，$i \in (0, d_{model})$代表位置向量第$i$维。在偶数位置，使用正弦编码，在奇数位置，使用余弦编码。
 Positional Encoding与embedding的值相加，作为输入送到下一层。
 
 ### 编码器

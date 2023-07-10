@@ -12,9 +12,9 @@ Result demonstrate that PromptGen leverages a pre-trained generative model, e.g.
 
 ## How it Works?
 
-Given a subject s, relation r, a generated prompt ```T<r,s>```, and an MLM, we can identify the word oˆ ∈ V to which the MLM assigns the highest probability of ```P([MASK] = oˆ|T<r s>)```, where ```T<r,s>``` represents the generated prompt conditional on relation r and subject s; V represents the predefined vocabulary.If the MLM can fill in the mask with the correct object, we conclude that the MLM encodes information about the fact.
+Given a subject s, relation r, a generated prompt $T<r,s>$, and an MLM, we can identify the word oˆ ∈ V to which the MLM assigns the highest probability of $P([MASK] = oˆ|T<r s>)$, where $T<r,s>$ represents the generated prompt conditional on relation r and subject s; V represents the predefined vocabulary.If the MLM can fill in the mask with the correct object, we conclude that the MLM encodes information about the fact.
 
-Input Format:The input of our generative model is the manual prompt provided by the LAMA dataset. For instances: for relation “place of birth”, our input is “```[sub]``` was born in ```[MASK]```”; The encoding form of the original prompt on the encoder as follow: Assuming the BART word embedding matrix for tokens in vocabulary Vcommon is $\epsilon$<sub>V</sub> ∈ R<sup>|V|×d</sup>. we know that each ```[Di]``` is a multinomial distribution on Vcommon,so the embedding vector $\epsilon$<sub>Di</sub> for each ```[Di]``` is a linear combination on $\epsilon$<sub>V</sub> :
+Input Format:The input of our generative model is the manual prompt provided by the LAMA dataset. For instances: for relation “place of birth”, our input is “```[sub]``` was born in ```[MASK]```”; The encoding form of the original prompt on the encoder as follow: Assuming the BART word embedding matrix for tokens in vocabulary Vcommon is $\epsilon_V ∈ R^{|V|×d}$. we know that each $[Di]$ is a multinomial distribution on Vcommon,so the embedding vector $\epsilon_{Di}$ for each $[Di]$ is a linear combination on $\epsilon_V$ :
 
 ![embedding](img/embedding.png)
 
@@ -24,7 +24,7 @@ The method structure is shown in the following figure:
 
 ![Method](img/Method.png)
 
-Explanation of the above figure:we elaborate our method on the application of the LAMA task, in which the downstream MLM is BERT. Our generative model(encoder-decoder) adopts pre-trained BART.At each decoding step, we use the model output from a prior time as the current input.At each decoding step t, our decoder computes the current hidden state ```h<sub>t</sub>``` and current token distribution ```D<sub>t</sub>``` , based on the current sequence ```[D1], ..., [Dt−1]```, and the encoding output ```h<sub>encode</sub>```:
+Explanation of the above figure:we elaborate our method on the application of the LAMA task, in which the downstream MLM is BERT. Our generative model(encoder-decoder) adopts pre-trained BART.At each decoding step, we use the model output from a prior time as the current input.At each decoding step t, our decoder computes the current hidden state $h_t$ and current token distribution $D_t$ , based on the current sequence ```[D1], ..., [Dt−1]```, and the encoding output $h_{encode}$:
 
 ![soft](img/soft.png)
 

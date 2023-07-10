@@ -1,19 +1,25 @@
 # 🏞️ Evaluation and Reliability
 
 ## 🏔️ Contents
-- [AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models](#agieval-a-human-centric-benchmark-for-evaluating-foundation-models)
-- [Have LLMs Advanced Enough?A Challenging Problem Solving Benchmark For Large Language Models](#have-llms-advanced-enougha-challenging-problem-solving-benchmark-for-large-language-models)
-- [EVEVAL:A Comprehensive Evaluation of Event Semantics for Large Language Model](#evevala-comprehensive-evaluation-of-event-semantics-for-large-language-model)
+
+- [A Human-Centric Benchmark for Evaluating Foundation Models](#agieval-a-human-centric-benchmark-for-evaluating-foundation-models)
+
+- [Have LLMs Advanced Enough?](#have-llms-advanced-enough-a-challenging-problem-solving-benchmark-for-large-language-models)
+
+- [A Comprehensive Evaluation of Event Semantics for Large Language Model](#eveval-a-comprehensive-evaluation-of-event-semantics-for-large-language-model)
+
 - [Is GPT-4 a Good Data Analyst?](#is-gpt-4-a-good-data-analyst)
+
 ---
 
 ## AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models
 
-&ensp;&ensp;&ensp;&ensp;This paper presents the AGIEval, a benchmark model specifically designed to assess foundation models in the context of human-centered standardized testing. The authors use this benchmark to assess several state-of-the-art foundation models, including the GPT-4, ChatGPT, and Text-Davinci-003.
+This paper presents the AGIEval, a benchmark model specifically designed to assess foundation models in the context of human-centered standardized testing. The authors use this benchmark to assess several state-of-the-art foundation models, including the GPT-4, ChatGPT, and Text-Davinci-003.
 The assessment model uses a dataset drawn from a variety of high-standard exams in human society, including:
 university entrance exams and professional licensing exams, among others. Ensures robust and standardized assessment of LLM
 The benchmark is also bilingual, including Chinese and English versions, in order to provide a more comprehensive assessment of LLMs' ability to process in different languages and cultures.  
-&ensp;&ensp;&ensp;&ensp;The authors used the benchmark to conduct experiments on the three LLMs mentioned above to draw experimental conclusions.
+
+The authors used the benchmark to conduct experiments on the three LLMs mentioned above to draw experimental conclusions.
 The authors found that GPT-4 significantly outperformed ChatGPT and Text-Davinci-003, achieving an accuracy rate of 93.8% and 95% on the Advanced Placement English and SAT, respectively.
 This indicates its superior general-purpose ability to handle human-centered tasks. chatGPT significantly outperformed Text-Davinci-003 on tasks requiring a high degree of external knowledge, such as
 For example, courses involving geography, biology, chemistry, physics, and mathematics. This suggests that ChatGPT has a more robust knowledge base and is better able to handle tasks that require a deeper understanding of a specific domain.
@@ -21,7 +27,8 @@ While the three larger models above performed well they showed limitations in ha
 The authors compared the few-sample cueing with the zero-sample cueing experiments, in which only a limited improvement was found for the few-sample cueing compared to the zero-sample cueing.
 This suggests that the current zero-sample learning ability of large language models is approaching its less-sample learning ability. It is also mentioned in the paper that the original GPT-3 performs much better than zero-sample learning.
 The improvement in GPT-3 is due to the improvements in manual alignment and instruction tuning in the current large models, which allow the models to better understand the meaning and context of the task in advance, thus making them perform better.  
-&ensp;&ensp;&ensp;&ensp;In this article, the authors manually look at the comprehension dimension, the knowledge dimension, the reasoning dimension, and the computational dimension. Four dimensions are used to assess the capability of the LLM model.  
+
+In this article, the authors manually look at the comprehension dimension, the knowledge dimension, the reasoning dimension, and the computational dimension. Four dimensions are used to assess the capability of the LLM model.  
 
 1. Comprehension dimension: The comprehension of the large model is good and the meaning can be understood correctly for most tasks, reflecting the ability of the large model to understand the context.
 2. Knowledge dimension: In the knowledge dimension, large models struggled to recall domain-specific knowledge for subject exams such as law, biology and physics, an observation that highlights the importance of integrating more domain-specific knowledge into the model, either through the use of dedicated domain-specific knowledge bases or knowledge-enhancing pre-training techniques.
@@ -36,7 +43,7 @@ Finally, the experimental data was analysed to obtain aspects of the current LLM
 5. better automated human-centred assessment metrics for tasks Development of more robust and meaningful automated assessment metrics
 6. Robustness of inference capabilities Improving the robustness of model inference capabilities is essential to ensure their consistency and reliability across contexts
 
-## Have LLMs Advanced Enough?A Challenging Problem Solving Benchmark For Large Language Models
+## Have LLMs Advanced Enough? A Challenging Problem Solving Benchmark For Large Language Models
 
 The authors propose the JEEBench dataset for assessing the ability of LLMS to solve complex problems, which is a collection of 450 challenging problems from the IIT JEE-Advanced Exam (an entrance exam in India with an acceptance rate of only 5%).
 450 challenging problems were selected from the IIT JEE-Advanced Exam, including mathematics, physics and chemistry problems, where LLMs need to reason mathematically and logically from deep domain knowledge above. The authors evaluated the GPT family of models and the best performer was GPT-4, but even with the use of
@@ -82,7 +89,7 @@ The authors found that more often than not, GPT-4 was able to give at least a sk
 Another interesting direction that could be explored is self-improvement. If a verifier were trained that could verify the correctness of mathematical reasoning in natural language and possibly provide some feedback on the nature of the errors, such an approach has the potential to greatly improve the reasoning power of the LLM. Physics problems often require spatial reasoning in order to understand real-world physical dynamics. We found that although GPT- 4's physical reasoning was far from perfect, it was able to reason about basic physical concepts in a limited sense.
 This is a summary of the authors' experiments, and they also suggest future developments such as calculator-enhanced GPT, multimodal assessment of GPT-4, and the planning capabilities of GPT in an exam setting. The authors hope that this benchmark will guide future research using the LLM.  
 
-## EVEVAL:A Comprehensive Evaluation of Event Semantics for Large Language Model
+## EVEVAL: A Comprehensive Evaluation of Event Semantics for Large Language Model
 
 Recent studies have begun leveraging large language models (LLMs) to address event semantic processing. However, the extent that LLMs can effectively tackle these challenges remains uncertain. The lack of a comprehensive evaluation framework for event semantic processing poses a significant challenge in evaluating these capabilities.To comprehensively evaluate the event semantic processing abilities of models, we introduce a novel benchmark called EVEVAL. We include 8 datasets covering understanding, reasoning, and prediction about the event semantics. Extensive experiments are conducted on EVEVAL, leading to several noteworthy findings based on the obtained results.
 

@@ -2,7 +2,7 @@
 
 **背景**
 
-提示已经成为一种很有前途的方法，可以使用大型预训练语言模型（LM）来解决广泛的NLP问题，包括从左到右的模型，如GPT（[\[Radford等人 , 2019\]](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)）和Masked-LM，如BERT（[\[Devlin等人, 2019\]](https://doi.org/10.48550/arXiv.2210.01848)）、RoBERTa（[\[Liu等人, 2019\]](https://arxiv.org/pdf/1907.11692.pdf)）等。与为每个下游任务昂贵地更新大量LM参数的传统微调相比，提示将输入与引导LM产生所需输出的附加文本连接起来。提示的一个关键问题是如何找到最佳提示来提高LM在各种任务上的表现。然而，书写提示不仅耗时，而且不清楚相同的措辞是否对每种模式都有效，也不清楚是什么标准决定了特定的措辞是否最能引发所需信息。为了解决上述问题，研究人员提出了自动生成提示这一概念。
+提示已经成为一种很有前途的方法，可以使用大型预训练语言模型（LM）来解决广泛的NLP问题，包括从左到右的模型，如GPT（[\[Radford等人 , 2019\]](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf)）和Masked-LM，如BERT（[\[Devlin等人, 2019\]](https://arxiv.org/pdf/1810.04805.pdf)）、RoBERTa（[\[Liu等人, 2019\]](https://arxiv.org/pdf/1907.11692.pdf)）等。与为每个下游任务昂贵地更新大量LM参数的传统微调相比，提示将输入与引导LM产生所需输出的附加文本连接起来。提示的一个关键问题是如何找到最佳提示来提高LM在各种任务上的表现。然而，书写提示不仅耗时，而且不清楚相同的措辞是否对每种模式都有效，也不清楚是什么标准决定了特定的措辞是否最能引发所需信息。为了解决上述问题，研究人员提出了自动生成提示这一概念。
 
 **概述**
 
