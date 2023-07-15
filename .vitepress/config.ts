@@ -385,7 +385,7 @@ export default defineConfig({
                 link: 'zh/theorychapter',
                 items: [
                   {
-                    text: '大语言模型概览', link: 'zh/principle#框架',
+                    text: '大语言模型概览', link: 'zh/LLMoverview/LLM',
                   },
                   {
                     text: 'Transformer', link: 'zh/Transformer_md/Transformer',
@@ -690,7 +690,7 @@ export default defineConfig({
                 link: '/theorychapter',
                 items: [
                   {
-                    text: 'The Overview of LLM', link: '/principle#design-principle',
+                    text: 'The Overview of LLM', link: 'LLMoverview/LLM',
                   },
                   {
                     text: 'Transformer', link: '/Transformer_md/Transformer',
