@@ -1,5 +1,7 @@
 # iPrompt: Explaining Data Patterns in Natural Language via Interpretable Autoprompting
 
+## Introduction
+
 [Chandan Singh et al., 2023](https://doi.org/10.48550/arXiv.2210.01848) introduce interpretable autoprompting (iPrompt), an algorithm that generates a natural language string explaining the data.
 
 In other words,iPrompt is an extended AutoPrompt that uses natural language writing to generate a semantically meaningful natural language prompt for better understanding and generalization than AutoPrompt.
@@ -34,3 +36,23 @@ The algorithm is repeated until identifying a suitably strong ^s.
 *Prompt:*
 
 ![img.png](img.png)
+
+
+## Datasets
+### [Synthetic math](https://paperswithcode.com/paper/measuring-mathematical-problem-solving-with)
+Synthetic math datasets that require inferring an underlying mathematical function based on numeric input and outputs.
+
+### [ANLI](https://github.com/facebookresearch/anli)
+The Adversarial Natural Language Inference (ANLI, Nie et al.) is a new large-scale NLI benchmark dataset, collected via an iterative, adversarial human-and-model-in-the-loop procedure. Particular, the data is selected to be difficult to the state-of-the-art models, including BERT and RoBERTa.
+
+
+### [Instruction induction](https://arxiv.org/pdf/2205.10782.pdf)
+diverse language tasks with easily verifiable descriptions (e.g. Find a country’s capital).
+
+### [Sentiment Dataset](https://www.aclweb.org/anthology/D13-1170.pdf)
+a collection of sentiment classification datasets in different domains.
+
+## References
+图文、代码详解BeamSearch.[在线].知乎.取自:https://zhuanlan.zhihu.com/p/460733009
+
+

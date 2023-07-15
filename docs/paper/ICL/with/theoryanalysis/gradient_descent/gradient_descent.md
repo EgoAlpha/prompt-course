@@ -15,32 +15,32 @@ What they contribute includes:
 
 Firstly, they change the standard multi-head self-attention layer:
 
-![](./Screenshot 2023-05-16 090737.png)
+![](./090737.png)
 
 to the linear self-attention layer they designed:
 
-![](./Screenshot 2023-05-16 090746.png)
+![](./090746.png)
 
 Then They induce the squared-error loss of e a reference linear model: 
 
-![](./Screenshot 2023-05-16 095519.png)
+![](./095519.png)
 
 Thus, they can view the outcome of a gradient descent step as an update to our regression loss, where data, and not weights, are updated.
 
-Set Q,K,V matrix like: $$W_K = W_Q = (\begin{matrix} I_X&0\\0&0 \end {matrix}),W_V = (\begin{matrix} 0&0\\W_0&-I_y \end {matrix})$$
+Set Q,K,V matrix like: $W_K = W_Q = (\begin{matrix} I_X&0\\0&0 \end {matrix}),W_V = (\begin{matrix} 0&0\\W_0&-I_y \end {matrix})$
 
 then obtain the following dynamics
 
-![](./Screenshot 2023-05-16 105601.png)
+![](./105601.png)
 
 Comparing one step of gradient descent with a trained single linear self-attention layer:
 
-![](./Screenshot 2023-05-16 105834.png)
+![](./105834.png)
 
 Comparing two steps of gradient descent with trained recurrent two-layer Transformers:
 
-![](./Screenshot 2023-05-16 105952.png)
+![](./105952.png)
 
 Comparing five steps of gradient descent with trained five-layer Transformers:
 
-![](./Screenshot 2023-05-16 110000.png)
+![](./110000.png)

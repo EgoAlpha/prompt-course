@@ -1,4 +1,4 @@
-## Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale
+# Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale
 
 ## 介绍
 
@@ -16,8 +16,8 @@
 
 ​  基于特定任务和特定镜头的重要性得分，以迭代方式去除OPT-66B中的注意头时对上下文学习准确性的影响：
 
-![](./Screenshot 2023-05-15 163139.png)
+![](./163139.png)
 
 ​  基于特定任务和特定镜头的重要性得分，以迭代方式删除OPT-66B中的前馈网络（FFN）时对上下文学习准确性的影响：
 
-![](./Screenshot 2023-05-15 163204.png)
+![](./163204.png)

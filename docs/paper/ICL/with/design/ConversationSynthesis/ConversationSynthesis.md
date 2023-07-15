@@ -14,16 +14,16 @@ Along with each conversation, they wrote a brief conversation “recipe” which
 
 Conversations in the prompt are prefixed by recipes. <font color="blue">Blue text</font>: topic labels. <font color="red">Red text</font>: seed background information metadata.
 
-![](./Screenshot 2023-04-24 111315.png)
+![](./111315.png)
 
  Handwritten conversation examples of varying length. In-context examples are randomly sampled from this pool and used as part of a prompt for dyadic conversation generation.
 
-![](./Screenshot 2023-06-27 193736.png)
+![](./193736.png)
 
 Pair of dyadic conversations generated using OPT 30B. The prompt recipe given is: “The following is a conversation between Alice and Bob about their hometowns. Bob is from Austin, Texas, and Alice is from New York City.”
 
-![](./Screenshot 2023-06-27 193945.png)
+![](./193945.png)
 
 Pair of dyadic conversations generated using OPT 175B. The prompt recipe given is: “The following is a conversation between Alice and Bob about their majors. They are both students at Stanford University.”
 
-![Screenshot 2023-06-27 193955](./Screenshot 2023-06-27 193955.png)
+![Screenshot 2023-06-27 193955](./193955.png)

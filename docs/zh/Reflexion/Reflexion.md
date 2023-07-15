@@ -1,4 +1,4 @@
-# **反思**
+# **反射**
 
 ## 简介
 
@@ -66,8 +66,15 @@ New plan: I was stuck in a loop in which I continually examined stoveburner 1 in
 
 ## 数据集
 
-### HotPotQA
+### [HotPotQA](https://arxiv.org/abs/1809.09600)
 HotPotQA是一个基于维基百科的数据集，包含11.3万个问题和答案对，挑战代理对内容进行解析和推理。
 
 
+## 参考文献
+
+[1] Ahn, M., Brohan, A., Brown, N., Chebotar, Y., Cortes, O., David, B., Finn, C., Gopalakrishnan, K., Hausman, K., Herzog, A., et al. (2022). [Do as i can, not as i say: Grounding language in robotic affordances. ](https://arxiv.org/abs/2204.01691)
+
+[2] Austin, J., Odena, A., Nye, M., Bosma, M., Michalewski, H., Dohan, D., Jiang, E., Cai, C., Terry, M., Le, Q., et al. (2021). [Program synthesis with large language models.](https://arxiv.org/abs/2108.07732)
+
+[3] Chen, B., Zhang, F., Nguyen, A., Zan, D., Lin, Z., Lou, J.-G., and Chen, W. (2022). [Codet: Code generation with generated tests.](https://arxiv.org/abs/2108.07732)
 

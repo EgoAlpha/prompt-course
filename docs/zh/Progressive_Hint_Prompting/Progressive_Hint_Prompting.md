@@ -123,25 +123,36 @@ Therefore, Toulouse, Charleston, and Seattle have a total of 260 sheep together.
 ```
 
 
-## Datasets
+## 数据集
 
-### AddSub
+### [AddSub](https://aclanthology.org/D14-1058/)
 AddSub数据集是一个用于测试算术电路的数据集，包含了加减法器的测试用例。
 
-### MultiArith
+### [MultiArith](https://arxiv.org/pdf/1608.01413/)
 MultiArith数据集是一个用于测试算术推理的数据集，包含了多种算术运算，如加、减、乘、除等。
 
-### SingleEQ
+### [SingleEQ](https://aclanthology.org/Q15-1042)
 SingleEQ数据集是一个用于测试单方程代数问题的数据集，包含了对非负有理数和一个变量进行多项数学运算的单方程代数单词问题。
 
-### SVAMP
+### [SVAMP](https://arxiv.org/abs/2103.07191)
 SVAMP是一个用于测试硬件验证的数据集，包含了各种硬件验证问题，如等价性检查、模型检查等。
 
-### GSM8K
+### [GSM8K](http://export.arxiv.org/abs/2110.14168)
 GSM8K是一个用于测试汉语音素转换的数据集，包含了各种汉字和拼音之间的映射关系。
 
-### AQuA
+### [AQuA](https://arxiv.org/pdf/1705.04146/)
 AQuA是一个用于测试汇编代码理解的数据集，包含了各种汇编代码和问题之间的映射关系。
+
+
+## 参考文献
+
+[1] Daniel W Otter, Julian R Medina, and Jugal K Kalita. [A survey of the usages of deep learning for natural language processing.](https://arxiv.org/pdf/1807.10854.pdf) IEEE transactions on neural networks and learning systems, 32(2):604–624, 2020.
+
+[2] Xipeng Qiu, Tianxiang Sun, Yige Xu, Yunfan Shao, Ning Dai, and Xuanjing Huang. [Pre-trained models for natural language processing: A survey.](https://arxiv.org/abs/2003.08271) Science China Technological Sciences, 63(10):1872–1897, 2020.
+
+[3] KR1442 Chowdhary and KR Chowdhary. [Natural language processing.](https://link.springer.com/chapter/10.1007/978-81-322-3972-7_19) Fundamentals of artificial intelligence, pages 603–649, 2020.
+
+
 
 
 

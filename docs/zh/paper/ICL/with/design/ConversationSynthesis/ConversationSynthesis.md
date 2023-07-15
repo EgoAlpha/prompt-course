@@ -1,4 +1,4 @@
-## PLACES: Prompting Language Models for Social Conversation Synthesis
+# PLACES: Prompting Language Models for Social Conversation Synthesis
 
 
 
@@ -16,16 +16,16 @@
 
 ​		提示中的对话以情境为前缀。<font color="blue">蓝色文本</font>：主题标签；<font color="red">红色文本</font>：关键背景信息。
 
-![](./Screenshot 2023-04-24 111315.png)
+![](./111315.png)
 
 ​		不同长度的手写对话示例。in-context示例是从这个池中随机采样的，并用作二元对话生成提示的一部分。该对话池非常庞大，下图为截取一部分：
 
-![](./Screenshot 2023-06-27 193736.png)
+![](./193736.png)
 
 ​		使用OPT-30B生成的一组二元对话。给出的prompt是：“以下是Alice和Bob关于他们家乡的对话。Bob来自德克萨斯州奥斯汀，Alice来自纽约市。”
 
-![](./Screenshot 2023-06-27 193945.png)
+![](./193945.png)
 
 ​		使用OPT-175B生成的一对二元对话。给出的prompt是：“下面是Alice和Bob关于他们专业的对话。他们都是斯坦福大学的学生。”
 
-![Screenshot 2023-06-27 193955](./Screenshot 2023-06-27 193955.png)
+![Screenshot 2023-06-27 193955](./193955.png)

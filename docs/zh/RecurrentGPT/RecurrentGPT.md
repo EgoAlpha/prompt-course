@@ -76,5 +76,21 @@ Instruction 3: <content for instruction 3>, around 5 sentences
 
 ## 数据集
 
-### Vector Database
+### [Vector Database](https://aws.amazon.com/what-is/vector-databases/)
 Vector Database 是一种专门用于存储和管理矢量数据的数据库系统。矢量数据由点、线和多边形等几何要素构成，常用于地理信息系统（GIS）和地图应用中。与传统的关系型数据库相比，矢量数据库提供了更高效的存储和查询方式，以支持空间数据的存储、索引和分析。
+
+
+## 参考文献
+
+[1] Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya Sutskever, et al. [Improving language understanding by generative pre-training.](https://www.cs.ubc.ca/~amuham01/LING530/papers/radford2018improving.pdf) 2018.
+
+[2] Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. [Language models are unsupervised multitask learners.](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) OpenAI blog, 1(8):9, 2019.
+
+[3] Jeffrey L. Elman. [Finding structure in time.](https://www.sciencedirect.com/science/article/pii/036402139090002E) Cognitive Science, 14(2):179–211, 1990. ISSN 0364-0213.
+
+
+
+
+
+
+

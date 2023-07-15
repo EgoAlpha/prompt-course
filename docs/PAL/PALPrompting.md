@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[Gao et al., 2022(opens in a new tab)](https://arxiv.org/abs/2211.10435) The PAL framework is introduced, which involves lowering the reasoning steps and computation of the LLM's final results to the interpreter to ensure accuracy of the answers. This reduces the failure rate of LLM's logic and computation errors.
+[[Gao et al., 2022]](https://arxiv.org/abs/2211.10435) The PAL framework is introduced, which involves lowering the reasoning steps and computation of the LLM's final results to the interpreter to ensure accuracy of the answers. This reduces the failure rate of LLM's logic and computation errors.
 
 By outsourcing the reasoning steps to the interpreter, PAL eliminates the need for LLM to perform computations. The results show that even when a stronger COT is used by LLM, PAL still outperforms it in accuracy. Additionally, PAL can work collaboratively with weaker LLMs and expand its advantages when working with stronger LLMs.
 
@@ -127,25 +127,52 @@ def solution():
 
 ## Datasets
 
-### CodeSearchNet Corpus
-This dataset contains millions of lines of Java, Python, and other language code fragments from GitHub.
+We experiment with three broad classes of reasoning tasks: 
 
-### GSM8K
+(1) mathematical problems from a wide range of datasets including GSM8K, SVAMP, ASDIV, 
+and MAWPS;
+
+(2) symbolic reasoning from BIG-Bench Hard;
+
+(3) algorithmic problems from BIG-Bench Hard as well.
+
+
+### [GSM8K](https://www.huggingface.co/datasets/gsm8k)
 GSM8K is a data set consisting of 8.5K high quality language diverse primary math word problems. These problems are divided into 7.5K training problems and 1K test problems. These problems take between two and eight steps to solve, and are solved by performing a series of basic calculations using basic arithmetic operations (+ - / *) to arrive at the final answer.
 
-### Defects4J
+### [Defects4J](https://github.com/rjust/defects4j)
 This dataset contains known defects and fixes for 5 Java projects, including Commons Math, Joda Time, etc
 
-### MultiArith
+### [MultiArith](https://www.huggingface.co/datasets/ChilleD/MultiArith)
 The MultiArith dataset is a multi-step algorithm dataset containing 600 scenario-based math problems at the elementary level.
 
-### Django
+### [Django](https://www.huggingface.co/datasets/AhmedSSoliman/DJANGO)
 This dataset is also a natural language to code semantic parsing task dataset, which includes Python code from the Django Web framework and related natural language descriptions.
 
-### Codeforces
+### [Codeforces](https://www.kaggle.com/datasets/immortal3/codeforces-dataset)
 This dataset is an online programming competition platform that contains millions of lines of code submitted by programmers from around the world.
 
-### SQuAD
+### [SQuAD](https://www.huggingface.co/datasets/squad)
 This dataset is a question and answer dataset widely used in Natural language processing tasks, which contains questions from Wikipedia and their corresponding answers
 
+## References
 
+[1] Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan,
+J., Dhariwal, P ., Neelakantan, A., Shyam, P ., Sastry, G.,
+Askell, A., Agarwal, S., Herbert-V oss, A., Krueger, G.,
+Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu,
+J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M.,
+Gray, S., Chess, B., Clark, J., Berner, C., McCandlish,
+S., Radford, A., Sutskever, I., and Amodei, D. [Language
+Models are Few-Shot Learners.](https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
+In NeurIPS, 2020.
+
+[2] Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E.,
+and Zhou, D. [Self-Consistency Improves Chain of
+Thought Reasoning in Language Models.](https://arxiv.org/abs/2203.11171v2) arXiv preprint
+arXiv:2203.11171, 2022b.
+
+[3] Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E., Le,
+Q., and Zhou, D. [Chain of Thought Prompting Elicits
+Reasoning in Large Language Models.](https://arxiv.org/abs/2201.11903) arXiv preprint
+arXiv:2201.11903, 2022.

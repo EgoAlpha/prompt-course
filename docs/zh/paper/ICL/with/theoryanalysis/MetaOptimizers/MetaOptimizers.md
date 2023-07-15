@@ -1,4 +1,4 @@
-## Why Can GPT Learn In-Context? Language Models Secretly Perform Gradient Descent as Meta-Optimizers
+# Why Can GPT Learn In-Context? Language Models Secretly Perform Gradient Descent as Meta-Optimizers
 
 
 
@@ -18,21 +18,21 @@
 
    ICL中attention的计算方式：
 
-   ![](./Screenshot 2023-05-13 092254.png)
+   ![](./092254.png)
 
 ​		去除softmax操作和缩放因子将标准注意力近似为线性注意力：
 
-![](./Screenshot 2023-05-13 092305.png)
+![](./092305.png)
 
-​		如果去除few-shot中的示例部分，直接预测即为zero-shot:![](./Screenshot 2023-05-13 092700.png)
+​		如果去除few-shot中的示例部分，直接预测即为zero-shot:![](./092700.png)
 
 ​		将该式代入上式：
 
-![](./Screenshot 2023-05-13 092313.png)
+![](./092313.png)
 
 ​		可以发现in-context tuning形式与fine-tuning的形式非常类似：
 
-![](./Screenshot 2023-05-13 093540.png)
+![](./093540.png)
 
 ​		为了便于实验，他们从四个方面规定了ICL和fine-tuning之间的共同特性：（1）两者都执行梯度下降；（2） 相同的训练信息；（3） 训练实例的因果顺序相同；（4） 两者都以注意力为目标。
 

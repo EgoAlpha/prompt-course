@@ -76,5 +76,18 @@ Instruction 3: <content for instruction 3>, around 5 sentences
 
 ## Datasets
 
-### Vector Database
+### [Vector Database](https://aws.amazon.com/what-is/vector-databases/)
 Vector Database is a specialized database system designed for storing and managing vector data. Vector data, composed of points, lines, and polygons, is commonly used in geographic information systems (GIS) and mapping applications. Compared to traditional relational databases, vector databases provide more efficient storage and querying methods to support the storage, indexing, and analysis of spatial data.
+
+
+## References
+
+[1] Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya Sutskever, et al. [Improving language understanding by generative pre-training.](https://www.cs.ubc.ca/~amuham01/LING530/papers/radford2018improving.pdf) 2018.
+
+[2] Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et al. [Language models are unsupervised multitask learners.](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) OpenAI blog, 1(8):9, 2019.
+
+[3] Jeffrey L. Elman. [Finding structure in time.](https://www.sciencedirect.com/science/article/pii/036402139090002E) Cognitive Science, 14(2):179–211, 1990. ISSN 0364-0213.
+
+
+
+

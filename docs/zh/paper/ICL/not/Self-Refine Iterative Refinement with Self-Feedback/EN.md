@@ -1,4 +1,4 @@
-## Self-Refine: Iterative Refinement with Self-Feedback
+# Self-Refine: Iterative Refinement with Self-Feedback
 
 
 
@@ -16,9 +16,9 @@ REFINE refines the output based on the received feedback and the previously gene
 
 ## Prompt example
 
-![](./Screenshot 2023-04-24 095927.png)
+![](./095927.png)
 
-![](./Screenshot 2023-05-07 101823.png)
+![](./101823.png)
 
-![](./Screenshot 2023-05-07 102700.png)
+![](./102700.png)
 

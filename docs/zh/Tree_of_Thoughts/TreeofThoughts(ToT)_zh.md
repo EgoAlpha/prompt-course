@@ -1,8 +1,8 @@
-# **Batch Prompting: 使用大型语言模型API进行高效推理**
+# **思想树(ToT)**
 
 ## 简介
 
-[Yao等人，2023](https://arxiv.org/abs/2305.10601)引入了一种新的语言模型推理框架，
+[[Yao et al., 2023]](https://arxiv.org/abs/2305.10601)引入了一种新的语言模型推理框架，
 即“思想树”(ToT)，它概括了流行的“思想链”方法来提示语言模型，并允许探索连贯的文本单元(“思想”)，
 作为解决问题的中间步骤。ToT允许LMs通过考虑多种不同的推理路径和自我评估选择来执行深思熟虑的决策，
 以决定下一步的行动方针，以及在必要时做出全局选择时进行前瞻或回溯。
@@ -13,7 +13,7 @@
 
 ## 原理
 
-ToT将所有问题都定义为对树的搜索，其中每个节点都是一个状态s = [x, z<sub>1..]I </sub>]，
+ToT将所有问题都定义为对树的搜索，其中每个节点都是一个状态s = [x, z<sub>1..i </sub>]，
 表示部分解，包含输入和到目前为止的思想序列。ToT的具体实例包括回答四个问题:
 1. 如何将中间过程分解为思维步骤;
 2. 如何从每个状态中产生潜在的想法;
@@ -194,3 +194,36 @@ output of value_prompt:
 surge (s u r g e): 5 letters, letter 1 is s, letter 2 is u, letter 3 is r. Fit!
 sure
 ```
+
+## 数据集
+
+在实验中，我们从几个网站获取了三款游戏的数据。
+
+### 24点游戏
+
+我们从[4nums.com](https://www.4nums.com/game/difficulties/)中抓取数据，其中有1362个游戏，根据人类解决时间从简单到困难进行排序，并使用索引为901- 1000的相对困难游戏子集进行测试。
+
+对于每个任务，如果它是一个等于24的有效方程，并且每个输入数字恰好使用一次，则我们认为输出成功。我们报告100款游戏的成功率作为指标。
+
+### 创意写作
+
+我们从[randomwordgenerator.com](https://randomwordgenerator.com/sentence.php)中随机
+抽取句子，形成100个输入，并且每个输入约束都没有基本事实段落。
+由于我们发现GPT-4在大多数情况下可以遵循输入约束，因此我们着重于通过两种方式评估通道一致性:使用GPT-4
+零样本提示提供1-10的标量得分，或者使用人工判断来比较不同方法的输出对。
+
+### 迷你纵横字词游戏
+
+我们从[GooBix](https://www.goobix.com/crosswords/0505/)上抓取数据，其中包含156个5 × 5
+的迷你填字游戏。当我们观察到相邻的游戏包含相似的线索时，我们使用索引为1、6、···、91、96的20个游
+戏进行测试，并使用索引为136、141、146、151、156的游戏进行提示。
+
+## 参考文献
+[1] S. A. Sloman. [The empirical case for two systems of reasoning.](https://psycnet.apa.org/record/1996-01401-001) Psychological bulletin, 119(1):
+3, 1996. 
+
+[2] X. Wang, J. Wei, D. Schuurmans, Q. Le, E. Chi, and D. Zhou. [Self-consistency improves chain
+of thought reasoning in language models.](https://arxiv.org/abs/2203.11171v2) arXiv preprint arXiv:2203.11171, 2022.
+
+[3] J. Wei, X. Wang, D. Schuurmans, M. Bosma, E. Chi, Q. Le, and D. Zhou. [Chain of thought
+prompting elicits reasoning in large language models.](https://arxiv.org/abs/2201.11903) arXiv preprint arXiv:2201.11903, 2022.

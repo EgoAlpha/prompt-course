@@ -29,9 +29,9 @@ This implies W and the layer norm LN for the FFN can be entirely removed. In tot
 
 Effect on in-context learning accuracy when removing attention heads in OPT-66B in an iterative manner based on task-specific and shot-specific importance scores: 
 
-![](./Screenshot 2023-05-15 163139.png)
+![](./163139.png)
 
 Effect on in-context learning accuracy when removing feed forward networks (FFNs) in OPT-66B in an iterative manner based on task-specific and shot-specific importance scores:
 
-![](./Screenshot 2023-05-15 163204.png)
+![](./163204.png)
 

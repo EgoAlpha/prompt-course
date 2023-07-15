@@ -10,7 +10,7 @@ Large language models always require massive computation resources, only can be 
 
 - multitask in-context tuning: To better exploit the information in the few-shot training examples, they proposed multitask in-context tuning for multitask few-shot learning.  Multitask-ICT directly adapts the model to target tasks in two steps. First, it updates model parameters with a few examples from target tasks in an in-context tuning manner. Then it makes predictions via in-context learning. 
 
-![](./Screenshot 2023-05-08 142719.png)
+![](./142719.png)
 
 
 
@@ -18,18 +18,18 @@ Due to the limitation on the input sequence length of LMs, the number of trainin
 
 - In-context Learning Distillation: The student learns from the teacher by imitating the teacher’s predictions (soft labels). The student learns to perform in-context learning as well as language modeling from the teacher. In addition to learning from the teacher’s predictions, the student also learns from the ground truths (hard label). 
 
-![](./Screenshot 2023-05-08 142733.png)
+![](./142733.png)
 
 They experimented with two paradigms (Meta-ICT, Multi-ICT) on two benchmarks (LAMA, CrossFit), resulting in four different few-shot learning settings in total.
 
 Distillation results under Meta-ICT paradigms. ICT(baseline): In-context tuning without the teacher. ICL-D: In-context knowledge distillation which only distills through in-context learning objectives. ICL-D(LM): In-context knowledge distillation which distills through both in-context learning objectives and language modeling objectives. 
 
-![Screenshot 2023-05-08 143826](./Screenshot 2023-05-08 143826.png)
+![Screenshot 2023-05-08 143826](./143826.png)
 
 ​	 Distillation results under the Multitask-ICT paradigm.
 
-![Screenshot 2023-05-08 143833](./Screenshot 2023-05-08 143833.png)
+![Screenshot 2023-05-08 143833](./143833.png)
 
 ## Prompt example
 
-![](./Screenshot 2023-06-28 102509.png)
+![](./102509.png)

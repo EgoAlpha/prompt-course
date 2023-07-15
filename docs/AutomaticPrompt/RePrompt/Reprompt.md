@@ -1,5 +1,7 @@
 # RePrompt: Automatic Prompt Editing to Refine AI-Generative Art Towards Precise Expressions
 
+## Introduction
+
 [Wang et al., 2023](https://doi.org/10.1145/3544548.3581402) developed RePrompt, by exploring the emotional
 expression ability of AI-generated images, RePrompt Is an Automatic Prompt Engineering method based on XAI that can refine text prompts (prompt) and So as to optimize the image generation and realize the accurate emotional expression.
 
@@ -58,3 +60,12 @@ Add or delete words in the table according to existing rules,in this example,the
 &darr;
 
 `Final prompt:`"best,friend,going,school,country,current,cold,advance,sad"
+
+
+## Datasets
+
+### [EmpatheticDialogues](https://doi.org/10.18653/v1/2020.emnlp-main.531)
+EmpatheticDialogues is a frequently used text dataset for training empathetic AI chatbots, which fits the need in terms of our research questions.  
+
+## References
+Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever. 2021. Learning Transferable Visual Models From Natural Language Supervision. In ICML 2021. Retrieved from http://arxiv.org/abs/2103.00020

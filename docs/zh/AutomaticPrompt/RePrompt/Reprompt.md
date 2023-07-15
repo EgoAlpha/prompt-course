@@ -1,33 +1,35 @@
 # RePrompt: Automatic Prompt Editing to Refine AI-Generative Art Towards Precise Expressions
 
+## 简介
+
 [Wang et al., 2023](https://doi.org/10.1145/3544548.3581402)通过探索人工智能生成图像的情感表达能力，开发了RePrompt，RePrompt是一种基于XAI的Automatic Prompt Engineering 方法，可以细化文本提示（prompt），从而优化图像生成，实现精确的情感表达。
 
 RePrompt中，作者基于外行编辑（用户可解释）策略策划了直观的文本特征，设计了图像质量度量标准，训练了机器学习模型来预测文本特征的图像质量分数，然后将模型解释应用于训练的模型，以生成用于自动编辑文本提示的量规。
 
 模拟研究和用户研究结果表明，相对于IEA，RePrompt使用AI模型改进了图像生成，尤其是对于负面情绪。在我们的评估用户研究中，验证者无法感知不同条件下积极情绪表达的差异，这可能是由于人类对积极刺激的敏感性较低，以及CLIP对积极情绪建模的能力较弱。ITA的结果喜忧参半。
 
-## How it Works?
+## 原理
 
 **RePrompt工作过程**
 
 1）通过文本到图像生成模型了解哪些提示特征可以导致更好的输出图像，以及2）自动修改文本提示以实现更好的输出图片。
 
-`对于1）第一步`选择特征，设计单词级别的特征，这些特征满足了易于理解和调整的要求；
+**对于1）第一步**选择特征，设计单词级别的特征，这些特征满足了易于理解和调整的要求；
 
-`第二步`设置图像质量度量标准，采用图像情感比对（IEA）和图像文本比对（ITA）的CLIP评分作为图像质量的衡量标准。
+**第二步**设置图像质量度量标准，采用图像情感比对（IEA）和图像文本比对（ITA）的CLIP评分作为图像质量的衡量标准。
 
-`第三步` 特征分析，了解策划特征如何影响图像生成；1）利用SHAP计算全局特征值的重要性，根据特征的重要性和调整值的容易程度选择突出特征；2）识别特征值范围，使用PDP
+**第三步** 特征分析，了解策划特征如何影响图像生成；1）利用SHAP计算全局特征值的重要性，根据特征的重要性和调整值的容易程度选择突出特征；2）识别特征值范围，使用PDP
 来分析特征在特征值分布上对模型输出的影响。通过识别最优特征值范围，我们最终策划了特征值调整的规则。
 
-`对与2）第一步`给定一个文本，首先标记每个单词的词性（POS），并丢弃非名词、动词或形容词的单词，接着使用单词的CLIP分数和附加情感标签的全文来计算单词显著性，根据显著性确定删除和添加单词；
+**对与2）第一步**给定一个文本，首先标记每个单词的词性（POS），并丢弃非名词、动词或形容词的单词，接着使用单词的CLIP分数和附加情感标签的全文来计算单词显著性，根据显著性确定删除和添加单词；
 
-`第二步`从ConceptNet中检索前若干显著词的相关词，仅保留文本中的形容词；
+**第二步**从ConceptNet中检索前若干显著词的相关词，仅保留文本中的形容词；
 
-`第三步`计算单词显著性并查找单词具体性，然后保留若干最显著的单词；
+**第三步**计算单词显著性并查找单词具体性，然后保留若干最显著的单词；
 
-`第四步`添加情感标签，并最终确定了RePrompt的输出。
+**第四步**添加情感标签，并最终确定了RePrompt的输出。
 
-*Prompt:*
+*Prompt 示例:*
 
 `原始输入:`"My best friend will be going to school in another country for 4 years".Emotion:"Sad"
 
@@ -57,4 +59,12 @@ RePrompt中，作者基于外行编辑（用户可解释）策略策划了直观
 
 &darr;
 
-`最终输出prompt:`"best,friend,going,school,country,current,cold,advance,sad"
+`最终输出提示:`"best,friend,going,school,country,current,cold,advance,sad"
+
+## 数据集
+
+### [EmpatheticDialogues](https://doi.org/10.18653/v1/2020.emnlp-main.531)
+同理心对话数据是一个经常使用的文本数据集，用于训练有同情心的人工智能聊天机器人，这符合我们研究问题的需要。 
+
+## 参考文献
+Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever. 2021. Learning Transferable Visual Models From Natural Language Supervision. In ICML 2021. Retrieved from http://arxiv.org/abs/2103.00020

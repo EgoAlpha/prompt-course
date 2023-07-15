@@ -131,20 +131,28 @@ total_score: 30/30
 ```
 
 
-## Datasets
+## 数据集
 
-### FED
-
+### [FED](https://arxiv.org/abs/2006.12719)
 一个人类系统和人类对话的集合，在回合和对话级别都有18个细粒度的对话质量注释。创建该数据集是为了评估交互式对话系统，而不依赖于参考响应或训练数据。
 
-### PIE
-
+### [PIE](https://arxiv.org/abs/2302.07867)
 一个广泛用于代码优化的数据集，旨在测试模型提高Python代码效率的能力，数据集来源于论文，该数据集主要目标是通过实现算法修改来优化给定的程序，从而提高运行时性能。
 
-### CodeNet
-
+### [CodeNet](https://arxiv.org/abs/2105.12655)
 一个广泛用于代码可读性改进的数据集，旨在测试模型重构代码并提高代码可读性的能力，数据集来源于论文，该数据集都是一些难以阅读的多行代码片段。
 
-### GSM-8k
-
+### [GSM-8k](https://arxiv.org/abs/2110.14168)
 一个广泛用于数学推理任务的数据集，旨在测试模型在解决数字推理方面的能力。
+
+
+## 参考文献
+
+[1] Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. 2022a. [Training a helpful and harmless assistant with reinforcement learning from human feedback.](https://arxiv.org/abs/2204.05862)
+
+[2] Jinlan Fu, See-Kiong Ng, Zhengbao Jiang, and Pengfei Liu. 2023. [Gptscore: Evaluate as you desire.](https://arxiv.org/abs/2302.04166)
+
+[3] Luyu Gao, Aman Madaan, Shuyan Zhou, Uri Alon, Pengfei Liu, Yiming Yang, Jamie Callan, and Graham Neubig. 2022. [Pal: Program-aided language models. ](https://arxiv.org/abs/2211.10435)
+
+
+

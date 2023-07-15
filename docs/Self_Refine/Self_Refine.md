@@ -124,19 +124,24 @@ total_score: 30/30
 
 ## Datasets
 
-### FED
-
+### [FED](https://arxiv.org/abs/2006.12719)
 The FED dataset is a collection of human-system and human-human conversations annotated with eighteen fine-grained dialog qualities at both the turn and the dialogue-level. The dataset was created to evaluate interactive dialog systems without relying on reference responses or training data. Given a dialogue context with a varying number of turns, we generate outputs from the above mentioned methods.
 
-### PIE
-
+### [PIE](https://arxiv.org/abs/2302.07867)
 A dataset widely used for code optimization, aimed at testing the model's ability to improve Python code efficiency. The dataset is derived from paper and aims to optimize a given program by implementing algorithm modifications, thereby improving runtime performance.
 
-### CodeNet
-
+### [CodeNet](https://arxiv.org/abs/2105.12655)
 A dataset widely used for code readability improvement, designed to test the model's ability to refactor code and improve code readability.The dataset is sourced from the paper and consists of difficult to read multi line code fragments.
 
 
-### GSM-8k
-
+### [GSM-8k](https://arxiv.org/abs/2110.14168)
 A dataset widely used for mathematical reasoning tasks, aimed at testing the model's ability to solve numerical reasoning. 
+
+
+## References
+
+[1] Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, Dawn Drain, Stanislav Fort, Deep Ganguli, Tom Henighan, et al. 2022a. [Training a helpful and harmless assistant with reinforcement learning from human feedback.](https://arxiv.org/abs/2204.05862)
+
+[2] Jinlan Fu, See-Kiong Ng, Zhengbao Jiang, and Pengfei Liu. 2023. [Gptscore: Evaluate as you desire.](https://arxiv.org/abs/2302.04166)
+
+[3] Luyu Gao, Aman Madaan, Shuyan Zhou, Uri Alon, Pengfei Liu, Yiming Yang, Jamie Callan, and Graham Neubig. 2022. [Pal: Program-aided language models. ](https://arxiv.org/abs/2211.10435)

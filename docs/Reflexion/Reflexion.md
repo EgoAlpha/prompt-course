@@ -68,11 +68,14 @@ New plan: I was stuck in a loop in which I continually examined stoveburner 1 in
 
 ## Datasets
 
-### HotPotQA
+### [HotPotQA](https://arxiv.org/abs/1809.09600)
 HotPotQA is a Wikipedia-based dataset with 113k question-and-answer pairs that challenge agents to parse content and reason over several supporting documents.
 
 
+## References
 
+[1] Ahn, M., Brohan, A., Brown, N., Chebotar, Y., Cortes, O., David, B., Finn, C., Gopalakrishnan, K., Hausman, K., Herzog, A., et al. (2022). [Do as i can, not as i say: Grounding language in robotic affordances. ](https://arxiv.org/abs/2204.01691)
 
+[2] Austin, J., Odena, A., Nye, M., Bosma, M., Michalewski, H., Dohan, D., Jiang, E., Cai, C., Terry, M., Le, Q., et al. (2021). [Program synthesis with large language models.](https://arxiv.org/abs/2108.07732)
 
-
+[3] Chen, B., Zhang, F., Nguyen, A., Zan, D., Lin, Z., Lou, J.-G., and Chen, W. (2022). [Codet: Code generation with generated tests.](https://arxiv.org/abs/2108.07732)

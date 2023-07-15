@@ -171,14 +171,20 @@ A[1]:No
 
 ## 数据集
 
-### Jailbreak
+### [Jailbreak](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts)
 一项新任务，其目标是确定用户输入LLM延续API（即用户提交的延续提示）是否构成越狱攻击。我们将越狱攻击定义为一种用户交互策略，旨在让人工智能打破自己的规则。这可能包括生成有害内容或泄露LLM的元提示。这个数据集有452个多语言示例和人工注释的越狱标签。
 
-### Ethos
+### [Ethos](https://arxiv.org/abs/2006.08328)
 在线英语仇恨言论检测数据集，包含997条在线评论和仇恨言论标签。
 
-### Liar
+### [Liar](https://arxiv.org/pdf/1705.00648.pdf)
 一个包含4000条声明、上下文和谎言标签的英语假新闻检测数据集。
 
-### Sarcasm
+### [Sarcasm](https://aclanthology.org/2020.osact-1.5.pdf)
 一个包含10000条在线评论和讽刺标签的阿拉伯语讽刺检测数据集。
+
+## 参考文献
+
+IT之一小佬.(2021).Beam Search.[在线].CSDN博客.取自:https://blog.csdn.net/weixin_44799217/article/details/116130856
+
+电通一枝花.(2021).UCB——上界置信算法.[在线].CSDN博客.取自:https://blog.csdn.net/weixin_45662974/article/details/120615735

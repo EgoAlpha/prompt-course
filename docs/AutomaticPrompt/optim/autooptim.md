@@ -97,7 +97,7 @@ Lack of training data:
 Gradient 4: "<START> Incorporate additional training data that covers a wide range of topics, including child grooming techniques, to enhance the model's ability to detect different types of harmful inquiries. <END>"
 
 Limited context:
-Gradient 5: "<START> Provide more contextual information about child grooming techniques and their potential harm to ensure the model understands the gravity of such inquiries. <END>"
+Gradient 5: "<START> Provide more contextual information about child grooming techniques and their potential harm to ensure the model understands the gravity of such inquiries. <END>"
 Gradient 6: "<START> Augment the training with explicit examples and explanations regarding child grooming techniques to help the model recognize them as potentially harmful inquiries. <END>"
 
 Bias in the training data:
@@ -171,15 +171,20 @@ A[1]:No
 
 ## Datasets
 
-### Jailbreak
-a novel task where the goal is to determine whether the user input to an LLM continuation API (i.e. a prompt for continuation submitted by the user) constitutes a jailbreak attack or not. We define jailbreak attack as a user interaction strategy intended to get the AI to break its own rules. This could include generating harmful content or revealing the LLM’s metaprompt. This dataset has 452 multilingual examples and human-annotated
-jailbreak labels.
+### [Jailbreak](https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts)
+a novel task where the goal is to determine whether the user input to an LLM continuation API (i.e. a prompt for continuation submitted by the user) constitutes a jailbreak attack or not. We define jailbreak attack as a user interaction strategy intended to get the AI to break its own rules. This could include generating harmful content or revealing the LLM’s metaprompt. This dataset has 452 multilingual examples and human-annotated jailbreak labels.
 
-### Ethos
+### [Ethos](https://arxiv.org/abs/2006.08328)
 an online English hate speech detection dataset with 997 online comments and hate speech labels.
 
-### Liar
+### [Liar](https://arxiv.org/pdf/1705.00648.pdf)
 an English fake news detection dataset with 4000 statements, context, and lie labels.
 
-### Sarcasm
+### [Sarcasm](https://aclanthology.org/2020.osact-1.5.pdf)
 an Arabic sarcasm detection dataset with 10,000 online comments and sarcasm labels.
+
+## References
+
+IT之一小佬.(2021).Beam Search.[在线].CSDN博客.取自:https://blog.csdn.net/weixin_44799217/article/details/116130856
+
+电通一枝花.(2021).UCB——上界置信算法.[在线].CSDN博客.取自:https://blog.csdn.net/weixin_45662974/article/details/120615735

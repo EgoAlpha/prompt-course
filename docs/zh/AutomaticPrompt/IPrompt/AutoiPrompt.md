@@ -1,5 +1,7 @@
 # iPrompt: Explaining Data Patterns in Natural Language via Interpretable Autoprompting
 
+## 简介
+
 [Chandan Singh et al., 2023](https://doi.org/10.48550/arXiv.2210.01848)本文引入可解释的自动提示(iPrompt)，这是一种生成解释数据的自然语言字符串的算法。
 
 换一句话说，iPrompt是一种扩展的AutoPrompt，相较于AutoPrompt，iPrompt生成的文本提示使用自然语言书写以生成语义上有意义的自然语言提示解释数据的一个关键特征，让用户更好理解，具有较强的泛化性。
@@ -8,7 +10,7 @@ iPrompt使用经过预训练的冻住的LLM迭代地提出和评估不同的候�
 
 从综合数学到自然语言理解，在广泛的数据集上进行的实验表明，iPrompt可以通过准确地找到人类可以解释的数据集来产生有意义的见解。
 
-## How it Works?
+## 原理
 
 iPrompt是一种迭代局部搜索算法，在三个步骤之间交替：（1）提出候选提示，（2）重新排列候选提示，以及（3）探索
 
@@ -28,5 +30,24 @@ iPrompt是一种迭代局部搜索算法，在三个步骤之间交替：（1）
 
 重复该算法，直到识别出合适的s^。
 
-*Prompt:*
+*Prompt 示例:*
 ![img.png](img.png)
+
+
+## 数据集
+
+### [Synthetic math](https://paperswithcode.com/paper/measuring-mathematical-problem-solving-with)
+需要根据数字输入和输出推断出基本数学函数的数据集。
+
+### [ANLI](https://github.com/facebookresearch/anli)
+对抗性自然语言推理（ANLI，Nie et al.）是一个新的大规模NLI基准数据集，通过迭代的、对抗性的人类和模型在环过程收集。特别是，选择的数据对于最先进的模型来说是困难的，包括BERT和RoBERTa。
+
+### [Instruction induction](https://arxiv.org/pdf/2205.10782.pdf)
+具有易于验证的描述的多样化语言任务(例如，找到一个国家的首都)。
+
+### [Sentiment Dataset](https://www.aclweb.org/anthology/D13-1170.pdf)
+
+一个不同领域的情感分类数据集的集合,不同领域的情感分类数据集。
+
+## 参考文献
+图文、代码详解BeamSearch.[在线].知乎.取自:https://zhuanlan.zhihu.com/p/460733009

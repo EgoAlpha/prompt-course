@@ -87,17 +87,25 @@ demonstrations consistently improves the LLMs’ ability to make selective predi
 
 ## Datasets
 
-### SQuAD 2.0
+### [SQuAD 2.0](https://aclanthology.org/P18-2124/)
 
 Stanford Question Answering Dataset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or span, from the corresponding reading passage, or the question might be unanswerable.
 SQuAD2.0 combines the 100,000 questions in SQuAD1.1 with over 50,000 unanswerable questions written adversarially by crowdworkers to look similar to answerable ones. To do well on SQuAD2.0, systems must not only answer questions when possible, but also determine when no answer is supported by the paragraph and abstain from answering.
 
 
-### Machine Reading Comprehension
+### [Machine Reading Comprehension](https://aclanthology.org/N19-1300/)
 
 Focusing on machine reading comprehension, a key problem in natural language processing, the task is to read and understand a given passage of text and then answer the appropriate questions based on what is read.
 
 
-### Re-TACRED
+### [Re-TACRED](https://arxiv.org/abs/2104.08398)
 
 The Re-TACRED dataset is a significantly improved version of the TACRED dataset for relation extraction. Using new crowd-sourced labels, Re-TACRED prunes poorly annotated sentences and addresses TACRED relation definition ambiguity, ultimately correcting 23.9% of TACRED labels. This dataset contains over 91 thousand sentences spread across 40 relations. Dataset presented at AAAI 2021.
+
+## References
+
+[1] Johannes Bjerva, Nikita Bhutani, Behzad Golshan, Wang-Chiew Tan, and Isabelle Augenstein. 2020.[SubjQA: A Dataset for Subjectivity and Review Comprehension.](https://aclanthology.org/2020.emnlp-main.442/) In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 5480–5494, Online.
+
+[2] Eunsol Choi, He He, Mohit Iyyer, Mark Yatskar, Wentau Yih, Yejin Choi, Percy Liang, and Luke Zettlemoyer. 2018. [QuAC: Question answering in context.](https://aclanthology.org/D18-1241/) In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 2174–2184, Brussels, Belgium. 
+
+[3] Nicola De Cao, Wilker Aziz, and Ivan Titov. 2021.[Editing factual knowledge in language models.](https://aclanthology.org/2021.emnlp-main.522/) In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 6491–6506, Online and Punta Cana, Dominican Reublic.

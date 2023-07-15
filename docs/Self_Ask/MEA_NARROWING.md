@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[[Press et al., 2022\]](https://arxiv.org/abs/2210.03350) investigate the ability of language models to perform compositional reasoning tasks where the overall solution depends on correctly composing the answers to sub-problems.
+[[Press et al., 2022]](https://arxiv.org/abs/2210.03350) investigate the ability of language models to perform compositional reasoning tasks where the overall solution depends on correctly composing the answers to sub-problems.
 
 Meauring how often models can correctly answer all sub-problems but not generate the overall solution, a ratio is called the compositionality gap and is evaluated by asking multi-hop questions with answers that require composing multiple facts unlikely to have been observed together during pretraining.
 
@@ -28,7 +28,9 @@ The LM takes as input a compositional question and decomposes it by first output
 
 ![image-20230531191126641](img/image-20230531191126641.png)
 
-## *Prompt:*
+## Prompt Example
+
+### *Prompt*
 
 ```
 Question: Who lived longer, Muhammad Ali or Alan Turing?
@@ -73,7 +75,7 @@ Are follow up questions needed here:
 
  
 
-## *Output:* 
+### *Output* 
 
 ```
  Yes.
@@ -84,7 +86,10 @@ Intermediate answer: El Palmar, Murcia, Spain.
 So the final answer is: El Palmar, Murcia, Spain
 ```
 
-## Dataset：
+## Datasets
+
+We develop our method on the training set of Musique and then test it on the
+development sets of Musique and 2WikiMultiHopQA and on our own datasets.
 
 ### Compositional Celebrities(CC)
 
@@ -98,10 +103,32 @@ Bamboogle was designed by reading random Wikipedia articles and trying to come u
 
 ![image-20230602100006979](img/image-20230602100006979.png)
 
-### 2WikiMultiHopQA
+### [2WikiMultiHopQA](https://www.huggingface.co/datasets/voidful/2WikiMultihopQA)
 
 This dataset contains multi hop questions and answers between multiple Wikipedia pages, which can be used for research on machine reading comprehension and natural language inference tasks.
 
-### Musique
+### [Musique](https://www.huggingface.co/datasets/voidful/MuSiQue)
 
 The Music dataset is a dataset used for music information retrieval research, which includes user listening history and music metadata from Last. fm.
+
+## References
+
+[1] Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie
+Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind
+Neelakantan, Pranav Shyam, Girish Sastry, Amanda
+Askell, Sandhini Agarwal, Ariel Herbert-V oss,
+Gretchen Krueger, Tom Henighan, Rewon Child,
+Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu,
+Clemens Winter, Christopher Hesse, Mark Chen, Eric
+Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess,
+Jack Clark, Christopher Berner, Sam McCandlish,
+Alec Radford, Ilya Sutskever, and Dario Amodei.2020. [Language models are few-shot learners.](https://arxiv.org/abs/2005.14165)
+
+[2] Urvashi Khandelwal, Omer Levy, Dan Jurafsky, Luke
+Zettlemoyer, and Mike Lewis. 2020. [Generalization
+through memorization: Nearest neighbor language
+models.](https://arxiv.org/abs/1911.00172) ArXiv, abs/1911.00172.
+
+[3] Brenden M. Lake and Marco Baroni. 2017. [General-
+ization without systematicity: On the compositional
+skills of sequence-to-sequence recurrent networks.](https://arxiv.org/abs/1711.00350)

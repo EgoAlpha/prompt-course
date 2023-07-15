@@ -45,14 +45,19 @@ Peyton Manning.
 
 ## Datasets
 
-### DROP
+### [DROP](https://aclanthology.org/N19-1246/)
  A widely used dataset for question answering and reading comprehension tasks, designed to test models' ability in multi-step reasoning and numerical reasoning. The dataset is sourced from Wikipedia articles and question-answering websites. Each sample consists of a paragraph and a question related to the paragraph, and some questions require multi-step reasoning and analysis to arrive at the answer.
 
-### QQ-P
+### [QQ-P](https://aclanthology.org/D19-1410/)
 A commonly used dataset for the task of question pair matching, aiming to determine whether two questions have similar semantic meanings. The dataset is sourced from the Quora community and includes a large number of non-duplicate question pairs and a portion of duplicate question pairs.
 
+## References
 
+[1] Aishwarya Agrawal, Dhruv Batra, Devi Parikh, and Aniruddha Kembhavi. 2018. [Don’t just assume; look and answer: Overcoming priors for visual question answering.](https://ieeexplore.ieee.org/document/8578620) In 2018 IEEE Conference on Computer Vision and Pattern Recognition, CVPR 2018, Salt Lake City, UT, USA, June 18-22, 2018, pages 4971–4980. IEEE Computer Society.
 
+[2] Daniel Andor, Luheng He, Kenton Lee, and Emily Pitler. 2019. [Giving BERT a calculator: Finding operations and arguments with reading comprehension.](https://aclanthology.org/D19-1609/) In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 5947– 5952, Hong Kong, China. Association for Computational Linguistics.
+
+[3] Xinyun Chen, Chen Liang, Adams Wei Yu, Denny Zhou, Dawn Song, and Quoc V. Le. 2020.[ Neural symbolic reader: Scalable integration of distributed and symbolic representations for reading comprehension.](https://aclanthology.org/D19-1609/) In 8th International Conference on Learning Representations, ICLR 2020, Addis Ababa, Ethiopia, April 26-30, 2020. OpenReview.net
 
 
 

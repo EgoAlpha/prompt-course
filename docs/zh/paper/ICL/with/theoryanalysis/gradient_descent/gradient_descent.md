@@ -1,4 +1,4 @@
-## Transformers learn in-context by gradient descent
+# Transformers learn in-context by gradient descent
 
 
 
@@ -18,37 +18,37 @@
 
 ​		首先，将标准多头自注意力层：
 
-![](./Screenshot 2023-05-16 090737.png)
+![](./090737.png)
 
 改为本文设计的线性自注意力层：
 
-![](./Screenshot 2023-05-16 090746.png)
+![](./090746.png)
 
 导出了参考线性模型的平方误差损失：
 
-![](./Screenshot 2023-05-16 095519.png)
+![](./095519.png)
 
 因此，可以将梯度下降步骤的结果视为回归损失的更新，其中更新的是数据，而不是权重。
 
-Q,K,V矩阵如下设置：$$W_K = W_Q = (\begin{matrix} I_X&0\\0&0 \end {matrix}),W_V = (\begin{matrix} 0&0\\W_0&-I_y \end {matrix})$$
+Q,K,V矩阵如下设置：$W_K = W_Q = (\begin{matrix} I_X&0\\0&0 \end {matrix}),W_V = (\begin{matrix} 0&0\\W_0&-I_y \end {matrix})$
 
 于是获得以下变化：
 
-![](./Screenshot 2023-05-16 105601.png)
+![](./105601.png)
 
 
 
 将一步梯度下降与单个线性自注意层进行比较：
 
-![](./Screenshot 2023-05-16 105834.png)
+![](./105834.png)
 
 将两步梯度下降与双层Transformer进行比较：
 
-![](./Screenshot 2023-05-16 105952.png)
+![](./105952.png)
 
 将五步梯度下降与五层Transformer进行比较：
 
-![](./Screenshot 2023-05-16 110000.png)
+![](./110000.png)
 
 
 

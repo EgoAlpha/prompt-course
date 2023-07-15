@@ -14,21 +14,21 @@ By analysing, they explained ICL as a process of meta-optimization:
 
  In the ICL setting, the attention result of a head is formulated as
 
-![](./Screenshot 2023-05-13 092254.png)
+![](./092254.png)
 
 then approximate the standard attention to a relaxed linear attention by removing the softmax operation and the scaling factor:
 
-![](./Screenshot 2023-05-13 092305.png)
+![](./092305.png)
 
-![](./Screenshot 2023-05-13 092700.png)is the attention result in the Zero-Shot Learning (ZSL) setting, where no demonstrations are given.
+![](./092700.png)is the attention result in the Zero-Shot Learning (ZSL) setting, where no demonstrations are given.
 
-![](./Screenshot 2023-05-13 092313.png)
+![](./092313.png)
 
 Comparing ICL with finetuning:
 
 the attention result of a finetuned head is formulated as
 
-![](./Screenshot 2023-05-13 093540.png)
+![](./093540.png)
 
 For a more fair comparison with ICL, they gave finetuning three restricts: (1)specify the training examples as the demonstration examples for ICL; (2) train each example for only one step in the same order as demonstrated for ICL; (3) format each training example with the same template used for ICL and use the causal language modeling objective for finetuning.
 

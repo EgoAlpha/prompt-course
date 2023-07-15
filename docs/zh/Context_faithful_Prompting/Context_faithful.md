@@ -72,17 +72,25 @@
 
 ## 数据集
 
-### SQuAD 2.0
+### [SQuAD 2.0](https://aclanthology.org/P18-2124/)
 
 该数据集是一个阅读理解数据集，由维基百科文章上提出的问题组成，每个问题的答案是相应阅读段落中的一段文本或片段，或者可能不存在足以回答的问题。模型要在SQuAD2.0上表现良好，不仅必须在正常情况下正确回答问题，还要做到在没有正确答案的问题中，返回无法回答问题（或者选择“我不知道”选项）。
 
-
-### Machine Reading Comprehension
+### [Machine Reading Comprehension](https://aclanthology.org/N19-1300/)
 
 该数据集聚焦机器阅读理解这个自然语言处理中的一个关键问题，任务是阅读和理解给定的文本段落，然后根据阅读内容回答相应问题。
 
-
-
-### Re-TACRED
+### [Re-TACRED](https://arxiv.org/abs/2104.08398)
 
 该数据集是TACRED数据集在关系抽取方面的显着改进版本。通过使用新的标签，Re-TACRED修剪了标注不完善的句子，并解决了TACRED关系定义的模糊性，最终纠正了23.9%的TACRED标签。该数据集包含40个关系中的超过9.1万个句子。
+
+
+## 参考文献
+[1] Johannes Bjerva, Nikita Bhutani, Behzad Golshan, Wang-Chiew Tan, and Isabelle Augenstein. 2020.[SubjQA: A Dataset for Subjectivity and Review Comprehension.](https://aclanthology.org/2020.emnlp-main.442/) In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 5480–5494, Online.
+
+[2] Eunsol Choi, He He, Mohit Iyyer, Mark Yatskar, Wentau Yih, Yejin Choi, Percy Liang, and Luke Zettlemoyer. 2018. [QuAC: Question answering in context.](https://aclanthology.org/D18-1241/) In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 2174–2184, Brussels, Belgium. 
+
+[3] Nicola De Cao, Wilker Aziz, and Ivan Titov. 2021.[Editing factual knowledge in language models.](https://aclanthology.org/2021.emnlp-main.522/) In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 6491–6506, Online and Punta Cana, Dominican Reublic.
+
+
+

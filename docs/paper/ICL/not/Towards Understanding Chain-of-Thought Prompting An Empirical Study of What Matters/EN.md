@@ -1,4 +1,4 @@
-## Towards Understanding Chain-of-Thought Prompting: An Empirical Study of What Matters
+# Towards Understanding Chain-of-Thought Prompting: An Empirical Study of What Matters
 
 
 
@@ -21,6 +21,6 @@ To find out what are the key aspects that determine the effectiveness of CoT pro
 
 ## Prompt example
 
-![](./Screenshot 2023-05-09 122824.png)
+![](./122824.png)
 
-![](./Screenshot 2023-06-28 144944.png)
+![](./144944.png)

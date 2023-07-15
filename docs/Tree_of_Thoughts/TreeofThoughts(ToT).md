@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[Yao et al., 2023](https://arxiv.org/abs/2305.10601) introduced a new framework for language 
+[[Yao et al., 2023]](https://arxiv.org/abs/2305.10601) introduced a new framework for language 
 model inference, “Tree of Thoughts” (ToT), which generalizes over the
 popular “Chain of Thought” approach to prompting language models, and enables
 exploration over coherent units of text (“thoughts”) that serve as intermediate steps
@@ -199,3 +199,38 @@ sure
 ```
 
 
+## Datasets
+
+In experiments, data was obtained from several websites for three games.
+
+### Game of 24
+We scrape data from [4nums.com](https://www.4nums.com/game/difficulties/), which has 1,362 games that are sorted from easy 
+to hard by human solving time, and use a subset of relatively hard games indexed
+901-1,000 for testing.
+
+For each task, we consider the output as success if it is a valid equation that
+equals 24 and uses the input numbers each exactly once. We report the success 
+rate across 100 games as the metric.
+
+### Creative Writing
+We sample random sentences from [randomwordgenerator.com](https://randomwordgenerator.com/sentence.php) to form 100 inputs, 
+and there is no groundtruth passage for each input constraint. 
+As we find that GPT-4 can follow the input constraints most of the time, 
+we focus on evaluating passage coherency in two ways: using a GPT-4 zero-shot 
+prompt to provide a 1-10 scalar score, or using human judgments to compare 
+pairs of outputs from different methods. 
+
+### Mini Crosswords
+We scrape data from [GooBix](https://www.goobix.com/crosswords/0505/), which contains 156 games of 5 × 5 mini crosswords. As
+we observe adjacent games contain similar clues, we use 20 games with indices 1, 6, · · · , 91, 96 for
+testing, and games 136, 141, 146, 151, 156 for prompting.
+
+## References
+[1] S. A. Sloman. [The empirical case for two systems of reasoning.](https://psycnet.apa.org/record/1996-01401-001) Psychological bulletin, 119(1):
+3, 1996. 
+
+[2] X. Wang, J. Wei, D. Schuurmans, Q. Le, E. Chi, and D. Zhou. [Self-consistency improves chain
+of thought reasoning in language models.](https://arxiv.org/abs/2203.11171v2) arXiv preprint arXiv:2203.11171, 2022.
+
+[3] J. Wei, X. Wang, D. Schuurmans, M. Bosma, E. Chi, Q. Le, and D. Zhou. [Chain of thought
+prompting elicits reasoning in large language models.](https://arxiv.org/abs/2201.11903) arXiv preprint arXiv:2201.11903, 2022.

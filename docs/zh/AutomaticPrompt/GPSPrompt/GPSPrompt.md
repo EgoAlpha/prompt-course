@@ -36,14 +36,32 @@ GPS不需要更新任何参数，只需要搜索每个下游任务的最佳硬�
 
 ## 数据集
 
-### 自然语言推理
-ANLI R1,ANLI R2, ANLI R3, CB, RTE.
+### [ANLI](https://github.com/facebookresearch/anli)
+对抗性自然语言推理（ANLI，Nie et al.）是一个新的大规模NLI基准数据集，通过迭代的、对抗性的人类和模型在环过程收集。特别是，选择的数据对于最先进的模型来说是困难的，包括BERT和RoBERTa。
 
-### 指代消解
-WSC, Winogrande.
+### [RTE](https://aclweb.org/aclwiki/Recognizing_Textual_Entailment)
+识别文本蕴涵（RTE）数据集来自于一系列文本蕴涵挑战。合并来自RTE1、RTE2、RTE3和RTE5的数据。例子是根据新闻和维基百科文本构建的。
 
-### 完形填空
-COPA, HellaSwag.
+### [CB](https://huggingface.co/datasets/super_glue/viewer/cb/test)
+CB一个短文本语料库，其中至少有一个句子包含一个嵌入从句。其中每个嵌入从句都标注了该从句的预期的真实性程度。所得到的任务框架是三类文本蕴涵（three-class textual entailment），其样本来自《华尔街日报（Wall Street Journal）》、英国国家语料库（British National Corpus）的小说、Switchboard。每个样本都包含一个含有一个嵌入从句的前提（premise），对应的假设（hypothesis）则是该从句的提取。SuperCLUE 使用了该数据集的一个子集，该子集中注释之间的一致程度超过 0.85。这些数据不很平衡（中性样本相对较少），所以评估指标是准确度和 F1 分数，其中多类 F1 分数是每类 F1 分数的不加权的平均值。
 
-### 词义消歧
-WiC.
+### [WSC](https://cs.nyu.edu/~davise/papers/WinogradSchemas/WS.html)
+Winograd模式挑战的引入既是图灵测试的替代方案，也是对系统进行常识推理能力的测试。Winograd图式是一对句子，它们有一个或两个不同的词，有一个高度模糊的代词，在这两个句子中解析的方式不同，这似乎需要常识知识才能正确解析。这些例子被设计成人类很容易解决，但机器很难解决，原则上要求对文本内容及其描述的情况有深刻的理解。最初的Winograd模式挑战数据集由人工智能专家手动构建的100个Winograd模式组成。截至2020年，有285个例子;然而，最后12个例子是最近才添加的。为了确保与早期模型的一致性，一些作者通常倾向于只报告前273个示例的性能。这些数据集通常分别被称为WSC285和WSC273。
+
+### [Winogrande](https://huggingface.co/datasets/winogrande)
+WinoGrande是一个包含44k个问题的新集合，灵感来自Winograd模式挑战(Levesque, Davis, and Morgenstern, 2011)，但经过调整以提高针对数据集特定偏差的规模和鲁棒性。将其表述为带有二元选项的填空任务，目标是为给定的句子选择正确的选项，这需要常识推理。
+
+### [COPA](https://people.ict.usc.edu/~gordon/copa.html)
+合理选择(COPA)评价为研究人员提供了一种评估开放领域常识性因果推理进展的工具。COPA由1000个问题组成，平均分为开发集和测试集，每个集500个问题。每个问题都由一个前提和两个选项组成，其中的任务是选择与前提更有因果关系的选项。正确的选择是随机的，因此随机猜测的预期性能为50%。
+
+### [HellaSwag](https://rowanzellers.com/hellaswag/)
+HellaSwag是一个具有挑战性的数据集，用于评估常识性NLI，这对于最先进的模型来说尤其困难，尽管它的问题对人类来说微不足道(>95%的准确率)。
+
+### [WiC](https://pilehvar.github.io/wic/)
+WiC是评估上下文敏感词嵌入的基准。WiC被构造为二进制分类任务。WiC中的每个实例都有一个目标词w，要么是动词，要么是名词，为其提供了两个上下文。这些上下文中的每一个都会触发w的特定含义。任务是确定w在两个上下文中的出现是否对应于相同的含义。事实上，该数据集也可以被视为词义消歧在实践中的应用。
+
+## 参考文献
+
+Annaaphq.(2022).遗传算法（基础知识）.[在线].CSDN博客.取自:https://blog.csdn.net/Annaaphq/article/details/126341559
+
+tigerqin1980.(2022).遗传算法入门详解.[在线].知乎.取自:https://zhuanlan.zhihu.com/p/100337680?utm_id=0

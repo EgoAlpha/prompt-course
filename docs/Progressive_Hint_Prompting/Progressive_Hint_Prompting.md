@@ -124,27 +124,32 @@ Therefore, Toulouse, Charleston, and Seattle have a total of 260 sheep together.
 
 ## Datasets
 
-### AddSub
+### [AddSub](https://aclanthology.org/D14-1058/)
 The AddSub dataset is used to test arithmetic circuits and contains test cases for the addition and subtracter.
 
-### MultiArith
+### [MultiArith](https://arxiv.org/pdf/1608.01413/)
 MultiArith is a data set designed to test arithmetic reasoning, containing a variety of arithmetic operations such as addition, subtraction, multiplication, division, and so on.
 
-### SingleEQ
+### [SingleEQ](https://aclanthology.org/Q15-1042)
 SingleEQ is a dataset for testing single-equation algebraic problems, containing single-equation algebraic word problems that perform multiple mathematical operations on non-rational numbers and a variable.
 
-### SVAMP
+### [SVAMP](https://arxiv.org/abs/2103.07191)
 SVAMP is a data set for testing hardware validation that covers various hardware validation issues such as equivalence checking, model checking, and so on.
 
-### GSM8K
+### [GSM8K](http://export.arxiv.org/abs/2110.14168)
 GSM8K is a dataset used to test Chinese phoneme conversion, containing mapping relationships between various Chinese characters and pinyin.
 
-### AQuA
+### [AQuA](https://arxiv.org/pdf/1705.04146/)
 AQuA is a dataset for testing assembly code understanding and contains mapping relationships between various assembly code and problems.
 
 
+## References
 
+[1] Daniel W Otter, Julian R Medina, and Jugal K Kalita. [A survey of the usages of deep learning for natural language processing.](https://arxiv.org/pdf/1807.10854.pdf) IEEE transactions on neural networks and learning systems, 32(2):604–624, 2020.
 
+[2] Xipeng Qiu, Tianxiang Sun, Yige Xu, Yunfan Shao, Ning Dai, and Xuanjing Huang. [Pre-trained models for natural language processing: A survey.](https://arxiv.org/abs/2003.08271) Science China Technological Sciences, 63(10):1872–1897, 2020.
+
+[3] KR1442 Chowdhary and KR Chowdhary. [Natural language processing.](https://link.springer.com/chapter/10.1007/978-81-322-3972-7_19) Fundamentals of artificial intelligence, pages 603–649, 2020.
 
 
 

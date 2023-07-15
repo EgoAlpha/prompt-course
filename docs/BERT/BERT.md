@@ -6,109 +6,108 @@ img{
 </style>
 # BERT
 - [BERT](#bert)
-  - [简介](#简介)
-  - [Transformer模型概述](#transformer模型概述)
-  - [模型结构](#模型结构)
-    - [输入](#输入)
-    - [编码器](#编码器)
-  - [预训练任务](#预训练任务)
+  - [Introduction](#introduction)
+  - [Overview of the Transformer](#overview-of-the-transformer)
+  - [Model structure](#model-structure)
+    - [Input](#input)
+    - [Encoder](#encoder)
+  - [Pre-training tasks](#pre-training-tasks)
     - [MLM](#mlm)
     - [NSP](#nsp)
-  - [微调任务](#微调任务)
-  - [应用](#应用)
-  - [参考文献](#参考文献)
+  - [Fine-tuning tasks](#fine-tuning-tasks)
+  - [Application](#application)
+  - [References](#references)
 
-## 简介
-BERT（Bidirectional Encoder Representations from Transformers）是一种革命性的预训练语言模型。2018年，Google研究团队在论文[《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》](https://arxiv.org/pdf/1810.04805.pdf)中首次提出。
+## Introduction
+BERT (Bidirectional Encoder Representations from Transformers) is a revolutionary pre-trained language model. In 2018, the Google research team first proposed in the paper [《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》](https://arxiv.org/pdf/1810.04805.pdf).
 
-BERT模型的提出受益于Transformer模型的成功应用。Transformer是一种基于自注意力机制的神经网络架构，它在机器翻译等任务中表现出色。BERT模型利用了Transformer的编码器结构，并通过预训练的方式在大规模文本语料上学习通用的语言表示。这使得BERT模型能够对文本进行深层次的理解，捕捉上下文信息，从而提供更加准确和丰富的语言表示。
+BERT model benefits from the successful application of Transformer model. Transformer is a neural network architecture based on self-attention mechanism, which performs well in tasks such as machine translation. The BERT model takes advantage of Transformer's encoder structure and learns a common linguistic representation on a large-scale text corpus through pre-training. This enables the BERT model to understand the text at a deep level, capture contextual information, and thus provide a more accurate and rich language representation.
 
-BERT模型的重要性在于它在多项自然语言处理任务中取得了突破性的成果。通过在海量文本数据上进行预训练，BERT模型学习到了丰富的语言知识和上下文表示能力。这使得它能够以无监督的方式获得深层次的语义理解，从而在各种任务中取得卓越的表现。例如，在文本分类任务中，BERT模型能够准确地捕捉关键信息，提高分类的准确性。在命名实体识别任务中，BERT模型能够准确地识别和分类实体。在问答系统和机器翻译任务中，BERT模型能够生成更加准确和流畅的回答或翻译结果。
+The importance of BERT model is that it has achieved breakthrough results in several natural language processing tasks. Through pre-training on massive text data, BERT model learns rich linguistic knowledge and context representation ability. This allows it to gain deep semantic understanding in an unsupervised manner, leading to superior performance in a variety of tasks. For example, in the task of text classification, BERT model can accurately capture the key information and improve the accuracy of classification. In the named entity recognition task, the BERT model can accurately identify and classify entities. In question answering system and machine translation tasks, BERT model can generate more accurate and fluent answers or translation results.
 
-由于BERT模型在语言理解任务中的优异表现，它被广泛应用于各种自然语言处理领域。研究人员和工程师们利用BERT模型构建了强大的文本处理系统，取得了显著的进展。同时，BERT模型也为其他模型和算法的改进提供了新的思路和方法。它在自然语言处理领域的重要性不言而喻，对于推动语言理解和语言生成的研究和应用具有深远的影响。
+BERT model has been widely used in various natural language processing fields due to its excellent performance in language understanding tasks. Researchers and engineers have made remarkable progress in building powerful text processing systems using the BERT model. At the same time, BERT model also provides new ideas and methods for the improvement of other models and algorithms. Its importance in the field of natural language processing is self-evident, and it has a far-reaching impact on promoting the research and application of language understanding and language generation.
 
-## Transformer模型概述
-BERT的底层使用了Transformer的编码器模块。Transformer模型的基本结构由编码器和解码器组成。编码器负责将输入序列转换为高维度的语义表示，而解码器则利用编码器的输出和自身的输入来生成输出序列。核心组件之一是自注意力机制（Self-Attention），它允许模型在处理序列数据时更好地理解不同位置之间的依赖关系。自注意力机制通过计算每个位置与其他位置的关联度，并根据这些关联度对位置进行加权，从而实现了全局信息的交互和整合。这使得Transformer模型能够捕捉到长程依赖关系，避免了RNN中梯度消失或梯度爆炸的问题。Transformer模型的另一个优势是其并行计算能力。由于自注意力机制和多头注意力机制的特性，Transformer模型能够高效地进行并行计算，从而加快训练和推理的速度。这种并行性使得Transformer模型在处理大规模序列数据时表现出色，尤其适用于机器翻译、文本生成和语言建模等任务。
+## Overview of the Transformer
+The bottom layer of BERT uses Transformer's encoder module. The basic structure of Transformer model consists of an encoder and a decoder. The encoder is responsible for transforming the input sequence into a high-dimensional semantic representation, while the decoder uses the output of the encoder and its own input to generate the output sequence. One of the core components is the self-attention mechanism, which allows the model to better understand the dependencies between different locations when working with sequence data. The self-attention mechanism achieves the interaction and integration of global information by calculating the correlation between each location and other locations and weighting the locations according to these correlations. This allows the Transformer model to capture the long-range dependencies, avoiding the problem of vanishing or exploding gradients in RNNs. Another advantage of the Transformer model is its parallel computing capability. Because of the characteristics of self-attention mechanism and multi-head attention mechanism, Transformer model can efficiently carry out parallel computing, thus accelerating the speed of training and reasoning. This parallelism makes the Transformer model excellent for large-scale sequential data, especially for tasks such as machine translation, text generation, and language modeling.
 
 ![](transformer.png)
 
-Transformer模型为BERT模型的设计和优化提供了重要的基础和思路。它的自注意力机制、多头注意力机制和并行计算能力都对BERT模型的性能和应用产生了深远的影响。Transformer的创新和发展为自然语言处理领域带来了全新的范式，并在BERT等模型的成功中发挥了关键作用。
+Transformer model provides an important basis and idea for the design and optimization of BERT model. Its self-attention mechanism, multi-head attention mechanism and parallel computing ability have a profound impact on the performance and application of the BERT model. The innovation and development of Transformer has brought a new paradigm to the field of natural language processing and played a key role in the success of models such as BERT.
 
-## 模型结构
-BERT的模型结构如下图所示。编码器是BERT的核心组件，它由多个相同的层组成，每个层都是一个具有自注意力机制和前馈神经网络的Transformer模型。这些层的堆叠使得BERT具有强大的语言建模能力和上下文理解能力。BERT模型的编码器可以同时处理句子中的所有位置，通过自注意力机制捕捉词语之间的关系，并生成上下文相关的表示。
+## Model structure
+The model structure of BERT is shown in the following figure. The encoder is the core component of BERT, which consists of multiple identical layers, each of which is a Transformer model with self-attention mechanism and feedforward neural network. The stacking of these layers makes BERT powerful in language modeling and context understanding. The encoder of the BERT model can process all locations in the sentence simultaneously, capture the relationship between words through the self-attention mechanism, and generate context-sensitive representations.
 
 ![](structure0.png)
 
-### 输入
+### Input
 
 ![](structure1.png)
 
-首先，为了更好地适应下游任务，BERT需要在输入中添加两个特殊的标记符[CLS]和[SEP]。
-* [CLS]标记的表示向量可以用于下游任务的分类或判断。[CLS]的表示向量包含了整个序列的语义信息，因此它可以被视为整个序列的语义表示。同时，[CLS]标记在预训练任务中也有特殊的用途。在预训练任务中的下一句预测（Next Sentence Prediction，NSP）任务中，[CLS]的表示向量还会与另一个特殊标记[SEP]的表示向量一起用于判断两个句子是否是连续的。
-* [SEP]符号在BERT模型中用于标记句子之间的分隔，帮助模型理解和处理多个句子之间的关系。
+First, to better accommodate downstream tasks, BERT needs to add two special markers [CLS] and [SEP] to the input.
+* The representation vector of the [CLS] tag can be used for classification or judgment of downstream tasks. The representation vector of [CLS] contains the semantic information of the whole sequence, so it can be regarded as the semantic representation of the whole sequence. At the same time, the [CLS] marker has a special use in the pretraining task. In the next sentence prediction (Next Sentence Prediction, NSP) task in the pre-training task, the representation vector of [CLS] is also used together with the representation vector of another special marker [SEP] to determine whether two sentences are consecutive.
+* The [SEP] symbol is used in the BERT model to mark the separation between sentences, helping the model to understand and process the relationship between multiple sentences.
 
-同时，BERT模型还有三种类型的embedding：
-* 词嵌入（Token Embedding）：BERT模型将输入的文本序列中的每个单词映射到一个固定维度的实数向量表示，称为词嵌入。这种嵌入捕捉了单词的语义和上下文信息，使得模型能够更好地理解单词的含义和关系。
-* 分段嵌入（Segment Embedding）：分段嵌入是指给每个输入片段分配一个特定的标识符，如[SEP]符号，以区分不同片段的开始和结束。
-* 位置嵌入（Position Embedding）：为了捕捉单词在句子中的顺序，BERT引入了位置嵌入。和Transformer不同的是，BERT使用的不是三角函数型的encoding方式，而是直接采用类似Word embedding的方式，直接获得position embedding。
+At the same time, the BERT model also has three types of embedding:
+* Token Embedding: The BERT model maps each word in the input text sequence to a real vector representation of a fixed dimension, which is called Token Embedding. This embedding captures the semantic and contextual information of the words, allowing the model to better understand the meanings and relationships of the words.
+* Segment Embedding: Segment embedding refers to assigning a specific identifier, such as [SEP] symbol, to each input segment to distinguish the beginning and end of different segments.
+* Position Embedding: To capture the order of words in a sentence, BERT introduces Position Embedding. Unlike Transformer, BERT does not use a trigonometric encoding method, but directly uses a method similar to Word embedding to directly obtain position embedding.
   
-BERT将上述的三种嵌入向量组合起来，通过一个堆叠的Transformer编码器层进行处理，从而获取输入文本的上下文相关表示。BERT模型能够从输入序列中学习丰富的语义信息，以支持多种自然语言处理任务的处理和解决。
+BERT combines the above three embedding vectors and processes them through a stacked Transformer encoder layer to obtain a context-sensitive representation of the input text. The BERT model is able to learn rich semantic information from input sequences to support the processing and solving of multiple natural language processing tasks.
 
-### 编码器
-BERT的中间层和Transformer的编码器一样，具体可以参照Transformer部分的对应内容进行学习，在此不做赘述。
+### Encoder
+The intermediate layer of BERT is the same as the encoder of Transformer, which can be learned by referring to the corresponding content of Transformer and will not be described here.
 
 ![](encoder1.png)
 
-## 预训练任务
-BERT的预训练任务主要包括掩码语言建模（Masked Language Modeling，MLM）和下一句预测（Next Sentence Prediction，NSP）。
+## Pre-training tasks
+The pre-training tasks of BERT mainly include MLM (Masked Language Modeling) and NSP (Next Sentence Prediction).
 
 ### MLM
 
 ![](MLM.png)
 
-在该任务中，模型会随机遮盖掉输入文本中的一些词语，并尝试预测这些被遮盖的词语。这个任务的目的是让BERT学会通过上下文信息来推测被遮盖的词语。具体的做法是，在一句话中随机选择15%的词汇用于预测。对于在原句中被抹去的词汇，80%的词汇采用一个特殊符号[MASK]替换，10%的词汇采用一个任意词替换，剩余10%的词汇保持不变。这么做的主要原因是：在后续微调任务中语句中并不会出现[MASK]标记，而且这么做的另一个好处是：预测一个词汇时，模型并不知道输入对应位置的词汇是否为正确的词汇（10%概率），这就迫使模型更多地依赖于上下文信息去预测词汇，并且赋予了模型一定的纠错能力。
+In this task, the model randomly masks some words in the input text and tries to predict the masked words. The purpose of this task is to let BERT learn to infer the covered words from the context information. Specifically, 15% of the words in a sentence are randomly selected for prediction. For the words that were erased in the original sentence, 80% of the words were replaced by a special symbol [MASK], 10% of the words were replaced by an arbitrary word, and the remaining 10% remained unchanged. The main reason for this is that the [MASK] marker will not appear in the sentence in the subsequent fine-tuning task, and another advantage of this is that when predicting a word, the model does not know whether the word in the corresponding position of the input is the correct word (10% probability), which forces the model to rely more on context information to predict words. And endows the model with certain error correction capability.
 
 ### NSP
-给定一篇文章中的两句话，判断第二句话在文本中是否紧跟在第一句话之后，如下图所示。
+Given two sentences in an article, determine whether the second sentence immediately follows the first sentence in the text, as shown in the following figure.
 
-![](NSP0.png)
-![](NSP1.png)
+![](NSP0.png)![](NSP1.png)
 
-在实际预训练过程中，文章作者从文本语料库中随机选择50%正确语句对和50%错误语句对进行训练，与Masked LM任务相结合，让模型能够更准确地刻画语句乃至篇章层面的语义信息。
+In the actual pre-training process, the author randomly selects 50% of the correct sentence pairs and 50% of the wrong sentence pairs from the text corpus for training, combined with the Masked LM task, so that the model can more accurately depict the semantic information at the sentence and text level.
 
-## 微调任务
-BERT模型的微调任务是指在预训练之后，将BERT模型应用于特定的下游任务，并在该任务的数据集上进行微调（Fine-tuning）。
-* 基于句子对的分类任务：
-  * MNLI：给定一个前提 (Premise) ，根据这个前提去推断假设 (Hypothesis) 与前提的关系。该任务的关系分为三种，蕴含关系 (Entailment)、矛盾关系 (Contradiction) 以及中立关系 (Neutral)。所以这个问题本质上是一个分类问题，我们需要做的是去发掘前提和假设这两个句子对之间的交互信息。
-  * QQP：基于Quora，判断 Quora 上的两个问题句是否表示的是一样的意思。
-  * QNLI：用于判断文本是否包含问题的答案，类似于我们做阅读理解定位问题所在的段落。
-  * STS-B：预测两个句子的相似性，包括5个级别。
-  * MRPC：也是判断两个句子是否是等价的。
-  * RTE：类似于MNLI，但是只是对蕴含关系的二分类判断，而且数据集更小。
-  * SWAG：从四个句子中选择为可能为前句下文的那个。
-* 基于单个句子的分类任务：
-  * SST-2：电影评价的情感分析。
-  * CoLA：句子语义判断，是否是可接受的（Acceptable）。 
+## Fine-tuning tasks
+The fine-tuning task of the BERT model is to apply the BERT model to a specific downstream task and fine-tune it on the data set of the task after pre-training.
+* Sentence pair based classification task:
+  * MNLI: Given a Premise, infer the relationship between the Hypothesis and the Premise from the Premise. There are three kinds of relationships in this task: Entailment, Contradiction, and Neutral. So this problem is essentially a classification problem, and what we need to do is to explore the mutual information between the two sentence pairs of premise and hypothesis.
+  * QQP: Based on Quora, determine whether two question sentences on Quora have the same meaning.
+  * QNLI: Used to determine whether the text contains the answer to the question, similar to how we do reading comprehension to locate the passage where the question is.
+  * STS-B: Predicting the similarity of two sentences, including 5 levels.
+  * MRPC: It also determines whether two sentences are equivalent.
+  * RTE: It is similar to MNLI, but it is only a binary classification judgment of implication relations, and the data set is smaller.
+  * SWAG: Choose from four sentences as the one that may be the following of the preceding sentence.
+* Classification task based on a single sentence:
+  * SST-2: Sentiment Analysis of Film Evaluation.
+  * CoLA: Sentence semantic judgment, whether it is Acceptable.
 
-对于GLUE数据集的分类任务（MNLI，QQP，QNLI，SST-B，MRPC，RTE，SST-2，CoLA），BERT的微调方法是根据[CLS]标志生成一组特征向量$C$，并通过一层全连接进行微调。损失函数根据任务类型自行设计，例如多分类的softmax或者二分类的sigmoid。SWAG的微调方法与GLUE数据集类似，只不过其输出是四个可能选项的softmax。
-* 问答任务：
-  * SQuAD v1.1：给定一个句子（通常是一个问题）和一段描述文本，输出这个问题的答案，类似于做阅读理解的简答题。SQuAD的输入是问题和描述文本的句子对，输出是特征向量，通过在描述文本上接一层激活函数为softmax的全连接来获得输出文本的条件概率，全连接的输出节点个数是语料中Token的个数。
-* 命名实体识别NER:
-  * CoNLL-2003 NER：判断一个句子中的单词是不是Person，Organization，Location，Miscellaneous或者other（无命名实体）。微调CoNLL-2003 NER时将整个句子作为输入，在每个时间片输出一个概率，并通过softmax得到这个Token的实体类别。
-下图展示了BERT在11个不同任务中的模型，它们只需要在BERT的基础上再添加一个输出层便可以完成对特定任务的微调。这些任务类似于我们做过的文科试卷，其中有选择题，简答题等等。其中Tok表示不同的Token，$E$表示嵌入向量，$T_i$表示第$i$个Token在经过BERT处理之后得到的特征向量。
+For classification tasks on the GLUE dataset (MNLI, QQP, QNLI, SST-B, MRPC, RTE, SST-2, CoLA), BERT's fine-tuning method is to generate a set of feature vectors $C$ according to the [CLS] flag and fine-tune them through a layer of full connections. The loss function is designed according to the task type, such as softmax for multi-classification or sigmoid for binary classification. The fine-tuning method for SWAG is similar to the GLUE dataset, except that the output is a softmax of four possible options.
+* Question and answer task:
+  * SQuAD v1.1: Given a sentence (usually a question) and a descriptive text, output the answer to this question, similar to doing short answer questions for reading comprehension. The input of SQuAD is the sentence pair of the question and the description text, and the output is the feature vector. The conditional probability of the output text is obtained by connecting a layer of full connection with the activation function softmax on the description text. The number of output nodes of full connection is the number of Token in the corpus.
+* Named Entity Recognition NER:
+  * CoNLL-2003 NER: Determines whether a word in a sentence is Person, Organization, Location, Miscellaneous, or other (no named entity). When fine-tuning CoNLL-2003 NER, the whole sentence is taken as input, a probability is output at each time slice, and the entity category of this Token is obtained through softmax.
+The following figure shows the model of BERT in 11 different tasks, which only need to add an output layer on the basis of BERT to complete the fine-tuning of specific tasks. These tasks are similar to the liberal arts papers we have done, including multiple choice questions, short answer questions and so on. Where Tok represents a different Token, $E $represents the embedding vector, and $T _ I $represents the feature vector of the $I $th Token after BERT processing.
 
 ![](fine.png)
 
-## 应用
-BERT模型在自然语言处理任务中的应用广泛，它的上下文相关的词向量表示能力和强大的特征提取能力使其超越了传统模型，在语言理解任务上取得了显著的性能提升，并为其他任务提供了更好的特征表示。这使得BERT模型成为自然语言处理领域中的重要工具和研究热点。其重要的应用场景包括：
-* 情感分析：通过学习上下文相关的词向量表示，BERT模型能够更好地捕捉句子中的情感和情绪信息，从而提高情感分析的准确性。
-* 机器翻译：通过将源语言和目标语言的句子作为输入，BERT模型能够学习到句子级别的语义表示，从而提高翻译的准确性和流畅性。
-* 文本生成：BERT模型可以用于生成各种类型的文本，如自动摘要、对话系统和文本生成任务。通过学习上下文相关的词向量表示，BERT模型能够生成更具语义和语法正确性的文本。
-* 文本分类：BERT模型在文本分类任务中广泛应用，如新闻分类、垃圾邮件过滤和用户评论分类等。通过将文本输入BERT模型，可以获得更准确的文本分类结果。
-* 命名实体识别：通过学习上下文相关的词向量表示，BERT模型能够准确地识别出文本中的人名、地名、组织名等命名实体。
-* 关系抽取：通过学习上下文相关的词向量表示，BERT模型能够识别文本中的实体和它们之间的关系，从而提高关系抽取的准确性。
+## Application
+BERT model is widely used in natural language processing tasks, its context-sensitive word vector representation ability and powerful feature extraction ability make it surpass the traditional model, achieve significant performance improvement in language understanding tasks, and provide better feature representation for other tasks. This makes BERT model an important tool and research focus in the field of natural language processing. Its important application scenarios include:
+* Sentiment analysis: By learning context-dependent word vector representations, BERT models can better capture the sentiment and emotional information in sentences, thus improving the accuracy of sentiment analysis.
+* Machine translation: By taking the sentences of source language and target language as input, BERT model can learn the semantic representation at the sentence level, thus improving the accuracy and fluency of translation.
+* Text generation: The BERT model can be used to generate various types of text, such as automatic summarization, dialog systems, and text generation tasks. By learning a context-sensitive word vector representation, the BERT model is able to generate more semantically and syntactically correct texts.
+* Text categorization: BERT model is widely used in text categorization tasks, such as news categorization, spam filtering, and user comment categorization. By inputting the text into the Bert model, more accurate text classification results can be obtained.
+* Named entity recognition: By learning the context-dependent word vector representation, BERT model can accurately recognize named entities such as person names, place names and organization names in the text.
+* Relation extraction: By learning the context-dependent word vector representation, BERT model can identify the entities and their relationships in the text, thus improving the accuracy of relation extraction.
 
-## 参考文献
+## References
 * [《BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding》](https://arxiv.org/pdf/1810.04805.pdf)
 * [图解BERT模型：从零开始构建BERT](https://cloud.tencent.com/developer/article/1389555)
 * [BERT详解](https://zhuanlan.zhihu.com/p/130913995)

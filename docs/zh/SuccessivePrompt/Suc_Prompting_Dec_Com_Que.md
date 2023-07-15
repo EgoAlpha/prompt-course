@@ -47,11 +47,21 @@ Peyton Manning.
 
 ## 数据集
 
-### DROP
+### [DROP](https://aclanthology.org/N19-1246/)
 一个广泛用于问答和阅读理解任务的数据集，旨在测试模型对于多步骤推理和数值推理的能力。数据集的来源是维基百科的文章和问题回答网站中的问题。每个样本由一个段落和一个与段落相关的问题组成 ，一些问题需要多步骤的推理和分析才能得到答案。
 
-### QQ-P
+### [QQ-P](https://aclanthology.org/D19-1410/)
 一个用于问题对匹配任务的常用数据集，旨在帮助判断两个问题是否具有相似的语义意义， 数据来源于Quora社区，包含了大量的非重复问题对和一部分重复问题对。
+
+
+## 参考文献
+
+[1] Aishwarya Agrawal, Dhruv Batra, Devi Parikh, and Aniruddha Kembhavi. 2018. [Don’t just assume; look and answer: Overcoming priors for visual question answering.](https://ieeexplore.ieee.org/document/8578620) In 2018 IEEE Conference on Computer Vision and Pattern Recognition, CVPR 2018, Salt Lake City, UT, USA, June 18-22, 2018, pages 4971–4980. IEEE Computer Society.
+
+[2] Daniel Andor, Luheng He, Kenton Lee, and Emily Pitler. 2019. [Giving BERT a calculator: Finding operations and arguments with reading comprehension.](https://aclanthology.org/D19-1609/) In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 5947– 5952, Hong Kong, China. Association for Computational Linguistics.
+
+[3] Xinyun Chen, Chen Liang, Adams Wei Yu, Denny Zhou, Dawn Song, and Quoc V. Le. 2020.[ Neural symbolic reader: Scalable integration of distributed and symbolic representations for reading comprehension.](https://aclanthology.org/D19-1609/) In 8th International Conference on Learning Representations, ICLR 2020, Addis Ababa, Ethiopia, April 26-30, 2020. OpenReview.net
+
 
 
 

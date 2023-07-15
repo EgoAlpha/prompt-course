@@ -1,8 +1,8 @@
-# 测量和缩小语言模型中的合成性差距
+# **Self-Ask**
 
 ## 简介
 
-[[Press et al., 2022\]](https://arxiv.org/abs/2210.03350) 研究语言模型执行组合推理任务的能力，其中整体解决方案取决于正确组合子问题的答案。
+[[Press et al., 2022]](https://arxiv.org/abs/2210.03350) 研究语言模型执行组合推理任务的能力，其中整体解决方案取决于正确组合子问题的答案。
 
 衡量模型能够正确回答所有子问题但不能生成整体解决方案的频率被称为合成性差距，通过问多跳问题来评估，这些问题的答案需要合成多个事实，而这些事实在预训练过程中不太可能一起观察到。
 
@@ -28,7 +28,9 @@ LM将组成问题作为输入，并通过首先输出输入到搜索引擎的初
 
 ![img](img/clip_image001.png)
 
-## *Prompt:*
+## Prompt 示例
+
+### *Prompt*
 
 ```
 Question: Who lived longer, Muhammad Ali or Alan Turing?
@@ -73,7 +75,7 @@ Are follow up questions needed here:
 
  
 
-## *Output:* 
+### *Output* 
 
 ```
  Yes.
@@ -84,7 +86,10 @@ Intermediate answer: El Palmar, Murcia, Spain.
 So the final answer is: El Palmar, Murcia, Spain
 ```
 
-## 数据集：
+## 数据集
+
+我们在Musique的训练集上开发了我们的方法，
+然后在Musique和2WikiMultiHopQA的开发集上以及我们自己的数据集上进行了测试。
 
 ### Compositional Celebrities(CC)
 
@@ -98,10 +103,32 @@ Bamboogle是通过阅读维基百科上的随机文章并试图提出关于它�
 
 ![image-20230602101841798](img/image-20230602101841798.png)
 
-### 2WikiMultiHopQA
+### [2WikiMultiHopQA](https://www.huggingface.co/datasets/voidful/2WikiMultihopQA)
 
 该数据集包含多个维基百科页面之间的多跳问答，可用于机器阅读理解和自然语言推理任务的研究。
 
-### Musique
+### [Musique](https://www.huggingface.co/datasets/voidful/MuSiQue)
 
 Musique数据集是一个用于音乐信息检索研究的数据集，包含了来自Last.fm的用户听歌历史记录和音乐元数据。
+
+## 参考文献
+
+[1] Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie
+Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind
+Neelakantan, Pranav Shyam, Girish Sastry, Amanda
+Askell, Sandhini Agarwal, Ariel Herbert-V oss,
+Gretchen Krueger, Tom Henighan, Rewon Child,
+Aditya Ramesh, Daniel M. Ziegler, Jeffrey Wu,
+Clemens Winter, Christopher Hesse, Mark Chen, Eric
+Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess,
+Jack Clark, Christopher Berner, Sam McCandlish,
+Alec Radford, Ilya Sutskever, and Dario Amodei.2020. [Language models are few-shot learners.](https://arxiv.org/abs/2005.14165)
+
+[2] Urvashi Khandelwal, Omer Levy, Dan Jurafsky, Luke
+Zettlemoyer, and Mike Lewis. 2020. [Generalization
+through memorization: Nearest neighbor language
+models.](https://arxiv.org/abs/1911.00172) ArXiv, abs/1911.00172.
+
+[3] Brenden M. Lake and Marco Baroni. 2017. [General-
+ization without systematicity: On the compositional
+skills of sequence-to-sequence recurrent networks.](https://arxiv.org/abs/1711.00350)

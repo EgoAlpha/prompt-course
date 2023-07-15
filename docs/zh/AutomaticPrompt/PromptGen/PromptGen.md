@@ -40,5 +40,13 @@
 
 ## 数据集
 
-### LAMA
+### [LAMA](https://github.com/facebookresearch/LAMA)
 LAMA 数据集中包含的句子用于描述两个实体之间的关系，而其中一个实体被遮盖，需要语言模型来预测，如果预测正确则说明模型学会了这一关系。然而，很多时候其实从这些 query 中是看不出这种关系的，或者说，即便模型没有回答正确，也不能说明模型不懂这个关系（比如存在一对多的情形，或者模型未见过的实体等）。
+
+## 参考文献
+
+斜角巷奇遇.(2019).自然语言处理基础学习（一）word embedding，word2vec，skip-grams，CBOW.[在线].CSDN博客.取自:https://blog.csdn.net/WTQTakee/article/details/103442222
+
+weixin_51182518.(2021).NLP 3.5 Transformer的结构，BERT&masked language model.[在线].CSDN博客.取自:https://blog.csdn.net/weixin_51182518/article/details/113929301
+
+Terry_dong.(2019).图解Transformer.[在线].CSDN博客.取自:https://blog.csdn.net/sjyttkl/article/details/98784410/
