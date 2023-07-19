@@ -65,8 +65,7 @@ MS是一个基于群体的结构化分支叙事数据集，用于研究基于目
 
 ## 参考文献
 [1] V ered Shwartz, Peter West, Ronan Le Bras, Chandra
-Bhagavatula, and Y ejin Choi. 2020. [Unsupervised
-commonsense question answering with self-talk.](https://doi.org/10.18653/v1/2020.emnlp-main.373) In
+Bhagavatula, and Y ejin Choi. 2020. [Unsupervised commonsense question answering with self-talk.](https://doi.org/10.18653/v1/2020.emnlp-main.373) In
 Proceedings of the 2020 Conference on Empirical
 Methods in Natural Language Processing (EMNLP),
 pages 4615–4629, Online. Association for Computa-
@@ -74,14 +73,10 @@ tional Linguistics.
 
 [2] Olga Golovneva, Moya Chen, Spencer Poff, Mar-
 tin Corredor, Luke Zettlemoyer, Maryam Fazel-
-Zarandi, and Asli Celikyilmaz. 2023. [ROSCOE:
-A suite of metrics for scoring step-by-step reason-
-ing.](https://openreview.net/forum?id=xYlJRpzZtsY) In The Eleventh International Conference on
+Zarandi, and Asli Celikyilmaz. 2023. [ROSCOE: A suite of metrics for scoring step-by-step reasoning.](https://openreview.net/forum?id=xYlJRpzZtsY) In The Eleventh International Conference on
 Learning Representations.
 
 [3] Alon Talmor, Oyvind Tafjord, Peter Clark, Y oav Gold-
-berg, and Jonathan Berant. 2020. [Leap-of-thought:
-Teaching pre-trained models to systematically rea-
-son over implicit knowledge.](https://proceedings.neurips.cc/paper/2020/file/e992111e4ab9985366e806733383bd8c-Paper.pdf) In Advances in Neural
+berg, and Jonathan Berant. 2020. [Leap-of-thought: Teaching pre-trained models to systematically reason over implicit knowledge.](https://proceedings.neurips.cc/paper/2020/file/e992111e4ab9985366e806733383bd8c-Paper.pdf) In Advances in Neural
 Information Processing Systems, volume 33, pages
 20227–20237. Curran Associates, Inc.

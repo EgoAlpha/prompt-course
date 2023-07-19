@@ -113,7 +113,7 @@ The Music dataset is a dataset used for music information retrieval research, wh
 
 ## References
 
-[1] Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie
+\[1\] Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie
 Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind
 Neelakantan, Pranav Shyam, Girish Sastry, Amanda
 Askell, Sandhini Agarwal, Ariel Herbert-V oss,
@@ -124,11 +124,7 @@ Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess,
 Jack Clark, Christopher Berner, Sam McCandlish,
 Alec Radford, Ilya Sutskever, and Dario Amodei.2020. [Language models are few-shot learners.](https://arxiv.org/abs/2005.14165)
 
-[2] Urvashi Khandelwal, Omer Levy, Dan Jurafsky, Luke
-Zettlemoyer, and Mike Lewis. 2020. [Generalization
-through memorization: Nearest neighbor language
-models.](https://arxiv.org/abs/1911.00172) ArXiv, abs/1911.00172.
+\[2\] Urvashi Khandelwal, Omer Levy, Dan Jurafsky, Luke
+Zettlemoyer, and Mike Lewis. 2020. [Generalization through memorization: Nearest neighbor language models.](https://arxiv.org/abs/1911.00172) ArXiv, abs/1911.00172.
 
-[3] Brenden M. Lake and Marco Baroni. 2017. [General-
-ization without systematicity: On the compositional
-skills of sequence-to-sequence recurrent networks.](https://arxiv.org/abs/1711.00350)
+\[3\] Brenden M. Lake and Marco Baroni. 2017. [Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks.](https://arxiv.org/abs/1711.00350)

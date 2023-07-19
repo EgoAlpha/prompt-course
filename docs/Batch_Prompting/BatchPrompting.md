@@ -2,12 +2,11 @@
 
 ## Introduction
 
-[[Cheng et al., 2023]](https://arxiv.org/abs/2301.08721) proposed batch prompting, a simple alternative prompting approach which enables the LLM to run inference in batches, instead of one sample at a time in the way of standard prompting.
+\[[Cheng et al.\]](https://arxiv.org/abs/2301.08721) proposed batch prompting, a simple alternative prompting approach which enables the LLM to run inference in batches, instead of one sample at a time in the way of standard prompting.
 
 It theoretically demonstrated that under a few-shot in-context learning setting, the inference costs will decrease almost inverse linearly with the number of samples in each batch. The results of valuations delivered that when each batch contains 3 to 4 samples, the performance of the model is generally the best.
 
 Authors extensively validated the effectiveness of batch prompting on ten datasets across commonsense QA, arithmetic reasoning and NLI/NLU. Results showed that batch prompting significantly reduces the LLM (Codex) inference token and time costs while achieving better or comparable performance. Further, batch prompting can be applied across different LLMs and reasoning methods.
- 
 
 ## How it Works?
 
@@ -54,48 +53,56 @@ StrategyQA, GSM8K, SVAMP, AQuA, AddSub, MultiArith, RTE, MNLI, and SST-5.
 For CommonsenseQA, AQuA, AddSub, MultiArith, and RTE, we evaluate the whole dev/test
 sets. For the other five datasets, we evaluate the first 300 test samples considering the costs of LLM APIs.
 
-### [CSQA](https://www.huggingface.co/datasets/skrishna/CSQA_preprocessed)
-CSQA is a dataset of questions and answers about multiple options in the real world. Inference is made through T5, questions are formalized as text padding, and selection is predicted with the highest sequence-to-sequence language modeling probability. It contains around 200K dialogs with a total of 1.6M turns.
+### CSQA
 
-### [strategyQA](https://www.huggingface.co/datasets/wics/strategy-qa)
-An implicit multi-step question-and-answer dataset requiring extensive reasoning skills. It aims to measure the ability of models to answer questions that require multi-step implicit reasoning.
+[CSQA](https://www.huggingface.co/datasets/skrishna/CSQA_preprocessed) is a dataset of questions and answers about multiple options in the real world. Inference is made through T5, questions are formalized as text padding, and selection is predicted with the highest sequence-to-sequence language modeling probability. It contains around 200K dialogs with a total of 1.6M turns.
 
-### [GSM8K](https://www.huggingface.co/datasets/gsm8k)
-GSM8K is a data set consisting of 8.5K high quality language diverse primary math word problems. These problems are divided into 7.5K training problems and 1K test problems. These problems take between two and eight steps to solve, and are solved by performing a series of basic calculations using basic arithmetic operations (+ - / *) to arrive at the final answer.
+### strategyQA
 
-### [SVAMP](https://www.huggingface.co/datasets/ChilleD/SVAMP)
-A challenge set for elementary-level Math Word Problems (MWP).  An MWP consists of a short Natural Language narrative that describes a state of the world and poses a question about some unknown quantities.
+[strategyQA](https://www.huggingface.co/datasets/wics/strategy-qa):An implicit multi-step question-and-answer dataset requiring extensive reasoning skills. It aims to measure the ability of models to answer questions that require multi-step implicit reasoning.
 
-The examples in SVAMP test a model across different aspects of solving MWPs: 1) Is the model question sensitive?  2) Does the model have robust reasoning ability?  3) Is it invariant to structural alterations?
+### GSM8K
 
-### [AQuA](https://www.huggingface.co/datasets/aqua_rat)
-A dataset that contains algebraic word problems with rationales.  The dataset consists of about 100,000 algebraic word problems with natural language rationales.  Each problem is a json object consisting of four parts: * question - A natural language definition of the problem to solve * options - 5 possible options (A, B, C, D and E), among which one is correct * rationale - A natural language description of the solution to the problem * correct - The correct option.
+[GSM8K](https://www.huggingface.co/datasets/gsm8k) is a data set consisting of 8.5K high quality language diverse primary math word problems. These problems are divided into 7.5K training problems and 1K test problems. These problems take between two and eight steps to solve, and are solved by performing a series of basic calculations using basic arithmetic operations (+ - / *) to arrive at the final answer.
 
-### [MultiArith](https://www.huggingface.co/datasets/ChilleD/MultiArith)
-The MultiArith dataset is a multi-step algorithm dataset containing 600 scenario-based math problems at the elementary level.
+### SVAMP
 
-### [RTE](https://www.huggingface.co/datasets/SetFit/rte)
-The Recognizing Textual Entailment (RTE) datasets come from a series of textual entailment challenges.  Data from RTE1, RTE2, RTE3 and RTE5 is combined.  Examples are constructed based on news and Wikipedia text.
+[SVAMP](https://www.huggingface.co/datasets/ChilleD/SVAMP): A challenge set for elementary-level Math Word Problems (MWP).  An MWP consists of a short Natural Language narrative that describes a state of the world and poses a question about some unknown quantities.
 
-### [MNLI](https://www.huggingface.co/datasets/SetFit/mnli)
-MNLI, Multi-type natural language Inference Data set, a natural language inference task, is a collection of sentence text implication annotation through crowdsourcing. Given a premise statement and a hypothesis statement, the task is to predict whether the premise statement contains, contradicts, or is neutral.
+The examples in [SVAMP](https://www.huggingface.co/datasets/ChilleD/SVAMP) test a model across different aspects of solving MWPs: 1) Is the model question sensitive?  2) Does the model have robust reasoning ability?  3) Is it invariant to structural alterations?
 
-### [SST-5](https://www.huggingface.co/datasets/SetFit/sst5)
-SST is an emotion analysis data set released by Stanford University, which mainly classifies emotions for film reviews. Therefore, SST belongs to the text classification task of a single sentence, among which SST-5 is five categories, and its emotional polarity is more detailed.
+### AQuA
+
+[AQuA]((https://www.huggingface.co/datasets/aqua_rat)): A dataset that contains algebraic word problems with rationales.  The dataset consists of about 100,000 algebraic word problems with natural language rationales.  Each problem is a json object consisting of four parts:
+* question - A natural language definition of the problem to solve.
+* options - 5 possible options (A, B, C, D and E), among which one is correct.
+* rationale - A natural language description of the solution to the problem.
+* correct - The correct option.
+
+### MultiArith
+
+The [MultiArith](https://www.huggingface.co/datasets/ChilleD/MultiArith) dataset is a multi-step algorithm dataset containing 600 scenario-based math problems at the elementary level.
+
+### RTE
+
+[The Recognizing Textual Entailment (RTE)]((https://www.huggingface.co/datasets/SetFit/rte)) datasets come from a series of textual entailment challenges.  Data from RTE1, RTE2, RTE3 and RTE5 is combined.  Examples are constructed based on news and Wikipedia text.
+
+### MNLI
+
+[MNLI](https://www.huggingface.co/datasets/SetFit/mnli), Multi-type natural language Inference Data set, a natural language inference task, is a collection of sentence text implication annotation through crowdsourcing. Given a premise statement and a hypothesis statement, the task is to predict whether the premise statement contains, contradicts, or is neutral.
+
+### SST-5
+
+[SST]((https://www.huggingface.co/datasets/SetFit/sst5)) is an emotion analysis data set released by Stanford University, which mainly classifies emotions for film reviews. Therefore, SST belongs to the text classification task of a single sentence, among which SST-5 is five categories, and its emotional polarity is more detailed.
 
 ## References
 
-[1] Ashish V aswani, Noam Shazeer, Niki Parmar, Jakob
-Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz
-Kaiser, and Illia Polosukhin. 2017. [Attention is all
-you need.](https://arxiv.org/abs/1706.03762) In Proc. of NeurIPS.
+\[1\] Ashish V aswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. [Attention is all you need](https://arxiv.org/abs/1706.03762) In Proc. of NeurIPS.
 
-[2] Jiachang Liu, Dinghan Shen, Yizhe Zhang, Bill Dolan,
-Lawrence Carin, and Weizhu Chen. 2022. [What
-makes good in-context examples for gpt-3?](https://arxiv.org/abs/2101.06804)
+\[2\] Jiachang Liu, Dinghan Shen, Yizhe Zhang, Bill Dolan,
+Lawrence Carin, and Weizhu Chen. 2022. [What makes good in-context examples for gpt-3?](https://arxiv.org/abs/2101.06804)
 
-[3] Hongjin Su, Jungo Kasai, Chen Henry Wu, Weijia Shi,
+\[3\] Hongjin Su, Jungo Kasai, Chen Henry Wu, Weijia Shi,
 Tianlu Wang, Jiayi Xin, Rui Zhang, Mari Ostendorf,
 Luke Zettlemoyer, Noah A Smith, and Tao Y u. 2022.
-[Selective annotation makes language models better
-few-shot learners.](https://arxiv.org/abs/2209.01975)
+[Selective annotation makes language models better few-shot learners.](https://arxiv.org/abs/2209.01975)

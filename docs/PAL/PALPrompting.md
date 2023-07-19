@@ -157,22 +157,19 @@ This dataset is a question and answer dataset widely used in Natural language pr
 
 ## References
 
-[1] Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan,
+\[1\] Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan,
 J., Dhariwal, P ., Neelakantan, A., Shyam, P ., Sastry, G.,
 Askell, A., Agarwal, S., Herbert-V oss, A., Krueger, G.,
 Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu,
 J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M.,
 Gray, S., Chess, B., Clark, J., Berner, C., McCandlish,
-S., Radford, A., Sutskever, I., and Amodei, D. [Language
-Models are Few-Shot Learners.](https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
+S., Radford, A., Sutskever, I., and Amodei, D. [Language Models are Few-Shot Learners.](https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
 In NeurIPS, 2020.
 
 [2] Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E.,
-and Zhou, D. [Self-Consistency Improves Chain of
-Thought Reasoning in Language Models.](https://arxiv.org/abs/2203.11171v2) arXiv preprint
+and Zhou, D. [Self-Consistency Improves Chain of Thought Reasoning in Language Models.](https://arxiv.org/abs/2203.11171v2) arXiv preprint
 arXiv:2203.11171, 2022b.
 
 [3] Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E., Le,
-Q., and Zhou, D. [Chain of Thought Prompting Elicits
-Reasoning in Large Language Models.](https://arxiv.org/abs/2201.11903) arXiv preprint
+Q., and Zhou, D. [Chain of Thought Prompting Elicits Reasoning in Large Language Models.](https://arxiv.org/abs/2201.11903) arXiv preprint
 arXiv:2201.11903, 2022.
