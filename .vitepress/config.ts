@@ -400,7 +400,7 @@ export default defineConfig({
                     text: 'GPT系列', link: 'zh/gpt2_finetuning',
                   },
                   {
-                    text: 'T5', link: 'zh/principle#框架',
+                    text: 'T5', link: 'zh/T5/T5contents',
                   },
                 ],
               },
@@ -705,7 +705,7 @@ export default defineConfig({
                     text: 'GPT Series', link: '/gpt2_finetuning',
                   },
                   {
-                    text: 'T5', link: '/principle#framework',
+                    text: 'T5', link: '/T5/T5contents',
                   },
                 ],
               },
