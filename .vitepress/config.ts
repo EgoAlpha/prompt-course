@@ -360,7 +360,7 @@ export default defineConfig({
                     ],
                   },
                   {
-                    text: '知识增强Prompt', link: 'zh/principle#框架',
+                    text: '知识增强Prompt', link: 'zh/KAP/kap',
                   },
                   {
                     text: '评估和可靠性', link: 'zh/EvaRelia/evalua',items:[
@@ -663,7 +663,7 @@ export default defineConfig({
                     ],
                   },
                   {
-                    text: 'Knowledge Augumented Prompt', link: '/principle#framework',
+                    text: 'Knowledge Augumented Prompt', link: '/KAP/kap',
                   },
                   {
                     text: 'Evaluation and Reliability',

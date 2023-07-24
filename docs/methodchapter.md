@@ -1,22 +1,67 @@
 # 📚 Methodology Chapter
 
-## Contents
-本章节分为九大板块，分别是设计准则、框架、基本提示、高级提示、自动化提示、思维链、上下文学习、知识增强提示以及评估和可靠性。其中，ChatGPT使用指南会从以下几个部分进行介绍，分别是帮助我们学习，协助我们工作，丰富我们的经验和方便我们的生活四个部分，从上述几个方向提供了基于ChatGPT的提示内容，方便各行各业的人直接使用写好的提示内容进行搜索查询。同时给出了提示撰写的模版示例，您只需要效仿相关内容的写法，嵌套入自己的查询内容中即可完成对应的具体任务；使用LangChain操作大模型的部分，通过快速入门开源机器学习库LangChain的操作方法，可以短时间内熟悉和操作OpenAI等大模型，从而更加方便于诸多的开发者。
+## Overview
 
-### Design Principles
+This chapter is divided into 9 major sections, including *Design Principles*, *Framework*, *Basic Prompt*, *Advanced Prompt*, *Automated Prompt*, *Chain-Of-Thought(COT)*, *In Context Learning(ICL)*, *Knowledge Augumented Prompt*, and *Evaluation and Reliability*. Among them, *Design Principles* section mainly introduce how readers can improve the quality and accuracy of large language models' answers and enhance the overall user experience by following design principles; for the *Basic Prompt* section, several case studies and scenarios are used to quickly cultivate writing prompt habits and techniques; for the *Advanced Prompt* section, advanced and complex prompts are designed using relevant cutting-edge technologies and taking into account many factors; for the *Automated Prompt* section, related machine learning methods are used to automate the design of prompts and minimize manual design; for the *COT* section, several papers are introduced on the use of thinking chains in large models and their application scenarios; for the *ICL* section, related papers are also used to introduce this section; for the *Knowledge Augumented Prompt* section, this column is explained in conjunction with corresponding papers; for the *Evaluation and Reliability* section, explanations are provided based on relevant cutting-edge papers.
 
-### Framework
+## Design Principles
+
+This section presents several design principles for prompts in natural language processing, which provide input text to models and guide them to generate appropriate responses. Some of the design principles for prompts include:
+
+- Simplicity principle: Clearly state it.
+- Diversity principle: Use multiple different prompts.
+- Length principle: Try to use short prompts as much as possible.
+- Structure principle: Use simple sentence structures.
+
+Based on these principles, we have condensed more intuitive design principles without distinguishing them into categories.
+
+## Framework
+
+This section proposes a prompt design framework consisting of five key components: context, instruction, relevance, constraints, and demonstrations. This standardized structure can help simplify prompt design, ensure adherence to consistent procedures, and produce more effective prompts.
 
 ### Basic Prompt
 
-### Advanced Prompt
+The design of basic prompt is designed to facilitate readers in quickly establishing a writing prompt design habit.
 
-### Automatic Prompt
+## Advanced Prompt
 
-### CoT
+- Batch Prompting
+- Successive Prompting
+- PAL Prompting
+- ReAct Prompting
+- Self-ask
+- Context-faithful Prompting
+- REFINER: Reasoning Feedback on Intermediate Representations
+- Reflexion
+- Progressive-Hint Prompt
+- Self-Refine
+- RecurrentGPT
 
-### In-Context Learning
 
-### Knowledge Augumented Prompt
+## Automatic Prompt
 
-### Evaluation and Reliability
+This section focuses on using advanced machine learning and other technologies to generate prompts for language models (LM/LLM). It trains the model to generate high-quality, context-relevant and accurate prompts, guiding LM/LLM to produce more coherent, precise, semantically rich, and context-relevant results. This column will introduce this section through selected papers.
+
+## CoT
+
+This section mainly introduces the thinking chain from the following three aspects:
+
+1) What is COT?
+2) What are the forms of CoT prompts?
+3) How to design innovative CoT prompts?
+
+## In-Context Learning
+
+This section mainly introduces context learning from the following four aspects:
+
+1) What is in context learning (ICL)?
+2) What are the characteristics of ICL?
+3) What are the advantages of ICL?
+4) What are the components of research on ICL?
+
+## Knowledge Augumented Prompt
+
+
+## Evaluation and Reliability
+
+This section introduces the latest cutting-edge methods for evaluating and verifying the reliability of large models through selected papers.

@@ -1,6 +1,6 @@
 # 👓 Theory Chapter
 This chapter is divided into six sections, namely the overview of large language models, Transformer, tokenization, BERT model, fine-tuning of GPT model, and T5 model. It mainly introduces the basic framework structure, code implementation, and specific usage methods.
-## 📔 Contents
+## 📔 Table of Contents
 - [LLM Overview](zh/gpt2_finetuning.md)
 - [Transformer](Transformer_md/Transformer.md)
 - [Tokenizer](token.md)

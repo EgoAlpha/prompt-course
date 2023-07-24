@@ -5,7 +5,7 @@
 一个设计优秀的提示是具体的，能够提供足够的上下文信息，从而使得大语言模型可以产生与任务相关的反馈和响应。
 
 ## ⚔️ 设计原则
-By following design principle, you can improve the quality and accuracy of the LLM’s responses and enhance the overall user experience.
+
 通过遵循设计原则，你可以提高大语言模型的回答质量和准确性，并提高整个用户体验。
 
 - **清晰和具体**: 提示应该清楚地说明模型按照预期要回答的任务或问题。避免在提示中出现模棱两可或含糊不清的情况，因为这可能导致不明确或不相关的回答。
