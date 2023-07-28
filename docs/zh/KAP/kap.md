@@ -1,6 +1,6 @@
-# 💾 Knowledge Augmented Prompt
+# 💾 知识增强提示
 
-# 📂 Table of Contents
+# 📂 目录
 
 - [**LasUIE: Unifying Information Extraction with Latent Adaptive Structure-aware Generative Language Model**](https://arxiv.org/abs/2304.06248)
 - [**Commonsense-Aware Prompting for Controllable Empathetic Dialogue Generation**](https://doi.org/10.48550/arXiv.2302.01441)
@@ -44,15 +44,15 @@
 
 ### 微调机制
 
-![image-20230424140252553](mdimage/image-20230424140252553.png)
+![image_LasUIE](mdimage/image_LasUIE.png)
 
 - 延长训练与多结构检测
 
-  ![image-20230424140529304](mdimage/image-20230424140529304.png)
+![image_phs](mdimage/image_phs.png)
 
 - 面向任务的微调
 
-  <img src="mdimage/image-20230424140605168.png" alt="image-20230424140605168" style="zoom:67%;" />
+![image_tsf](mdimage/image_tsf.png)
 
 ## [**Commonsense-Aware Prompting for Controllable Empathetic Dialogue Generation**](https://doi.org/10.48550/arXiv.2302.01441)
 
@@ -66,7 +66,7 @@ This study  proposes a framework that improves empathetic dialogue generation us
 
 ### 总体结构
 
-![image-20230424142227187](mdimage/image-20230424142227187.png)
+![image_cpcedg](mdimage/image_cpcedg.png)
 
 ## [**REPLUG: Retrieval-Augmented Black-Box Language Models**](https://doi.org/10.48550/arXiv.2301.12652)
 
@@ -74,17 +74,15 @@ This study  proposes a framework that improves empathetic dialogue generation us
 
 ### 简介
 
-This work introduces REPLUG, a retrieval-augmented language modeling framework that treats the language model (LM) as a black box and augments it with a tuneable retrieval model. Unlike prior retrieval-augmented LMs that train language models with special cross attention mechanisms to encode the retrieved text, REPLUG simply prepends retrieved documents to the input for the frozen black-box LM. This simple design can be easily applied to any existing retrieval and language models. Furthermore, the LM can be used to supervise the retrieval model, which can then find documents that help the LM make better predictions.
-
 本文介绍了REPLUG，一种检索增强的语言建模框架，将语言模型（LM）视为黑盒，并通过可调整的检索模型进行增强。与先前的检索增强语言模型不同，先前的模型通过特殊的交叉注意机制训练语言模型来编码检索到的文本，而REPLUG将检索到的文档置于冻结的黑盒语言模型的输入之前。这种简单的设计可以轻松应用于任何现有的检索和语言模型。此外，预训练模型可以用于监督检索模型，从而帮助预训练模型做出更好预测。
 
 ### 主要思路
 
-<img src="mdimage/image-20230424143447003.png" alt="image-20230424143447003" style="zoom:50%;" />
+![image_REPLUG](mdimage/image_REPLUG.png)
 
 ### 应用举例
 
-<img src="mdimage/image-20230424143525160.png" alt="image-20230424143525160" style="zoom:50%;" />
+![image_cpcedg_efi](mdimage/image_cpcedg_efi.png)
 
 ## [**Self-Instruct: Aligning Language Model with Self Generated Instructions**](https://doi.org/10.48550/arXiv.2212.10560)
 
@@ -100,7 +98,7 @@ This work introduces REPLUG, a retrieval-augmented language modeling framework t
 
 ### SELF-INSTRUCT 总览
 
-<img src="mdimage/image-20230424150210821.png" alt="image-20230424150210821" style="zoom: 50%;" />
+![image_SelfInstruct](mdimage/image_SelfInstruct.png)
 
 ## [**The Impact of Symbolic Representations on In-context Learning for Few-shot Reasoning**](https://doi.org/10.48550/arXiv.2212.08686)
 
@@ -112,7 +110,7 @@ This work introduces REPLUG, a retrieval-augmented language modeling framework t
 
 ### 比较 LMLP 与 CoT
 
-<img src="mdimage/image-20230424151914918.png" alt="image-20230424151914918" style="zoom: 33%;" />
+![image_cbalc](mdimage/image_cbalc.png)
 
 #### 6.[**Don’t Prompt, Search! Mining-based Zero-Shot Learning with Language Models**](https://doi.org/10.48550/arXiv.2210.14803) （**2022.10.26**）
 
@@ -126,7 +124,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 主要流程
 
-<img src="mdimage/image-20230425144231842.png" alt="image-20230425144231842" style="zoom:50%;" />
+![image_mpom](mdimage/image_mpom.png)
 
 ## [**Knowledge Prompting in Pre-trained Language Model for Natural Language Understanding**](https://doi.org/10.48550/arXiv.2210.08536)
 
@@ -150,7 +148,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 与以往方法比较
 
-<img src="mdimage/image-20230425161018517.png" alt="image-20230425161018517" style="zoom: 33%;" />
+![image_ppm](mdimage/image_ppm.png)
 
 ## [**Unified Knowledge Prompt Pre-training for Customer Service Dialogues**](https://doi.org/10.1145/3511808.3557718)
 
@@ -162,7 +160,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 总体结构
 
-<img src="mdimage/image-20230425175610859.png" alt="image-20230425175610859" style="zoom:50%;" />
+![image_oau](mdimage/image_oau.png)
 
 ## [**DocPrompting: Generating Code by Retrieving the Docs**](https://arxiv.org/abs/2207.05987)
 
@@ -174,7 +172,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 主要流程
 
-![image-20230425213535904](mdimage/image-20230425213535904.png)
+![image_mpd](mdimage/image_mpd.png)
 
 ## [**Towards Unified Conversational Recommender Systems via Knowledge-Enhanced Prompt Learning**](https://doi.org/10.1145/3534678.3539382)
 
@@ -190,7 +188,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 结构总览
 
-<img src="mdimage/image-20230426161329973.png" alt="image-20230426161329973" style="zoom:50%;" />
+![image_unicrs](mdimage/image_unicrs.png)
 
 ## [**Decoupling Knowledge from Memorization: Retrieval-augmented Prompt Learning**](https://doi.org/10.48550/arXiv.2205.14704)
 
@@ -202,11 +200,11 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 概览
 
-<img src="mdimage/image-20230426162440707.png" alt="image-20230426162440707" style="zoom:67%;" />
+![image_retro](mdimage/image_retro.png)
 
 ### 主要概念
 
-<img src="mdimage/image-20230426162541044.png" alt="image-20230426162541044" style="zoom:67%;" />
+![image_dkm](mdimage/image_dkm.png)
 
 ## [**Relation Extraction as Open-book Examination: Retrieval-enhanced Prompt Tuning**](https://doi.org/10.1145/3477495.3531746)
 
@@ -222,7 +220,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 应用流程
 
-<img src="mdimage/image-20230426164055339.png" alt="image-20230426164055339" style="zoom:67%;" />
+![image_poi](mdimage/image_poi.png)
 
 ## [**Contrastive Demonstration Tuning for Pre-trained Language Models**](https://doi.org/10.48550/arXiv.2204.04392) 
 
@@ -234,7 +232,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 示例微调示意
 
-<img src="mdimage/image-20230426165946329.png" alt="image-20230426165946329" style="zoom: 50%;" />
+![image_idt](mdimage/image_idt.png)
 
 ## [**Recommendation as Language Processing (RLP): A Unified Pretrain, Personalized Prompt & Predict Paradigm (P5)**](https://doi.org/10.1145/3523227.3546767) 
 
@@ -250,7 +248,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### P5的预训练与下游任务
 
-![image-20230426221104311](mdimage/image-20230426221104311.png)
+![image_p5](mdimage/image_p5.png)
 
 ## [**Multi-Stage Prompting for Knowledgeable Dialogue Generation**](https://doi.org/10.48550/arXiv.2203.08745) 
 
@@ -262,7 +260,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 概览
 
-<img src="mdimage/image-20230427134643905.png" alt="image-20230427134643905" style="zoom:67%;" />
+![image_mspa](mdimage/image_mspa.png)
 
 ## [**Training Data is More Valuable than You Think: A Simple and Effective Method by Retrieving from Training Data**](https://doi.org/10.48550/arXiv.2203.08773)
 
@@ -274,7 +272,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 流程示意
 
-<img src="mdimage/image-20230427135139660.png" alt="image-20230427135139660" style="zoom:67%;" />
+![image_reina](mdimage/image_reina.png)
 
 ## [**AdaPrompt: Adaptive Model Training for Prompt-based NLP**](https://arxiv.org/abs/2202.04824)
 
@@ -286,7 +284,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 概览
 
-<img src="mdimage/image-20230427160631480.png" alt="image-20230427160631480" style="zoom:50%;" />
+![image_adap](mdimage/image_adap.png)
 
 ## [**Generated Knowledge Prompting for Commonsense Reasoning**](https://doi.org/10.18653/v1/2022.acl-long.225)
 
@@ -298,7 +296,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 应用流程
 
-<img src="mdimage/image-20230427161825812.png" alt="image-20230427161825812" style="zoom: 67%;" />
+![image_gkp](mdimage/image_gkp.png)
 
 ## [**Label Verbalization and Entailment for Effective Zero and Few-Shot Relation Extraction**](https://doi.org/10.18653/v1/2021.emnlp-main.92)
 
@@ -310,7 +308,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 应用流程
 
-<img src="mdimage/image-20230427162531044.png" alt="image-20230427162531044" style="zoom:50%;" />
+![image_eare](mdimage/image_eare.png)
 
 ## [**Knowledgeable Prompt-tuning: Incorporating Knowledge into Prompt Verbalizer for Text Classification**](https://doi.org/10.18653/v1/2022.acl-long.158)
 
@@ -322,7 +320,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 总览
 
-<img src="mdimage/image-20230428115131071.png" alt="image-20230428115131071" style="zoom: 50%;" />
+![image_kpt](mdimage/image_kpt.png)
 
 ## [**PTR: Prompt Tuning with Rules for Text Classification**](https://doi.org/10.1016/j.aiopen.2022.11.003)
 
@@ -334,7 +332,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### PTR 在关系提取中的示例
 
-<img src="mdimage/image-20230428120213512.png" alt="image-20230428120213512" style="zoom: 67%;" />
+![image_ptr](mdimage/image_ptr.png)
 
 ## [**Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks**](https://arxiv.org/abs/2005.11401)
 
@@ -346,7 +344,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 总览
 
-<img src="mdimage/image-20230428122721047.png" alt="image-20230428122721047" style="zoom: 50%;" />
+![image_rag](mdimage/image_rag.png)
 
 ## [**REALM: Retrieval-Augmented Language Model Pre-Training**](https://arxiv.org/abs/2002.08909)
 
@@ -358,7 +356,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 总览
 
-<img src="mdimage/image-20230428124021738.png" alt="image-20230428124021738" style="zoom: 50%;" />
+![image_realm](mdimage/image_realm.png)
 
 左：无监督预训练
 
@@ -374,7 +372,7 @@ $\color{red}{勉强算知识增强，本质上是在构建数据集}$
 
 ### 总览
 
-<img src="mdimage/image-20230428125035171.png" alt="image-20230428125035171" style="zoom:67%;" />
+![image_csc](mdimage/image_csc.png)
 
 
 ​ 

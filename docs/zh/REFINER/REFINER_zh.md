@@ -2,7 +2,7 @@
 
 ## 简介
 
-[[Paul et al., 2023]](https://arxiv.org/abs/2304.01904)介绍了Refiner，这是一个用于微调
+[Paul et al., 2023](https://arxiv.org/abs/2304.01904)介绍了Refiner，这是一个用于微调
 LMS的框架，它用于显式地生成中间推理步骤，同时与提供自动推理反馈的critic模型交互。
 
 本研究在数学应用问题, 综合自然语言推理和道德行为生成三个自然语言推理任务上对Refiner算法进行了评估。
@@ -37,18 +37,18 @@ Generator的任务是反复学习如何与critic模型交互。在其中的Warm-
 
 ### *Prompt*
 
-```
+~~~python
 Situation: Jeff has not been happy in his relationship with his girlfriend Jenny for a long time.
 Intention: Jeff wants to break up with Jenny. 
 Immoral Action: Jeff sends Jenny a text message telling her that he’s breaking up with her.
-```
+~~~
 
 ### *Output* 
 
-```
+~~~pyhton
 Moral norm output(z): It’s wrong to break up with someone over text.
 Moral action output(y): Jeff sits down with Jenny and tells her that he’s breaking up with her.
-```
+~~~
 
 ## 数据集
 
@@ -64,19 +64,19 @@ SVAMP中的示例测试了解决MWP的不同方面的模型:(1)模型问题是�
 MS是一个基于群体的结构化分支叙事数据集，用于研究基于目标导向的社会推理。
 
 ## 参考文献
-[1] V ered Shwartz, Peter West, Ronan Le Bras, Chandra
+\[1\] V ered Shwartz, Peter West, Ronan Le Bras, Chandra
 Bhagavatula, and Y ejin Choi. 2020. [Unsupervised commonsense question answering with self-talk.](https://doi.org/10.18653/v1/2020.emnlp-main.373) In
 Proceedings of the 2020 Conference on Empirical
 Methods in Natural Language Processing (EMNLP),
 pages 4615–4629, Online. Association for Computa-
 tional Linguistics.
 
-[2] Olga Golovneva, Moya Chen, Spencer Poff, Mar-
+\[2\] Olga Golovneva, Moya Chen, Spencer Poff, Mar-
 tin Corredor, Luke Zettlemoyer, Maryam Fazel-
 Zarandi, and Asli Celikyilmaz. 2023. [ROSCOE: A suite of metrics for scoring step-by-step reasoning.](https://openreview.net/forum?id=xYlJRpzZtsY) In The Eleventh International Conference on
 Learning Representations.
 
-[3] Alon Talmor, Oyvind Tafjord, Peter Clark, Y oav Gold-
+\[3\] Alon Talmor, Oyvind Tafjord, Peter Clark, Y oav Gold-
 berg, and Jonathan Berant. 2020. [Leap-of-thought: Teaching pre-trained models to systematically reason over implicit knowledge.](https://proceedings.neurips.cc/paper/2020/file/e992111e4ab9985366e806733383bd8c-Paper.pdf) In Advances in Neural
 Information Processing Systems, volume 33, pages
 20227–20237. Curran Associates, Inc.
