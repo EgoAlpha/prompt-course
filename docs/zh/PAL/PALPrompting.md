@@ -2,10 +2,9 @@
 
 ## 简介
 
-[[Gao et al., 2022]](https://arxiv.org/abs/2211.10435)引入了PAL框架，该框架包括降低推理步骤和LLM最终结果的计算，以确保答案的准确性。这降低了LLM的逻辑和计算错误的失败率。
+[Gao et al., 2022](https://arxiv.org/abs/2211.10435)引入了PAL框架，该框架包括降低推理步骤和LLM最终结果的计算，以确保答案的准确性。这降低了LLM的逻辑和计算错误的失败率。
 
 通过将推理步骤外包给解释器，PAL消除了LLM执行计算的需要。结果表明，即使LLM使用更强的COT，PAL在精度上仍然优于它。此外，PAL可以与较弱的LLM协同工作，并在与较强的LLM合作时扩大其优势。
-
 
 ## 原理
 
@@ -14,7 +13,6 @@
 由于以前的LLM只在内部执行计算，因此无法处理大型计算和复杂的算法。PAL将问题分解为多个推理步骤，并将这些推理步骤和计算委托给Python解释器。因此，只要LLM的编码能力足够，它就可以准确地执行任何计算。
 
 ![pal.png](img/pal.png)
-
 
 ## Prompt 示例
 
@@ -109,7 +107,7 @@ Q: {屋子里有三把椅子两个桌子，三张床，请问一共有多少的�
 # solution using Python:
 ```
 
-### *Output* 
+### *Output*
 
 ```
 以下是Python代码：
@@ -135,25 +133,32 @@ def solution():
 (3)来自BIG-Bench Hard中的算法问题。
 
 ### [GSM8K](https://www.huggingface.co/datasets/gsm8k)
+
 GSM8K是一个由8.5K高质量语言多样的初级数学单词问题组成的数据集。这些问题分为7.5K训练问题和1K测试问题。这些问题需要两到八个步骤才能解决，并通过使用基本算术运算（+-/*）进行一系列基本计算来获得最终答案。
 
 ### [Defects4J](https://github.com/rjust/defects4j)
+
 该数据集包含5个Java项目的已知缺陷和修复，包括Commons Math、Joda Time等
 
 ### [MultiArith](https://www.huggingface.co/datasets/ChilleD/MultiArith)
+
 MultiArith数据集是一个多步骤算法数据集，包含600个初级基于场景的数学问题。
 
 ### [Django](https://www.huggingface.co/datasets/AhmedSSoliman/DJANGO)
+
 该数据集也是一个自然语言到代码的语义解析任务数据集，其中包括来自Django Web框架的Python代码和相关的自然语言描述。
 
 ### [Codeforces](https://www.kaggle.com/datasets/immortal3/codeforces-dataset)
+
 该数据集是一个在线编程竞赛平台，包含来自世界各地的程序员提交的数百万行代码。
 
 ### [SQuAD](https://www.huggingface.co/datasets/squad)
+
 该数据集是一个广泛用于自然语言处理任务的问答数据集，其中包含维基百科上的问题及其相应的答案
 
 ## 参考文献
-[1] Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan,
+
+\[1\] Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan,
 J., Dhariwal, P ., Neelakantan, A., Shyam, P ., Sastry, G.,
 Askell, A., Agarwal, S., Herbert-V oss, A., Krueger, G.,
 Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu,
@@ -162,10 +167,10 @@ Gray, S., Chess, B., Clark, J., Berner, C., McCandlish,
 S., Radford, A., Sutskever, I., and Amodei, D. [Language Models are Few-Shot Learners.](https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
 In NeurIPS, 2020.
 
-[2] Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E.,
+\[2\] Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E.,
 and Zhou, D. [Self-Consistency Improves Chain of Thought Reasoning in Language Models.](https://arxiv.org/abs/2203.11171v2) arXiv preprint
 arXiv:2203.11171, 2022b.
 
-[3] Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E., Le,
+\[3\] Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E., Le,
 Q., and Zhou, D. [Chain of Thought Prompting Elicits Reasoning in Large Language Models.](https://arxiv.org/abs/2201.11903) arXiv preprint
 arXiv:2201.11903, 2022.

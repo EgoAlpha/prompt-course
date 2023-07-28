@@ -1,8 +1,10 @@
-# MEASURING AND NARROWING THE COMPOSITIONALITY GAP IN LANGUAGE MODELS
+# Self Ask
+
+## MEASURING AND NARROWING THE COMPOSITIONALITY GAP IN LANGUAGE MODELS
 
 ## Introduction
 
-[[Press et al., 2022]](https://arxiv.org/abs/2210.03350) investigate the ability of language models to perform compositional reasoning tasks where the overall solution depends on correctly composing the answers to sub-problems.
+[Press et al., 2022](https://arxiv.org/abs/2210.03350) investigate the ability of language models to perform compositional reasoning tasks where the overall solution depends on correctly composing the answers to sub-problems.
 
 Meauring how often models can correctly answer all sub-problems but not generate the overall solution, a ratio is called the compositionality gap and is evaluated by asking multi-hop questions with answers that require composing multiple facts unlikely to have been observed together during pretraining.
 
@@ -73,9 +75,7 @@ Question: What is the hometown of the reigning men's U.S. Open champion?
 Are follow up questions needed here:
 ```
 
- 
-
-### *Output* 
+### *Output*
 
 ```
  Yes.

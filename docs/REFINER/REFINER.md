@@ -1,4 +1,4 @@
-# **REFINER**
+# REFINER
 
 ## Introduction
 
@@ -30,18 +30,18 @@ The following picture shows the overview of REFINER interaction loop. In each it
 
 ### *Prompt*
 
-~~~python
+```
 Situation: Jeff has not been happy in his relationship with his girlfriend Jenny for a long time.
 Intention: Jeff wants to break up with Jenny. 
 Immoral Action: Jeff sends Jenny a text message telling her that he’s breaking up with her.
-~~~
+```
 
 ### *Output*
 
-~~~python
+```
 Moral norm output(z): It’s wrong to break up with someone over text.
 Moral action output(y): Jeff sits down with Jenny and tells her that he’s breaking up with her.
-~~~
+```
 
 ## Datasets
 

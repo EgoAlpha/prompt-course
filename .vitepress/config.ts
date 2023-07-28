@@ -252,17 +252,17 @@ export default defineConfig({
                     text: '框架', link: 'zh/principle#框架',
                   },
                   {
-                    text: '基本Prompt', link: 'zh/basicprompting_zh',
+                    text: '基本提示设计', link: 'zh/basicprompting_zh',
                   },
                   {
-                    text: '高级Prompt',
+                    text: '高级提示设计',
                     link: 'zh/advanced',
                     items: [
                       {
-                        text: '批量prompt', link: 'zh/Batch_Prompting/BatchPrompting',
+                        text: '批量提示设计', link: 'zh/Batch_Prompting/BatchPrompting',
                       },
                       {
-                        text: '连续prompt', link: 'zh/SuccessivePrompt/Suc_Prompting_Dec_Com_Que',
+                        text: '连续提示设计', link: 'zh/SuccessivePrompt/Suc_Prompting_Dec_Com_Que',
                       },
                       {
                         text: 'PAL', link: 'zh/PAL/PALPrompting',
@@ -283,7 +283,7 @@ export default defineConfig({
                         text: '反思', link: 'zh/Reflexion/Reflexion',
                       },
                       {
-                        text: 'Progressive-Hint Prompt', link: 'zh/Progressive_Hint_Prompting/Progressive_Hint_Prompting',
+                        text: 'Progressive-Hint提示设计', link: 'zh/Progressive_Hint_Prompting/Progressive_Hint_Prompting',
                       },
                       {
                         text: '自我提问', link: 'zh/Self_Refine/Self_Refine',
@@ -294,7 +294,7 @@ export default defineConfig({
                     ],
                   },
                   {
-                    text: '自动化Prompt',
+                    text: '自动化提示设计',
                     link: 'zh/AutomaticPrompt/intro_automaticprompt',
                     items: [
                       {
@@ -360,7 +360,7 @@ export default defineConfig({
                     ],
                   },
                   {
-                    text: '知识增强Prompt', link: 'zh/KAP/kap',
+                    text: '知识增强提示设计', link: 'zh/KAP/kap',
                   },
                   {
                     text: '评估和可靠性', link: 'zh/EvaRelia/evalua',items:[

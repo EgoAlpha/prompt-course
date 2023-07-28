@@ -1,4 +1,4 @@
-# **PAL Prompting**
+# PAL Prompting
 
 ## Introduction
 
@@ -6,16 +6,13 @@
 
 By outsourcing the reasoning steps to the interpreter, PAL eliminates the need for LLM to perform computations. The results show that even when a stronger COT is used by LLM, PAL still outperforms it in accuracy. Additionally, PAL can work collaboratively with weaker LLMs and expand its advantages when working with stronger LLMs.
 
-
 ## How it Works?
 
-While LLMs can decompose natural language problems into steps and perform simple arithmetic operations, their perfor-mance falls dramatically when dealing with complex arith-metic  or large numbers . In fact, even when fine-tuning a PaLM-based model on 164B tokens of explicit mathematical content, its two most common failures are reportedly “incorrect reasoning” and “incorrect calculation” 
+While LLMs can decompose natural language problems into steps and perform simple arithmetic operations, their perfor-mance falls dramatically when dealing with complex arith-metic  or large numbers . In fact, even when fine-tuning a PaLM-based model on 164B tokens of explicit mathematical content, its two most common failures are reportedly “incorrect reasoning” and “incorrect calculation”
 
 Because previous LLMs only performed calculations internally, they were unable to handle large calculations and complex algorithms. PAL breaks down the problem into multiple reasoning steps and delegates these reasoning steps and calculations to a Python interpreter. Therefore, as long as the coding ability of an LLM is sufficient, it can accurately execute any calculation.
 
 ![pal.png](img/pal.png)
-
-
 
 ## Prompt Example
 
@@ -110,7 +107,7 @@ Q: {There are three chairs, two tables, and three beds in the room. How many pie
 # solution using Python:
 ```
 
-### *Output* 
+### *Output*
 
 ```
 
@@ -127,15 +124,14 @@ def solution():
 
 ## Datasets
 
-We experiment with three broad classes of reasoning tasks: 
+We experiment with three broad classes of reasoning tasks:
 
-(1) mathematical problems from a wide range of datasets including GSM8K, SVAMP, ASDIV, 
+(1) mathematical problems from a wide range of datasets including GSM8K, SVAMP, ASDIV,
 and MAWPS;
 
 (2) symbolic reasoning from BIG-Bench Hard;
 
 (3) algorithmic problems from BIG-Bench Hard as well.
-
 
 ### [GSM8K](https://www.huggingface.co/datasets/gsm8k)
 GSM8K is a data set consisting of 8.5K high quality language diverse primary math word problems. These problems are divided into 7.5K training problems and 1K test problems. These problems take between two and eight steps to solve, and are solved by performing a series of basic calculations using basic arithmetic operations (+ - / *) to arrive at the final answer.
@@ -166,10 +162,10 @@ Gray, S., Chess, B., Clark, J., Berner, C., McCandlish,
 S., Radford, A., Sutskever, I., and Amodei, D. [Language Models are Few-Shot Learners.](https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html)
 In NeurIPS, 2020.
 
-[2] Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E.,
+\[2\] Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E.,
 and Zhou, D. [Self-Consistency Improves Chain of Thought Reasoning in Language Models.](https://arxiv.org/abs/2203.11171v2) arXiv preprint
 arXiv:2203.11171, 2022b.
 
-[3] Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E., Le,
+\[3\] Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E., Le,
 Q., and Zhou, D. [Chain of Thought Prompting Elicits Reasoning in Large Language Models.](https://arxiv.org/abs/2201.11903) arXiv preprint
 arXiv:2201.11903, 2022.
