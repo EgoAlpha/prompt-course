@@ -120,6 +120,7 @@ export default defineConfig({
         nav: [
           { text: '首页', link: '/zh/' },
           { text: '课程', link: '/zh/intro' },
+          { text: 'Agents', link: '/zh/agentsintro' },
           { text: 'TrustGPT', link: 'https://trustgpt.co' },
         ],
 
@@ -423,6 +424,7 @@ export default defineConfig({
         nav: [
           { text: 'Home', link: '/' },
           { text: 'Course', link: '/intro' },
+          { text: 'Agents', link: '/agentsintro' },
           { text: 'TrustGPT', link: 'https://trustgpt.co', target: '_blank' },
         ],
 
