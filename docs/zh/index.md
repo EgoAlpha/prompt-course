@@ -11,8 +11,8 @@ hero:
       text: 课程
       link: /zh/intro
     - theme: brand
-      text: Trust Gpt
-      link: https://trustgpt.co
+      text: LangGraph
+      link: https://www.langchain.com/langgraph
 
 features:
   - title: "实践篇"

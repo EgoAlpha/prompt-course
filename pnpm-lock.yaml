@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@docsearch/css':
     specifier: ^3.3.3
@@ -33,6 +37,9 @@ devDependencies:
   '@iconify-json/carbon':
     specifier: ^1.1.16
     version: 1.1.16
+  '@iconify-json/ri':
+    specifier: ^1.2.5
+    version: 1.2.5
   '@unocss/extractor-pug':
     specifier: ^0.50.4
     version: 0.50.4(pug@3.0.2)
@@ -597,6 +604,12 @@ packages:
 
   /@iconify-json/carbon@1.1.16:
     resolution: {integrity: sha512-AD8bcnRSGA0WfcGEass2FbA0sagrUzrpFx5WchuDy3uf7yKBWumdypdQK121DH321fQDl5+zZQ26T6gC9knwUQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/ri@1.2.5:
+    resolution: {integrity: sha512-kWGimOXMZrlYusjBKKXYOWcKhbOHusFsmrmRGmjS7rH0BpML5A9/fy8KHZqFOwZfC4M6amObQYbh8BqO5cMC3w==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

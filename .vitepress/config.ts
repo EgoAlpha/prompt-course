@@ -121,7 +121,8 @@ export default defineConfig({
           { text: '首页', link: '/zh/' },
           { text: '课程', link: '/zh/intro' },
           { text: 'Agents', link: '/zh/agentsintro' },
-          { text: 'TrustGPT', link: 'https://trustgpt.co' },
+          { text: 'Symposium', link: '/symposium' },
+          { text: 'Hackthon', link: '/hackthon' },
         ],
 
         sidebar: [
@@ -423,9 +424,10 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
           { text: 'Home', link: '/' },
+          { text: 'Symposium', link: '/symposium' },
+          { text: 'Hackthon', link: '/hackthon' },
           { text: 'Course', link: '/intro' },
           { text: 'Agents', link: '/agentsintro' },
-          { text: 'TrustGPT', link: 'https://trustgpt.co', target: '_blank' },
         ],
 
         sidebar: [
@@ -786,6 +788,9 @@ export default defineConfig({
           presetIcons({
             scale: 1.2,
             warn: true,
+            collections: {
+              ri: () => import('@iconify-json/ri/icons.json').then(i => i.default),
+            },
           }),
           presetWebFonts({
             fonts: {

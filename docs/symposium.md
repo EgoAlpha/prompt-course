@@ -1,0 +1,3 @@
+---
+layout: SymposiumLayoutV2
+---

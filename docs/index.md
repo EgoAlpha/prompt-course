@@ -11,8 +11,8 @@ hero:
       text: Course
       link: /intro
     - theme: brand
-      text: TrustGPT
-      link: https://trustgpt.co
+      text: LangGraph
+      link: https://www.langchain.com/langgraph
 
 features:
   - title: "Practical Chapter"
