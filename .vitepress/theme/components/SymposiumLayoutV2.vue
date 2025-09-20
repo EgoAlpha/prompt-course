@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section class="relative min-h-screen bg-cover bg-center bg-no-repeat flex items-center" 
-             style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)), url('/symposium-hero.png');">
+             style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)), url('/bg.jpg');">
       <div class="w-full px-6 lg:px-8">
         <div class="max-w-4xl">
           <div class="text-white space-y-8">
@@ -16,14 +16,14 @@
                 Exploring the cutting-edge developments in NLP and AI agent technologies through expert insights and innovative research.
               </p>
             </div>
-            <div class="flex flex-col sm:flex-row gap-4">
+            <!-- <div class="flex flex-col sm:flex-row gap-4">
               <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors cursor-pointer whitespace-nowrap">
                 Join Symposium
               </button>
               <button class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors cursor-pointer whitespace-nowrap">
                 View Schedule
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center space-x-8">
-            <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">← Back to Course</a>
+            <a href="/" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">← Back to Course</a>
           </div>
           <div class="flex items-center space-x-6">
             <a href="#speakers" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Speakers</a>
@@ -44,183 +44,6 @@
         </div>
       </div>
     </nav>
-
-    <!-- Keynote Speakers Section -->
-    <section id="speakers" class="py-20 px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">Keynote Speakers</h2>
-          <p class="text-xl text-gray-600">Leading experts sharing their insights on the future of NLP and AI agents</p>
-        </div>
-        
-        <!-- Speaker 1: Yu Liu -->
-        <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div class="space-y-6">
-            <div class="flex items-center space-x-4">
-              <img alt="Prof. Yu Liu" class="w-24 h-24 rounded-full object-cover shadow-lg" 
-                   src="/prof-yu-liu.png">
-              <div>
-                <h3 class="text-2xl font-bold text-gray-900">Prof. Yu Liu</h3>
-                <p class="text-lg text-blue-600">Tsinghua University</p>
-              </div>
-            </div>
-            <div class="bg-blue-50 p-6 rounded-xl">
-              <h4 class="text-xl font-semibold text-gray-900 mb-3">
-                "Multimodal Large Language Models: Bridging Vision and Language Understanding"
-              </h4>
-              <p class="text-gray-700 leading-relaxed">
-                This talk explores the latest advancements in multimodal large language models that seamlessly integrate visual and textual information. We'll discuss breakthrough architectures, training methodologies, and real-world applications that are reshaping how AI systems understand and interact with the world around us.
-              </p>
-            </div>
-          </div>
-          <div class="relative">
-             <img alt="Multimodal AI Research" class="rounded-2xl shadow-2xl object-cover w-full h-96" 
-                  src="/symposium-conference1.png">
-           </div>
-        </div>
-
-        <!-- Speaker 2: Zheng Yuan -->
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div class="relative lg:order-1">
-             <img alt="AI Agent Systems" class="rounded-2xl shadow-2xl object-cover w-full h-96" 
-                  src="/symposium-conference2.png">
-           </div>
-          <div class="space-y-6 lg:order-2">
-            <div class="flex items-center space-x-4">
-              <img alt="Dr. Zheng Yuan" class="w-24 h-24 rounded-full object-cover shadow-lg" 
-                   src="/dr-zheng-yuan.png">
-              <div>
-                <h3 class="text-2xl font-bold text-gray-900">Dr. Zheng Yuan</h3>
-                <p class="text-lg text-purple-600">University of Cambridge</p>
-              </div>
-            </div>
-            <div class="bg-purple-50 p-6 rounded-xl">
-              <h4 class="text-xl font-semibold text-gray-900 mb-3">
-                "Autonomous AI Agents: From Theory to Practice"
-              </h4>
-              <p class="text-gray-700 leading-relaxed">
-                An in-depth examination of autonomous AI agents, covering theoretical foundations, practical implementation challenges, and emerging applications. This presentation will showcase how intelligent agents are being deployed in various domains and the key considerations for building robust, reliable autonomous systems.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Schedule Section -->
-    <section id="schedule" class="py-20 bg-gray-50 px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">Symposium Schedule</h2>
-          <p class="text-xl text-gray-600">A comprehensive program covering the latest in NLP and AI agent research</p>
-        </div>
-        <div class="space-y-8">
-          <div class="bg-white rounded-2xl p-8 shadow-lg">
-            <div class="grid md:grid-cols-4 gap-6 items-center">
-              <div class="text-center">
-                <div class="text-2xl font-bold text-blue-600">09:00</div>
-                <div class="text-gray-600">Opening</div>
-              </div>
-              <div class="md:col-span-3">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Welcome & Introduction</h3>
-                <p class="text-gray-600">Opening remarks and symposium overview</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-2xl p-8 shadow-lg">
-            <div class="grid md:grid-cols-4 gap-6 items-center">
-              <div class="text-center">
-                <div class="text-2xl font-bold text-blue-600">09:30</div>
-                <div class="text-gray-600">Keynote 1</div>
-              </div>
-              <div class="md:col-span-3">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Multimodal Large Language Models</h3>
-                <p class="text-gray-600">Prof. Yu Liu - Bridging Vision and Language Understanding</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-2xl p-8 shadow-lg">
-            <div class="grid md:grid-cols-4 gap-6 items-center">
-              <div class="text-center">
-                <div class="text-2xl font-bold text-purple-600">11:00</div>
-                <div class="text-gray-600">Keynote 2</div>
-              </div>
-              <div class="md:col-span-3">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Autonomous AI Agents</h3>
-                <p class="text-gray-600">Dr. Zheng Yuan - From Theory to Practice</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white rounded-2xl p-8 shadow-lg">
-            <div class="grid md:grid-cols-4 gap-6 items-center">
-              <div class="text-center">
-                <div class="text-2xl font-bold text-green-600">14:00</div>
-                <div class="text-gray-600">Panel</div>
-              </div>
-              <div class="md:col-span-3">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Future Directions in AI Research</h3>
-                <p class="text-gray-600">Interactive discussion with all speakers and audience Q&A</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">Symposium Gallery</h2>
-          <p class="text-xl text-gray-600">Highlights from our symposium on NLP and AI agents</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="relative group">
-            <img alt="Symposium Conference Photo 1" class="rounded-2xl shadow-lg object-cover w-full h-80 group-hover:scale-105 transition-transform duration-300" 
-                 src="/symposium-conference1.png">
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-2xl transition-all duration-300"></div>
-          </div>
-          <div class="relative group">
-            <img alt="Symposium Conference Photo 2" class="rounded-2xl shadow-lg object-cover w-full h-80 group-hover:scale-105 transition-transform duration-300" 
-                 src="/symposium-conference2.png">
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-2xl transition-all duration-300"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Research Topics Section -->
-    <section class="py-20 bg-gray-50 px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">Research Focus Areas</h2>
-          <p class="text-xl text-gray-600">Key topics covered in our symposium</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
-            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class=" i-ri-brain-line text-2xl text-white"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Multimodal AI</h3>
-            <p class="text-gray-600">Integration of vision, language, and other modalities in AI systems</p>
-          </div>
-          <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
-            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class=" i-ri-robot-line text-2xl text-white"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Autonomous Agents</h3>
-            <p class="text-gray-600">Self-directed AI systems capable of independent decision-making</p>
-          </div>
-          <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
-            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class=" i-ri-chat-3-line text-2xl text-white"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Language Understanding</h3>
-            <p class="text-gray-600">Advanced natural language processing and comprehension techniques</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- About Section -->
     <section class="py-20 px-6 lg:px-8">
@@ -254,7 +77,7 @@
     </section>
 
     <!-- Keynote Speakers Section -->
-    <section class="py-20 bg-gray-50 px-6 lg:px-8">
+    <section id="speakers" class="py-20 bg-gray-50 px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-gray-900 mb-4">Keynote Speakers</h2>
@@ -327,8 +150,102 @@
       </div>
     </section>
 
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 bg-gray-50 px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Symposium Schedule</h2>
+          <p class="text-xl text-gray-600">A comprehensive program covering the latest in NLP and AI agent research</p>
+        </div>
+        <div class="space-y-8">
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="grid md:grid-cols-4 gap-6 items-center">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-blue-600">09:00</div>
+                <div class="text-gray-600">Opening</div>
+              </div>
+              <div class="md:col-span-3">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Welcome & Introduction</h3>
+                <p class="text-gray-600">Opening remarks and symposium overview</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="grid md:grid-cols-4 gap-6 items-center">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-blue-600">09:30</div>
+                <div class="text-gray-600">Keynote 1</div>
+              </div>
+              <div class="md:col-span-3">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Advancing AI Agents: From Theory to Practice with LangGraph</h3>
+                <p class="text-gray-600">Prof. Yu Liu - Dalian University of Technology</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="grid md:grid-cols-4 gap-6 items-center">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-purple-600">11:00</div>
+                <div class="text-gray-600">Keynote 2</div>
+              </div>
+              <div class="md:col-span-3">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">On the application of NLP in language education</h3>
+                <p class="text-gray-600">Dr. Zheng Yuan - King's College London</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="grid md:grid-cols-4 gap-6 items-center">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-green-600">14:00</div>
+                <div class="text-gray-600">Panel</div>
+              </div>
+              <div class="md:col-span-3">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Future Directions in AI Research</h3>
+                <p class="text-gray-600">Interactive discussion with all speakers and audience Q&A</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Research Topics Section -->
+    <section class="py-20 bg-gray-50 px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Research Focus Areas</h2>
+          <p class="text-xl text-gray-600">Key topics covered in our symposium</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class=" i-ri-brain-line text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Multimodal AI</h3>
+            <p class="text-gray-600">Integration of vision, language, and other modalities in AI systems</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class=" i-ri-robot-line text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Autonomous Agents</h3>
+            <p class="text-gray-600">Self-directed AI systems capable of independent decision-making</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class=" i-ri-chat-3-line text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Language Understanding</h3>
+            <p class="text-gray-600">Advanced natural language processing and comprehension techniques</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Event Details Section -->
-    <section class="py-20 px-6 lg:px-8">
+    <!-- <section class="py-20 px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="grid lg:grid-cols-3 gap-8">
           <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl text-center">
@@ -357,10 +274,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Research Topics Section -->
-    <section class="py-20 bg-gray-900 px-6 lg:px-8">
+    <!-- <section class="py-20 bg-gray-900 px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Research Topics</h2>
@@ -411,10 +328,32 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Symposium Gallery</h2>
+          <p class="text-xl text-gray-600">Highlights from our symposium on NLP and AI agents</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="relative group">
+            <img alt="Symposium Conference Photo 1" class="rounded-2xl shadow-lg object-cover w-full h-80 group-hover:scale-105 transition-transform duration-300" 
+                 src="/symposium-conference1.png">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-2xl transition-all duration-300"></div>
+          </div>
+          <div class="relative group">
+            <img alt="Symposium Conference Photo 2" class="rounded-2xl shadow-lg object-cover w-full h-80 group-hover:scale-105 transition-transform duration-300" 
+                 src="/symposium-conference2.png">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 rounded-2xl transition-all duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 px-6 lg:px-8">
+    <!-- <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold text-white mb-6">Join the Future of AI Research</h2>
         <p class="text-xl text-blue-100 mb-8 leading-relaxed">
@@ -429,10 +368,10 @@
           </button>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16 px-6 lg:px-8">
+    <!-- <footer class="bg-gray-900 text-white py-16 px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-4 gap-8">
           <div class="md:col-span-2">
@@ -480,7 +419,7 @@
           <p>© 2024 EgoAlpha Prompt Course. All rights reserved.</p>
         </div>
       </div>
-    </footer>
+    </footer> -->
   </div>
 </template>
 
