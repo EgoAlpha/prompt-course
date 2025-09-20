@@ -264,4 +264,8 @@
   color: inherit;
   font-weight: 600;
 }
+img{
+    width: unset;
+    padding-left: unset;
+}
 </style>

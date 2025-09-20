@@ -789,7 +789,7 @@ export default defineConfig({
             scale: 1.2,
             warn: true,
             collections: {
-              ri: () => import('@iconify-json/ri/icons.json').then(i => i.default),
+              // ri: () => import('@iconify-json/ri/icons.json').then(i => i.default),
             },
           }),
           presetWebFonts({

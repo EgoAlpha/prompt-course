@@ -221,21 +221,21 @@
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
             <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class=" i-ri-brain-line text-2xl text-white"></i>
+              <i class=" i-carbon-watson-machine-learning text-2xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Multimodal AI</h3>
             <p class="text-gray-600">Integration of vision, language, and other modalities in AI systems</p>
           </div>
           <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
             <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class=" i-ri-robot-line text-2xl text-white"></i>
+              <i class=" i-carbon-bot text-2xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Autonomous Agents</h3>
             <p class="text-gray-600">Self-directed AI systems capable of independent decision-making</p>
           </div>
           <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
             <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class=" i-ri-chat-3-line text-2xl text-white"></i>
+              <i class=" i-carbon-chat text-2xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Language Understanding</h3>
             <p class="text-gray-600">Advanced natural language processing and comprehension techniques</p>
@@ -250,7 +250,7 @@
         <div class="grid lg:grid-cols-3 gap-8">
           <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl text-center">
             <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class=" i-ri-calendar-line text-2xl text-white"></i>
+              <i class=" i-carbon-calendar text-2xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Date & Time</h3>
             <p class="text-gray-700">March 15-16, 2024</p>
@@ -258,7 +258,7 @@
           </div>
           <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl text-center">
             <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class=" i-ri-map-pin-line text-2xl text-white"></i>
+              <i class=" i-carbon-location text-2xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Location</h3>
             <p class="text-gray-700">Academic Conference Center</p>
@@ -266,7 +266,7 @@
           </div>
           <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl text-center">
             <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class=" i-ri-group-line text-2xl text-white"></i>
+              <i class=" i-carbon-group text-2xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Attendees</h3>
             <p class="text-gray-700">Researchers</p>
@@ -286,42 +286,42 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition-colors cursor-pointer">
             <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-              <i class=" i-ri-brain-line text-xl text-white"></i>
+              <i class=" i-carbon-watson-machine-learning text-xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-white mb-2">Cognitive Architectures</h3>
             <p class="text-gray-400">Advanced frameworks for AI reasoning and decision-making</p>
           </div>
           <div class="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition-colors cursor-pointer">
             <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
-              <i class=" i-ri-translate-line text-xl text-white"></i>
+              <i class=" i-carbon-translate text-xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-white mb-2">Language Technologies</h3>
             <p class="text-gray-400">Cutting-edge NLP methods and applications</p>
           </div>
           <div class="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition-colors cursor-pointer">
             <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
-              <i class=" i-ri-robot-line text-xl text-white"></i>
+              <i class=" i-carbon-bot text-xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-white mb-2">AI Agents</h3>
             <p class="text-gray-400">Intelligent systems for complex environments</p>
           </div>
           <div class="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition-colors cursor-pointer">
             <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
-              <i class=" i-ri-database-line text-xl text-white"></i>
+              <i class=" i-carbon-data-base text-xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-white mb-2">Large-Scale Models</h3>
             <p class="text-gray-400">Training and deployment of massive AI systems</p>
           </div>
           <div class="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition-colors cursor-pointer">
             <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mb-4">
-              <i class=" i-ri-graduation-cap-line text-xl text-white"></i>
+              <i class=" i-carbon-education text-xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-white mb-2">Educational Applications</h3>
             <p class="text-gray-400">NLP technologies in language learning</p>
           </div>
           <div class="bg-gray-800 p-6 rounded-xl hover:bg-gray-700 transition-colors cursor-pointer">
             <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-4">
-              <i class=" i-ri-code-line text-xl text-white"></i>
+              <i class=" i-carbon-code text-xl text-white"></i>
             </div>
             <h3 class="text-xl font-semibold text-white mb-2">Practical Implementation</h3>
             <p class="text-gray-400">Bridging theory and real-world applications</p>
@@ -380,16 +380,16 @@
               Advancing the frontiers of natural language processing and artificial intelligence through comprehensive prompt engineering education and research.
             </p>
             <div class="flex space-x-4">
-              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                <i class=" i-ri-book-line text-blue-400"></i>
-              </a>
-              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                <i class=" i-ri-graduation-cap-line text-blue-400"></i>
-              </a>
-              <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                <i class=" i-ri-github-fill text-blue-400"></i>
-              </a>
-            </div>
+                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
+                  <i class=" i-carbon-book text-blue-400"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
+                  <i class=" i-carbon-education text-blue-400"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
+                  <i class=" i-carbon-logo-github text-blue-400"></i>
+                </a>
+              </div>
           </div>
           <div>
             <h4 class="text-lg font-semibold mb-4">Course</h4>
@@ -403,16 +403,16 @@
           <div>
             <h4 class="text-lg font-semibold mb-4">Contact</h4>
             <ul class="space-y-2 text-gray-400">
-              <li class="flex items-center">
-                <i class=" i-ri-mail-line mr-2"></i>info@egoalpha.com
-              </li>
-              <li class="flex items-center">
-                <i class=" i-ri-book-open-line mr-2"></i>Course Materials
-              </li>
-              <li class="flex items-center">
-                <i class=" i-ri-question-line mr-2"></i>Support Center
-              </li>
-            </ul>
+                <li class="flex items-center">
+                  <i class=" i-carbon-email mr-2"></i>info@egoalpha.com
+                </li>
+                <li class="flex items-center">
+                  <i class=" i-carbon-document mr-2"></i>Course Materials
+                </li>
+                <li class="flex items-center">
+                  <i class=" i-carbon-help mr-2"></i>Support Center
+                </li>
+              </ul>
           </div>
         </div>
         <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
@@ -428,5 +428,8 @@
 </script>
 
 <style scoped>
-/* Additional custom styles if needed */
+img{
+    width: unset;
+    padding-left: unset;
+}
 </style>
