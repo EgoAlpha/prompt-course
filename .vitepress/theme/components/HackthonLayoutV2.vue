@@ -10,7 +10,7 @@
               <img src="/EgoAlpha.svg" alt="EgoAlpha Logo" class="h-9 w-auto mr-3">
               <span class="text-2xl font-semibold text-gray-800">EgoAlpha</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+            <h1 class="text-4xl md:text-5xl font-bold dark:text-gray-900 text-gray-900 mb-3 leading-tight">
               AI Agent & LangGraph Hackathon
             </h1>
             <p class="text-xl text-gray-600 mb-12">
@@ -48,14 +48,14 @@
       <div class="max-w-4xl mx-auto px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center space-x-8">
-            <a href="/" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">← Back to Course</a>
+            <a href="/" class="text-gray-600 hover:dark:text-gray-900 text-gray-900 transition-colors cursor-pointer">← Back to Home</a>
           </div>
           <div class="flex items-center space-x-6">
-            <a href="#title" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Project</a>
-            <a href="#background" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Background</a>
-            <a href="#overview" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Overview</a>
-            <a href="#technical" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Technical</a>
-            <a href="#application" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Application</a>
+            <a href="#title" class="text-gray-600 hover:dark:text-gray-900 text-gray-900 transition-colors cursor-pointer">Project</a>
+            <a href="#background" class="text-gray-600 hover:dark:text-gray-900 text-gray-900 transition-colors cursor-pointer">Background</a>
+            <a href="#overview" class="text-gray-600 hover:dark:text-gray-900 text-gray-900 transition-colors cursor-pointer">Overview</a>
+            <a href="#technical" class="text-gray-600 hover:dark:text-gray-900 text-gray-900 transition-colors cursor-pointer">Technical</a>
+            <a href="#application" class="text-gray-600 hover:dark:text-gray-900 text-gray-900 transition-colors cursor-pointer">Application</a>
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@
     <!-- Winner Introduction Section -->
     <section class="bg-gray-50 py-16">
       <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl font-bold dark:text-gray-900 text-gray-900 mb-4">
           🏆 Announcing the Winning Project
         </h2>
         <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
@@ -77,7 +77,7 @@
     <div class="max-w-4xl mx-auto px-6 lg:px-8 py-16">
       <!-- Project Title Section -->
       <section id="title" class="mb-16 text-center">
-        <h1 class="text-4xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight">
+        <h1 class="text-4xl lg:text-4xl font-bold dark:text-gray-900 text-gray-900 mb-8 leading-tight">
           Enterprise Market Value Forecasting System Based on Augmented Reflexion-Agent
         </h1>
         <div class="flex justify-center mb-8">
@@ -87,7 +87,7 @@
 
       <!-- Background Section -->
       <section id="background" class="mb-16">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        <h2 class="text-3xl font-bold dark:text-gray-900 text-gray-900 mb-6">
           Background
         </h2>
         <div class="prose prose-lg max-w-none">
@@ -118,7 +118,7 @@
 
       <!-- Project Overview Section -->
       <section id="overview" class="mb-16">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        <h2 class="text-3xl font-bold dark:text-gray-900 text-gray-900 mb-6">
           Project Overview
         </h2>
         <div class="prose prose-lg max-w-none">
@@ -158,12 +158,12 @@
 
       <!-- Technical Highlights Section -->
       <section id="technical" class="mb-16">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        <h2 class="text-3xl font-bold dark:text-gray-900 text-gray-900 mb-6">
           Technical Highlights
         </h2>
         <div class="prose prose-lg max-w-none">
           <div class="mb-8">
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            <h3 class="text-xl font-semibold dark:text-gray-900 text-gray-900 mb-4">
               1. Automated Data Extraction & Knowledge Construction
             </h3>
             <ul class="list-disc pl-6 space-y-2">
@@ -177,7 +177,7 @@
           </div>
 
           <div class="mb-8">
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            <h3 class="text-xl font-semibold dark:text-gray-900 text-gray-900 mb-4">
               2. Enhanced RAG (Retrieval-Augmented Generation)
             </h3>
             <ul class="list-disc pl-6 space-y-2">
@@ -194,7 +194,7 @@
           </div>
 
           <div class="mb-8">
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            <h3 class="text-xl font-semibold dark:text-gray-900 text-gray-900 mb-4">
               3. Reflexion-Agent
             </h3>
             <ul class="list-disc pl-6 space-y-2">
@@ -214,7 +214,7 @@
 
       <!-- Application Value Section -->
       <section id="application" class="mb-16">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        <h2 class="text-3xl font-bold dark:text-gray-900 text-gray-900 mb-6">
           Application Value
         </h2>
         <div class="prose prose-lg max-w-none">
@@ -255,13 +255,13 @@
 
 <style scoped>
 .prose {
-  color: inherit;
+  /* color: inherit; */
 }
 .prose h1, .prose h2, .prose h3, .prose h4 {
-  color: inherit;
+  /* color: inherit; */
 }
 .prose strong {
-  color: inherit;
+  /* color: inherit; */
   font-weight: 600;
 }
 img{

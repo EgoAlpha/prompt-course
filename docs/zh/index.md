@@ -12,7 +12,7 @@ hero:
       link: /zh/intro
     - theme: brand
       text: LangGraph
-      link: /zh/LangGraph/LangGraph_Intro.html
+      link: /zh/LangGraph/AI_Agent_Intro
 
 features:
   - title: "实践篇"

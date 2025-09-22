@@ -34,7 +34,7 @@
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center space-x-8">
-            <a href="/" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">← Back to Course</a>
+            <a href="/" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">← Back to Home</a>
           </div>
           <div class="flex items-center space-x-6">
             <a href="#speakers" class="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">Speakers</a>
