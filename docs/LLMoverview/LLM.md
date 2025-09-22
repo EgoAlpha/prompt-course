@@ -1,9 +1,4 @@
-<style>
-img{
-    width: 60%;
-    padding-left: 20%;
-}
-</style>
+
 # Overview of the Large Language Model
 - [Overview of the Large Language Model](#overview-of-the-large-language-model)
   - [Introduction](#introduction)

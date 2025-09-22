@@ -12,7 +12,7 @@ const layoutComponents = {
   SymposiumLayout,
   HackthonLayout,
   SymposiumLayoutV2,
-  HackthonLayoutV2
+  HackthonLayoutV2,
 }
 
 const currentLayout = computed(() => {
@@ -28,5 +28,32 @@ component(:is="currentLayout")
 </template>
 
 <style scoped lang="scss">
-
 </style>
+
+<style>
+@media (min-width: 960px) {
+     .main .tagline {
+        font-size: 18px !important;
+    }
+}
+
+@media (min-width: 640px) {
+     .main .tagline {
+        font-size: 16px !important;
+    }
+}
+ .main .tagline {
+    line-height: 1.5 !important;
+    font-size: 18px !important;
+}
+ .content img{
+  max-height: 50vh;
+  max-width: 80%;
+  margin:0 auto;
+ }
+ .content iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+ </style>

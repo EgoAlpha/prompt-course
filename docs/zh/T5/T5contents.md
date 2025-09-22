@@ -1,9 +1,3 @@
-<style>
-img{
-    width: 60%;
-    padding-left: 20%;
-}
-</style>
 # T5
 
 ## 简介

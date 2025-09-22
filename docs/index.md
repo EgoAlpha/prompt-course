@@ -12,7 +12,7 @@ hero:
       link: /intro
     - theme: brand
       text: LangGraph
-      link: https://www.langchain.com/langgraph
+      link: /zh/LangGraph/LangGraph_Intro.html
 
 features:
   - title: "Practical Chapter"
