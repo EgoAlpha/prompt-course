@@ -1024,131 +1024,131 @@ export default defineConfig({
               items: [
                 {
                   text: '介绍',
-                  link: '/zh/LangGraph/AI_Agent_Intro',
+                  link: '/LangGraph/AI_Agent_Intro',
                 },
                 {
                   text: 'LangGraph介绍与智能体执行器',
-                  link: '/zh/LangGraph/LangGraph_Intro',
+                  link: '/LangGraph/LangGraph_Intro',
                   collapsed: true,
                   items: [
                     {
                       text: 'LangGraph 简介',
-                      link: '/zh/LangGraph/LangGraph_Intro#_1-langgraph-简介',
+                      link: '/LangGraph/LangGraph_Intro#_1-langgraph-简介',
                     },
                     {
                       text: 'Agent Executor 智能体执行器',
-                      link: '/zh/LangGraph/LangGraph_Intro#_2-agent-executor-智能体执行器',
+                      link: '/LangGraph/LangGraph_Intro#_2-agent-executor-智能体执行器',
                     },
                     {
                       text: 'Chat Agent Executor 聊天智能体执行器',
-                      link: '/zh/LangGraph/LangGraph_Intro#_3-chat-agent-executor-聊天智能体执行器',
+                      link: '/LangGraph/LangGraph_Intro#_3-chat-agent-executor-聊天智能体执行器',
                     },
                   ],
                 },
                 {
                   text: '检索增强智能体',
-                  link: '/zh/LangGraph/RAG',
+                  link: '/LangGraph/RAG',
                   collapsed: true,
                   items: [
                     {
                       text: '简介',
-                      link: '/zh/LangGraph/RAG#_1-简介',
+                      link: '/LangGraph/RAG#_1-简介',
                     },
                     {
                       text: 'Agentic RAG',
-                      link: '/zh/LangGraph/RAG#_2-agentic-rag',
+                      link: '/LangGraph/RAG#_2-agentic-rag',
                     },
                     {
                       text: 'Corrective RAG',
-                      link: '/zh/LangGraph/RAG#_3-corrective-rag',
+                      link: '/LangGraph/RAG#_3-corrective-rag',
                     },
                     {
                       text: 'Self RAG',
-                      link: '/zh/LangGraph/RAG#_4-self-rag',
+                      link: '/LangGraph/RAG#_4-self-rag',
                     },
                   ],
                 },
                 {
                   text: '多智能体',
-                  link: '/zh/LangGraph/Multi_Agents',
+                  link: '/LangGraph/Multi_Agents',
                   collapsed: true,
                   items: [
                     {
                       text: '简介',
-                      link: '/zh/LangGraph/Multi_Agents#_1-简介',
+                      link: '/LangGraph/Multi_Agents#_1-简介',
                     },
                     {
                       text: 'Multi-agent with supervisor',
-                      link: '/zh/LangGraph/Multi_Agents#_2-multi-agent-with-supervisor',
+                      link: '/LangGraph/Multi_Agents#_2-multi-agent-with-supervisor',
                     },
                     {
                       text: 'Multi Agent Collaboration',
-                      link: '/zh/LangGraph/Multi_Agents#_3-multi-agent-collaboration',
+                      link: '/LangGraph/Multi_Agents#_3-multi-agent-collaboration',
                     },
                     {
                       text: 'Hierarchical Agent Teams',
-                      link: '/zh/LangGraph/Multi_Agents#_4-hierarchical-agent-teams',
+                      link: '/LangGraph/Multi_Agents#_4-hierarchical-agent-teams',
                     },
                   ],
                 },
                 {
                   text: '规划智能体',
-                  link: '/zh/LangGraph/Planning_Agents',
+                  link: '/LangGraph/Planning_Agents',
                   collapsed: true,
                   items: [
                     {
                       text: '简介',
-                      link: '/zh/LangGraph/Planning_Agents#_1-简介',
+                      link: '/LangGraph/Planning_Agents#_1-简介',
                     },
                     {
                       text: 'Plan-and-execute',
-                      link: '/zh/LangGraph/Planning_Agents#_2-plan-and-execute',
+                      link: '/LangGraph/Planning_Agents#_2-plan-and-execute',
                     },
                     {
                       text: 'ReWOO',
-                      link: '/zh/LangGraph/Planning_Agents#_3-rewoo',
+                      link: '/LangGraph/Planning_Agents#_3-rewoo',
                     },
                     {
                       text: 'LLMCompiler',
-                      link: '/zh/LangGraph/Planning_Agents#_4-llmcompiler',
+                      link: '/LangGraph/Planning_Agents#_4-llmcompiler',
                     },
                   ],
                 },
                 {
                   text: '反思智能体',
-                  link: '/zh/LangGraph/Reflection_Agents',
+                  link: '/LangGraph/Reflection_Agents',
                   collapsed: true,
                   items: [
                     {
                       text: 'Reflection',
-                      link: '/zh/LangGraph/Reflection_Agents#_1-reflection',
+                      link: '/LangGraph/Reflection_Agents#_1-reflection',
                     },
                     {
                       text: 'Reflexion',
-                      link: '/zh/LangGraph/Reflection_Agents#_2-reflexion',
+                      link: '/LangGraph/Reflection_Agents#_2-reflexion',
                     },
                     {
                       text: 'Language Agents Tree Search',
-                      link: '/zh/LangGraph/Reflection_Agents#_3-language-agents-tree-search',
+                      link: '/LangGraph/Reflection_Agents#_3-language-agents-tree-search',
                     },
                   ],
                 },
                 {
                   text: '聊天机器人',
-                  link: '/zh/LangGraph/Chat_Robot',
+                  link: '/LangGraph/Chat_Robot',
                   collapsed: true,
                   items: [
                     {
                       text: 'Customer Support ChatRobot',
-                      link: '/zh/LangGraph/Chat_Robot#_1-customer-support-chatrobot',
+                      link: '/LangGraph/Chat_Robot#_1-customer-support-chatrobot',
                     },
                     {
                       text: 'Prompt Generation ChatRobot',
-                      link: '/zh/LangGraph/Chat_Robot#_2-prompt-generation-chatrobot',
+                      link: '/LangGraph/Chat_Robot#_2-prompt-generation-chatrobot',
                     },
                     {
                       text: 'Multi-agent Simulation for ChatRobot',
-                      link: '/zh/LangGraph/Chat_Robot#_3-multi-agent-simulation-for-chatrobot',
+                      link: '/LangGraph/Chat_Robot#_3-multi-agent-simulation-for-chatrobot',
                     },
                   ],
                 },
